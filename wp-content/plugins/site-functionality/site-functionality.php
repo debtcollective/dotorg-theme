@@ -79,9 +79,9 @@ class Site_Functions {
 	static function hooks() {
 		flush_rewrite_rules();
 		
-		include_once( SITE_CORE_DIR . '/src/util/util.php' 					);
+		// include_once( SITE_CORE_DIR . '/src/util/util.php' 					);
 
-		Util\update_links();
+		// Util\update_links();
     }
 
 	/**
