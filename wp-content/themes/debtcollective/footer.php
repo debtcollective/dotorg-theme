@@ -35,7 +35,6 @@
 
 	</footer><!-- .site-footer container-->
 
-	<?php debtcollective_display_mobile_menu(); ?>
 	<?php wp_footer(); ?>
 
 </body>

@@ -20,8 +20,6 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'page' );
 
-				debtcollective_display_comments();
-
 			endwhile; // End of the loop.
 			?>
 

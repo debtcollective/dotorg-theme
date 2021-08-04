@@ -19,8 +19,6 @@ get_header(); ?>
 
 			the_post_navigation();
 
-			debtcollective_display_comments();
-
 		endwhile; // End of the loop.
 		?>
 
