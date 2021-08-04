@@ -32,7 +32,7 @@ wp-content/plugins/*
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
-# !/wp-content/themes/rs-theme/
+!/wp-content/themes/debtcollective/
 
 # ignore OS generated files
 ehthumbs.db
