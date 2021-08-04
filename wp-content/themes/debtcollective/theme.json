@@ -2,10 +2,12 @@
 	"version": 1,
 	"settings": {
 		"color": {
-			"customGradient": false,
-			"customColor": false,
-			"gradients": [],
-			"duotone": [
+            "custom": false,
+            "customDuotone": false,
+            "customGradient": false,
+            "link": false,
+            "gradients": [],
+            "duotone": [
 				{
 					"colors": [
 						"#ffed9c",
@@ -15,7 +17,7 @@
 					"name": "Canary and Jade"
 				}
 			],
-			"palette": [
+            "palette": [
 				{
 					"name": "Emphasis",
 					"slug": "emphasis",
@@ -67,7 +69,16 @@
 					"color": "#ffffff"
 				}
 			]
-		},
+        },
+		"layout": {
+            "contentSize": "800px",
+            "wideSize": "1000px"
+        },
+		"spacing": {
+            "customMargin": false,
+            "customPadding": false,
+            "units": [ "px", "em", "rem", "vh", "vw" ]
+        },
 		"typography": {
 			"customFontSize": false,
 			"customLineHeight": false,
@@ -97,99 +108,145 @@
 				},
 				{
 					"name": "Large",
-					"size": "24px",
+					"size": "26.88px",
 					"slug": "large"
 				},
 				{
+					"name": "X Large",
+					"size": "32.26px",
+					"slug": "x-large"
+				},
+				{
+					"name": "XX Large",
+					"size": "48.16px",
+					"slug": "xx-large"
+				},
+				{
 					"name": "Huge",
-					"size": "32px",
+					"size": "67.78px",
 					"slug": "huge"
 				}
 			],
 			"fontWeights": [
 				{
+					"name": "Light",
 					"slug": "light",
 					"weight": 300
 				},
 				{
+					"name": "Normal",
 					"slug": "normal",
 					"weight": 500
 				},
 				{
+					"name": "Black",
 					"slug": "black",
 					"weight": 900
 				}
 			]
 		},
-		"custom": {
-			"customColor": false,
-			"color": {
-				"emphasis": "var(--wp--preset--color--emphasis)",
-				"salmon": "var(--wp--preset--color--salmon)",
-				"jade": "var(--wp--preset--color--jade)",
-				"canary": "var(--wp--preset--color--canary)",
-				"lilac": "var(--wp--preset--color--lilac)",
-				"gray-dark": "var(--wp--preset--color--gray-dark)",
-				"gray-darkest": "var(--wp--preset--color--gray-darkest)",
-				"black": "var(--wp--preset--color--black)",
-				"white": "var(--wp--preset--color--white)"
-			},
-			"colorPalettes": [
-				{
-					"label": "Hero",
-					"slug": "hero",
-					"colors": {
-						"primary": "var(--wp--preset--color--emphasis)",
-						"secondary": "var(--wp--preset--color--jade)",
-						"foreground": "var(--wp--preset--color--gray-darkest)",
-						"background": "var(--wp--preset--color--salmon)"
-					}
-				},
-				{
-					"label": "Event",
-					"slug": "event-basic",
-					"colors": {
-						"primary": "var(--wp--preset--color--emphasis)",
-						"foreground": "var(--wp--preset--color--gray-darkest)",
-						"background": "var(--wp--preset--color--canary)"
-					}
-				},
-				{
-					"label": "Tout - Jade",
-					"slug": "tout-jade",
-					"colors": {
-						"primary": "var(--wp--preset--color--jade)",
-						"secondary": "var(--wp--preset--color--white)",
-						"foreground": "var(--wp--preset--color--white)",
-						"background": "var(--wp--preset--color--jade)"
-					}
-				},
-				{
-					"label": "Tout - Salmon",
-					"slug": "tout-salmon",
-					"colors": {
-						"primary": "var(--wp--preset--color--salmon)",
-						"secondary": "var(--wp--preset--color--gray-darkest)",
-						"foreground": "var(--wp--preset--color--gray-darkest)",
-						"background": "var(--wp--preset--color--salmon)"
-					}
-				}
-			]
-		}
-	},
-	"styles": {
 		"blocks": {
+			"core/group": {
+                "color": {
+					"palette": [
+						{
+							"name": "Emphasis",
+							"slug": "emphasis",
+							"color": "#ff4630"
+						},
+						{
+							"name": "Salmon",
+							"slug": "salmon",
+							"color": "#ffa494"
+						},
+						{
+							"name": "Jade",
+							"slug": "jade",
+							"color": "#20a78c"
+						},
+						{
+							"name": "Mint",
+							"slug": "mint",
+							"color": "#d6ffb8"
+						},
+						{
+							"name": "Canary",
+							"slug": "canary",
+							"color": "#ffed9c"
+						},
+						{
+							"name": "Dark Gray",
+							"slug": "gray-dark",
+							"color": "#434343"
+						},
+						{
+							"name": "Darkest Gray",
+							"slug": "gray-darkest",
+							"color": "#343434"
+						},
+						{
+							"name": "White",
+							"slug": "white",
+							"color": "#ffffff"
+						}
+					]
+				},
+                "custom": {},
+                "layout": {},
+                "spacing": {},
+                "typography": {}
+            },
+			"core/paragraph": {
+                "color": {
+					"palette": [
+						{
+							"name": "Emphasis",
+							"slug": "emphasis",
+							"color": "#ff4630"
+						},
+						{
+							"name": "Jade",
+							"slug": "jade",
+							"color": "#20a78c"
+						},
+						{
+							"name": "Darkest Gray",
+							"slug": "gray-darkest",
+							"color": "#343434"
+						},
+						{
+							"name": "White",
+							"slug": "white",
+							"color": "#ffffff"
+						}
+					]
+				},
+                "custom": {},
+                "layout": {},
+                "spacing": {},
+                "typography": {}
+            },
 			"core/heading": {
 				"typography": {
 					"customFontSize": false,
 					"customLineHeight": false
 				},
 				"color": {
-					"palette": [ 
+					"palette": [
 						{
-							"name": "Black",
-							"slug": "black",
-							"color": "#000000"
+							"name": "Emphasis",
+							"slug": "emphasis",
+							"color": "#ff4630"
+						},
+						{
+							"name": "Jade",
+							"slug": "jade",
+							"color": "#20a78c"
+						},
+						{
+							"name": "Darkest Gray",
+							"slug": "gray-darkest",
+							"color": "#343434"
 						},
 						{
 							"name": "White",
@@ -199,76 +256,47 @@
 					]
 				}
 			},
-			"core/heading/h1": {
-				"typography": {
-					"fontFamily": "Libre Franklin Black",
-					"fontSize": "67.78px",
-					"lineHeight": "100%"
-				},
-				"color": {
-					"text": "#000000"
-				}
-			},
-			"core/heading/h2": {
-				"typography": {
-					"fontFamily": "Libre Franklin Black",
-					"fontSize": "41.88px",
-					"lineHeight": "115%"
-				},
-				"color": {
-					"text": "#000000"
-				}
-			},
-			"core/heading/h3": {
-				"typography": {
-					"fontFamily": "Libre Franklin Black",
-					"fontSize": "26.88px",
-					"lineHeight": "120%"
-				},
-				"color": {
-					"text": "#000000"
-				}
-			},
-			"core/heading/h4": {
-				"typography": {
-					"fontFamily": "Libre Franklin Black",
-					"fontSize": "1rem",
-					"lineHeight": "24px"
-				},
-				"color": {
-					"text": "#000000"
-				}
-			},
-			"core/paragraph": {
-				"typography": {
-					"fontSize": "1rem",
-					"customFontSize": false,
-					"customLineHeight": false
-				}
-			},
 			"core/button": {
 				"color": {
-					"palette": [ 
+					"palette": [
+						{
+							"name": "Emphasis",
+							"slug": "emphasis",
+							"color": "#ff4630"
+						},
 						{
 							"name": "Jade",
 							"slug": "jade",
 							"color": "#20a78c"
 						},
 						{
-							"name": "Emphasis",
-							"slug": "emphasis",
-							"color": "#ff4630"
+							"name": "Darkest Gray",
+							"slug": "gray-darkest",
+							"color": "#343434"
+						},
+						{
+							"name": "White",
+							"slug": "white",
+							"color": "#ffffff"
 						}
 					]
-				},
-				"typography": {
-					"fontSize": "1rem",
-					"LineHeight": "19px",
-					"fontFamily": "Libre Franklin",
-					"fontWeight": "900",
-					"customFontSize": false,
-					"customLineHeight": false
 				}
+			}
+		},
+		"custom": {
+            "lineHeight": {
+                "body": "150%",
+				"heading": "100%"
+            },
+            "font-primary": "Libre Franklin\", \"Helvetica Neue\", sans-serif",
+			"font-heading": "Libre Franklin\", \"Helvetica Neue\", sans-serif",
+			"font-heading-alt": "More Gothic\", \"Helvetica Neue\", sans-serif"
+        }
+	},
+	"styles": {
+		"styles": {
+			"color": {
+				"text": "var(--wp--preset--color--gray-dark)"
 			}
 		}
 	}
