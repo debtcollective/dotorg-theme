@@ -1,0 +1,214 @@
+{
+	"version": 1,
+	"settings": {
+		"color": {
+			"custom": {
+				"lineHeight": {
+					"body": "150%"
+				},
+				"font-primary": "Libre Franklin\", \"Helvetica Neue\", sans-serif"
+			},
+			"customGradient": false,
+			"duotone": [
+				{
+					"colors": [
+						"#ffed9c",
+						"#20a78c"
+					],
+					"slug": "canary-jade",
+					"name": "Canary and Jade"
+				}
+			],
+			"palette": [
+				{
+					"name": "Emphasis",
+					"slug": "emphasis",
+					"color": "#ff4630"
+				},
+				{
+					"name": "Salmon",
+					"slug": "salmon",
+					"color": "#ffa494"
+				},
+				{
+					"name": "Jade",
+					"slug": "jade",
+					"color": "#20a78c"
+				},
+				{
+					"name": "Mint",
+					"slug": "mint",
+					"color": "#d6ffb8"
+				},
+				{
+					"name": "Canary",
+					"slug": "canary",
+					"color": "#ffed9c"
+				},
+				{
+					"name": "Lilac",
+					"slug": "lilac",
+					"color": "#d2c4f5"
+				},
+				{
+					"name": "Dark Gray",
+					"slug": "gray-dark",
+					"color": "#434343"
+				},
+				{
+					"name": "Darkest Gray",
+					"slug": "gray-darkest",
+					"color": "#343434"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				}
+			],
+			"gradients": []
+		},
+		"typography": {
+			"customFontSize": false,
+			"customLineHeight": false,
+			"dropCap": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "Libre Franklin\", \"Helvetica Neue\", sans-serif",
+					"slug": "libre-franklin",
+					"name": "Libre Franklin"
+				},
+				{
+					"fontFamily": "More Gothic\", \"Helvetica Neue\", sans-serif",
+					"slug": "more-gothic",
+					"name": "More Gothic"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "default",
+					"size": 16
+				},
+				{
+					"slug": "small",
+					"size": 14
+				}
+			],
+			"fontWeights": [
+				{
+					"slug": "light",
+					"weight": 300
+				},
+				{
+					"slug": "normal",
+					"weight": 500
+				},
+				{
+					"slug": "black",
+					"weight": 900
+				}
+			]
+		  }
+	},
+	"styles": {
+		"blocks": {
+			"core/heading": {
+				"typography": {
+					"customFontSize": false,
+					"customLineHeight": false
+				},
+				"color": {
+					"palette": [ 
+						{
+							"name": "Black",
+							"slug": "black",
+							"color": "#000000"
+						},
+						{
+							"name": "White",
+							"slug": "white",
+							"color": "#ffffff"
+						}
+					]
+				}
+			},
+			"core/heading/h1": {
+				"typography": {
+					"fontFamily": "Libre Franklin Black",
+					"fontSize": "67.78px",
+					"lineHeight": "100%"
+				},
+				"color": {
+					"text": "#000000"
+				}
+			},
+			"core/heading/h2": {
+				"typography": {
+					"fontFamily": "Libre Franklin Black",
+					"fontSize": "41.88px",
+					"lineHeight": "115%"
+				},
+				"color": {
+					"text": "#000000"
+				}
+			},
+			"core/heading/h3": {
+				"typography": {
+					"fontFamily": "Libre Franklin Black",
+					"fontSize": "26.88px",
+					"lineHeight": "120%"
+				},
+				"color": {
+					"text": "#000000"
+				}
+			},
+			"core/heading/h4": {
+				"typography": {
+					"fontFamily": "Libre Franklin Black",
+					"fontSize": "1rem",
+					"lineHeight": "24px"
+				},
+				"color": {
+					"text": "#000000"
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontSize": "1rem",
+					"customFontSize": false,
+					"customLineHeight": false
+				}
+			},
+			"core/button": {
+				"color": {
+					"palette": [ 
+						{
+							"name": "Jade",
+							"slug": "jade",
+							"color": "#20a78c"
+						},
+						{
+							"name": "Emphasis",
+							"slug": "emphasis",
+							"color": "#ff4630"
+						}
+					]
+				},
+				"typography": {
+					"fontSize": "1rem",
+					"LineHeight": "19px",
+					"fontFamily": "Libre Franklin",
+					"fontWeight": "900",
+					"customFontSize": false,
+					"customLineHeight": false
+				}
+			}
+		}
+	}
+	
+}
