@@ -33,6 +33,8 @@
 		"css-loader": "^5.2.6",
 		"css-minimizer-webpack-plugin": "1.3.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-jsdoc": "^36.0.6",
+		"eslint-plugin-prettier": "^3.4.0",
 		"eslint-webpack-plugin": "^2.5.4",
 		"file-loader": "^6.2.0",
 		"imagemin-webpack-plugin": "^2.4.2",
@@ -47,9 +49,7 @@
 		"svg-spritemap-webpack-plugin": "3.9.1",
 		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
 		"url-loader": "^4.1.1",
-		"webpack-merge": "^5.8.0",
-		"eslint-plugin-jsdoc": "^36.0.6",
-		"eslint-plugin-prettier": "^3.4.0"
+		"webpack-merge": "^5.8.0"
 	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
@@ -75,7 +75,7 @@
 		"watch": "run-p start sync"
 	},
 	"dependencies": {
-		"@debtcollective/dc-header-component": "^3.6.3"
-
+		"@debtcollective/dc-header-component": "^3.6.3",
+		"@debtcollective/union-component": "^1.5.2"
 	}
 }

@@ -22,6 +22,8 @@
 
 	<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ); ?>"></script>
 
+	<!-- <script type="module" src="<?php /** echo esc_url( \get_stylesheet_directory_uri() . '/build/web-components.js' ); */?>"></script> -->
+
 	<?php wp_head(); ?>
 
 </head>

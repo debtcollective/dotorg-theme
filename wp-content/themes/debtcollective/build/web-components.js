@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/@debtcollective/dc-header-component/dist/header/header.esm.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/@debtcollective/dc-header-component/dist/header/header.esm.js ***!
-  \************************************************************************************/
+/***/ "./node_modules/@debtcollective/dc-header-component/dist/header/index.esm.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@debtcollective/dc-header-component/dist/header/index.esm.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: Unexpected token (1:63)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> import{p as e,b as l}from\"./p-1822b0d8.js\";(()=>{const l=import.meta.url,o={};return\"\"!==l&&(o.resourcesUrl=new URL(\".\",l).href),e(o)})().then((e=>l([[\"p-3fb6bf3a\",[[1,\"dc-header\",{homepage:[1],community:[1],returnurl:[1],logo:[8],logosmall:[8],user:[32],isShrink:[32],scrollTop:[32],isMenuOpen:[32],isProfileMenuOpen:[32]},[[9,\"scroll\",\"handleScroll\"],[0,\"toggleMenu\",\"toggleMenuHandler\"],[0,\"toggleProfileMenu\",\"toggleProfileMenuHandler\"],[0,\"closeAll\",\"closeAll\"]]],[1,\"dc-menu\",{open:[4],community:[1],homepage:[1],host:[1],user:[16]},[[4,\"keydown\",\"handleEscapeKey\"]]],[1,\"dc-profile\",{shrank:[4],expanded:[4],community:[1],homepage:[1],host:[1],user:[16]},[[4,\"keydown\",\"handleEscapeKey\"]]],[4,\"dc-link\",{to:[1],target:[1],namespace:[1]},[[2,\"click\",\"handleClick\"]]]]]],e)));");
+
 
 /***/ }),
 
@@ -106,13 +106,13 @@ throw new Error("Module parse failed: Unexpected token (1:63)\nYou may need an a
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _debtcollective_dc_header_component_dist_header_header_esm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @debtcollective/dc-header-component/dist/header/header.esm */ "./node_modules/@debtcollective/dc-header-component/dist/header/header.esm.js");
-/* harmony import */ var _debtcollective_dc_header_component_dist_header_header_esm__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_debtcollective_dc_header_component_dist_header_header_esm__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _debtcollective_dc_header_component_dist_header_index_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @debtcollective/dc-header-component/dist/header/index.esm.js */ "./node_modules/@debtcollective/dc-header-component/dist/header/index.esm.js");
+/* harmony import */ var _debtcollective_dc_header_component_dist_header_index_esm_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_debtcollective_dc_header_component_dist_header_index_esm_js__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * Web Components
  */
 
-
+// import '@debtcollective/union-component/build/index';
 
 /***/ })
 
