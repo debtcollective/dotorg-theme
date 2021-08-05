@@ -391,47 +391,24 @@ function debtcollective_display_numeric_pagination( $args = [], $query = null ) 
 	<?php
 }
 
-/**
- * Displays the mobile menu with off-canvas background layer.
- *
- * @author Debt Collective
- *
- * @return string An empty string if no menus are found at all.
- */
-function debtcollective_display_mobile_menu() {
-	// Bail if no mobile or primary menus are set.
-	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
-		return '';
+function debtcollective_render_section_navigation( $post = null ) {
+
+	if ( $post->post_parent ) {
+		$parent = $post->post_parent;
+	} else {
+		$parent = $post->ID;
 	}
 
-	// Set a default menu location.
-	$menu_location = 'primary';
+		echo '<ul class="page-button-nav">';
 
-	// If we have a mobile menu explicitly set, use it.
-	if ( has_nav_menu( 'mobile' ) ) {
-		$menu_location = 'mobile';
-	}
-	?>
-	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', 'debtcollective' ); ?>" aria-hidden="true" tabindex="-1">
-		<?php
-		// Mobile menu args.
-		$mobile_args = [
-			'theme_location'  => $menu_location,
-			'container'       => 'div',
-			'container_class' => 'off-canvas-content',
-			'container_id'    => '',
-			'menu_id'         => 'site-mobile-menu',
-			'menu_class'      => 'mobile-menu',
-			'fallback_cb'     => false,
-			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		];
+		wp_list_pages( array(
+			'child_of'			=>	$parent,
+			'sort_column'		=> 'menu_order', // sort by menu order to enable custom sorting
+			'title_li'			=> '', // get rid of the annoying top level "Pages" title element
+		) );
 
-		// Display the mobile menu.
-		wp_nav_menu( $mobile_args );
-		?>
-	</nav>
-	<?php
+		echo '</ul>';
+
 }
 
 /**
@@ -482,4 +459,47 @@ function debtcollective_display_comments() {
 	if ( comments_open() || get_comments_number() ) {
 		comments_template();
 	}
+}
+
+/**
+ * Displays the mobile menu with off-canvas background layer.
+ *
+ * @author Debt Collective
+ *
+ * @return string An empty string if no menus are found at all.
+ */
+function debtcollective_display_mobile_menu() {
+	// Bail if no mobile or primary menus are set.
+	if ( ! has_nav_menu( 'mobile' ) && ! has_nav_menu( 'primary' ) ) {
+		return '';
+	}
+
+	// Set a default menu location.
+	$menu_location = 'primary';
+
+	// If we have a mobile menu explicitly set, use it.
+	if ( has_nav_menu( 'mobile' ) ) {
+		$menu_location = 'mobile';
+	}
+	?>
+	<div class="off-canvas-screen"></div>
+	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', 'debtcollective' ); ?>" aria-hidden="true" tabindex="-1">
+		<?php
+		// Mobile menu args.
+		$mobile_args = [
+			'theme_location'  => $menu_location,
+			'container'       => 'div',
+			'container_class' => 'off-canvas-content',
+			'container_id'    => '',
+			'menu_id'         => 'site-mobile-menu',
+			'menu_class'      => 'mobile-menu',
+			'fallback_cb'     => false,
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		];
+
+		// Display the mobile menu.
+		wp_nav_menu( $mobile_args );
+		?>
+	</nav>
+	<?php
 }
