@@ -20,6 +20,8 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+	<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ); ?>"></script>
+
 	<?php wp_head(); ?>
 
 </head>
@@ -27,6 +29,13 @@
 <body <?php body_class( 'site-wrapper' ); ?>>
 
 	<?php wp_body_open(); ?>
+
+	<dc-header
+      community="<?php echo esc_url( 'https://community.debtcollective.org' ); ?>"
+      homepage="/"
+      returnurl="<?php echo esc_url( 'https://community.debtcollective.org' ); ?>"
+      id="dc-header"
+    ></dc-header>
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'debtcollective' ); ?></a>
 
