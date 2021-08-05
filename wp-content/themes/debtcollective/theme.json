@@ -202,22 +202,22 @@
 						{
 							"name": "Emphasis",
 							"slug": "emphasis",
-							"color": "#ff4630"
+							"color": "var(--wp--preset--color--emphasis)"
 						},
 						{
 							"name": "Jade",
 							"slug": "jade",
-							"color": "#20a78c"
+							"color": "var(--wp--preset--color--jade)"
 						},
 						{
 							"name": "Darkest Gray",
 							"slug": "gray-darkest",
-							"color": "#343434"
+							"color": "var(--wp--preset--color--gray-darkest)"
 						},
 						{
 							"name": "White",
 							"slug": "white",
-							"color": "#ffffff"
+							"color": "var(--wp--preset--color--white)"
 						}
 					]
 				},
@@ -236,22 +236,22 @@
 						{
 							"name": "Emphasis",
 							"slug": "emphasis",
-							"color": "#ff4630"
+							"color": "var(--wp--preset--color--emphasis)"
 						},
 						{
 							"name": "Jade",
 							"slug": "jade",
-							"color": "#20a78c"
+							"color": "var(--wp--preset--color--jade)"
 						},
 						{
 							"name": "Darkest Gray",
 							"slug": "gray-darkest",
-							"color": "#343434"
+							"color": "var(--wp--preset--color--gray-darkest)"
 						},
 						{
 							"name": "White",
 							"slug": "white",
-							"color": "#ffffff"
+							"color": "var(--wp--preset--color--white)"
 						}
 					]
 				}
@@ -262,22 +262,22 @@
 						{
 							"name": "Emphasis",
 							"slug": "emphasis",
-							"color": "#ff4630"
+							"color": "var(--wp--preset--color--emphasis)"
 						},
 						{
 							"name": "Jade",
 							"slug": "jade",
-							"color": "#20a78c"
+							"color": "var(--wp--preset--color--jade)"
 						},
 						{
 							"name": "Darkest Gray",
 							"slug": "gray-darkest",
-							"color": "#343434"
+							"color": "var(--wp--preset--color--gray-darkest)"
 						},
 						{
 							"name": "White",
 							"slug": "white",
-							"color": "#ffffff"
+							"color": "var(--wp--preset--color--white)"
 						}
 					]
 				}
