@@ -152,42 +152,42 @@
 						{
 							"name": "Emphasis",
 							"slug": "emphasis",
-							"color": "#ff4630"
+							"color": "var(--wp--preset--color--emphasis)"
 						},
 						{
 							"name": "Salmon",
 							"slug": "salmon",
-							"color": "#ffa494"
+							"color": "var(--wp--preset--color--salmon)"
 						},
 						{
 							"name": "Jade",
 							"slug": "jade",
-							"color": "#20a78c"
+							"color": "var(--wp--preset--color--jade)"
 						},
 						{
 							"name": "Mint",
 							"slug": "mint",
-							"color": "#d6ffb8"
+							"color": "var(--wp--preset--color--mint)"
 						},
 						{
 							"name": "Canary",
 							"slug": "canary",
-							"color": "#ffed9c"
+							"color": "var(--wp--preset--color--canary)"
 						},
 						{
 							"name": "Dark Gray",
 							"slug": "gray-dark",
-							"color": "#434343"
+							"color": "var(--wp--preset--color--gray-dark)"
 						},
 						{
 							"name": "Darkest Gray",
 							"slug": "gray-darkest",
-							"color": "#343434"
+							"color": "var(--wp--preset--color--gray-darkest"
 						},
 						{
 							"name": "White",
 							"slug": "white",
-							"color": "#ffffff"
+							"color": "var(--wp--preset--color--white)"
 						}
 					]
 				},
