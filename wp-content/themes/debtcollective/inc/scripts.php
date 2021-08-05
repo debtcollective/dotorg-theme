@@ -23,10 +23,13 @@ function scripts() {
 		];
 	}
 
+	// wp_enqueue_script( 'global-header', \esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ), null, null, false );
+
+	// wp_enqueue_script( 'global-header', \get_stylesheet_directory_uri() . '/build/web-components.js', null, null, false );
+
 	// Register styles & scripts.
-	wp_enqueue_style( 'wd_s', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
-	wp_enqueue_script( 'wds-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
+	wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
+	wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
 }
-
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );

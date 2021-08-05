@@ -23,8 +23,9 @@
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.6",
+		"@tailwindcss/postcss7-compat": "^2.2.7",
 		"@wordpress/prettier-config": "^1.1.0",
-		"@wordpress/scripts": "^17.1.0",
+		"@wordpress/scripts": "^17.0.0",
 		"browser-sync": "^2.27.4",
 		"clean-webpack-plugin": "^3.0.0",
 		"copy-webpack-plugin": "6.4.1",
@@ -39,14 +40,16 @@
 		"npm-run-all": "^4.1.5",
 		"postcss-loader": "4.2.0",
 		"postcss-preset-env": "^6.7.0",
-		"prettier": "npm:@wordpress/prettier-config@^1.1.0",
-		"prettier-eslint-cli": "^5.0.1",
+		"prettier": "^2.3.2",
 		"sass-loader": "10.2.0",
 		"stylelint-config-prettier": "^8.0.2",
 		"stylelint-webpack-plugin": "^2.2.2",
 		"svg-spritemap-webpack-plugin": "3.9.1",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
 		"url-loader": "^4.1.1",
-		"webpack-merge": "^5.8.0"
+		"webpack-merge": "^5.8.0",
+		"eslint-plugin-jsdoc": "^36.0.6",
+		"eslint-plugin-prettier": "^3.4.0"
 	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production wp-scripts build --config webpack.prod.js",
@@ -70,5 +73,9 @@
 		"start": "cross-env NODE_ENV=development wp-scripts start",
 		"sync": "browser-sync start --https --proxy 'http://debtcollective.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
+	},
+	"dependencies": {
+		"@debtcollective/dc-header-component": "^3.6.3"
+
 	}
 }
