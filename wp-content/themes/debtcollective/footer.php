@@ -22,7 +22,7 @@
 					'menu_id'        => 'footer-menu',
 					'menu_class'     => 'menu container',
 					'container'      => false,
-					'depth'          => 1,
+					'depth'          => 2,
 				]
 			);
 			?>
