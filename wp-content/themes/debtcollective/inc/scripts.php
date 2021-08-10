@@ -6,6 +6,27 @@
  */
 namespace DebtCollective\Inc;
 
+ /**
+ * Register Google Fonts
+ */
+function theme_fonts() {
+	$fonts_url = 'https://fonts.gstatic.com';
+
+	$font_families = [];
+	$font_families[] = 'Libre+Franklin:wght@300;400;900&';
+	// $font_families[] = 'Noto+Serif:400,400i,700,700';
+
+	$query_args = array(
+		'family'  => implode( '|', $font_families ),
+		'subset'  => 'latin',
+		'display' => 'swap'
+	);
+
+	$fonts_url = \add_query_arg( $query_args, \esc_url( $fonts_url ) );
+
+	return $fonts_url;
+}
+
 /**
  * Enqueue scripts and styles.
  *
@@ -26,6 +47,9 @@ function scripts() {
 	// wp_enqueue_script( 'global-header', \esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ), null, null, false );
 
 	// wp_enqueue_script( 'global-header', \get_stylesheet_directory_uri() . '/build/web-components.js', null, null, false );
+
+	wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
+
 
 	// Register styles & scripts.
 	wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
