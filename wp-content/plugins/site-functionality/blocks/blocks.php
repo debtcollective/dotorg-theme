@@ -79,7 +79,8 @@ function init() {
 		'site-functionality',
 		\plugins_url( 'build/style.css', __FILE__ ),
 		array( ),
-		filemtime( \plugin_dir_path( __FILE__ ) . 'build/style.css' )
+		null
+		// filemtime( \plugin_dir_path( __FILE__ ) . 'build/style.css' )
 	);
 
 	\register_block_type( 'site-functionality/hero', array(
