@@ -1,0 +1,59 @@
+{
+    "apiVersion": 2,
+    "version": "1.0.0",
+    "textdomain": "site-functionality",
+    "editorScript": "file:../build/index.js",
+    "name": "site-functionality/hero",
+    "title": "Hero Block",
+    "category": "widget",
+    "collection": "site-functionality",
+    "icon": "slides",
+    "className": "hero",
+    "description": "Display a hero element on page",
+    "keywords": [
+        "hero",
+        "landing"
+    ],
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "color": { 
+            "background": true,
+            "text": true,
+            "gradients": false,
+            "link": false
+        },
+        "customClassName": true,
+        "defaultStylePicker": false,
+        "__experimentalLayout": false
+    },
+    "attributes": {
+        "url": {
+			"type": "string"
+		},
+		"id": {
+			"type": "number"
+		},
+        "backgroundColor": {
+			"type": "string"
+		}
+    },
+    "variations": [],
+    "styles": [
+        {
+            "name": "default",
+            "label": "Default",
+            "isDefault": true
+        },
+        {
+            "name": "other",
+            "label": "Other"
+        }
+    ],
+    "example": {
+        "attributes": {
+            "url": "https://example.com/image.jpg"
+        }
+    },
+    "style": "wp-block-site-functionality-hero"
+}

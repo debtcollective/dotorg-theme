@@ -1,0 +1,35 @@
+{
+	"name": "site-functionality",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Custom Blocks",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"block"
+	],
+	"main": "build/index.js",
+	"devDependencies": {
+		"@wordpress/blocks": "^11.0.0",
+		"@wordpress/icons": "^5.0.0",
+		"@wordpress/components": "^15.0.0",
+		"@wordpress/scripts": "^9.0.0",
+		"classnames": "^2.3.1",
+		"css-loader": "^6.2.0",
+		"ignore-emit-webpack-plugin": "^2.0.6",
+		"mini-css-extract-plugin": "^2.2.0",
+		"node-sass": "^6.0.1",
+		"path": "^0.12.7",
+		"postcss-loader": "^6.1.1",
+		"postcss-preset-env": "^6.7.0",
+		"sass-loader": "^12.1.0"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"format:js": "wp-scripts format-js",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start"
+	},
+	"dependencies": {}
+}

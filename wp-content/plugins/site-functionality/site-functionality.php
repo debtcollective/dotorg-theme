@@ -7,7 +7,7 @@
  * Text Domain:         site-functionality
  * Domain Path:         /languages
  * Version:             1.0.0
- * Requires at least:   5.4
+ * Requires at least:   5.6
  *
  * @package             Site_Functionality
  */
@@ -36,6 +36,8 @@ function site_functionality_init() {
 	include_once( SITE_CORE_DIR . '/src/api/graphql.php' 				);
 
 	include_once( SITE_CORE_DIR . '/src/admin/admin.php' 				);
+
+	include_once( SITE_CORE_DIR . '/blocks/blocks.php' 				);
 }
 
 // class Site_Functions {
