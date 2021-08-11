@@ -8,7 +8,7 @@
  *
  * @package DebtCollective
  */
-
+$display_global_header = get_theme_mod( 'display_global_header', 'true' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -20,7 +20,9 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ); ?>"></script>
+	<?php if( $display_global_header ) : ?>
+		<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ); ?>"></script>
+	<?php endif; ?>
 
 	<?php wp_head(); ?>
 
@@ -30,14 +32,16 @@
 
 	<?php wp_body_open(); ?>
 
-	<dc-header
-		logo=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-black.png' ); ?>
-		logosmall=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-small.png' ); ?>
-		community="<?php echo esc_url( 'https://community.debtcollective.org' ); ?>"
-		homepage="/"
-		returnurl="<?php echo esc_url( 'https://debtcollective.org' ); ?>"
-		id="dc-header"
-    ></dc-header>
+	<?php if( $display_global_header ) : ?>
+		<dc-header
+			logo=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-black.png' ); ?>
+			logosmall=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-small.png' ); ?>
+			community="<?php echo esc_url( 'https://community.debtcollective.org' ); ?>"
+			homepage="/"
+			returnurl="<?php echo esc_url( 'https://debtcollective.org' ); ?>"
+			id="dc-header"
+		></dc-header>
+	<?php endif; ?>
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'debtcollective' ); ?></a>
 

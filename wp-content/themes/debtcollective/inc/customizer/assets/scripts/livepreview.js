@@ -55,4 +55,12 @@
 			$( '.site-info' ).text( to );
 		} );
 	} );
+
+	// Global header element.
+	api( 'display_global_header', function ( value ) {
+		value.bind( function ( to ) {
+			$( '.#dc-header' ).toggleClass( 'visually-hidden', '' !== to );
+		} );
+	} );
+
 } )( jQuery );
