@@ -55,6 +55,27 @@ function customize_additional_scripts( $wp_customize ) {
 			'type'        => 'textarea',
 		]
 	);
+
+	$wp_customize->add_setting( 
+		'display_global_header', 
+		[
+			'default'	=> 'true'
+		] 
+	);
+
+	$wp_customize->add_control( 
+		'global_header_control', 
+		[
+			'label'      	=> esc_attr__( 'Display Global Header', 'debtcollective' ),
+			'section'    	=> 'title_tagline',
+			'settings'   	=> 'display_global_header',
+			'type'       	=> 'checkbox',
+			'choices'   => [
+				'true' 	=> esc_attr__( 'Display', 'debtcollective' )
+			]
+			
+		] 
+	);
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\customize_additional_scripts' );
