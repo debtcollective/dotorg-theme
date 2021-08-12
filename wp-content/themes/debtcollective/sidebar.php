@@ -6,11 +6,26 @@
  *
  * @package DebtCollective
  */
+?>
+<aside class="sidebar widget-area">
 
-if ( is_active_sidebar( 'sidebar-1' ) ) {
-	?>
-	<aside class="sidebar widget-area">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</aside><!-- .secondary -->
+	<ul>
+		<?php
+		$args = [
+			'child_of' 	=> $post->post_parent,
+			'depth' 	=> 1,
+			'title_li'	=> false
+		];
+
+		wp_list_pages( $args );
+		?>
+	</ul>
+
 	<?php
-}
+	if ( is_active_sidebar( 'sidebar-1' ) ) :
+		?>
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		
+		<?php
+	endif; ?>
+</aside><!-- .secondary -->

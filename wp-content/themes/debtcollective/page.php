@@ -9,19 +9,21 @@
 
 get_header(); ?>
 
-	<main id="main" class="container site-main">
+	<div class="container site-main">
+		<main id="main" class="content-container">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+				get_template_part( 'template-parts/content', 'page' );
 
-			the_post_navigation();
+			endwhile; // End of the loop.
+			?>
 
-		endwhile; // End of the loop.
-		?>
+		</main><!-- #main -->
 
-	</main><!-- #main -->
+		<?php get_sidebar(); ?>
+	</div>
 
 <?php get_footer(); ?>
