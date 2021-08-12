@@ -13,10 +13,8 @@ jobs:
       - aws-cli/setup:
           profile-name: wordpress_stage
       - run:
-          name: Deploy task with new version
-          command: |
-            export AWS_DEFAULT_REGION=$AWS_STAGE_DEFAULT_REGION
-            aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment
+          name: wp-content
+          command: cp -rf ./wp-content /var/www/html/
 
   deploy_prod:
     environment:
@@ -29,11 +27,8 @@ jobs:
           profile-name: wordpress_prod
       - run:
           name: wp-content
-          command: pwd
-      - run:
-          name: Deploy task with new version
-          command: |
-            aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment
+          command: cp -rf ./wp-content /var/www/html/
+          
 workflows:
   version: 2
   pipeline:
