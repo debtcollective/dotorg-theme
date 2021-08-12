@@ -41,11 +41,6 @@ workflows:
           filters:
             branches:
               only: development
-      - deploy_prod_approval:
-          type: approval
-          filters:
-            branches:
-              only: main
       - deploy_prod:
           filters:
             branches:
