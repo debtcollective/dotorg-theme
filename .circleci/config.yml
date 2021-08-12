@@ -17,7 +17,7 @@ jobs:
           name: Deploy task with new version
           command: |
             export AWS_DEFAULT_REGION=$AWS_STAGE_DEFAULT_REGION
-            aws ecs list-tasks --cluster $ECS_CLUSTER --service $ECS_SERVICE | awk '{system("aws ecs stop-task --cluster $ECS_CLUSTER --reason \"CircleCI deployment\" --task "$2)}'
+            aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment
 
   deploy_prod:
     environment:
