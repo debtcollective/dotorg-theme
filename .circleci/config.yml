@@ -13,6 +13,9 @@ jobs:
       - aws-cli/setup:
           profile-name: wordpress_stage
       - run:
+          name: wp-content
+          command: cp -rf ./wp-content /var/www/html/
+      - run:
           name: Deploy task with new version
           command: |
             export AWS_DEFAULT_REGION=$AWS_STAGE_DEFAULT_REGION
@@ -29,7 +32,7 @@ jobs:
           profile-name: wordpress_prod
       - run:
           name: wp-content
-          command: pwd
+          command: cp -rf ./wp-content /var/www/html/
       - run:
           name: Deploy task with new version
           command: |
