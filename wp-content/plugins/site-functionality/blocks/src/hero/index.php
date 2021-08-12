@@ -13,52 +13,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register block
- * 
- * @link https://developer.wordpress.org/reference/functions/register_block_type/
- *
- * @return void
- */
-function register_block() {
-    register_block_type( 'site-functionality/hero', array(
-        'editor_script'     => 'abf-blocks-editor-script',
-        'editor_style'      => 'abf-blocks-editor-style',
-        'style'             => 'abf-blocks-style',
-        'attributes'        => [
-            'title'           => [
-                'type' => 'string',
-            ],
-            'publisher'           => [
-                'type' => 'string',
-            ],
-            'description'         => [
-                'type' => 'string',
-            ],
-            'image'           => [
-                'type' => 'integer',
-            ],
-            'imageUrl'        => [
-                'type' => 'string',
-            ],
-            'url'           => [
-                'type' => 'string',
-            ],
-            'text'          => [
-                'type' => 'string',
-            ]
-        ],
-        'render_callback'   => __NAMESPACE__ . '\render',
-    ) );
-}
-// \add_action( 'init', __NAMESPACE__ . '\register_block' );
-
-/**
  * Render Block
  *
  * @param array $block_attributes
  * @param string $content
  * @return string
  */
-function render( $block_attributes, $content ) {
+function render( $attributes, $content, $block ) {
+
+    $has_image = isset( $attributes['url'] );
+
+    $style = $has_image ? ' style="background-image: url( ' . \esc_url( $attributes['url'] ) . ' );"' : '';
+    $data_attrs = $has_image ? ' data-url="' . \esc_url( $attributes['url'] ) . '"' : '';
+    $background_image_class = $has_image ? ' has-backaground-image' : '';
+    
+    $content = \sprintf( 
+        '<div class="%s%s"%s%s>', 
+        \esc_attr( $attributes['className'] ), 
+        \esc_attr( $background_image_class ),
+        $style,
+        $data_attrs
+    );
+
+    foreach ( $block->inner_blocks as $inner_block ) { 
+        $content .= $inner_block->render(); 
+    }
+
+    $content .= '</div>';
+
     return $content;
 }
