@@ -86,9 +86,9 @@ const Edit = ( props ) => {
 	return (
 		<div { ...blockProps } 
             style={{
-                backgroundImage: hasImage ? `background-image: url( ${url} );`: ``
+                backgroundImage: hasImage ? `backgroundImage: url( ${url} );`: ``
             }} 
-            data-url={ hasImage ? `background-image: url( ${url} );`: `` }
+            data-url={ hasImage ? `backgroundImage: url( ${url} );`: `` }
         >
              <InspectorControls>
                 <PanelBody
@@ -97,22 +97,11 @@ const Edit = ( props ) => {
                     >
                     
                     { hasImage && (
-                        <>
-                            <img
-                                className="wp-block-cover__image-background"
-                                alt=""
-                                src={ url }
-                            />
-                            <Button
-                                variant="link"
-                                isDestructive
-                                className="block-library-cover__reset-button is-link"
-                                onClick={ onClickButton }
-                            >
-                                { __( 'Remove Image', 'site-functionality' ) }
-                            </Button>
-                        </>
-                        
+                        <img
+                            className="wp-block-cover__image-background"
+                            alt=""
+                            src={ url }
+                        />                        
                     ) }
                     
                     <MediaReplaceFlow
@@ -120,9 +109,22 @@ const Edit = ( props ) => {
                         mediaURL={ url }
                         allowedTypes={ ALLOWED_MEDIA_TYPES }
                         accept="image/*"
+                        className="is-secondary"
                         onSelect={ onSelectMedia }
                         name={ ! url ? __( 'Add Image', 'site-functionality' ) : __( 'Replace Image', 'site-functionality' ) }
                     />
+
+                    { hasImage && (
+                        <Button
+                            variant="link"
+                            isDestructive
+                            className="block-library-cover__reset-button is-link"
+                            onClick={ onClickButton }
+                        >
+                            { __( 'Remove Image', 'site-functionality' ) }
+                        </Button>
+                    ) }
+                    
                         
                 </PanelBody>
             </InspectorControls>
