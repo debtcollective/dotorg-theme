@@ -12,7 +12,6 @@ jobs:
       - checkout
       - aws-cli/setup:
           profile-name: wordpress_stage
-
       - run:
           name: Deploy task with new version
           command: |
@@ -28,7 +27,9 @@ jobs:
       - checkout
       - aws-cli/setup:
           profile-name: wordpress_prod
-
+      - run:
+          name: wp-content
+          command: pwd
       - run:
           name: Deploy task with new version
           command: |
