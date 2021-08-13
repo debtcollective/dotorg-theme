@@ -86,9 +86,9 @@ const Edit = ( props ) => {
 	return (
 		<div { ...blockProps } 
             style={{
-                backgroundImage: hasImage ? `backgroundImage: url( ${url} );`: ``
+                backgroundImage: hasImage ? `url( ${url} );`: ``
             }} 
-            data-url={ hasImage ? `backgroundImage: url( ${url} );`: `` }
+            data-url={ hasImage ? url: `` }
         >
              <InspectorControls>
                 <PanelBody

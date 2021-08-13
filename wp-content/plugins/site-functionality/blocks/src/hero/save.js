@@ -5,7 +5,8 @@ import {
 
 const Save = ( props ) => {
 
-	return <InnerBlocks.Content />;
+	// return <InnerBlocks.Content />;
+    return null;
 };
 
 export default Save;

@@ -34,6 +34,13 @@ function init() {
 		// filemtime( \plugin_dir_path( __FILE__ ) . 'build/style.css' )
 	);
 
+	// \register_block_type_from_metadata(
+	// 	__DIR__ . '/src/hero',
+	// 	array(
+	// 		'render_callback' => __NAMESPACE__ . '\Hero\render',
+	// 	)
+	// );
+
 	\register_block_type( 'site-functionality/hero', array(
 		'api_version' 		=> 2,
 		'style' 			=> 'site-functionality',

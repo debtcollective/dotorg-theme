@@ -185,6 +185,32 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
+/***/ "./src/assets/img/hero.png":
+/*!*********************************!*\
+  !*** ./src/assets/img/hero.png ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "63adee5575f5e2b8066cb5597f67d3bb.png");
+
+/***/ }),
+
+/***/ "./src/assets/img/student.png":
+/*!************************************!*\
+  !*** ./src/assets/img/student.png ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "f58a009a9fe3486f0f7f4199a9fc9ee1.png");
+
+/***/ }),
+
 /***/ "./src/hero/block.json":
 /*!*****************************!*\
   !*** ./src/hero/block.json ***!
@@ -265,9 +291,9 @@ var Edit = function Edit(props) {
   var classes = classnames__WEBPACK_IMPORTED_MODULE_5___default()();
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, blockProps, {
     style: {
-      backgroundImage: hasImage ? "backgroundImage: url( ".concat(url, " );") : ""
+      backgroundImage: hasImage ? "url( ".concat(url, " );") : ""
     },
-    "data-url": hasImage ? "backgroundImage: url( ".concat(url, " );") : ""
+    "data-url": hasImage ? url : ""
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])("Background Image", "site-functionality"),
     initialOpen: true
@@ -357,15 +383,13 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])(_blo
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
 
 
 var Save = function Save(props) {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__["InnerBlocks"].Content, null);
+  // return <InnerBlocks.Content />;
+  return null;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Save);
@@ -385,13 +409,283 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hero */ "./src/hero/index.js");
+/* harmony import */ var _variations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variations */ "./src/variations/index.js");
+/* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hero */ "./src/hero/index.js");
 
 
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockCollection"])('site-functionality', {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Debt Collective', 'site-functionality')
 });
 
+
+
+/***/ }),
+
+/***/ "./src/variations/banners.js":
+/*!***********************************!*\
+  !*** ./src/variations/banners.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/student.png */ "./src/assets/img/student.png");
+
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/columns', [{
+  name: 'banner-media',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Media Banner', 'site-functionality'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('A banner that displays a media item on the left and text on the right.', 'site-functionality'),
+  attributes: {
+    className: 'banner',
+    backgroundColor: 'canary',
+    verticalAlignment: 'center'
+  },
+  innerBlocks: [['core/column', {
+    width: '33.33%',
+    verticalAlignment: 'top'
+  }, [['core/embed', {
+    type: "video",
+    providerNameSlug: "youtube",
+    responsive: true,
+    className: "wp-embed-aspect-16-9 wp-has-aspect-ratio banner__media"
+  }]]], ['core/column', {
+    width: '66.66%',
+    verticalAlignment: 'top'
+  }, [['core/heading', {
+    level: 2,
+    className: 'banner__heading',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Heading...', 'site-functionality')
+  }], ['core/paragraph', {
+    className: 'banner__content',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add content...', 'site-functionality')
+  }]]]],
+  example: {
+    attributes: {
+      className: 'banner',
+      backgroundColor: 'canary'
+    },
+    innerBlocks: [{
+      name: 'core/column',
+      attributes: {
+        width: '33.33%',
+        verticalAlignment: 'top'
+      },
+      innerBlocks: [{
+        name: 'core/embed',
+        attributes: {
+          type: "video",
+          providerNameSlug: "youtube",
+          responsive: true,
+          className: "wp-embed-aspect-16-9 wp-has-aspect-ratio banner__media",
+          url: 'https://youtu.be/PyLDFT2GW-A'
+        }
+      }]
+    }, {
+      name: 'core/column',
+      attributes: {
+        width: '66.66%',
+        verticalAlignment: 'top'
+      },
+      innerBlocks: [{
+        name: 'core/heading',
+        attributes: {
+          level: 2,
+          className: 'banner__heading',
+          placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Our Movement Has <em>Abolished</em> More Than <em>$2.8 Billion</em>', 'site-functionality')
+        }
+      }, {
+        name: 'core/paragraph',
+        attributes: {
+          className: 'banner__content',
+          placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('in student debt, medical debt, payday loans, probation debt and credit card debt. Our student debt campaign put full student debt cancellation and free public college on the political map.', 'site-functionality')
+        }
+      }]
+    }]
+  }
+}]);
+
+/***/ }),
+
+/***/ "./src/variations/buttons.js":
+/*!***********************************!*\
+  !*** ./src/variations/buttons.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/buttons', [{
+  name: 'large',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Large Button', 'site-functionality'),
+  attributes: {
+    className: 'is-large'
+  }
+}]);
+
+/***/ }),
+
+/***/ "./src/variations/cover.js":
+/*!*********************************!*\
+  !*** ./src/variations/cover.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_img_hero_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/hero.png */ "./src/assets/img/hero.png");
+
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/cover', [{
+  name: 'hero',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Hero', 'site-functionality'),
+  attributes: {
+    className: 'hero',
+    contentPosition: 'top left',
+    url: 'https://s.w.org/images/core/5.3/Windbuchencom.jpg'
+  },
+  innerBlocks: [['core/heading', {
+    className: 'hero__heading h1',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Heading...', 'site-functionality')
+  }], ['core/paragraph', {
+    className: 'hero__content',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add content...', 'site-functionality')
+  }], ['core/buttons', {
+    style: 'large'
+  }, [['core/button', {
+    className: 'hero__button'
+  }]]]],
+  example: {
+    attributes: {
+      contentPosition: 'top left',
+      url: _assets_img_hero_png__WEBPACK_IMPORTED_MODULE_2__["default"]
+    },
+    innerBlocks: [{
+      name: 'core/heading',
+      attributes: {
+        level: 2,
+        className: 'hero__heading',
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'site-functionality')
+      }
+    }, {
+      name: 'core/paragraph',
+      attributes: {
+        className: 'hero__content',
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'site-functionality')
+      }
+    }, {
+      name: 'core/buttons',
+      attributes: {
+        className: 'hero__buttons'
+      },
+      innerBlocks: [{
+        name: 'core/button',
+        attributes: {
+          className: 'hero__button',
+          style: 'large',
+          content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Join the Union', 'site-functionality')
+        }
+      }]
+    }]
+  }
+}]);
+
+/***/ }),
+
+/***/ "./src/variations/index.js":
+/*!*********************************!*\
+  !*** ./src/variations/index.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _banners__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./banners */ "./src/variations/banners.js");
+/* harmony import */ var _buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buttons */ "./src/variations/buttons.js");
+/* harmony import */ var _cover__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cover */ "./src/variations/cover.js");
+/* harmony import */ var _touts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./touts */ "./src/variations/touts.js");
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/variations/touts.js":
+/*!*********************************!*\
+  !*** ./src/variations/touts.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/student.png */ "./src/assets/img/student.png");
+
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/cover', [{
+  name: 'tout',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Tout', 'site-functionality'),
+  attributes: {
+    className: 'tout',
+    url: _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+    backgroundColor: 'mint'
+  },
+  innerBlocks: [['core/group', {}, [['core/heading', {
+    level: 3,
+    className: 'tout__heading h2',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Heading...', 'site-functionality')
+  }], ['core/paragraph', {
+    className: 'tout__content',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add content...', 'site-functionality')
+  }]]]],
+  example: {
+    attributes: {
+      className: 'tout',
+      url: _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+      backgroundColor: 'canary'
+    },
+    innerBlocks: [{
+      name: 'core/heading',
+      attributes: {
+        level: 3,
+        className: 'tout__heading',
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Cancel Student Debt Today!', 'site-functionality')
+      }
+    }, {
+      name: 'core/paragraph',
+      attributes: {
+        className: 'tout__content',
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('The President can cancel all federal student loans through executive order. It\'s not a magic trick; with the flick of his pen he can legally make all federal student loan debt disappear!', 'site-functionality')
+      }
+    }]
+  }
+}]);
 
 /***/ }),
 

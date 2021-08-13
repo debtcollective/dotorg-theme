@@ -5,5 +5,8 @@ registerBlockCollection( 'site-functionality', {
     title: __( 'Debt Collective', 'site-functionality' )
 } );
 
+
+import './variations';
+
 import './hero';
 
