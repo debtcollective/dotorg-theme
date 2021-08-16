@@ -41,7 +41,12 @@ class Filters {
 	 *
 	 * @return void
 	 */
-	function actions() {}
+	function actions() {
+		/**
+		 * @see https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/
+		 */
+		add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+	}
 
 }
 
