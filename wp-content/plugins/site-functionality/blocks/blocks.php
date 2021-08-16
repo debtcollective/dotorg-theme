@@ -8,9 +8,6 @@
 namespace Site_Functionality\Blocks;
 
 include_once( \plugin_dir_path( __FILE__ ) . 'src/hero/index.php' );
-include_once( \plugin_dir_path( __FILE__ ) . 'src/eventDate/index.php' );
-include_once( \plugin_dir_path( __FILE__ ) . 'src/eventLocation/index.php' );
-include_once( \plugin_dir_path( __FILE__ ) . 'src/eventTime/index.php' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -19,33 +16,6 @@ include_once( \plugin_dir_path( __FILE__ ) . 'src/eventTime/index.php' );
  * Passes translations to JavaScript.
  */
 function init() {
-
-	// $asset_file = include( \plugin_dir_path( __FILE__ ) . 'build/index.asset.php' );
-
-	/**
-	 * Register JavaScript
-	 * 
-	 * @see https://developer.wordpress.org/reference/functions/wp_register_script/
-	 */
-	// \wp_register_script(
-	// 	'site-functionality',
-	// 	\plugins_url( 'build/index.js', __FILE__ ),
-	// 	$asset_file['dependencies'],
-	// 	$asset_file['version']
-	// );
-
-	/**
-	 * Register CSS
-	 * 
-	 * @see https://developer.wordpress.org/reference/functions/wp_register_style/
-	 */
-	// \wp_register_style(
-	// 	'site-functionality',
-	// 	\plugins_url( 'build/style.css', __FILE__ ),
-	// 	[],
-	// 	null
-	// 	// filemtime( \plugin_dir_path( __FILE__ ) . 'build/style.css' )
-	// );
 
 	/**
 	 * Register custom pattern category
