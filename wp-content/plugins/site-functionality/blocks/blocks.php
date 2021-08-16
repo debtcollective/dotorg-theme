@@ -8,6 +8,9 @@
 namespace Site_Functionality\Blocks;
 
 include_once( \plugin_dir_path( __FILE__ ) . 'src/hero/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/eventDate/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/eventLocation/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/eventTime/index.php' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -17,36 +20,48 @@ include_once( \plugin_dir_path( __FILE__ ) . 'src/hero/index.php' );
  */
 function init() {
 
-	$asset_file = include( \plugin_dir_path( __FILE__ ) . 'build/index.asset.php' );
+	// $asset_file = include( \plugin_dir_path( __FILE__ ) . 'build/index.asset.php' );
 
-	\wp_register_script(
-		'site-functionality',
-		\plugins_url( 'build/index.js', __FILE__ ),
-		$asset_file['dependencies'],
-		$asset_file['version']
-	);
-
-	\wp_register_style(
-		'site-functionality',
-		\plugins_url( 'build/style.css', __FILE__ ),
-		array( ),
-		null
-		// filemtime( \plugin_dir_path( __FILE__ ) . 'build/style.css' )
-	);
-
-	// \register_block_type_from_metadata(
-	// 	__DIR__ . '/src/hero',
-	// 	array(
-	// 		'render_callback' => __NAMESPACE__ . '\Hero\render',
-	// 	)
+	/**
+	 * Register JavaScript
+	 * 
+	 * @see https://developer.wordpress.org/reference/functions/wp_register_script/
+	 */
+	// \wp_register_script(
+	// 	'site-functionality',
+	// 	\plugins_url( 'build/index.js', __FILE__ ),
+	// 	$asset_file['dependencies'],
+	// 	$asset_file['version']
 	// );
 
-	\register_block_type( 'site-functionality/hero', array(
-		'api_version' 		=> 2,
-		'style' 			=> 'site-functionality',
-		'editor_script' 	=> 'site-functionality',
-		'render_callback' 	=> __NAMESPACE__ . '\Hero\render'
-	) );
+	/**
+	 * Register CSS
+	 * 
+	 * @see https://developer.wordpress.org/reference/functions/wp_register_style/
+	 */
+	// \wp_register_style(
+	// 	'site-functionality',
+	// 	\plugins_url( 'build/style.css', __FILE__ ),
+	// 	[],
+	// 	null
+	// 	// filemtime( \plugin_dir_path( __FILE__ ) . 'build/style.css' )
+	// );
+
+	/**
+	 * Register custom pattern category
+	 * 
+	 * @see https://developer.wordpress.org/reference/functions/register_block_pattern_category/
+	 */
+	if ( class_exists( '\WP_Block_Patterns_Registry' ) ) {
+
+		\register_block_pattern_category(
+			'touts',
+			[ 
+				'label' => \_x( 'Heroes and touts.', 'Block pattern category', 'site-functionality' ) 
+			]
+		);
+
+	}
 
   if ( function_exists( '\wp_set_script_translations' ) ) {
     /**

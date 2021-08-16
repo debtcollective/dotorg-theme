@@ -7,7 +7,8 @@
  * Text Domain:         site-functionality
  * Domain Path:         /languages
  * Version:             1.0.0
- * Requires at least:   5.6
+ * Requires at least: 	5.8
+ * Requires PHP:      	7.2
  *
  * @package             Site_Functionality
  */
@@ -24,7 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 define( 'SITE_CORE_DIR', dirname( __FILE__ ) );
 define( 'SITE_CORE_DIR_URI', plugin_dir_url( __FILE__ ) );
-
 
 function site_functionality_init() {
 	load_plugin_textdomain( 'site-functionality', false, SITE_CORE_DIR . '/languages' );
