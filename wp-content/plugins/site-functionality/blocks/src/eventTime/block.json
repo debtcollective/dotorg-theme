@@ -1,0 +1,33 @@
+{
+	"apiVersion": 2,
+	"name": "site-functionality/event-time",
+	"title": "Event Time",
+	"category": "theme",
+	"description": "Add the event time.",
+	"textdomain": "site-functionality",
+	"attributes": {
+		"format": {
+			"type": "string",
+			"default": "g:i a"
+		}
+	},
+	"usesContext": [ "postId", "postType", "queryId" ],
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": false,
+			"link": false,
+			"text": false,
+			"background": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false,
+			"__experimentalFontWeight": false
+		}
+	},
+	"script": "site-functionality",
+	"style": "file:../../build/style-index.css",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css"
+}

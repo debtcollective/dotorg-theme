@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
 /**
  * Render Block
  *
@@ -43,3 +44,16 @@ function render( $attributes, $content, $block ) {
 
     return $content;
 }
+
+/**
+ * Registers the `site-functionality/event-time` block on the server.
+ */
+function register() {
+	\register_block_type(
+		__DIR__,
+		[
+			'render_callback' 	=> __NAMESPACE__ . '\render',
+		]
+	);
+}
+add_action( 'init', __NAMESPACE__ . '\register' );

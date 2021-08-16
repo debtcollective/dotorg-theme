@@ -2,7 +2,6 @@
     "apiVersion": 2,
     "version": "1.0.0",
     "textdomain": "site-functionality",
-    "editorScript": "file:../build/index.js",
     "name": "site-functionality/hero",
     "title": "Hero Block",
     "category": "widget",
@@ -55,5 +54,8 @@
             "url": "https://example.com/image.jpg"
         }
     },
-    "style": "wp-block-site-functionality-hero"
+    "script": "site-functionality",
+    "style": "file:../../build/style-index.css",
+    "editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css"
 }

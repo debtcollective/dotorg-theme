@@ -8,5 +8,9 @@ registerBlockCollection( 'site-functionality', {
 
 import './variations';
 
-import './hero';
+import './patterns';
 
+import './eventDate';
+import './eventTime';
+import './eventLocation';
+import './hero';
