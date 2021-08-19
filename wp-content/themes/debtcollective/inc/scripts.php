@@ -13,7 +13,7 @@ function theme_fonts() {
 	$fonts_url = 'https://fonts.gstatic.com';
 
 	$font_families = [];
-	$font_families[] = 'Libre+Franklin:wght@300;400;900&';
+	$font_families[] = 'Libre+Franklin:wght@200;300;400;500;800;900&';
 	// $font_families[] = 'Noto+Serif:400,400i,700,700';
 
 	$query_args = array(
