@@ -46,9 +46,9 @@ function scripts() {
 
 	// wp_enqueue_script( 'global-header', \esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ), null, null, false );
 
-	// wp_enqueue_script( 'global-header', \get_stylesheet_directory_uri() . '/build/web-components.js', null, null, false );
-
 	wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
+
+	wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), [], $asset_file['version']  );
 
 
 	// Register styles & scripts.
