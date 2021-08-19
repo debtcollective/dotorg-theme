@@ -48,7 +48,7 @@ function scripts() {
 
 	wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
 
-	wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), [], $asset_file['version']  );
+	wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
 
 
 	// Register styles & scripts.
