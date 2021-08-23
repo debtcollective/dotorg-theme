@@ -45,7 +45,8 @@
         "wpackagist-plugin/wp-discourse":"^2.3.0",
         "communiteq/wp-discourse-shortcodes": "*",
         "wpackagist-plugin/wp-graphql":"^1.6.2",
-        "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10"
+        "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10",
+        "deliciousbrains-plugin/wp-offload-media": "^2.0"
     },
     "extra": {
         "installer-paths": {
