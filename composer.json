@@ -33,12 +33,12 @@
         {
             "type": "package",
             "package": {
-                "name": "communiteq/wp-discourse-shortcodes", //give package name to anything, must be unique
+                "name": "communiteq/wp-discourse-shortcodes",
                 "version": "1.0",
                 "source": {
-                    "url": "https://github.com/communiteq/wp-discourse-shortcodes.git", //git url
+                    "url": "https://github.com/communiteq/wp-discourse-shortcodes.git",
                     "type": "git",
-                    "reference": "master" //git branch-name
+                    "reference": "master"
                 }
             }
         }
