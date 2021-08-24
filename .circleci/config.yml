@@ -40,7 +40,7 @@ workflows:
       - deploy_stage:
           filters:
             branches:
-              only: development
+              only: staging
 #       - deploy_prod:
 #           filters:
 #             branches:
