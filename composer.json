@@ -18,7 +18,7 @@
             "type": "package",
             "package": {
               "name": "advanced-custom-fields/advanced-custom-fields-pro",
-              "version": "*.*.*(.*)",
+              "version": "5.9.9",
               "type": "wordpress-plugin",
               "dist": {
                 "type": "zip",
@@ -31,19 +31,26 @@
             }
         },
         {
-            "type": "github",
-            "name": "communiteq/wp-discourse-shortcodes",
-            "url":  "git@github.com:communiteq/wp-discourse-shortcodes.git"
+            "type": "package",
+            "package": {
+                "name": "communiteq/wp-discourse-shortcodes",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/communiteq/wp-discourse-shortcodes.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
         "philippbaschke/acf-pro-installer": "^1.0",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "5.9.9",
         "wpackagist-plugin/getwid":"^1.7.3",
         "wpackagist-plugin/members":"^3.1.5",
         "wpackagist-plugin/page-links-to":"^3.3.5",
         "wpackagist-plugin/wp-discourse":"^2.3.0",
-        "communiteq/wp-discourse-shortcodes": "*",
+        "communiteq/wp-discourse-shortcodes": "1.0",
         "wpackagist-plugin/wp-graphql":"^1.6.2",
         "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10"
     },
