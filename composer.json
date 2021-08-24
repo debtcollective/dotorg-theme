@@ -31,9 +31,16 @@
             }
         },
         {
-            "type": "github",
-            "name": "communiteq/wp-discourse-shortcodes",
-            "url":  "git@github.com:communiteq/wp-discourse-shortcodes.git"
+            "type": "package",
+            "package": {
+                "name": "communiteq/wp-discourse-shortcodes", //give package name to anything, must be unique
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/communiteq/wp-discourse-shortcodes.git", //git url
+                    "type": "git",
+                    "reference": "master" //git branch-name
+                }
+            }
         }
     ],
     "require": {
@@ -43,7 +50,7 @@
         "wpackagist-plugin/members":"^3.1.5",
         "wpackagist-plugin/page-links-to":"^3.3.5",
         "wpackagist-plugin/wp-discourse":"^2.3.0",
-        "communiteq/wp-discourse-shortcodes": "^0.24",
+        "communiteq/wp-discourse-shortcodes": "1.0",
         "wpackagist-plugin/wp-graphql":"^1.6.2",
         "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10"
     },
