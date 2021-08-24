@@ -21,7 +21,7 @@ jobs:
 
   deploy_prod:
     environment:
-      ECS_CLUSTER: test
+      ECS_CLUSTER: prod
       ECS_SERVICE: wordpress
     executor: aws-cli/default
     steps:
@@ -41,7 +41,7 @@ workflows:
           filters:
             branches:
               only: development
-      - deploy_prod:
-          filters:
-            branches:
-              only: main
+#       - deploy_prod:
+#           filters:
+#             branches:
+#               only: main
