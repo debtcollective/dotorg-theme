@@ -38,15 +38,15 @@
     ],
     "require": {
         "philippbaschke/acf-pro-installer": "^1.0",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "5.9.9",
         "wpackagist-plugin/getwid":"^1.7.3",
         "wpackagist-plugin/members":"^3.1.5",
         "wpackagist-plugin/page-links-to":"^3.3.5",
         "wpackagist-plugin/wp-discourse":"^2.3.0",
-        "communiteq/wp-discourse-shortcodes": "*",
+        "communiteq/wp-discourse-shortcodes": "^0.24",
         "wpackagist-plugin/wp-graphql":"^1.6.2",
-        "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10",
-        "deliciousbrains-plugin/wp-offload-media": "^2.0"
+        "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10"
+        // "deliciousbrains-plugin/wp-offload-media": "^2.0"
     },
     "extra": {
         "installer-paths": {
