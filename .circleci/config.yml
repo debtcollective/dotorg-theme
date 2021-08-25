@@ -16,7 +16,7 @@ jobs:
           name: Deploy over SSH
           command: |
             export AWS_DEFAULT_REGION=$AWS_STAGE_DEFAULT_REGION
-            scp -P $SSH_PORT -r ./ $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            scp -P $SSH_PORT StrictHostKeyChecking=accept-new -r ./ $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
       - run:
           name: Deploy task with new version
           command: |
