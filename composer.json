@@ -11,21 +11,25 @@
     ],
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://wpackagist.org"
+            "type":"composer",
+            "url":"https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
         },
         {
             "type": "package",
             "package": {
               "name": "advanced-custom-fields/advanced-custom-fields-pro",
-              "version": "5.9.9",
+              "version": "5.10.2",
               "type": "wordpress-plugin",
               "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
-                },
+                "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%PLUGIN_ACF_KEY}&t={%VERSION}"
+              },
             "require": {
-                "philippbaschke/acf-pro-installer": "^1.0",
+                "ffraenz/private-composer-installer": "^5.0",
                 "composer/installers": "^1.0"
                 }
             }
@@ -34,7 +38,7 @@
             "type": "package",
             "package": {
                 "name": "debtcollective/wp-action-network-events",
-                "version": "1.0.0",
+                "version": "dev-main",
                 "type": "wordpress-plugin",
                 "dist": {
                     "type": "zip",
@@ -43,33 +47,48 @@
                 "source": {
                     "type": "git",
                     "url": "git@github.com:debtcollective/wp-action-network-events.git",
-                    "reference": "master"
+                    "reference": "main"
                 }
             }
         },
         {
-            "type": "github",
-            "name": "communiteq/wp-discourse-shortcodes",
-            "url":  "git@github.com:communiteq/wp-discourse-shortcodes.git"
+            "type": "package",
+            "package": {
+                "name": "scossar/wp-discourse-shortcodes",
+                "version": "dev-master",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/communiteq/wp-discourse-shortcodes/archive/refs/heads/master.zip"
+                },
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:communiteq/wp-discourse-shortcodes.git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
-        "philippbaschke/acf-pro-installer": "^1.0",
-        "debtcollective/wp-action-network-events": "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "^5.10.2",
         "wpackagist-plugin/codepress-admin-columns":"^4.3.2",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*",
         "wpackagist-plugin/getwid":"^1.7.3",
         "wpackagist-plugin/members":"^3.1.5",
         "wpackagist-plugin/page-links-to":"^3.3.5",
         "wpackagist-plugin/wp-discourse":"^2.3.0",
-        "communiteq/wp-discourse-shortcodes": "*",
+        "scossar/wp-discourse-shortcodes": "dev-master",
         "wpackagist-plugin/wp-rest-api-v2-menus":"^0.10",
-        "wpackagist-plugin/amazon-s3-and-cloudfront":"^2.5.5"
+        "wpackagist-plugin/amazon-s3-and-cloudfront":"^2.5.5",
+        "debtcollective/wp-action-network-events": "dev-main"
     },
     "extra": {
         "installer-paths": {
             "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
             "wp-content/themes/{$name}/": ["type:wordpress-theme"]
-        }
+        },
+        "private-composer-installer": {
+            "dotenv-path": ".",
+            "dotenv-name": ".env"
+          }
     }
 }
