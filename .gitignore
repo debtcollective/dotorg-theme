@@ -15,7 +15,7 @@
 /*
 !.gitignore
 !composer.json
-!.env
+!.env.example
 !wp-content/
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
