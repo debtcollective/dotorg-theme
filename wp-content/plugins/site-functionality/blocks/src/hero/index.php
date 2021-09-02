@@ -22,19 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function render( $attributes, $content, $block ) {
 
-    $has_image = isset( $attributes['url'] );
+    $has_image = array_key_exists( 'url', $attributes );
 
     $style = $has_image ? ' style="background-image: url( ' . \esc_url( $attributes['url'] ) . ' );"' : '';
-    $data_attrs = $has_image ? ' data-url="' . \esc_url( $attributes['url'] ) . '"' : '';
-    $background_image_class = $has_image ? ' has-backaground-image' : '';
-    
-    $content = \sprintf( 
-        '<div class="%s%s"%s%s>', 
-        \esc_attr( $attributes['className'] ), 
-        \esc_attr( $background_image_class ),
-        $style,
-        $data_attrs
-    );
+    $wrapper_attributes = \get_block_wrapper_attributes( array( 'class' => $has_image ? ' has-backaground-image' : '' ) );
+
+    $content = '<div ' . $wrapper_attributes . '>';
 
     foreach ( $block->inner_blocks as $inner_block ) { 
         $content .= $inner_block->render(); 
