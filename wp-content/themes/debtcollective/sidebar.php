@@ -9,17 +9,25 @@
 ?>
 <aside class="sidebar widget-area">
 
-	<ul>
-		<?php
-		$args = [
-			'child_of' 	=> $post->post_parent,
-			'depth' 	=> 1,
-			'title_li'	=> false
-		];
-
-		wp_list_pages( $args );
+	<?php 
+	if( $parent = $post->post_parent ) : 
 		?>
-	</ul>
+
+		<ul>
+			<?php
+			$parent_title = get_post_field( 'post_title', $parent );
+			$args = [
+				'child_of' 	=> $parent,
+				'depth' 	=> 1,
+				'title_li'	=> $parent_title,
+			];
+
+			wp_list_pages( $args );
+			?>
+		</ul>
+
+		<?php 
+	endif; ?>
 
 	<?php
 	if ( is_active_sidebar( 'sidebar-1' ) ) :

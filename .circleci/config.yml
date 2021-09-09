@@ -16,11 +16,6 @@ jobs:
           name: Deploy over SSH
           command: |
             scp -P $SSH_PORT -o StrictHostKeyChecking=accept-new -r * $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
-      - run:
-          name: Deploy task with new version
-          command: |
-            export AWS_DEFAULT_REGION=$AWS_STAGE_DEFAULT_REGION
-            aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment
 
   deploy_prod:
     environment:

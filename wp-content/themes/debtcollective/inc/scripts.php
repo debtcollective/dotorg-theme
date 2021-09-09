@@ -10,11 +10,11 @@ namespace DebtCollective\Inc;
  * Register Google Fonts
  */
 function theme_fonts() {
-	$fonts_url = 'https://fonts.gstatic.com';
+	$fonts_url = 'https://fonts.googleapis.com/css2';
 
 	$font_families = [];
 	$font_families[] = 'Libre+Franklin:wght@200;300;400;500;800;900&';
-	// $font_families[] = 'Noto+Serif:400,400i,700,700';
+	$font_families[] = 'Material+Icons';
 
 	$query_args = array(
 		'family'  => implode( '|', $font_families ),
@@ -48,7 +48,7 @@ function scripts() {
 
 	wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
 
-	wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
+	// wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
 
 
 	// Register styles & scripts.
