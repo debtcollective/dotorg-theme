@@ -8,6 +8,7 @@
 namespace Site_Functionality\CustomFields;
 
 use Site_Functionality\Abstracts\Base;
+use Site_Functionality\PostTypes\PurchaseAgreement;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,6 +18,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 class CustomFields extends Base {
 
 	/**
+	 * Custom fields
+	 */
+	public const FIELDS = [
+		'amount'	=> 'number',
+		'number'	=> 'integer',
+		'average'	=> 'number',
+		'price'		=> 'number',
+		'file'		=> 'string',
+	];
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0
@@ -24,13 +36,15 @@ class CustomFields extends Base {
 	public function __construct( $version, $plugin_name ) {
 		parent::__construct( $version, $plugin_name );
 
+		\add_action( 'init',			[ $this, 'register_post_meta' ] );
+
 		\add_action( 'acf/init', 		[ $this, 'acf_settings' ] );
 		\add_action( 'acfe/init', 		[ $this, 'acfe_settings' ] );
 		\add_action( 'acf/init', 		[ $this, 'register_fields' ] );
 
-		add_filter( 'acf/format_value/name=amount', 	[ $this, 'format_number_as_currency' ], 20, 3 );
-		add_filter( 'acf/format_value/name=average', 	[ $this, 'format_number_as_currency' ], 20, 3 );
-		add_filter( 'acf/format_value/name=price', 		[ $this, 'format_number_as_currency' ], 20, 3 );
+		\add_filter( 'acf/format_value/name=amount', 	[ $this, 'format_number_as_currency' ], 20, 3 );
+		\add_filter( 'acf/format_value/name=average', 	[ $this, 'format_number_as_currency' ], 20, 3 );
+		\add_filter( 'acf/format_value/name=price', 	[ $this, 'format_number_as_currency' ], 20, 3 );
 	}
 
 	/**
@@ -210,6 +224,27 @@ class CustomFields extends Base {
 				'acfe_note' => '',
 			]
 		);
+	}
+
+	/**
+	 * Register post meta with Rest API
+	 * 
+	 * @see https://developer.wordpress.org/reference/functions/register_post_meta/
+	 *
+	 * @return void
+	 */
+	public function register_post_meta() {
+
+		foreach( self::FIELDS as $name => $type  ) {
+			\register_post_meta(
+				PurchaseAgreement::POST_TYPE['id'], 
+				$name, [
+					'show_in_rest' 	=> true,
+					'single' 		=> true,
+					'type' 			=> $type,
+				]
+			);
+		}
 	}
 
 	/**
