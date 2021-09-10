@@ -2,3 +2,4 @@ build/
 vendor/
 !.*.js
 src/stories
+src/scss
