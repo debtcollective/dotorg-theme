@@ -455,4 +455,8 @@ strong {
   font-weight: 900;
 }
 
+header.site-header {
+  margin-top: 6rem;
+}
+
 /*# sourceMappingURL=index.css.map*/
