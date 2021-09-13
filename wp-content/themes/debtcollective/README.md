@@ -51,6 +51,11 @@ Install theme dependencies and trigger an initial build.
 npm i --legacy-peer-deps
 ```
 
+If you see any errors thrown by webpack dependencies on build, update wordpress-scripts dependencies with
+```bash
+npm run packages-update
+```
+
 ### Development
 
 From the command line, type any of the following to perform an action:
