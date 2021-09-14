@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url(https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,500;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 .material-icons {
   font-family: 'Material Icons';
@@ -55,11 +55,11 @@ $fonts: (
 );
 
 
-@function getFontSize($key) {
+@function get-font-size($key) {
   @return map-get($font-sizes, $key);
 }
 
-@function getFont($key) {
+@function get-font($key) {
   @return map-get($fonts, $key);
 }
 
@@ -76,9 +76,9 @@ html {
 }
 
 body {
-  font-family: getFont('base');
+  font-family: get-font('base'), sans-serif;
   font-weight: 400;
-  color: getColor(text);
+  color: get-color(text);
   min-height: 100%;
   word-wrap: break-word;
   font-style: normal;
@@ -87,7 +87,7 @@ body {
 
 p {
   margin-bottom: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5 {
@@ -98,28 +98,28 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   margin-top: 0;
-  font-size: getFontSize('h1');
+  font-size: get-font-size('h1');
 }
 
 h2 {
-  font-size: getFontSize('h2')
+  font-size: get-font-size('h2')
 }
 
 h3 {
-  font-size: getFontSize('h3')
+  font-size: get-font-size('h3')
 }
 
 h4 {
-  font-size: getFontSize('h4')
+  font-size: get-font-size('h4')
 }
 
 h5 {
-  font-size: getFontSize('h5')
+  font-size: get-font-size('h5')
 }
 
 small,
 .text_small {
-  font-size: getFontSize('h6')
+  font-size: get-font-size('h6')
 }
 
 h1,

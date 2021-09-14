@@ -6,6 +6,6 @@ $breakpoints: (
   'xl': 2000px
 );
 
-@function getBreakpoint($key) {
+@function get-breakpoint($key) {
   @return map-get($breakpoints, $key);
 }
