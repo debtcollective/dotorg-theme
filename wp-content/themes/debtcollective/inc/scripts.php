@@ -44,16 +44,17 @@ function scripts() {
 		];
 	}
 
-	// wp_enqueue_script( 'global-header', \esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ), null, null, false );
-
-	wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
-
-	// wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
+	\wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
+	\wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
 
 
 	// Register styles & scripts.
-	wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
-	wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
+	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
+	\wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
+
+	// Disable 3rd-party styles & scripts
+	\wp_dequeue_style( 'flexy-breadcrumb' );
+	\remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
 
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
