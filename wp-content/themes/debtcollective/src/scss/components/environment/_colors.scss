@@ -1,0 +1,45 @@
+$white: #fff;
+$c__gray--light: #EBE7DC;
+$c__gray--mid: #777777;
+$c__gray--dark: #434343;
+$c__gray--darker: #343434;
+$black: #000;
+
+$c__orange: #FF4630;
+
+$c__jade: #20A78C;
+$c__jade--dark: #1E9981;
+$c__jade--darker: #146656;
+
+$c__canary: #FFED9C;
+
+
+$c__mint: #D6FFB8;
+$c__salmon: #FFA494;
+$c__lilac: #D2C4F5;
+
+$c__black--80: rgba(black, 0.8);
+$c__black--50: rgba(black, 0.5);
+
+// Usage  `map.get($colors, "emphasis");``
+$colors: (
+  "emphasis": $c__orange,
+  "orange:": $c__orange,
+  "jade": $c__jade,
+  "jade-dark": $c__jade--dark,
+  "jade-darker": $c__jade--darker,
+  "canary": $c__canary,
+  "mint": $c__mint,
+  "salmon": $c__salmon,
+  "lilac": $c__lilac,
+  "text": $c__gray--dark,
+  "title": $c__gray--darker,
+  "border": $c__gray--light,
+  "grey": $c__gray--mid,
+  "grey-light":  $c__gray--light,
+  "grey-dark": $c__gray--dark
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}

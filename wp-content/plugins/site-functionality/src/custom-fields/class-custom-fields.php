@@ -40,7 +40,7 @@ class CustomFields extends Base {
 	 *
 	 * @return void
 	 */
-	protected function acf_settings() {
+	public function acf_settings() {
 		\acf_update_setting( 'l10n_textdomain', 'site-functionality' );
 
 		\acf_update_setting( 'acfe/modules/taxonomies', false );
@@ -57,7 +57,7 @@ class CustomFields extends Base {
 	 *
 	 * @return void
 	 */
-	protected function acfe_settings() {
+	public function acfe_settings() {
 		\acfe_update_setting( 'modules/taxonomies', false );
 		\acfe_update_setting( 'modules/forms', false );
 		\acfe_update_setting( 'modules/options_pages', false );
