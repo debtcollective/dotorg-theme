@@ -1,7 +1,8 @@
 <?php
 /**
  * Functions to modify blocks
- *
+ * 
+ * @see https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/
  *
  * @package DebtCollective
  */

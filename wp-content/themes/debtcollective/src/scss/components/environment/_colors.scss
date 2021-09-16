@@ -40,6 +40,6 @@ $colors: (
   "grey-dark": $c__gray--dark
 );
 
-@function getColor($key) {
+@function get-color($key) {
   @return map-get($colors, $key);
 }

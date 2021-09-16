@@ -1,0 +1,40 @@
+{
+    "apiVersion": 2,
+    "version": "1.0.0",
+    "textdomain": "site-functionality",
+    "name": "site-functionality/faqs",
+    "title": "FAQs",
+    "category": "widget",
+    "collection": "site-functionality",
+    "icon": "format-chat",
+    "className": "faq-list",
+    "description": "Display a FAQs on page",
+    "keywords": [
+        "faqs",
+        "accorion"
+    ],
+    "providesContext": {
+        "my-plugin/message": "message"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "color": { 
+            "background": true,
+            "text": true,
+            "gradients": false,
+            "link": false
+        },
+        "customClassName": true,
+        "defaultStylePicker": false,
+        "__experimentalLayout": false
+    },
+    "attributes": {},
+    "variations": [],
+    "styles": [],
+    "example": {},
+    "script": "site-functionality",
+    "style": "file:../../build/style-index.css",
+    "editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css"
+}

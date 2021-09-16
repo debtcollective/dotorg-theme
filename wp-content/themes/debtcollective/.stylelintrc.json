@@ -21,6 +21,25 @@
 					"screen"
 				]
 			}
-		]
+		],
+		"color-hex-length": [
+			"short", {"severity": "warning"}
+		],
+		"color-named": [
+			"never", {"severity": "warning"}
+		],
+		"font-family-no-duplicate-names": [
+			true, {"severity": "warning"}
+		],
+		"font-family-no-missing-generic-family-keyword": [
+			true, {"severity": "warning"}
+		],
+		"font-weight-notation": [
+			"numeric", {"severity": "warning"}
+		],
+		"comment-empty-line-before": [
+			"always", {"severity": "warning"}
+		],
+		"selector-class-pattern": null
 	}
 }

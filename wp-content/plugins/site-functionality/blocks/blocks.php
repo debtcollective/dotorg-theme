@@ -8,6 +8,8 @@
 namespace Site_Functionality\Blocks;
 
 include_once( \plugin_dir_path( __FILE__ ) . 'src/hero/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/faqs/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/faq/index.php' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in

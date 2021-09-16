@@ -47,8 +47,16 @@ Install theme dependencies and trigger an initial build.
 
 >Note: You will need to have Composer and NPM 7 installed first.
 
-```bash
+<!-- ```bash
 npm i --legacy-peer-deps
+``` -->
+```bash
+yarn install
+```
+
+If you see any errors thrown by webpack dependencies on build, update wordpress-scripts dependencies with
+```bash
+yarn run packages-update
 ```
 
 ### Development
@@ -57,9 +65,9 @@ From the command line, type any of the following to perform an action:
 
 Command | Action
 :- | :-
-`npm run watch` | Builds assets and starts Live Reload and Browsersync servers
-`npm run start` | Builds assets and starts Live Reload server
-`npm run build` | Builds production-ready assets for a deployment
-`npm run lint` | Check all CSS, JS, MD, and PHP files for errors
-`npm run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
+`yarn run watch` | Builds assets and starts Live Reload and Browsersync servers
+`yarn run start` | Builds assets and starts Live Reload server
+`yarn run build` | Builds production-ready assets for a deployment
+`yarn run lint` | Check all CSS, JS, MD, and PHP files for errors
+`yarn run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
 

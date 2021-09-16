@@ -1,0 +1,18 @@
+<?php
+/**
+ * Block Styles
+ *
+ * A place to put custom block styles.
+ * 
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
+ *
+ * @package DebtCollective
+ */
+namespace DebtCollective\Inc;
+
+\register_block_style(
+    'core/list', [
+        'name'         => 'inline-bullet-list',
+        'label'        => __( 'Inline Bullet List', 'debtcollective' ),
+    ]
+);

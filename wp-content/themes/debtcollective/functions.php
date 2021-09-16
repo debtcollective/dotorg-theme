@@ -19,13 +19,15 @@ function debtcollective_get_theme_include_files() {
 		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/extras.php', // Custom functions that act independently of the theme templates.
 		'inc/hooks.php', // Load custom filters and hooks.
-		'inc/block-filters.php', // Fuctions to modify blocks.
 		'inc/security.php', // WordPress hardening.
 		// 'inc/scaffolding.php', // Scaffolding.
 		'inc/scripts.php', // Load styles and scripts.
 		'inc/shortcodes.php', // Custom shortcodes.
 		'inc/template-tags.php', // Custom template tags for this theme.
-		'inc/patterns.php', // Custom patterns for this theme.
+		'inc/block-editor/block-filters.php', // Fuctions to modify blocks.
+		'inc/block-editor/block-patterns.php', // Custom patterns for this theme.
+		'inc/block-editor/block-styles.php', // Custom styles for this theme.
+		'inc/block-editor/block-variations.php', // Custom variations for this theme.
 	];
 }
 
