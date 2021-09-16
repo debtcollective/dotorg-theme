@@ -13,9 +13,13 @@ import './variations';
 import './patterns';
 
 import * as hero from './hero';
+import * as faqs from './faqs';
+import * as faq from './faq';
 
 const blocks = [
-	hero
+	hero,
+	faqs,
+	faq
 ];
 
 /**
