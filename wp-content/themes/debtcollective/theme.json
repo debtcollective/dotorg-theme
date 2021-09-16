@@ -5,7 +5,7 @@
             "custom": false,
             "customDuotone": false,
             "customGradient": false,
-            "link": true,
+            "link": false,
             "gradients": [],
             "duotone": [
 				{
@@ -24,6 +24,11 @@
 					"color": "#ff4630"
 				},
 				{
+					"name": "Orange",
+					"slug": "orange",
+					"color": "#ffa494"
+				},
+				{
 					"name": "Salmon",
 					"slug": "salmon",
 					"color": "#ffa494"
@@ -31,6 +36,16 @@
 				{
 					"name": "Jade",
 					"slug": "jade",
+					"color": "#20a78c"
+				},
+				{
+					"name": "Dark Jade",
+					"slug": "jade-dark",
+					"color": "#20a78c"
+				},
+				{
+					"name": "Darker Jade",
+					"slug": "jade-darker",
 					"color": "#20a78c"
 				},
 				{
@@ -49,13 +64,18 @@
 					"color": "#d2c4f5"
 				},
 				{
+					"name": "Light Gray",
+					"slug": "grey-light",
+					"color": "#343434"
+				},
+				{
 					"name": "Dark Gray",
-					"slug": "gray-dark",
+					"slug": "grey-dark",
 					"color": "#434343"
 				},
 				{
-					"name": "Darkest Gray",
-					"slug": "gray-darkest",
+					"name": "Gray",
+					"slug": "grey-mid",
 					"color": "#343434"
 				},
 				{
@@ -75,6 +95,10 @@
 				}
 			]
         },
+		"border": {
+			"customColor": false,
+			"color": "var(--wp--preset--color--grey-light)"
+		},
 		"layout": {
             "contentSize": "800px",
             "wideSize": "1000px"
@@ -166,6 +190,11 @@
 						"color": "var(--wp--preset--color--emphasis)"
 					},
 					{
+						"name": "Orange",
+						"slug": "orange",
+						"color": "var(--wp--preset--color--orange)"
+					},
+					{
 						"name": "Salmon",
 						"slug": "salmon",
 						"color": "var(--wp--preset--color--salmon)"
@@ -186,14 +215,19 @@
 						"color": "var(--wp--preset--color--canary)"
 					},
 					{
-						"name": "Dark Gray",
-						"slug": "gray-dark",
-						"color": "var(--wp--preset--color--gray-dark)"
+						"name": "Light Gray",
+						"slug": "grey-light",
+						"color": "var(--wp--preset--color--grey-light)"
 					},
 					{
-						"name": "Darkest Gray",
-						"slug": "gray-darkest",
-						"color": "var(--wp--preset--color--gray-darkest"
+						"name": "Gray",
+						"slug": "grey-mid",
+						"color": "var(--wp--preset--color--grey-mid)"
+					},
+					{
+						"name": "Dark Gray",
+						"slug": "grey-dark",
+						"color": "var(--wp--preset--color--grey-dark"
 					},
 					{
 						"name": "White",
@@ -240,8 +274,8 @@
 						},
 						{
 							"name": "Darkest Gray",
-							"slug": "gray-darkest",
-							"color": "var(--wp--preset--color--gray-darkest)"
+							"slug": "grey-darkest",
+							"color": "var(--wp--preset--color--grey-darkest)"
 						},
 						{
 							"name": "White",
@@ -274,8 +308,8 @@
 						},
 						{
 							"name": "Darkest Gray",
-							"slug": "gray-darkest",
-							"color": "var(--wp--preset--color--gray-darkest)"
+							"slug": "grey-darkest",
+							"color": "var(--wp--preset--color--grey-darkest)"
 						},
 						{
 							"name": "White",
@@ -300,8 +334,8 @@
 						},
 						{
 							"name": "Darkest Gray",
-							"slug": "gray-darkest",
-							"color": "var(--wp--preset--color--gray-darkest)"
+							"slug": "grey-darkest",
+							"color": "var(--wp--preset--color--grey-darkest)"
 						},
 						{
 							"name": "White",
@@ -314,11 +348,46 @@
 		}
 	},
 	"styles": {
-		"styles": {
-			"color": {
-				"text": "var(--wp--preset--color--gray-dark)"
-			}
-		}
+		"color": {
+			"text": "var(--wp--preset--color--grey-dark)"
+		},
+		"elements": {
+            "h1": {
+                "color": {
+                    "text": "var(--wp--preset--color--grey-darker)"
+                }
+            },
+            "h2": {
+                "color": {
+                    "text": "var(--wp--preset--color--grey-darker)"
+                }
+            },
+            "h3": {
+                "color": {
+                    "text": "var(--wp--preset--color--grey-darker)"
+                }
+            },
+			"h4": {
+                "color": {
+                    "text": "var(--wp--preset--color--grey-darker)"
+                }
+            }
+        },
+		"blocks": {
+            "core/paragraph": {
+                "color": {
+                    "text": "var(--wp--preset--color--grey-dark)"
+                }
+            },
+            "core/heading": {
+                "color": {}
+            },
+			"core/group": {
+                "color": {},
+				"elements": {}
+            }
+        }
+
 	}
 	
 }

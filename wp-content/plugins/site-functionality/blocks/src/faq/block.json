@@ -1,0 +1,45 @@
+{
+    "apiVersion": 2,
+    "version": "1.0.0",
+    "textdomain": "site-functionality",
+    "name": "site-functionality/faq",
+    "title": "FAQ",
+    "category": "widget",
+    "collection": "site-functionality",
+    "icon": "admin-comments",
+    "className": "faq",
+    "description": "FAQ question and answer",
+    "parent": "site-functionality/faqs",
+    "keywords": [
+        "faq",
+        "accordion"
+    ],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "color": { 
+            "background": false,
+            "text": false,
+            "gradients": false,
+            "link": false
+        },
+        "customClassName": true,
+        "defaultStylePicker": false,
+        "__experimentalLayout": false
+    },
+    "attributes": {
+        "question": {
+            "type": "string"
+        },
+        "answer": {
+            "type": "string"
+        }
+    },
+    "variations": [],
+    "styles": [],
+    "example": {},
+    "script": "site-functionality",
+    "style": "file:../../build/style-index.css",
+    "editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css"
+}
