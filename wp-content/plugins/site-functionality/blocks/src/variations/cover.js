@@ -11,7 +11,7 @@ registerBlockVariation(
             attributes: {
                 className: 'hero',
                 contentPosition: 'top left',
-                url: 'https://s.w.org/images/core/5.3/Windbuchencom.jpg'
+                url: image
             },
             innerBlocks: [
                 [ 'core/heading', { 
