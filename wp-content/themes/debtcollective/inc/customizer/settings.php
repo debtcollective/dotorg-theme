@@ -63,12 +63,33 @@ function customize_additional_scripts( $wp_customize ) {
 		] 
 	);
 
+	$wp_customize->add_setting( 
+		'display_site_branding', 
+		[
+			'default'	=> 'false'
+		] 
+	);
+
 	$wp_customize->add_control( 
 		'global_header_control', 
 		[
 			'label'      	=> esc_attr__( 'Display Global Header', 'debtcollective' ),
 			'section'    	=> 'title_tagline',
 			'settings'   	=> 'display_global_header',
+			'type'       	=> 'checkbox',
+			'choices'   => [
+				'true' 	=> esc_attr__( 'Display', 'debtcollective' )
+			]
+			
+		] 
+	);
+
+	$wp_customize->add_control( 
+		'site_branding_control', 
+		[
+			'label'      	=> esc_attr__( 'Display Site Branding', 'debtcollective' ),
+			'section'    	=> 'title_tagline',
+			'settings'   	=> 'display_site_branding',
 			'type'       	=> 'checkbox',
 			'choices'   => [
 				'true' 	=> esc_attr__( 'Display', 'debtcollective' )
