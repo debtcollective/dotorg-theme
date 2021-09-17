@@ -4,18 +4,15 @@
     "textdomain": "site-functionality",
     "name": "site-functionality/faqs",
     "title": "FAQs",
-    "category": "widget",
+    "category": "components",
     "collection": "site-functionality",
     "icon": "format-chat",
     "className": "faq-list",
-    "description": "Display a FAQs on page",
+    "description": "Display FAQs on page",
     "keywords": [
         "faqs",
         "accorion"
     ],
-    "providesContext": {
-        "my-plugin/message": "message"
-    },
     "supports": {
         "align": false,
         "anchor": true,
