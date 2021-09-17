@@ -11,20 +11,23 @@
 
 	<?php 
 	if( $parent = $post->post_parent ) : 
+		$parent_title = get_post_field( 'post_title', $parent );
 		?>
+		<nav class="pagenav">
+			<h2><?php echo esc_attr( $parent_title ); ?></h2>
 
-		<ul>
-			<?php
-			$parent_title = get_post_field( 'post_title', $parent );
-			$args = [
-				'child_of' 	=> $parent,
-				'depth' 	=> 1,
-				'title_li'	=> $parent_title,
-			];
+			<ul>
+				<?php
+				$args = [
+					'child_of' 	=> $parent,
+					'depth' 	=> 1,
+					'title_li'	=> false,
+				];
 
-			wp_list_pages( $args );
-			?>
-		</ul>
+				wp_list_pages( $args );
+				?>
+			</ul>
+		</nav>
 
 		<?php 
 	endif; ?>
