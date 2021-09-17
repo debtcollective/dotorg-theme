@@ -1,0 +1,106 @@
+footer.site-footer {
+	background-color: #434343;
+	color: #ffff;
+	aside:nth-child(1) div.wp-block-group {
+		display: flex;
+		justify-content: space-between;
+		padding: 2rem 0 1rem;
+		ul.wp-block-social-links {
+			margin: 0;
+			li.wp-social-link {
+				height: 2.25rem;
+			}
+		}
+	}
+	aside {
+		padding: 0 1rem;
+		h4 {
+			margin: 0;
+			width: 50%;
+		}
+		h5 {
+			margin: 0;
+			font-weight: 200;
+		}
+		@media (min-width: get-breakpoint(sm)) {
+			padding: 0 2.875rem;
+			&:nth-child(1) {
+				padding-top: 2.875rem;
+			}
+			h4 {
+				width: auto;
+				font-size: get-font-size(h3);
+			}
+			h5 {
+				font-size: get-font-size(h4);
+			}
+		}
+	}
+	aside.widget_yikes_easy_mc_widget {
+		// padding: 1rem;
+		form.yikes-easy-mc-form {
+			margin: 1rem 0;
+			label {
+				span {
+					font-weight: 500;
+				}
+				// &:nth-child(1) {
+				// 	margin-left: 0;
+				// }
+				&:nth-child(5) {
+					display: none;
+				}
+			}
+			button {
+				margin: 0 !important;
+			}
+			@media (min-width: get-breakpoint(sm)) {
+				// padding: 1rem 2.875rem;
+				display: flex;
+				justify-content: space-between;
+				label {
+					margin: 0 0.5rem;
+					&:nth-child(1) {
+						margin-left: 0;
+					}
+				}
+				button {
+					margin: 0.5rem !important
+				}
+			}
+		}
+	}
+	ul#footer-menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0 1rem 5rem;
+		padding: 1rem 0;
+		border-top: solid #ffff 1px;
+		@media (min-width: get-breakpoint(sm)) {
+			flex-direction: row;
+			margin: 0 2.875rem 5rem;
+		}
+		> li:nth-child(1) {
+			// padding-top: 1rem;
+			// border-top: solid #ffff 1px;
+		}
+		> li {
+			list-style: none;
+			> a {
+				font-size: 1.25rem;
+				font-weight: 900;
+				color: #ffff;
+				text-decoration: none;
+			}
+			ul.sub-menu {
+				list-style: none;
+				padding-left: 0;
+				a {
+					color: #ffff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
