@@ -4,12 +4,10 @@
     "textdomain": "site-functionality",
     "name": "site-functionality/faq",
     "title": "FAQ",
-    "category": "widget",
-    "collection": "site-functionality",
     "icon": "admin-comments",
     "className": "faq",
     "description": "FAQ question and answer",
-    "parent": "site-functionality/faqs",
+    "parent": [ "site-functionality/faqs" ],
     "keywords": [
         "faq",
         "accordion"
