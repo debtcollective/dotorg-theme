@@ -30,11 +30,8 @@ footer.site-footer {
 		p {
 			margin: 0;
 			font-weight: 200;
-			// font-size: get-font-size(h5);
 		}
 		@media (min-width: get-breakpoint(xs)) {
-			// &:nth-child(1) {
-			// }
 			h2 {
 				width: auto;
 				font-size: get-font-size(h3);
@@ -45,7 +42,6 @@ footer.site-footer {
 		}
 	}
 	aside.widget_yikes_easy_mc_widget {
-		// padding: 1rem;
 		form.yikes-easy-mc-form {
 			margin: 1rem 0;
 			label {
@@ -53,9 +49,6 @@ footer.site-footer {
 				span {
 					font-weight: 500;
 				}
-				// &:nth-child(1) {
-				// 	margin-left: 0;
-				// }
 				&:nth-child(5) {
 					display: none;
 				}
@@ -64,7 +57,6 @@ footer.site-footer {
 				margin: 0 !important;
 			}
 			@media (min-width: get-breakpoint(sm)) {
-				// padding: 1rem 2.875rem;
 				display: flex;
 				justify-content: space-between;
 				label {
