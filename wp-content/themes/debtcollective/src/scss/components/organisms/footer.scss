@@ -18,27 +18,29 @@ footer.site-footer {
 	}
 	aside {
 		padding: 0 1rem;
+		@media (min-width: get-breakpoint(sm)) {
+			padding: 0 2.875rem;
+		}
 		h2 {
 			margin: 0;
 			padding-bottom: 1rem;
 			font-size: get-font-size(h4);
+			line-height: 1.15;
 		}
 		p {
 			margin: 0;
 			font-weight: 200;
 			// font-size: get-font-size(h5);
 		}
-		@media (min-width: get-breakpoint(sm)) {
-			padding: 0 2.875rem;
-			&:nth-child(1) {
-				// padding-top: 2.875rem;
-			}
+		@media (min-width: get-breakpoint(xs)) {
+			// &:nth-child(1) {
+			// }
 			h2 {
 				width: auto;
-				// font-size: get-font-size(h3);
+				font-size: get-font-size(h3);
 			}
 			p {
-				// font-size: get-font-size(h4);
+				font-size: get-font-size(h4);
 			}
 		}
 	}
@@ -47,6 +49,7 @@ footer.site-footer {
 		form.yikes-easy-mc-form {
 			margin: 1rem 0;
 			label {
+				line-height: 1.2;
 				span {
 					font-weight: 500;
 				}
@@ -66,6 +69,9 @@ footer.site-footer {
 				justify-content: space-between;
 				label {
 					margin: 0 0.5rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
 					&:nth-child(1) {
 						margin-left: 0;
 					}
@@ -87,9 +93,6 @@ footer.site-footer {
 			flex-direction: row;
 			margin: 0 2.875rem 5rem;
 		}
-		> li:nth-child(1) {
-			// margin-left: 0;
-		}
 		> li {
 			list-style: none;
 			margin-right: 0.5rem;
@@ -98,6 +101,7 @@ footer.site-footer {
 			}
 			> a {
 				font-size: 1.25rem;
+				line-height: 2.67;
 				font-weight: 900;
 				color: #ffff;
 				text-decoration: none;
@@ -111,6 +115,7 @@ footer.site-footer {
 				a {
 					color: #ffff;
 					text-decoration: none;
+					line-height: 2.5;
 				}
 			}
 		}
