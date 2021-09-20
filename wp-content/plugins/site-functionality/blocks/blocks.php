@@ -8,6 +8,8 @@
 namespace Site_Functionality\Blocks;
 
 include_once( \plugin_dir_path( __FILE__ ) . 'src/hero/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/faqs/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/faq/index.php' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -41,6 +43,25 @@ function init() {
      */
     wp_set_script_translations( 'site-functionality', 'site-functionality' );
   }
-
 }
 add_action( 'init', __NAMESPACE__ . '\init' );
+
+/**
+ * Register custom block category
+ * 
+ * @see https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#managing-block-categories
+ */
+function register_block_category( $block_categories, $editor_context ) {
+	if ( ! empty( $editor_context->post ) ) {
+		array_push(
+			$block_categories,
+			array(
+				'slug'  => 'components',
+				'title' => __( 'Components', 'site-functionality' ),
+				'icon'  => 'block-default',
+			)
+		);
+	}
+	return $block_categories;
+}
+\add_filter( 'block_categories_all', __NAMESPACE__ . '\register_block_category', 10, 2 );

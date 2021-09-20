@@ -9,6 +9,7 @@
  * @package DebtCollective
  */
 $display_global_header = get_theme_mod( 'display_global_header', 'true' );
+$display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -49,25 +50,27 @@ $display_global_header = get_theme_mod( 'display_global_header', 'true' );
 
 		<div class="container">
 
+			<?php
+			if( $display_site_branding ) : ?>
 			<div class="site-branding">
 
 				<?php the_custom_logo(); ?>
 
 				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<p class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
 
 				<?php
-
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo esc_html( $description ); ?></p>
+					<p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 
 			</div><!-- .site-branding -->
+			<?php endif; ?>
 
 			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
 				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open Menu', 'debtcollective' ); ?>"></button>

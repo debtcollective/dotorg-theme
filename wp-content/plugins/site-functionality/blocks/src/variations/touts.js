@@ -8,10 +8,11 @@ registerBlockVariation(
         {
             name: 'tout',
             title: __( 'Tout', 'site-functionality' ),
+            category: 'components',
+            icon: 'format-image',
+            description: "Display a callout element on page",
             attributes: {
-                className: 'tout',
-                url: image,
-                backgroundColor: 'mint'
+                className: 'tout'
             },
             innerBlocks: [
                 [ 'core/group', {}, [
