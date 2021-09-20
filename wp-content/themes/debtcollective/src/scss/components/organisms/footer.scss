@@ -69,7 +69,8 @@ footer.site-footer {
 					}
 				}
 				button {
-					margin: 0.5rem !important
+					margin: 0.5rem !important;
+					margin-right: 0 !important;
 				}
 			}
 		}
@@ -81,14 +82,16 @@ footer.site-footer {
 		margin: 0 1rem 5rem;
 		padding: 1rem 0;
 		border-top: solid #ffff 1px;
-		@media (min-width: get-breakpoint(sm)) {
+		@media (min-width: get-breakpoint(xs)) {
 			flex-direction: row;
+		}
+		@media (min-width: get-breakpoint(sm)) {
 			margin: 0 2.875rem 5rem;
 		}
 		> li {
 			list-style: none;
 			margin-right: 0.5rem;
-			@media (min-width: get-breakpoint(sm)) {
+			@media (min-width: get-breakpoint(xs)) {
 				width: 20%;
 			}
 			> a {
