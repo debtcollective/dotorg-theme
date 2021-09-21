@@ -53,8 +53,8 @@ function scripts() {
 	\wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
 	// Disable 3rd-party styles & scripts
-	\wp_dequeue_style( 'flexy-breadcrumb' );
-	\remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
+	// \wp_dequeue_style( 'flexy-breadcrumb' );
+	// \remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
 
 }
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );

@@ -52,24 +52,24 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 
 			<?php
 			if( $display_site_branding ) : ?>
-			<div class="site-branding">
+				<div class="site-branding">
 
-				<?php the_custom_logo(); ?>
+					<?php the_custom_logo(); ?>
 
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif; ?>
+					<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif; ?>
 
-				<?php
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) :
-					?>
-					<p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
-				<?php endif; ?>
+					<?php
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) :
+						?>
+						<p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
+					<?php endif; ?>
 
-			</div><!-- .site-branding -->
+				</div><!-- .site-branding -->
 			<?php endif; ?>
 
 			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
@@ -91,5 +91,7 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 			);
 			?>
 		</nav><!-- #site-navigation-->
+
+		<?php echo do_shortcode( '[flexy_breadcrumb]'); ?> 
 
 	</header><!-- .site-header-->
