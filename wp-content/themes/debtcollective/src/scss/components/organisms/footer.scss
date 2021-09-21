@@ -3,16 +3,30 @@ footer.site-footer {
 	color: #ffff;
 	position: absolute;
 	width: 100vw;
-	aside:nth-child(1) div.wp-block-group {
-		padding: 1rem 0;
+	aside:nth-child(1) {
+		display: flex;
+		justify-content: flex-end;
+		position: absolute;
+		width: 97%;
+		padding: 0;
+		right: 0.75rem;
 		@media (min-width: get-breakpoint(sm)) {
-			display: flex;
-			justify-content: space-between;
+			top: 2rem;
+			right: 2.35rem;
 		}
 		ul.wp-block-social-links {
 			margin: 0;
-			li.wp-social-link {
-				height: 2.25rem;
+			.wp-social-link {
+				margin: 0;
+				a {
+					padding: 0;
+					@media (min-width: get-breakpoint(sm)){
+						svg {
+							width: 2.25rem;
+							height: 2.25rem;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -21,7 +35,7 @@ footer.site-footer {
 		@media (min-width: get-breakpoint(sm)) {
 			padding: 0 2.875rem;
 		}
-		h2 {
+		h3 {
 			margin: 0;
 			padding-bottom: 1rem;
 			font-size: get-font-size(h4);
@@ -31,10 +45,11 @@ footer.site-footer {
 			margin: 0;
 			font-weight: 200;
 		}
-		@media (min-width: get-breakpoint(xs)) {
-			h2 {
+		@media (min-width: get-breakpoint(sm)) {
+			h3 {
 				width: auto;
 				font-size: get-font-size(h3);
+				padding: 1rem 0;
 			}
 			p {
 				font-size: get-font-size(h4);
