@@ -21,6 +21,8 @@ $c__lilac: #D2C4F5;
 $c__black--80: rgba(black, 0.8);
 $c__black--50: rgba(black, 0.5);
 
+$c__green--1: rgba(91, 203, 181, 0.1);
+
 // Usage  `map.get($colors, "emphasis");``
 $colors: (
   "emphasis": $c__orange,
@@ -37,7 +39,8 @@ $colors: (
   "border": $c__gray--light,
   "grey": $c__gray--mid,
   "grey-light":  $c__gray--light,
-  "grey-dark": $c__gray--dark
+  "grey-dark": $c__gray--dark,
+	"green-1": $c__green--1
 );
 
 @function get-color($key) {

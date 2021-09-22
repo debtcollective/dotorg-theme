@@ -1,0 +1,7 @@
+input[type="text"], input[type="email"] {
+	//get-color($c__green--1)
+	background-color: get-color(green-1) !important;
+	border: 1px solid #219653 !important;
+	border-radius: 6px;
+	height: 2.5rem;
+}
