@@ -104,7 +104,7 @@ class CustomFields extends Base {
 							'class' => '',
 							'id' => '',
 						),
-						'default_value' => '',
+						'default_value' => 1,
 						'placeholder' => '',
 						'prepend' => '',
 						'append' => '',

@@ -15,7 +15,9 @@ $taxonomy = 'purchase_agreement_type';
 		<?php debtcollective_post_date(); ?>
 	</div><!-- .entry-meta -->
 
-	<h3 class="purchase-agreement__title entry-title"><?php the_title(); ?></h3>
+	<?php if( \get_post_meta( $post_id, 'show_title', true ) ) : ?>
+		<h3 class="purchase-agreement__title entry-title"><?php the_title(); ?></h3>
+	<?php endif; ?>
 
 	<div class="purchase-agreement__summary entry-content">
 		<?php
