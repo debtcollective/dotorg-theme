@@ -164,7 +164,7 @@ function widgets_init() {
 	// Define sidebars.
 	$sidebars = [
 		'sidebar-1' => esc_html__( 'Sidebar 1', 'debtcollective' ),
-		'sidebar-2' => esc_html__( 'Content Sidebar', 'debtcollective' ),
+		'sidebar-2' => esc_html__( 'Content Footer', 'debtcollective' ),
 		'footer' 	=> esc_html__( 'Footer', 'debtcollective' ),
 	];
 
