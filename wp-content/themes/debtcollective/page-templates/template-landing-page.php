@@ -4,7 +4,7 @@
  *
  * This template displays a landing page without a sidebar on the right side of the screen.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package DebtCollective
  */
