@@ -7,6 +7,24 @@
  * @package DebtCollective
  */
 
+ /**
+ * Prints HTML with meta information for the current post-date/time and author.
+ *
+ * @author Debt Collective
+ */
+function debtcollective_post_date() {
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
+	$time_string = sprintf(
+		$time_string,
+		esc_attr( get_the_date( DATE_W3C ) ),
+		esc_html( get_the_date() )
+	);
+
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+	echo '<span class="posted-on">' . $time_string . '</span>';
+}
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
