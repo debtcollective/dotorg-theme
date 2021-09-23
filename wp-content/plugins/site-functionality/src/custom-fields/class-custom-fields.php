@@ -198,14 +198,9 @@ class CustomFields extends Base {
 				'location' => array(
 					array(
 						array(
-							'param' => 'post_type',
-							'operator' => '==',
-							'value' => 'purchase_agreement',
-						),
-						array(
-							'param' => 'post_type',
-							'operator' => '==',
-							'value' => 'debt_buy',
+							'param' 	=> 'post_type',
+							'operator' 	=> '==',
+							'value' 	=> PurchaseAgreement::POST_TYPE['id'],
 						),
 					),
 				),
