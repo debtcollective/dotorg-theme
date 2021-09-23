@@ -164,7 +164,7 @@ function widgets_init() {
 	// Define sidebars.
 	$sidebars = [
 		'sidebar-1' => esc_html__( 'Sidebar 1', 'debtcollective' ),
-		'sidebar-2' => esc_html__( 'Content Footer', 'debtcollective' ),
+		'sidebar-2' => esc_html__( 'Content Sidebar', 'debtcollective' ),
 		'footer' 	=> esc_html__( 'Footer', 'debtcollective' ),
 	];
 
@@ -175,7 +175,7 @@ function widgets_init() {
 				'name'          => $sidebar_name,
 				'id'            => $sidebar_id,
 				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', 'debtcollective' ), $sidebar_name ),
-				'before_widget' => '<aside class="widget %1$s">',
+				'before_widget' => '<aside class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
