@@ -23,7 +23,9 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php get_sidebar(); ?>
+		<?php if( !is_front_page() ) : ?>
+			<?php get_sidebar(); ?>
+		<?php endif; ?>
 	</div>
 
 <?php get_footer(); ?>
