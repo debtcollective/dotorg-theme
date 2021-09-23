@@ -21,11 +21,12 @@ class CustomFields extends Base {
 	 * Custom fields
 	 */
 	public const FIELDS = [
-		'amount'	=> 'number',
-		'number'	=> 'integer',
-		'average'	=> 'number',
-		'price'		=> 'number',
-		'file'		=> 'string',
+		'amount'		=> 'number',
+		'number'		=> 'integer',
+		'average'		=> 'number',
+		'price'			=> 'number',
+		'file'			=> 'string',
+		'show_title'	=> 'boolean',
 	];
 
 	/**
@@ -90,6 +91,24 @@ class CustomFields extends Base {
 				'key' => 'group_purchase_agreement_group',
 				'title' => __( 'Purchase Agreement Details', 'site-functionality' ),
 				'fields' => array(
+					array(
+						'key' => 'field_show_title',
+						'label' => __( 'Show Title', 'site-functionality' ),
+						'name' => 'show_title',
+						'type' => 'true_false',
+						'instructions' => __( 'Select if purchase agreement has no title.', 'site-functionality' ),
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
 					array(
 						'key' => 'field_amount',
 						'label' => __( 'Amount Abolished', 'site-functionality' ),
