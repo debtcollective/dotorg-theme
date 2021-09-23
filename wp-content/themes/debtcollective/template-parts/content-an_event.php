@@ -7,8 +7,8 @@
  * @package DebtCollective
  */
 $post_id = get_the_ID();
-$date_format = $args['dateFormat'];
-$time_format = $args['timeFormat'];
+$date_format = 'M j, Y';
+$time_format = 'g:ia';
 $default_timezone = \get_option( 'timezone_string' );
 $timezone = \get_post_meta( $post_id, 'timezone', true ) ?? $default_timezone;
 $raw_start_date = \get_post_meta( $post_id, 'start_date', true );
@@ -54,7 +54,9 @@ $timezone_abbr = $generic_date->format( 'T' );
 			?>
 		</div>
 
-		<div class="event__location"><?php echo \esc_attr( $location ); ?></div>
+		<?php if( $location = \get_post_meta( $post_id, 'location_venue', true ) ) : ?>
+			<div class="event__location"><?php echo \esc_attr( $location ); ?></div>
+		<?php endif; ?>
 
 	</a>
 
