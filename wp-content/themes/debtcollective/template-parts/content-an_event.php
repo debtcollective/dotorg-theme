@@ -23,6 +23,7 @@ $formatted_end_time = $end_datetime ? $end_datetime->format( $time_format ) : nu
 $generic_date = new \DateTime( $raw_start_date );
 $generic_date->setTimezone( new \DateTimeZone( $timezone ) );
 $timezone_abbr = $generic_date->format( 'T' );
+$taxonomy = 'event_tag';
 ?>
 
 <article <?php \post_class( 'event-container event' ); ?>>
