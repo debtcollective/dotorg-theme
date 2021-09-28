@@ -15,11 +15,13 @@ import './patterns';
 import * as hero from './hero';
 import * as faqs from './faqs';
 import * as faq from './faq';
+import * as purchaseAgreements from './purchaseAgreements';
 
 const blocks = [
 	hero,
 	faqs,
-	faq
+	faq,
+	purchaseAgreements
 ];
 
 /**
