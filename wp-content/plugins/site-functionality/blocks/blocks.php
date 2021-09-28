@@ -10,6 +10,18 @@ namespace Site_Functionality\Blocks;
 include_once( \plugin_dir_path( __FILE__ ) . 'src/hero/index.php' );
 include_once( \plugin_dir_path( __FILE__ ) . 'src/faqs/index.php' );
 include_once( \plugin_dir_path( __FILE__ ) . 'src/faq/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/purchaseAgreements/index.php' );
+
+const TEMPLATE_PARAMS = [
+	'filter_prefix'             => 'wp_action_network_events',
+	'plugin_directory'          => SITE_CORE_DIR,
+	'plugin_template_directory' => 'blocks/src/templates',
+	'theme_template_directory'  => 'template-parts/components',
+];
+
+function get_template_params() {
+	return TEMPLATE_PARAMS;
+}
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in

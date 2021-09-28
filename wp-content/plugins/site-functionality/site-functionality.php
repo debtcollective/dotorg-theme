@@ -35,6 +35,8 @@ function site_functionality_init() {
 	include_once( SITE_CORE_DIR . '/src/filters.php' 									);
 	include_once( SITE_CORE_DIR . '/src/security.php' 									);
 	include_once( SITE_CORE_DIR . '/src/util/util.php' 									);
+	include_once( SITE_CORE_DIR . '/src/class-template-loader.php' 						);
+
 	include_once( SITE_CORE_DIR . '/src/api/rest-api.php' 								);
 	// include_once( SITE_CORE_DIR . '/src/api/graphql.php' 				);
 
