@@ -388,13 +388,13 @@ const Edit = ( props ) => {
 							</dd>
 							</>
 						) }
-						{ showPurchasePrice && post.meta?.["purchase_price"] && (
+						{ showPurchasePrice && post.meta?.["price"] && (
 							<>
 							<dt class="purchase-agreement__purchase-price entry-label">
 								{ __( 'Abolished', 'site-functionality' ) }
 							</dt>
 							<dd class="purchase-agreement__purchase-price entry-value">
-								<span class="value">{ new Intl.NumberFormat().format( post.meta?.["purchase_price"] ) }</span>
+								<span class="value">{ new Intl.NumberFormat().format( post.meta?.["price"] ) }</span>
 							</dd>
 							</>
 						) }
