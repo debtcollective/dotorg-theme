@@ -69,8 +69,6 @@ function render( $attributes, $content, $block ) {
 		$wrapper_attributes = \get_block_wrapper_attributes( [ 'class' => 'purchase-agreeements__list' ] );
 		$loader_params = \Site_Functionality\Blocks\get_template_params();
 		$template_loader = new TemplateLoader( $loader_params );
-
-		var_dump( $loader_params );
 		
 		ob_start();
 		?>
