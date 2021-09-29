@@ -70,7 +70,7 @@ $taxonomy = 'purchase_agreement_type';
 					<?php \esc_html_e( 'Average Debt/Debtor', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__average entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average ) ); ?>
+					<?php var_dump( number_format( $average, 2 )  );printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
@@ -78,7 +78,7 @@ $taxonomy = 'purchase_agreement_type';
 					<?php \esc_html_e( 'Purchase Price', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__purchase-price entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $purchase_price ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $purchase_price, 2 ) ); ?>
 				</dd>
 			<?php endif; ?>
 		</dl>
