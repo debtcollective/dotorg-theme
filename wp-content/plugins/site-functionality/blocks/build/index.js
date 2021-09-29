@@ -1773,13 +1773,13 @@ const Edit = props => {
       class: "purchase-agreement__average entry-value"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
       class: "value"
-    }, new Intl.NumberFormat().format((_post$meta8 = post.meta) === null || _post$meta8 === void 0 ? void 0 : _post$meta8["average"])))), showPurchasePrice && ((_post$meta9 = post.meta) === null || _post$meta9 === void 0 ? void 0 : _post$meta9["purchase_price"]) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
+    }, new Intl.NumberFormat().format((_post$meta8 = post.meta) === null || _post$meta8 === void 0 ? void 0 : _post$meta8["average"])))), showPurchasePrice && ((_post$meta9 = post.meta) === null || _post$meta9 === void 0 ? void 0 : _post$meta9["price"]) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
       class: "purchase-agreement__purchase-price entry-label"
     }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Abolished', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
       class: "purchase-agreement__purchase-price entry-value"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
       class: "value"
-    }, new Intl.NumberFormat().format((_post$meta10 = post.meta) === null || _post$meta10 === void 0 ? void 0 : _post$meta10["purchase_price"])))))), media && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+    }, new Intl.NumberFormat().format((_post$meta10 = post.meta) === null || _post$meta10 === void 0 ? void 0 : _post$meta10["price"])))))), media && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
       href: media.source_url,
       "aria-label": Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__["__"])('Download Purchase Agreement as PDF', 'site-functionality'),
       target: "_blank"
