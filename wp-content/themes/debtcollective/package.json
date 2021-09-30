@@ -42,17 +42,16 @@
 		"eslint-plugin-jsdoc": "^36.0.6",
 		"eslint-plugin-prettier": "^3.4.0",
 		"eslint-webpack-plugin": "^2.5.4",
-		"file-loader": "^6.2.0",
 		"imagemin-webpack-plugin": "^2.4.2",
-		"mini-css-extract-plugin": "^2.2.2",
+		"lodash": "^4.17.21",
 		"mini-css-extract-plugin": "^1.6.2",
 		"npm-run-all": "^4.1.5",
 		"postcss-loader": "4.2.0",
 		"postcss-preset-env": "^6.7.0",
 		"prettier": "prettier@npm:wp-prettier@latest",
+		"prettier-eslint-cli": "^5.0.1",
 		"sass": "^1.39.0",
 		"sass-loader": "10.2.0",
-		"style-loader": "^3.2.1",
 		"stylelint-config-prettier": "^8.0.2",
 		"stylelint-webpack-plugin": "^2.2.2",
 		"svg-spritemap-webpack-plugin": "3.9.1",
@@ -84,7 +83,4 @@
 		"watch": "run-p start sync"
 	},
 	"dependencies": {}
-		"@debtcollective/dc-header-component": "^3.6.3",
-		"@debtcollective/union-component": "^1.5.2"
-	}
 }

@@ -3,6 +3,7 @@
  *
  * Import JS for Gutenberg blocks.
  */
+import lodash from 'lodash';
 
 // Custom Gutenberg Blocks.
 import './wd';
