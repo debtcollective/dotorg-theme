@@ -83,7 +83,7 @@
 		"sync": "browser-sync start --https --proxy 'http://debtcollective.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
 	},
-	"dependencies": {
+	"dependencies": {}
 		"@debtcollective/dc-header-component": "^3.6.3",
 		"@debtcollective/union-component": "^1.5.2"
 	}
