@@ -1,15 +1,12 @@
-/**
- * Gutenberg Block JS
- *
- * Import JS for Gutenberg blocks.
- */
+/*  Gutenberg Block JS */
+
 import lodash from 'lodash';
 
 /**
  * Modify settings for core/social-links
- * @param {object} settings 
- * @param {string} name 
- * @returns {object} settings 
+ * @param {Object} settings 
+ * @param {String} name 
+ * @return {Object}
  */
 function modifySocialLinkSettings( settings, name ) {
     if ( name !== 'core/social-links' ) {
