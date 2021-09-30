@@ -29,6 +29,8 @@
 		"@storybook/addon-links": "^6.3.8",
 		"@storybook/html": "^6.3.8",
 		"@storybook/preset-scss": "^1.0.3",
+		"@wordpress/blocks": "^11.1.0",
+		"@wordpress/i18n": "^4.2.2",
 		"@wordpress/prettier-config": "^1.1.0",
 		"@wordpress/scripts": "^17.1.0",
 		"babel-loader": "^8.2.2",
