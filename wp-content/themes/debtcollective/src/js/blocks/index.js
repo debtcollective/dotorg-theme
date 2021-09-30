@@ -5,10 +5,6 @@
  */
 import lodash from 'lodash';
 
-// Custom Gutenberg Blocks.
-import './wd';
-// import './acf';
-
 /**
  * Modify settings for core/social-links
  * @param {object} settings 
