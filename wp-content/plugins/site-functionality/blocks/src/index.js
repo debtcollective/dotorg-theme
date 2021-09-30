@@ -11,6 +11,7 @@ registerBlockCollection( 'site-functionality', {
 
 import './variations';
 import './patterns';
+import './styles';
 
 import * as hero from './hero';
 import * as faqs from './faqs';

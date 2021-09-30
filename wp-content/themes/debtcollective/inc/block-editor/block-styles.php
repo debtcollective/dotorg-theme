@@ -16,3 +16,11 @@ namespace DebtCollective\Inc;
         'label'        => __( 'Inline Bullet List', 'debtcollective' ),
     ]
 );
+
+/**
+ * Unregister Core Block Styles
+ * 
+ * @see https://developer.wordpress.org/reference/functions/unregister_block_style/
+ */
+\unregister_block_style( 'core/button', 'fill' );
+\unregister_block_style( 'core/button', 'outline' );

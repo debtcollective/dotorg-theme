@@ -2,56 +2,73 @@ import { registerBlockVariation } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import image from '../assets/img/student.png';
 
-registerBlockVariation(
-    'core/cover',
-    [
-        {
-            name: 'tout',
-            title: __( 'Tout', 'site-functionality' ),
-            category: 'components',
-            icon: 'format-image',
-            description: "Display a callout element on page",
+const variations = [
+    {
+        name: 'tout',
+        title: __( 'Standard Tout', 'site-functionality' ),
+        attributes: {
+            className: 'tout',
+            contentPosition: 'top left',
+            url: image
+        },
+        innerBlocks: [
+            [ 'core/heading', { 
+                className: 'tout__heading h1',
+                placeholder: __( 'Add Heading...', 'site-functionality' )
+            } ],
+            [ 'core/paragraph', { 
+                className: 'tout__content',
+                placeholder: __( 'Add content...', 'site-functionality' )
+            } ],
+            [ 'core/buttons', { className: 'buttons' }, [
+                [ 'core/button', { 
+                    className: 'tout__button button',
+                    placeholder: __( 'Add Button Text...', 'site-functionality' )
+                } ]
+            ] ],
+        ],
+        example: {
             attributes: {
-                className: 'tout'
+                contentPosition: 'top left',
+                url: image,
             },
             innerBlocks: [
-                [ 'core/group', {}, [
-                    [ 'core/heading', { 
-                        level: 3,
-                        className: 'tout__heading h2',
-                        placeholder: __( 'Add Heading...', 'site-functionality' )
-                    } ],
-                    [ 'core/paragraph', { 
-                        className: 'tout__content',
-                        placeholder: __( 'Add content...', 'site-functionality' )
-                    } ]
-                ] ],
-            ],
-            example: {
-                attributes: {
-                    className: 'tout',
-                    url: image,
-                    backgroundColor: 'canary'
+                {
+                    name: 'core/heading',
+                    attributes: {
+                        level: 2,
+                        className: 'tout__heading',
+                        content: __( 'Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'site-functionality' ),
+                    },
                 },
-                innerBlocks: [
-                    {
-                        name: 'core/heading',
-                        attributes: {
-                            level: 3,
-                            className: 'tout__heading',
-                            content: __( 'Cancel Student Debt Today!', 'site-functionality' ),
-                        },
+                {
+                    name: 'core/paragraph',
+                    attributes: {
+                        className: 'tout__content',
+                        content: __( 'We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'site-functionality' ),
                     },
-                    {
-                        name: 'core/paragraph',
-                        attributes: {
-                            className: 'tout__content',
-                            content: __( 'The President can cancel all federal student loans through executive order. It\'s not a magic trick; with the flick of his pen he can legally make all federal student loan debt disappear!', 'site-functionality' ),
-                        },
+                },
+                {
+                    name: 'core/buttons',
+                    attributes: {
+                        className: 'tout__buttons',
                     },
-                ],
-            }
-
+                    innerBlocks: [
+                        {
+                            name: 'core/button',
+                            attributes: {
+                                className: 'tout__button',
+                                content: __( 'Join the Union', 'site-functionality' ),
+                            }
+                        }
+                    ]
+                },
+            ],
         }
-    ]
+    }
+];
+
+registerBlockVariation(
+    'core/cover',
+    variations
 );
