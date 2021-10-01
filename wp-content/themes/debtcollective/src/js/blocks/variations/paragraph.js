@@ -1,18 +1,19 @@
 import { registerBlockVariation } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import image from '../assets/img/hero.png'
 
 const variations = [
     {
         name: 'lede',
-        title: __( 'Lede', 'site-functionality' ),
+        title: __( 'Lede', 'debtcollective' ),
+        category: 'components',
         attributes: {
             className: 'lede',
-            placeholder: __( 'Add content...', 'site-functionality' )
+            placeholder: __( 'Add content&hellip;', 'debtcollective' )
         },
         example: {
             attributes: {
-                content: __( 'We are a membership-powered movement. Some supporting copy reenforcing the message and sentiment we’re looking to convey.', 'site-functionality' )
+                className: 'lede',
+                content: __( 'We are a membership-powered movement. Some supporting copy reenforcing the message and sentiment we’re looking to convey.', 'debtcollective' )
             },
         }
     }
