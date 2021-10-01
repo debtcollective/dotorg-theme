@@ -1,14 +1,14 @@
 import { registerBlockVariation } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import image from '../assets/img/student.png';
 
 registerBlockVariation(
     'core/columns',
     [
         {
             name: 'banner-media',
-            title: __( 'Media Banner', 'site-functionality' ),
-            description: __( 'A banner that displays a media item on the left and text on the right.', 'site-functionality' ),
+            title: __( 'Media Banner', 'debtcollective' ),
+            description: __( 'A banner that displays a media item on the left and text on the right.', 'debtcollective' ),
+            category: 'components',
             attributes: {
                 className: 'banner',
                 backgroundColor: 'canary',
@@ -33,11 +33,11 @@ registerBlockVariation(
                     [ 'core/heading', {
                         level: 2,
                         className: 'banner__heading',
-                        placeholder: __( 'Add Heading...', 'site-functionality' )
+                        placeholder: __( 'Add Heading&hellip;', 'debtcollective' )
                     } ],
                     [ 'core/paragraph', {
                         className: 'banner__content',
-                        placeholder: __( 'Add content...', 'site-functionality' )
+                        placeholder: __( 'Add content&hellip;', 'debtcollective' )
                     } ]
                 ] ],
             ],
@@ -78,14 +78,14 @@ registerBlockVariation(
                                 attributes: {
                                     level: 2,
                                     className: 'banner__heading',
-                                    placeholder: __( 'Our Movement Has <em>Abolished</em> More Than <em>$2.8 Billion</em>', 'site-functionality' )
+                                    placeholder: __( 'Our Movement Has <em>Abolished</em> More Than <em>$2.8 Billion</em>', 'debtcollective' )
                                 },
                             },
                             {
                                 name: 'core/paragraph',
                                 attributes: {
                                     className: 'banner__content',
-                                    placeholder: __( 'in student debt, medical debt, payday loans, probation debt and credit card debt. Our student debt campaign put full student debt cancellation and free public college on the political map.', 'site-functionality' )
+                                    placeholder: __( 'in student debt, medical debt, payday loans, probation debt and credit card debt. Our student debt campaign put full student debt cancellation and free public college on the political map.', 'debtcollective' )
                                 }
                             }
                         ]
