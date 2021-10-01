@@ -4,7 +4,8 @@ import { __ } from '@wordpress/i18n';
 const buttonsVariations = [
     {
         name: 'buttons',
-        title: __( 'Buttons', 'site-functionality' ),
+        title: __( 'Buttons', 'debtcollective' ),
+        category: 'components',
         isDefault: true,
         parent: false,
         attributes: {
@@ -12,7 +13,7 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text...', 'site-functionality' ),
+                placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
                 className: 'button',
                 backgroundColor: 'emphasis',
                 textColor: 'white'
@@ -22,13 +23,14 @@ const buttonsVariations = [
     },
     {
         name: 'buttons-minor',
-        title: __( 'Minor Buttons', 'site-functionality' ),
+        title: __( 'Minor Buttons', 'debtcollective' ),
+        category: 'components',
         attributes: {
             className: 'buttons--minor'
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text...', 'site-functionality' ),
+                placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
                 className: 'button--minor',
                 backgroundColor: 'white',
                 textColor: 'grey-dark'
@@ -38,13 +40,13 @@ const buttonsVariations = [
     },
     {
         name: 'buttons-jade',
-        title: __( 'Jade Buttons', 'site-functionality' ),
+        title: __( 'Jade Buttons', 'debtcollective' ),
         attributes: {
             className: 'buttons--jade'
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text...', 'site-functionality' ),
+                placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
                 className: 'button--jade',
                 backgroundColor: 'jade',
                 textColor: 'white'
@@ -62,11 +64,11 @@ registerBlockVariation(
 const buttonVariations = [
     {
         name: 'button',
-        title: __( 'Button', 'site-functionality' ),
+        title: __( 'Button', 'debtcollective' ),
         isDefault: true,
         parent: false,
         attributes: {
-            placeholder: __( 'Add Button Text...', 'site-functionality' ),
+            placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
             className: 'button',
             backgroundColor: 'emphasis',
             textColor: 'white'
@@ -75,9 +77,9 @@ const buttonVariations = [
     },
     {
         name: 'button-minor',
-        title: __( 'Minor Button', 'site-functionality' ),
+        title: __( 'Minor Button', 'debtcollective' ),
         attributes: {
-            placeholder: __( 'Add Button Text...', 'site-functionality' ),
+            placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
             className: 'button--minor',
             backgroundColor: 'white',
             textColor: 'grey-dark'
@@ -86,9 +88,9 @@ const buttonVariations = [
     },
     {
         name: 'button-jade',
-        title: __( 'Jade Button', 'site-functionality' ),
+        title: __( 'Jade Button', 'debtcollective' ),
         attributes: {
-            placeholder: __( 'Add Button Text...', 'site-functionality' ),
+            placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
             className: 'button--jade',
             backgroundColor: 'jade',
             textColor: 'white'
