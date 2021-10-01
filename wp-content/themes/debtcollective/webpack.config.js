@@ -15,7 +15,8 @@ const StylelintPlugin = require( 'stylelint-webpack-plugin' );
 module.exports = {
 	...defaultConfig,
 	entry: {
-		index: [ './src/js/index.js', './src/scss/index.scss' ]
+		index: [ './src/js/index.js', './src/scss/index.scss' ],
+		editor: [ './src/scss/editor.scss' ]
 	},
 	module: {
 		rules: [
