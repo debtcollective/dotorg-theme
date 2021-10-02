@@ -1,9 +1,6 @@
 //----------------------------------------
-// Quote - Core Gutenberg Block
+// Editor Styles.
 //----------------------------------------
 
-.wp-block-quote {
-	p {}
-
-	cite {}
-}
+@import 'blocks/index.scss';
+@import 'components/index.scss';

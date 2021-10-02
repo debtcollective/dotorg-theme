@@ -39,6 +39,9 @@
 		"comment-empty-line-before": [
 			"always", {"severity": "warning"}
 		],
-		"selector-class-pattern": null
+		"selector-class-pattern": null,
+		"block-no-empty": [
+			"always", {"severity": "warning"}
+		]
 	}
 }

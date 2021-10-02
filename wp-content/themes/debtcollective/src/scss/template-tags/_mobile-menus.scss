@@ -2,68 +2,40 @@
 // Mobile Menus
 //--------------------------------------------------------------
 .mobile-menu {
-	li {
-		@apply mb-8;
-	}
+	li {}
 
 	.sub-menu {
-		@apply hidden mb-0 ml-16 mt-8;
-
-		&.is-visible {
-			@apply block opacity-100 visible;
-		}
+		&.is-visible {}
 	}
 
 	.menu-item-has-children {
 		&.is-visible {
-			max-height: 8000px;
 
-			.parent-indicator {
-				@apply rotate-180;
-			}
+			.parent-indicator {}
 		}
 
 		.menu-item-has-children {
 			&:last-of-type {
-				.menu-item-has-children.is-visible {
-					@apply mb-0;
-				}
+				.menu-item-has-children.is-visible {}
 			}
 
-			.parent-indicator {
-				@apply rotate-0;
-			}
+			.parent-indicator {}
 
 			&.is-visible {
-				&:last-of-type {
-					@apply mb-0;
-				}
+				&:last-of-type {}
 
-				.parent-indicator {
-					@apply rotate-180;
-				}
+				.parent-indicator {}
 			}
 
 			.menu-item-has-children {
-				.parent-indicator {
-					@apply rotate-0;
-				}
+				.parent-indicator {}
 
 				&.is-visible {
-					.parent-indicator {
-						@apply rotate-180;
-					}
+					.parent-indicator {}
 				}
 			}
 		}
 	}
 
-	.parent-indicator {
-		@apply inline-block relative;
-
-		float: unset;
-		height: theme( 'height.16' );
-		width: theme( 'width.16' );
-		top: -4px;
-	}
+	.parent-indicator {}
 }

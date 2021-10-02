@@ -97,10 +97,11 @@ function setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Gutenberg support for full-width/wide alignment of supported blocks.
-	add_theme_support( 'align-wide' );
+	/** Now defined in ./theme.json */
 
-	// Gutenberg defaults for font sizes.
+	// Gutenberg support for full-width/wide alignment of supported blocks.
+	add_theme_support( 'align-wide' );	// Gutenberg defaults for font sizes.
+
 	// add_theme_support(
 	// 	'editor-font-sizes',
 	// 	[
@@ -129,7 +130,7 @@ function setup() {
 
 	// Gutenberg editor styles support.
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'build/index.css' );
+	add_editor_style( 'build/editor.css' );
 
 	// Gutenberg responsive embed support.
 	add_theme_support( 'responsive-embeds' );
@@ -149,7 +150,6 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 function content_width() {
 	$GLOBALS['content_width'] = apply_filters( __NAMESPACE__ . '\content_width', 640 );
 }
-
 add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
 
 /**
