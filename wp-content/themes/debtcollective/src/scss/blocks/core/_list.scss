@@ -3,19 +3,13 @@
 //----------------------------------------
 
 ul {
-	&:not( .menu, .sub-menu ) {
-		@apply mb-16 list-disc list-inside;
-	}
+	&:not( .menu, .sub-menu ) {}
 }
 
-ol {
-	@apply mb-16 list-decimal list-inside;
-}
+ol {}
 
 li li,
 li li li,
 li li li li,
 li li li li li,
-li li li li li li {
-	@apply ml-16;
-}
+li li li li li li {}

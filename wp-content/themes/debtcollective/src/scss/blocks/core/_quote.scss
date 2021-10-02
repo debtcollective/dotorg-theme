@@ -3,13 +3,7 @@
 //----------------------------------------
 
 .wp-block-quote {
-	@apply container my-32;
+	p {}
 
-	p {
-		@apply mb-16;
-	}
-
-	cite {
-		@apply not-italic;
-	}
+	cite {}
 }
