@@ -19,7 +19,14 @@ const buttonsVariations = [
                 textColor: 'white'
             } ]
         ],
-        styles: []
+        styles: [],
+        scope: [
+            block,
+            inserter,
+            transform
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'buttons-minor',
@@ -36,7 +43,14 @@ const buttonsVariations = [
                 textColor: 'grey-dark'
             } ]
         ],
-        styles: []
+        styles: [],
+        scope: [
+            block,
+            inserter,
+            transform
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'buttons-jade',
@@ -52,7 +66,14 @@ const buttonsVariations = [
                 textColor: 'white'
             } ]
         ],
-        styles: []
+        styles: [],
+        scope: [
+            block,
+            inserter,
+            transform
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
 ];
 
@@ -73,7 +94,14 @@ const buttonVariations = [
             backgroundColor: 'emphasis',
             textColor: 'white'
         },
-        styles: []
+        styles: [],
+        scope: [
+            block,
+            inserter,
+            transform
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-minor',
@@ -84,7 +112,14 @@ const buttonVariations = [
             backgroundColor: 'white',
             textColor: 'grey-dark'
         },
-        styles: []
+        styles: [],
+        scope: [
+            block,
+            inserter,
+            transform
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-jade',
@@ -95,7 +130,14 @@ const buttonVariations = [
             backgroundColor: 'jade',
             textColor: 'white'
         },
-        styles: []
+        styles: [],
+        scope: [
+            block,
+            inserter,
+            transform
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
 ];
 
