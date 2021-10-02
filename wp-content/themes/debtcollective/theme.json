@@ -117,12 +117,12 @@
 					"slug": "small"
 				},
 				{
-					"name": "Normal",
+					"name": "Body/H5",
 					"size": "16px",
-					"slug": "normal"
+					"slug": "body"
 				},
 				{
-					"name": "H3",
+					"name": "H3/Lede",
 					"size": "26.88px",
 					"slug": "h3"
 				},
@@ -130,6 +130,11 @@
 					"name": "H2",
 					"size": "41.88px",
 					"slug": "h2"
+				},
+				{
+					"name": "H1",
+					"size": "67.776px",
+					"slug": "h1"
 				},
 				{
 					"name": "H1",
