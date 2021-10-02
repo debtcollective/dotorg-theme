@@ -1360,10 +1360,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _variations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./variations */ "./src/variations/index.js");
 /* harmony import */ var _patterns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./patterns */ "./src/patterns/index.js");
 /* harmony import */ var _patterns__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_patterns__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./hero */ "./src/hero/index.js");
-/* harmony import */ var _faqs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./faqs */ "./src/faqs/index.js");
-/* harmony import */ var _faq__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./faq */ "./src/faq/index.js");
-/* harmony import */ var _purchaseAgreements__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./purchaseAgreements */ "./src/purchaseAgreements/index.js");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles */ "./src/styles/index.js");
+/* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./hero */ "./src/hero/index.js");
+/* harmony import */ var _faqs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./faqs */ "./src/faqs/index.js");
+/* harmony import */ var _faq__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./faq */ "./src/faq/index.js");
+/* harmony import */ var _purchaseAgreements__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./purchaseAgreements */ "./src/purchaseAgreements/index.js");
 
 
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockCollection"])('site-functionality', {
@@ -1375,7 +1376,8 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockCollection"]
 
 
 
-const blocks = [_hero__WEBPACK_IMPORTED_MODULE_4__, _faqs__WEBPACK_IMPORTED_MODULE_5__, _faq__WEBPACK_IMPORTED_MODULE_6__, _purchaseAgreements__WEBPACK_IMPORTED_MODULE_7__];
+
+const blocks = [_hero__WEBPACK_IMPORTED_MODULE_5__, _faqs__WEBPACK_IMPORTED_MODULE_6__, _faq__WEBPACK_IMPORTED_MODULE_7__, _purchaseAgreements__WEBPACK_IMPORTED_MODULE_8__];
 /**
  * Function to register an individual block.
  *
@@ -1867,6 +1869,65 @@ const settings = {
 
 /***/ }),
 
+/***/ "./src/styles/buttons.js":
+/*!*******************************!*\
+  !*** ./src/styles/buttons.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function removeButtonSupport(settings, name) {
+  if (name !== 'core/button') {
+    return settings;
+  }
+
+  return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.assign({}, settings, {
+    supports: lodash__WEBPACK_IMPORTED_MODULE_0___default.a.assign({}, settings.supports, {
+      color: {
+        text: false,
+        gradient: false
+      },
+      typography: {
+        fontSize: false
+      },
+      spacing: {
+        padding: false
+      }
+    })
+  });
+} // wp.blocks.getBlockTypes().forEach( ( block ) => {
+//     if ( Array.isArray( block['styles'] ) ) {
+//         console.log( block.name, block['styles'].map( item => item['name'] ) );
+//     }
+// });
+// wp.hooks.addFilter(
+//     'blocks.registerBlockType',
+//     'site-functionality/button',
+//     removeButtonSupport
+// );
+
+/***/ }),
+
+/***/ "./src/styles/index.js":
+/*!*****************************!*\
+  !*** ./src/styles/index.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _buttons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./buttons */ "./src/styles/buttons.js");
+
+
+/***/ }),
+
 /***/ "./src/variations/banners.js":
 /*!***********************************!*\
   !*** ./src/variations/banners.js ***!
@@ -1974,13 +2035,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 
 
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/buttons', [{
-  name: 'large',
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Large Button', 'site-functionality'),
+const buttonsVariations = [{
+  name: 'buttons',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Buttons', 'site-functionality'),
+  isDefault: true,
+  parent: false,
   attributes: {
-    className: 'is-large'
-  }
-}]);
+    className: 'buttons'
+  },
+  innerBlocks: [['core/button', {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    className: 'button',
+    backgroundColor: 'emphasis',
+    textColor: 'white'
+  }]],
+  styles: []
+}, {
+  name: 'buttons-minor',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Minor Buttons', 'site-functionality'),
+  attributes: {
+    className: 'buttons--minor'
+  },
+  innerBlocks: [['core/button', {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    className: 'button--minor',
+    backgroundColor: 'white',
+    textColor: 'grey-dark'
+  }]],
+  styles: []
+}, {
+  name: 'buttons-jade',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Jade Buttons', 'site-functionality'),
+  attributes: {
+    className: 'buttons--jade'
+  },
+  innerBlocks: [['core/button', {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    className: 'button--jade',
+    backgroundColor: 'jade',
+    textColor: 'white'
+  }]],
+  styles: []
+}];
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/buttons', buttonsVariations);
+const buttonVariations = [{
+  name: 'button',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Button', 'site-functionality'),
+  isDefault: true,
+  parent: false,
+  attributes: {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    className: 'button',
+    backgroundColor: 'emphasis',
+    textColor: 'white'
+  },
+  styles: []
+}, {
+  name: 'button-minor',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Minor Button', 'site-functionality'),
+  attributes: {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    className: 'button--minor',
+    backgroundColor: 'white',
+    textColor: 'grey-dark'
+  },
+  styles: []
+}, {
+  name: 'button-jade',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Jade Button', 'site-functionality'),
+  attributes: {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    className: 'button--jade',
+    backgroundColor: 'jade',
+    textColor: 'white'
+  },
+  styles: []
+}];
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/button', buttonVariations);
 
 /***/ }),
 
@@ -2001,59 +2132,80 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/cover', [{
+const variations = [{
   name: 'hero',
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Hero', 'site-functionality'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add a hero with background image.', 'site-functionality'),
+  category: 'components',
+  keywords: [Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('banner', 'site-functionality'), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('hero', 'site-functionality'), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('image', 'site-functionality')],
+  icon: 'format-image',
   attributes: {
     className: 'hero',
-    contentPosition: 'top left',
-    url: _assets_img_hero_png__WEBPACK_IMPORTED_MODULE_2__["default"]
+    contentPosition: 'top left'
   },
   innerBlocks: [['core/heading', {
     className: 'hero__heading h1',
+    level: 1,
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Heading...', 'site-functionality')
-  }], ['core/paragraph', {
-    className: 'hero__content',
+  }], ['core/heading', {
+    className: 'hero__content h3',
+    level: 3,
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add content...', 'site-functionality')
   }], ['core/buttons', {
-    style: 'large'
+    className: 'buttons'
   }, [['core/button', {
-    className: 'hero__button'
+    className: 'hero__button button',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    backgroundColor: 'emphasis',
+    textColor: 'white'
+  }], ['core/button', {
+    className: 'hero__button button--minor',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality'),
+    backgroundColor: 'white',
+    textColor: 'grey-dark'
   }]]]],
   example: {
     attributes: {
+      className: 'hero',
       contentPosition: 'top left',
+      dimRatio: 0,
       url: _assets_img_hero_png__WEBPACK_IMPORTED_MODULE_2__["default"]
     },
     innerBlocks: [{
       name: 'core/heading',
       attributes: {
-        level: 2,
-        className: 'hero__heading',
-        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'site-functionality')
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'site-functionality'),
+        className: 'hero__heading h1',
+        level: 1
       }
     }, {
-      name: 'core/paragraph',
+      name: 'core/heading',
       attributes: {
-        className: 'hero__content',
         content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'site-functionality')
       }
     }, {
       name: 'core/buttons',
-      attributes: {
-        className: 'hero__buttons'
-      },
       innerBlocks: [{
         name: 'core/button',
         attributes: {
-          className: 'hero__button',
-          style: 'large',
-          content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Join the Union', 'site-functionality')
+          content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Join the Union', 'site-functionality'),
+          className: 'hero__button button',
+          backgroundColor: 'emphasis',
+          textColor: 'white'
+        }
+      }, {
+        name: 'core/button',
+        attributes: {
+          content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Membership Benefits', 'site-functionality'),
+          className: 'hero__button button--minor',
+          backgroundColor: 'white',
+          textColor: 'grey-dark'
         }
       }]
     }]
   }
-}]);
+}];
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/cover', variations);
 
 /***/ }),
 
@@ -2070,10 +2222,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _buttons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buttons */ "./src/variations/buttons.js");
 /* harmony import */ var _cover__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cover */ "./src/variations/cover.js");
 /* harmony import */ var _touts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./touts */ "./src/variations/touts.js");
+/* harmony import */ var _paragraph__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./paragraph */ "./src/variations/paragraph.js");
 
 
 
 
+
+
+/***/ }),
+
+/***/ "./src/variations/paragraph.js":
+/*!*************************************!*\
+  !*** ./src/variations/paragraph.js ***!
+  \*************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_img_hero_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/hero.png */ "./src/assets/img/hero.png");
+
+
+
+const variations = [{
+  name: 'lede',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Lede', 'site-functionality'),
+  attributes: {
+    className: 'lede',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add content...', 'site-functionality')
+  },
+  example: {
+    attributes: {
+      content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('We are a membership-powered movement. Some supporting copy reenforcing the message and sentiment we’re looking to convey.', 'site-functionality')
+    }
+  }
+}];
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/paragraph', variations);
 
 /***/ }),
 
@@ -2094,45 +2282,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/cover', [{
+const variations = [{
   name: 'tout',
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Tout', 'site-functionality'),
-  category: 'components',
-  icon: 'format-image',
-  description: "Display a callout element on page",
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Standard Tout', 'site-functionality'),
   attributes: {
-    className: 'tout'
+    className: 'tout',
+    contentPosition: 'top left',
+    url: _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
-  innerBlocks: [['core/group', {}, [['core/heading', {
-    level: 3,
-    className: 'tout__heading h2',
+  innerBlocks: [['core/heading', {
+    className: 'tout__heading h1',
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Heading...', 'site-functionality')
   }], ['core/paragraph', {
     className: 'tout__content',
     placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add content...', 'site-functionality')
+  }], ['core/buttons', {
+    className: 'buttons'
+  }, [['core/button', {
+    className: 'tout__button button',
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add Button Text...', 'site-functionality')
   }]]]],
   example: {
     attributes: {
-      className: 'tout',
-      url: _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__["default"],
-      backgroundColor: 'canary'
+      contentPosition: 'top left',
+      url: _assets_img_student_png__WEBPACK_IMPORTED_MODULE_2__["default"]
     },
     innerBlocks: [{
       name: 'core/heading',
       attributes: {
-        level: 3,
+        level: 2,
         className: 'tout__heading',
-        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Cancel Student Debt Today!', 'site-functionality')
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'site-functionality')
       }
     }, {
       name: 'core/paragraph',
       attributes: {
         className: 'tout__content',
-        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('The President can cancel all federal student loans through executive order. It\'s not a magic trick; with the flick of his pen he can legally make all federal student loan debt disappear!', 'site-functionality')
+        content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'site-functionality')
       }
+    }, {
+      name: 'core/buttons',
+      attributes: {
+        className: 'tout__buttons'
+      },
+      innerBlocks: [{
+        name: 'core/button',
+        attributes: {
+          className: 'tout__button',
+          content: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Join the Union', 'site-functionality')
+        }
+      }]
     }]
   }
-}]);
+}];
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/cover', variations);
 
 /***/ }),
 
@@ -2243,6 +2446,17 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])
 /***/ (function(module, exports) {
 
 (function() { module.exports = window["wp"]["primitives"]; }());
+
+/***/ }),
+
+/***/ "lodash":
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["lodash"]; }());
 
 /***/ })
 
