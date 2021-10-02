@@ -16,7 +16,7 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		index: [ './src/js/index.js', './src/scss/index.scss' ],
-		"web-components": './src/js/web-components/index.js'
+		editor: [ './src/scss/editor.scss' ]
 	},
 	module: {
 		rules: [
@@ -115,7 +115,9 @@ module.exports = {
 		 *
 		 * @see https://www.npmjs.com/package/eslint-webpack-plugin
 		 */
-		new ESLintPlugin(),
+		new ESLintPlugin( {
+			failOnError: false
+		} ),
 
 		/**
 		 * Report css warnings and errors to the command line.

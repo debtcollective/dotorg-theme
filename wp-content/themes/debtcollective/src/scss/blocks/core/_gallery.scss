@@ -3,26 +3,19 @@
 //----------------------------------------
 
 .wp-block-gallery {
-	@apply container mb-80;
 
 	.blocks-gallery-item {
 		img,
-		figcaption {
-			@apply rounded;
-		}
+		figcaption {}
 	}
 
 	&.columns-1,
 	&.columns-2 {
-		.blocks-gallery-item {
-			// .blocks-gallery-item__caption {}
-		}
+		.blocks-gallery-item {}
 	}
 
 	&.columns-5,
 	&.columns-6 {
-		.blocks-gallery-item {
-			// .blocks-gallery-item__caption {}
-		}
+		.blocks-gallery-item {}
 	}
 }

@@ -33,4 +33,4 @@ function custom_render_block_core_cover (
 	return $block_content;
 }
 
-add_filter( 'render_block', __NAMESPACE__. '\custom_render_block_core_cover', null, 2 );
+// add_filter( 'render_block', __NAMESPACE__. '\custom_render_block_core_cover', null, 2 );
