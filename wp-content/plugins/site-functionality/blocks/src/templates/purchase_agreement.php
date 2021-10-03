@@ -7,7 +7,7 @@
  * @package DebtCollective
  */
 $post_id = get_the_ID();
-$taxonomy = 'purchase_agreement_type';
+$taxonomy = $data->args['taxonomy'];
 ?>
 
 <article <?php \post_class( 'purchase-agreement-container purchase-agreement' ); ?>>
