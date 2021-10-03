@@ -10,12 +10,12 @@
  */
 namespace DebtCollective\Inc;
 
-\register_block_style(
-    'core/list', [
-        'name'         => 'inline-bullet-list',
-        'label'        => __( 'Inline Bullet List', 'debtcollective' ),
-    ]
-);
+// \register_block_style(
+//     'core/list', [
+//         'name'         => 'inline-bullet-list',
+//         'label'        => __( 'Inline Bullet List', 'debtcollective' ),
+//     ]
+// );
 
 /**
  * Unregister Core Block Styles
