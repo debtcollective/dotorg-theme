@@ -15,7 +15,7 @@ const variations = [
         icon: 'editor-justify',
         attributes: {
             className: 'lede',
-            placeholder: __( 'Add content&hellip;', 'debtcollective' )
+            placeholder: __( 'Add content ...', 'debtcollective' )
         },
         example: {
             attributes: {
@@ -28,12 +28,15 @@ const variations = [
             'inserter',
             'transform'
         ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        // isActive: ( blockAttributes, variationAttributes ) => {
+        //     blockAttributes.className === variationAttributes.className
+        // }
     }
 ];
 
-registerBlockVariation(
-    'core/paragraph',
-    variations
-);
+variations.forEach( ( variation ) => {
+    registerBlockVariation(
+        'core/paragraph',
+        variation
+    );
+} );
