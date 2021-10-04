@@ -5,6 +5,7 @@ const buttonsVariations = [
     {
         name: 'buttons',
         title: __( 'Buttons', 'debtcollective' ),
+        description: __( 'Add one or more standard buttons.', 'debtcollective' ),
         category: 'components',
         isDefault: true,
         parent: false,
@@ -31,6 +32,7 @@ const buttonsVariations = [
     {
         name: 'buttons-minor',
         title: __( 'Minor Buttons', 'debtcollective' ),
+        description: __( 'Add one or more secondary buttons.', 'debtcollective' ),
         category: 'components',
         attributes: {
             className: 'buttons--minor'
@@ -55,6 +57,7 @@ const buttonsVariations = [
     {
         name: 'buttons-jade',
         title: __( 'Jade Buttons', 'debtcollective' ),
+        description: __( 'Add one or more jade-colored buttons.', 'debtcollective' ),
         attributes: {
             className: 'buttons--jade'
         },
@@ -86,8 +89,14 @@ const buttonVariations = [
     {
         name: 'button',
         title: __( 'Button', 'debtcollective' ),
-        isDefault: true,
+        description: __( 'Add a standard button.', 'debtcollective' ),
+        keywords: [
+            __( 'component', 'debtcollective' ),
+            __( 'link', 'debtcollective' ),
+            __( 'action', 'debtcollective' )
+        ],
         parent: false,
+        isDefault: true,
         attributes: {
             placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
             className: 'button',
@@ -106,6 +115,12 @@ const buttonVariations = [
     {
         name: 'button-minor',
         title: __( 'Minor Button', 'debtcollective' ),
+        description: __( 'Add a secondary button.', 'debtcollective' ),
+        keywords: [
+            __( 'component', 'debtcollective' ),
+            __( 'link', 'debtcollective' ),
+            __( 'action', 'debtcollective' )
+        ],
         attributes: {
             placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
             className: 'button--minor',
@@ -124,6 +139,12 @@ const buttonVariations = [
     {
         name: 'button-jade',
         title: __( 'Jade Button', 'debtcollective' ),
+        description: __( 'Add a jade-colored button.', 'debtcollective' ),
+        keywords: [
+            __( 'component', 'debtcollective' ),
+            __( 'link', 'debtcollective' ),
+            __( 'action', 'debtcollective' )
+        ],
         attributes: {
             placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
             className: 'button--jade',

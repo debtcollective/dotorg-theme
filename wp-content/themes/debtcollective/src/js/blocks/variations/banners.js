@@ -8,6 +8,11 @@ registerBlockVariation(
             name: 'banner-media',
             title: __( 'Media Banner', 'debtcollective' ),
             description: __( 'A banner that displays a media item on the left and text on the right.', 'debtcollective' ),
+            keywords: [
+                __( 'banner', 'debtcollective' ),
+                __( 'tout', 'debtcollective' ),
+                __( 'call to action', 'debtcollective' )
+            ],
             category: 'components',
             attributes: {
                 className: 'banner',

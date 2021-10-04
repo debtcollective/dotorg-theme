@@ -13,6 +13,11 @@ const variations = [
         name: 'hero',
         title: __( 'Hero', 'debtcollective' ),
         description: __( 'Add a hero with background image.', 'debtcollective' ),
+        keywords: [
+            __( 'banner', 'debtcollective' ),
+            __( 'tout', 'debtcollective' ),
+            __( 'call to action', 'debtcollective' )
+        ],
         category: 'components',
         keywords: [
             __( 'banner', 'debtcollective' ),
