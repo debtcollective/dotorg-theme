@@ -6,6 +6,12 @@ const variations = [
         name: 'tout',
         title: __( 'Standard Tout', 'debtcollective' ),
         category: 'components',
+        description: __( 'Add a standard tout component.', 'debtcollective' ),
+        keywords: [
+            __( 'tout', 'debtcollective' ),
+            __( 'call to action', 'debtcollective' ),
+            __( 'callout', 'debtcollective' )
+        ],
         attributes: {
             className: 'tout',
             contentPosition: 'top left',
