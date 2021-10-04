@@ -18,12 +18,13 @@ const variations = [
             },
         },
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        isActive: ( blockAttributes, variationAttributes ) => {
+            blockAttributes.className === variationAttributes.className 
+        }
     }
 ];
 
