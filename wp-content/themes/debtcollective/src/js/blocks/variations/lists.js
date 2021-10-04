@@ -1,6 +1,5 @@
 import { registerBlockVariation } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import { transform } from 'lodash';
 
 const variations = [
     {
@@ -10,11 +9,11 @@ const variations = [
         category: 'components',
         attributes: {
             className: 'inline-bullet-list',
-            placeholder: __( 'Add list items &hellip;', 'debtcollective' )
+            placeholder: __( 'Add list items  ...', 'debtcollective' )
         },
         example: {
             attributes: {
-                className: 'inline-list',
+                className: 'inline-bullet-list',
             },
         },
         scope: [
@@ -22,13 +21,15 @@ const variations = [
             'inserter',
             'transform'
         ],
-        isActive: ( blockAttributes, variationAttributes ) => {
-            blockAttributes.className === variationAttributes.className 
-        }
+        // isActive: ( blockAttributes, variationAttributes ) => {
+        //     blockAttributes.className === variationAttributes.className 
+        // }
     }
 ];
 
-registerBlockVariation(
-    'core/list',
-    variations
-);
+variations.forEach( ( variation ) => {
+    registerBlockVariation(
+        'core/list',
+        variation
+    );
+} );
