@@ -21,9 +21,9 @@ const buttonsVariations = [
         ],
         styles: [],
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
@@ -45,9 +45,9 @@ const buttonsVariations = [
         ],
         styles: [],
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
@@ -68,9 +68,9 @@ const buttonsVariations = [
         ],
         styles: [],
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
@@ -96,9 +96,9 @@ const buttonVariations = [
         },
         styles: [],
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
@@ -114,9 +114,9 @@ const buttonVariations = [
         },
         styles: [],
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
@@ -132,9 +132,9 @@ const buttonVariations = [
         },
         styles: [],
         scope: [
-            block,
-            inserter,
-            transform
+            'block',
+            'inserter',
+            'transform'
         ],
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
