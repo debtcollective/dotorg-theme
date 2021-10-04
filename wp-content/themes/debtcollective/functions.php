@@ -24,7 +24,8 @@ function debtcollective_get_theme_include_files() {
 		'inc/scripts.php', // Load styles and scripts.
 		'inc/shortcodes.php', // Custom shortcodes.
 		'inc/template-tags.php', // Custom template tags for this theme.
-		'inc/block-editor/block-filters.php', // Fuctions to modify blocks.
+		'inc/block-editor/blocks-enqueue.php', // Load block editor scripts.
+		'inc/block-editor/block-filters.php', // Functions to modify blocks.
 		'inc/block-editor/block-patterns.php', // Custom patterns for this theme.
 		'inc/block-editor/block-styles.php', // Custom styles for this theme.
 		'inc/block-editor/block-variations.php', // Custom variations for this theme.

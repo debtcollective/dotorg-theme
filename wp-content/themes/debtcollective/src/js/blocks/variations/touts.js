@@ -6,6 +6,12 @@ const variations = [
         name: 'tout',
         title: __( 'Standard Tout', 'debtcollective' ),
         category: 'components',
+        description: __( 'Add a standard tout component.', 'debtcollective' ),
+        keywords: [
+            __( 'tout', 'debtcollective' ),
+            __( 'call to action', 'debtcollective' ),
+            __( 'callout', 'debtcollective' )
+        ],
         attributes: {
             className: 'tout',
             contentPosition: 'top left',
@@ -14,16 +20,16 @@ const variations = [
         innerBlocks: [
             [ 'core/heading', { 
                 className: 'tout__heading h1',
-                placeholder: __( 'Add Heading&hellip;', 'debtcollective' )
+                placeholder: __( 'Add Heading ...', 'debtcollective' )
             } ],
             [ 'core/paragraph', { 
                 className: 'tout__content',
-                placeholder: __( 'Add content&hellip;', 'debtcollective' )
+                placeholder: __( 'Add content ...', 'debtcollective' )
             } ],
             [ 'core/buttons', { className: 'buttons' }, [
                 [ 'core/button', { 
                     className: 'tout__button button',
-                    placeholder: __( 'Add Button Text&hellip;', 'debtcollective' )
+                    placeholder: __( 'Add Button Text ...', 'debtcollective' )
                 } ]
             ] ],
         ],

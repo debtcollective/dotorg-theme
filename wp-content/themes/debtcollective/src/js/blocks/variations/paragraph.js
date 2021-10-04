@@ -1,16 +1,21 @@
 import { registerBlockVariation } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import { transform } from 'lodash';
 
 const variations = [
     {
         name: 'lede',
         title: __( 'Lede', 'debtcollective' ),
+        description: __( 'Add opening sentence or paragraph.', 'debtcollective' ),
         category: 'components',
+        keywords: [
+            __( 'intro', 'debtcollective' ),
+            __( 'paragraph', 'debtcollective' ),
+            __( 'sentence', 'debtcollective' )
+        ],
         icon: 'editor-justify',
         attributes: {
             className: 'lede',
-            placeholder: __( 'Add content&hellip;', 'debtcollective' )
+            placeholder: __( 'Add content ...', 'debtcollective' )
         },
         example: {
             attributes: {
@@ -23,12 +28,15 @@ const variations = [
             'inserter',
             'transform'
         ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        // isActive: ( blockAttributes, variationAttributes ) => {
+        //     blockAttributes.className === variationAttributes.className
+        // }
     }
 ];
 
-registerBlockVariation(
-    'core/paragraph',
-    variations
-);
+variations.forEach( ( variation ) => {
+    registerBlockVariation(
+        'core/paragraph',
+        variation
+    );
+} );

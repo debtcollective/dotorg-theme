@@ -13,6 +13,11 @@ const variations = [
         name: 'hero',
         title: __( 'Hero', 'debtcollective' ),
         description: __( 'Add a hero with background image.', 'debtcollective' ),
+        keywords: [
+            __( 'banner', 'debtcollective' ),
+            __( 'tout', 'debtcollective' ),
+            __( 'call to action', 'debtcollective' )
+        ],
         category: 'components',
         keywords: [
             __( 'banner', 'debtcollective' ),
@@ -30,14 +35,14 @@ const variations = [
             [ 'core/heading', { 
                 className: 'hero__heading h1',
                 level: 1,
-                placeholder: __( 'Add Heading&hellip;', 'debtcollective' ),
+                placeholder: __( 'Add Heading ...', 'debtcollective' ),
                 content: __( 'Alone Our Debts are a Burden.<br/>Together They Make Us <strong>Powerful</strong>', 'debtcollective' ),
                 textColor: 'white'
             } ],
             [ 'core/heading', { 
                 className: 'hero__content h3',
                 level: 3,
-                placeholder: __( 'Add content&hellip;', 'debtcollective' ),
+                placeholder: __( 'Add content ...', 'debtcollective' ),
                 content: __( 'We are a debtors’ union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
                 textColor: 'white'
             } ],
@@ -46,14 +51,14 @@ const variations = [
             }, [
                 [ 'core/button', { 
                     className: 'hero__button button',
-                    placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
+                    placeholder: __( 'Add Button Text ...', 'debtcollective' ),
                     backgroundColor: 'emphasis',
                     textColor: 'white',
                     content: __( 'Join the Union', 'debtcollective' )
                 } ],
                 [ 'core/button', { 
                     className: 'hero__button button--minor' ,
-                    placeholder: __( 'Add Button Text&hellip;', 'debtcollective' ),
+                    placeholder: __( 'Add Button Text ...', 'debtcollective' ),
                     backgroundColor: 'white',
                     textColor: 'grey-dark',
                     content: __( 'Membership Benefits', 'debtcollective' )
@@ -134,14 +139,14 @@ const variations = [
             [ 'core/heading', { 
                 className: 'hero__heading h1',
                 level: 1,
-                placeholder: __( 'Add Heading&hellip;', 'debtcollective' ),
+                placeholder: __( 'Add Heading ...', 'debtcollective' ),
                 content: __( 'Alone Our Debts are a Burden.<br/>Together They Make Us <strong>Powerful</strong>', 'debtcollective' ),
                 textColor: 'grey-darker'
             } ],
             [ 'core/heading', { 
                 className: 'hero__content h3',
                 level: 3,
-                placeholder: __( 'Add content&hellip;', 'debtcollective' ),
+                placeholder: __( 'Add content ...', 'debtcollective' ),
                 content: __( 'We are a debtors’ union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
                 textColor: 'grey-darker'
             } ]
@@ -177,7 +182,9 @@ const variations = [
     }
 ];
 
-registerBlockVariation(
-    'core/cover',
-    variations
-);
+variations.forEach( ( variation ) => {
+    registerBlockVariation(
+        'core/cover',
+        variation
+    );
+} );
