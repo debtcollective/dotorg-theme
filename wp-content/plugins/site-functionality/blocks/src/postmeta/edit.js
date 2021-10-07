@@ -178,11 +178,13 @@ const Edit = ( props ) => {
             return false;
         }
         return (
-            <TextControl
-                label={ __( 'File Label', 'site-functionality' ) }
-                value={ label }
-                onChange={ setLabel }
-            />
+            <>
+                <TextControl
+                    label={ __( 'File Label', 'site-functionality' ) }
+                    value={ label }
+                    onChange={ setLabel }
+                />
+            </>
         )
     }
 

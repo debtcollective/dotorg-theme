@@ -1599,11 +1599,11 @@ const Edit = props => {
       return false;
     }
 
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
       label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('File Label', 'site-functionality'),
       value: label,
       onChange: setLabel
-    });
+    }));
   };
 
   const SettingsPanel = () => {
