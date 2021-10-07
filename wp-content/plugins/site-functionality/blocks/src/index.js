@@ -13,11 +13,13 @@ import './styles';
 
 import * as faqs from './faqs';
 import * as faq from './faq';
+import * as postmeta from './postmeta';
 import * as purchaseAgreements from './purchaseAgreements';
 
 const blocks = [
 	faqs,
 	faq,
+	postmeta,
 	purchaseAgreements
 ];
 
