@@ -65,7 +65,9 @@ footer.site-footer {
 					font-weight: 500;
 				}
 				&:nth-child(5) {
-					display: none;
+					width: 1px;
+					height: 1px;
+					margin: -1px;
 				}
 			}
 			button {
