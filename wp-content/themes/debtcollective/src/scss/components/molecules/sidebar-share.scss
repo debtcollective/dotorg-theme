@@ -1,0 +1,22 @@
+aside.sidebar .widget .sidebar-social {
+	h3 {
+		font-size: 1rem;
+		border-bottom: solid 3px get-color(grey-dark);
+		padding-bottom: 0.75rem;
+	}
+	ul {
+		margin-left: 1rem;
+		li {
+			margin: 0;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+				span {
+					color: get-color(grey-dark);
+				}
+			}
+		}
+	}
+}

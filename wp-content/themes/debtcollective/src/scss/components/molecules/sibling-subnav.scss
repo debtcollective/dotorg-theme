@@ -1,5 +1,4 @@
 aside.sidebar {
-	// background-color: hotpink;
 	nav.pagenav {
 		&::before {
 			content: "In this section";
@@ -34,6 +33,7 @@ aside.sidebar {
 				&.current_page_item a {
 					text-decoration: line-through;
 					text-decoration-color: get-color(emphasis);
+					text-decoration-thickness: 0.25rem;
 				}
 			}
 		}
