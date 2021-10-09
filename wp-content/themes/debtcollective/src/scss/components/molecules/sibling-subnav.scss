@@ -1,0 +1,41 @@
+aside.sidebar {
+	// background-color: hotpink;
+	nav.pagenav {
+		&::before {
+			content: "In this section";
+			line-height: 1.5;
+			font-weight: 900;
+			position: relative;
+			bottom: 0.5rem;
+		}
+		h2, li.page_item {
+			font-size: get-font-size(h4);
+			line-height: 1.2;
+			font-weight: 900;
+		}
+		h2 {
+			padding: 1.75rem 1rem 1rem;
+			margin: 0;
+			border-top: solid 3px get-color(grey-dark);
+		}
+		ul {
+			padding: 0 1rem;
+			margin: 0;
+			li.page_item {
+				list-style: none;
+				padding-bottom: 1rem;
+				a {
+					color: get-color(grey-dark);
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				&.current_page_item a {
+					text-decoration: line-through;
+					text-decoration-color: get-color(emphasis);
+				}
+			}
+		}
+	}
+}
