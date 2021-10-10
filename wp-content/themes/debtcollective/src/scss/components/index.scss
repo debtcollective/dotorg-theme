@@ -6,9 +6,14 @@
 @import 'environment/variables';
 
 @import 'biomes/layout--global.scss';
+@import 'biomes/events.scss';
 
 @import 'organisms/footer.scss';
+
+@import 'molecules/event.scss';
 
 @import 'atoms/a.scss';
 @import 'atoms/input.scss';
 @import 'atoms/button.scss';
+@import 'atoms/h2.taxonomy-label.scss';
+@import 'atoms/p.taxonomy-description.scss';
