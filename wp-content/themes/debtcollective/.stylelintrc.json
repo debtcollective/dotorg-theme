@@ -41,7 +41,7 @@
 		],
 		"selector-class-pattern": null,
 		"block-no-empty": [
-			"always", {"severity": "warning"}
+			true, {"severity": "warning"}
 		]
 	}
 }

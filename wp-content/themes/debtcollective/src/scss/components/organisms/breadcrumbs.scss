@@ -1,11 +1,16 @@
-div.fbc-page div.fbc-wrap {
+div.fbc-page {
+	margin-left: 1.2rem;
 	@media (min-width: get-breakpoint(sm)) {
-		margin-left: 3.5rem;
+		margin-left: 4.75rem;
 	}
-	ol.fbc-items {
+	div.fbc-wrap ol.fbc-items {
+		padding-left: 0;
 		li {
 			font-weight: 300;
 			line-height: 1.25;
+			&:first-child {
+				padding-left: 0;
+			}
 			a {
 				text-decoration: none;
 				&:hover {
