@@ -15,10 +15,14 @@ div.fbc-page {
 				text-decoration: none;
 				&:hover {
 					text-decoration: underline;
+					text-decoration-color: #000;
 				}
 				i {
 					color: #000;
 					margin: 0;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 				span {
 					color: #000
