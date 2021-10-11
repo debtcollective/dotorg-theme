@@ -1,23 +1,5 @@
-@import 'environment/breakpoints';
-@import 'environment/colors';
-@import 'environment/extendables';
-@import 'environment/normalize';
-@import 'environment/typography';
-@import 'environment/variables';
-
-@import 'biomes/layout--global.scss';
-@import 'biomes/events.scss';
-
-@import 'organisms/footer.scss';
-@import 'organisms/sidebar.scss';
-@import 'organisms/breadcrumbs.scss';
-
-@import 'molecules/event.scss';
-@import 'molecules/sibling-subnav.scss';
-@import 'molecules/sidebar-share.scss';
-
-@import 'atoms/a.scss';
-@import 'atoms/input.scss';
-@import 'atoms/button.scss';
-@import 'atoms/h2.taxonomy-label.scss';
-@import 'atoms/p.taxonomy-description.scss';
+@import 'environment/index.scss';
+@import 'biomes/index.scss';
+@import 'organisms/index.scss';
+@import 'molecules/index.scss';
+@import 'atoms/index.scss';
