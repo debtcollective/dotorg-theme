@@ -1,0 +1,30 @@
+div.fbc-page div.fbc-wrap {
+	@media (min-width: get-breakpoint(sm)) {
+		margin-left: 3.5rem;
+	}
+	ol.fbc-items {
+		li {
+			font-weight: 300;
+			line-height: 1.25;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+				i {
+					color: #000;
+					margin: 0;
+				}
+				span {
+					color: #000
+				}
+			}
+			span.fbc-separator {
+				color: #000
+			}
+		}
+		li.active span {
+			color: #000;
+		}
+	}
+}
