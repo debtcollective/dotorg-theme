@@ -1,0 +1,24 @@
+article.purchase-agreement {
+	width: 290px;
+	background-color: get-color(canary);
+	padding: 1.125rem;
+	margin: 1rem;
+	div.purchase-agreement__date {
+		font-size: get-font-size(h4);
+		line-height: 1;
+		font-weight: 300;
+	}
+	div.purchase-agreement__details {
+		dl {
+			dt.purchase-agreement__amount {
+				font-weight: 900;
+				color: get-color(emphasis);
+			}
+			dd.purchase-agreement__amount {
+				font-size: get-font-size(h4);
+				font-weight: 900;
+				color: get-color(emphasis)
+			}
+		}
+	}
+}
