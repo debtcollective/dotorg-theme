@@ -1,18 +1,25 @@
 ul.is-style-inline-bullet-list {
 	margin: 0;
+	padding: 1rem;
 	list-style: none;
 	display: flex;
-	// background-image: url('/wp-content/themes/debtcollective/src/images/debt-collective-logo.svg');
+	flex-wrap: wrap;
 	li {
-		// list-style-image: url('../../../images/icons/rectangle-jade.svg');
-
-		margin-left: 1rem;
+		@media (min-width: get-breakpoint(sm)) {
+			width: 290px;
+			margin-right: 1.75rem;
+		}
+		margin-bottom: 1.5rem;
+		display: flex;
+		column-gap: 0.5rem;
 		&::before {
-
-			content: "* ";
-			font-size: 1.35rem;
-			background-color: get-color(jade);
-			// color: get-color(jade);
+			content: "";
+			background: center/contain no-repeat url(../images/icons/rectangle-jade.svg);
+			width: 2.4rem;
+			height: 1.65rem;
+		}
+		span.has-jade-color {
+			color: get-color(jade);
 		}
 	}
 }
