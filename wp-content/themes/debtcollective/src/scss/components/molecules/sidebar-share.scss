@@ -1,8 +1,10 @@
 aside.sidebar .widget .sidebar-social {
 	h3 {
-		font-size: 1rem;
-		border-bottom: solid 3px get-color(grey-dark);
-		padding-bottom: 0.75rem;
+		color: #000;
+		font-size: get-font-size(h4);
+		border-bottom: solid 2px get-color(grey-dark);
+		padding-bottom: 0.5rem;
+		margin-top: 2.75rem;
 	}
 	ul {
 		margin-left: 1rem;
