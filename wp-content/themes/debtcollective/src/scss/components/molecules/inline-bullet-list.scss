@@ -1,0 +1,18 @@
+ul.is-style-inline-bullet-list {
+	margin: 0;
+	list-style: none;
+	display: flex;
+	// background-image: url('/wp-content/themes/debtcollective/src/images/debt-collective-logo.svg');
+	li {
+		// list-style-image: url('../../../images/icons/rectangle-jade.svg');
+
+		margin-left: 1rem;
+		&::before {
+
+			content: "* ";
+			font-size: 1.35rem;
+			background-color: get-color(jade);
+			// color: get-color(jade);
+		}
+	}
+}
