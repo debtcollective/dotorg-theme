@@ -18,8 +18,9 @@ ul.is-style-inline-bullet-list {
 			width: 2.4rem;
 			height: 1.65rem;
 		}
-		span.has-jade-color {
+		em {
 			color: get-color(jade);
+			font-style: inherit;
 		}
 	}
 }
