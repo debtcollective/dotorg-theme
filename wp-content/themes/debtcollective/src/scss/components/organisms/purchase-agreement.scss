@@ -1,23 +1,36 @@
 article.purchase-agreement {
-	width: 290px;
+	height: min-content;
 	background-color: get-color(canary);
 	padding: 1.125rem;
 	margin: 1rem;
+	width: 100%;
+	@media (min-width: get-breakpoint(sm)){
+		width: 290px;
+	}
 	div.purchase-agreement__date {
 		font-size: get-font-size(h4);
 		line-height: 1;
 		font-weight: 300;
 	}
 	div.purchase-agreement__details {
+		width: 250px;
+		dt {
+			display: inline-block;
+			clear: left;
+		}
+		dd {
+			display: inline-block;
+			margin-left: 0rem;
+			font-weight: 900;
+		}
 		dl {
-			dt.purchase-agreement__amount {
+			.purchase-agreement__amount {
 				font-weight: 900;
 				color: get-color(emphasis);
 			}
 			dd.purchase-agreement__amount {
 				font-size: get-font-size(h4);
-				font-weight: 900;
-				color: get-color(emphasis)
+				margin-left: 0.25rem;
 			}
 		}
 	}

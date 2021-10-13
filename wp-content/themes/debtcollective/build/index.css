@@ -482,6 +482,11 @@ div.events-by-tag .events__list {
   }
 }
 
+body.page-debt-abolition .wp-block-site-functionality-purchase-agreements {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 footer.site-footer {
   background-color: #434343;
   color: #ffff;
@@ -631,24 +636,43 @@ footer.site-footer ul#footer-menu > li ul.sub-menu a {
 }
 
 article.purchase-agreement {
-  width: 290px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   background-color: #FFED9C;
   padding: 1.125rem;
   margin: 1rem;
+  width: 100%;
+}
+@media (min-width: 720px) {
+  article.purchase-agreement {
+    width: 290px;
+  }
 }
 article.purchase-agreement div.purchase-agreement__date {
   font-size: 1.618rem;
   line-height: 1;
   font-weight: 300;
 }
-article.purchase-agreement div.purchase-agreement__details dl dt.purchase-agreement__amount {
+article.purchase-agreement div.purchase-agreement__details {
+  width: 250px;
+}
+article.purchase-agreement div.purchase-agreement__details dt {
+  display: inline-block;
+  clear: left;
+}
+article.purchase-agreement div.purchase-agreement__details dd {
+  display: inline-block;
+  margin-left: 0rem;
+  font-weight: 900;
+}
+article.purchase-agreement div.purchase-agreement__details dl .purchase-agreement__amount {
   font-weight: 900;
   color: #FF4630;
 }
 article.purchase-agreement div.purchase-agreement__details dl dd.purchase-agreement__amount {
   font-size: 1.618rem;
-  font-weight: 900;
-  color: #FF4630;
+  margin-left: 0.25rem;
 }
 
 article.event {
