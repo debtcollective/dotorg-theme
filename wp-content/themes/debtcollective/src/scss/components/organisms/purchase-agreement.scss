@@ -14,24 +14,22 @@ article.purchase-agreement {
 	}
 	div.purchase-agreement__details {
 		width: 250px;
+		.purchase-agreement__amount {
+			font-weight: 900;
+			color: get-color(emphasis);
+		}
+		dd.purchase-agreement__amount {
+			font-size: get-font-size(h4);
+			margin-left: 0.25rem;
+		}
 		dt {
 			display: inline-block;
 			clear: left;
 		}
 		dd {
 			display: inline-block;
-			margin-left: 0rem;
+			margin-left: 0;
 			font-weight: 900;
-		}
-		dl {
-			.purchase-agreement__amount {
-				font-weight: 900;
-				color: get-color(emphasis);
-			}
-			dd.purchase-agreement__amount {
-				font-size: get-font-size(h4);
-				margin-left: 0.25rem;
-			}
 		}
 	}
 }
