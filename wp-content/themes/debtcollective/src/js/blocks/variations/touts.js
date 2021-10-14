@@ -24,7 +24,13 @@ const variations = [
             [ 'core/paragraph', { 
                 className: 'tout__content',
                 placeholder: __( 'Add content...', 'debtcollective' )
-            } ]
+            } ],
+            [ 'core/buttons', { className: 'buttons' }, [
+                [ 'core/button', { 
+                    className: 'tout__button button',
+                    placeholder: __( 'Add Button Text...', 'debtcollective' )
+                } ]
+            ] ],
         ],
         example: {
             attributes: {

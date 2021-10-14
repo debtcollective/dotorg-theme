@@ -19,7 +19,6 @@ const variations = [
         },
         innerBlocks: [
             [ 'core/column', {
-                width: '33.33%',
                 verticalAlignment: 'top'
             }, [
                 [ 'core/embed', {
@@ -30,7 +29,6 @@ const variations = [
                 } ]
             ] ],
             [ 'core/column', {
-                width: '66.66%',
                 verticalAlignment: 'top'
             }, [
                 [ 'core/heading', {

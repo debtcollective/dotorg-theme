@@ -28,8 +28,9 @@ const variations = [
         attributes: {
             className: 'hero',
             contentPosition: 'top left',
-            overlayColor: 'jade',
-            backgroundColor: 'jade',
+            url: 'https://wordpress-cdn-test.debtcollective.org/wp-content/uploads/2021/08/24080707/hero-1.png',
+            id: 307,
+            dimRatio: 0,
         },
         innerBlocks: [
             [ 'core/heading', { 

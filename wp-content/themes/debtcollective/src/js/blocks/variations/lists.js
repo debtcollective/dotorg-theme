@@ -9,7 +9,7 @@ const variations = [
         category: 'components',
         attributes: {
             className: 'inline-bullet-list',
-            placeholder: __( 'Add list items...', 'debtcollective' )
+            placeholder: __( 'Add list items ...', 'debtcollective' )
         },
         example: {
             attributes: {

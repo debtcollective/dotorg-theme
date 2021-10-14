@@ -16,8 +16,6 @@ const buttonsVariations = [
             [ 'core/button', {
                 placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button',
-                backgroundColor: 'emphasis',
-                textColor: 'white'
             } ]
         ],
         styles: [],
@@ -41,8 +39,6 @@ const buttonsVariations = [
             [ 'core/button', {
                 placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button--minor',
-                backgroundColor: 'white',
-                textColor: 'grey-dark'
             } ]
         ],
         styles: [],
@@ -65,8 +61,6 @@ const buttonsVariations = [
             [ 'core/button', {
                 placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button--jade',
-                backgroundColor: 'jade',
-                textColor: 'white'
             } ]
         ],
         styles: [],
@@ -95,8 +89,6 @@ const buttonVariations = [
         attributes: {
             placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button',
-            backgroundColor: 'emphasis',
-            textColor: 'white'
         },
         styles: [],
         scope: [
@@ -119,8 +111,6 @@ const buttonVariations = [
         attributes: {
             placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button--minor',
-            backgroundColor: 'white',
-            textColor: 'grey-dark'
         },
         styles: [],
         scope: [
@@ -128,9 +118,8 @@ const buttonVariations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-jade',
@@ -144,8 +133,6 @@ const buttonVariations = [
         attributes: {
             placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button--jade',
-            backgroundColor: 'jade',
-            textColor: 'white'
         },
         styles: [],
         scope: [
@@ -153,9 +140,8 @@ const buttonVariations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
 ];
 
