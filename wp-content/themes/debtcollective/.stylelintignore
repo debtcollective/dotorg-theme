@@ -2,3 +2,8 @@ build/
 vendor/
 !.*.js
 src/stories
+src/scss/blocks
+src/scss/global
+src/scss/template-tags
+src/scss/templates
+src/scss/wordpress-global
