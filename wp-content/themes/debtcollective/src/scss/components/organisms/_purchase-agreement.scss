@@ -18,8 +18,11 @@ article.purchase-agreement {
 		font-size: get-font-size(h5);
 		margin: 1rem 0 0.5rem;
 	}
-	.purchase-agreement__summary p {
-		margin: 0;
+	.purchase-agreement__summary {
+		padding: 0;
+		p {
+			margin: 0;
+		}
 	}
 	div.purchase-agreement__details dl {
 		width: 250px;

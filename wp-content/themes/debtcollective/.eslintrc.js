@@ -22,5 +22,7 @@ module.exports = {
 		'jsdoc/newline-after-description': 0,
 		'jsdoc/check-types': 0,
 		'jsdoc/require-returns-description': 0,
+		'no-unused-vars': 0,
+		'no-console': 0,
 	},
 };
