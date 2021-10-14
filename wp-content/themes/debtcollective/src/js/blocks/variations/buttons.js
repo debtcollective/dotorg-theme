@@ -14,7 +14,7 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button',
                 backgroundColor: 'emphasis',
                 textColor: 'white'
@@ -39,7 +39,7 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button--minor',
                 backgroundColor: 'white',
                 textColor: 'grey-dark'
@@ -63,7 +63,7 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button--jade',
                 backgroundColor: 'jade',
                 textColor: 'white'
@@ -93,7 +93,7 @@ const buttonVariations = [
         parent: false,
         isDefault: true,
         attributes: {
-            placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button',
             backgroundColor: 'emphasis',
             textColor: 'white'
@@ -117,7 +117,7 @@ const buttonVariations = [
             __( 'action', 'debtcollective' )
         ],
         attributes: {
-            placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button--minor',
             backgroundColor: 'white',
             textColor: 'grey-dark'
@@ -142,7 +142,7 @@ const buttonVariations = [
             __( 'action', 'debtcollective' )
         ],
         attributes: {
-            placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button--jade',
             backgroundColor: 'jade',
             textColor: 'white'

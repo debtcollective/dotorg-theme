@@ -15,7 +15,7 @@ const variations = [
         icon: 'editor-justify',
         attributes: {
             className: 'lede',
-            placeholder: __( 'Add content ...', 'debtcollective' )
+            placeholder: __( 'Add content...', 'debtcollective' )
         },
         example: {
             attributes: {
