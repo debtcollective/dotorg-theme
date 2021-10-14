@@ -19,19 +19,19 @@ const variations = [
         },
         innerBlocks: [
             [ 'core/heading', { 
-                className: 'callout__content h3',
+                className: 'callout__content',
                 level: 3,
-                placeholder: __( 'Add content ...', 'debtcollective' )
+                placeholder: __( 'Add content...', 'debtcollective' )
             } ],
             [ 'core/heading', { 
-                className: 'callout__heading h2 has-canary-text-color',
+                className: 'callout__heading',
                 level: 2,
-                placeholder: __( 'Add Heading ...', 'debtcollective' )
+                placeholder: __( 'Add Heading...', 'debtcollective' )
             } ],
             [ 'core/heading', { 
-                className: 'callout__content h3',
+                className: 'callout__content',
                 level: 3,
-                placeholder: __( 'Add content ...', 'debtcollective' )
+                placeholder: __( 'Add content...', 'debtcollective' )
             } ],
         ],
         example: {
@@ -56,7 +56,7 @@ const variations = [
                     name: 'core/heading',
                     attributes: {
                         level: 2,
-                        className: 'callout__heading h2 has-canary-text-color',
+                        className: 'callout__heading has-canary-text-color',
                         content: __( '$31,982,455.76', 'debtcollective' ),
                         textColor: 'canary',
                     },
