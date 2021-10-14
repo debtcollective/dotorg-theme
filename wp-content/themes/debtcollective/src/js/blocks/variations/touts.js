@@ -15,28 +15,29 @@ const variations = [
         attributes: {
             className: 'tout',
             contentPosition: 'top left',
-            url: '../assets/student.png'
         },
         innerBlocks: [
             [ 'core/heading', { 
-                className: 'tout__heading h1',
-                placeholder: __( 'Add Heading ...', 'debtcollective' )
+                className: 'tout__heading',
+                placeholder: __( 'Add Heading...', 'debtcollective' )
             } ],
             [ 'core/paragraph', { 
                 className: 'tout__content',
-                placeholder: __( 'Add content ...', 'debtcollective' )
+                placeholder: __( 'Add content...', 'debtcollective' )
             } ],
             [ 'core/buttons', { className: 'buttons' }, [
                 [ 'core/button', { 
                     className: 'tout__button button',
-                    placeholder: __( 'Add Button Text ...', 'debtcollective' )
+                    placeholder: __( 'Add Button Text...', 'debtcollective' )
                 } ]
             ] ],
         ],
         example: {
             attributes: {
+                className: 'tout',
                 contentPosition: 'top left',
-                url: '../assets/student.png'
+                overlayColor: 'jade',
+                url: 'images/student.png'
             },
             innerBlocks: [
                 {

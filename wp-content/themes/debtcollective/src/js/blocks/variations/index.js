@@ -1,6 +1,7 @@
 import './banners';
 import './buttons';
-import './cover';
+import './callouts';
+import './heros';
 import './lists';
 import './touts';
 import './paragraph';

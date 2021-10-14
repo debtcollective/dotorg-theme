@@ -346,55 +346,55 @@ const Edit = ( props ) => {
 				{ showSummary && (
 					<div className="purchase-agreement__summary entry-content" dangerouslySetInnerHTML={{ __html: post?.content?.rendered }}/>
 				) }
-				<div class="purchase-agreement__details">
+				<div className="purchase-agreement__details">
 					<dl>
 						{ ( showAmount && post.meta?.["amount"] ) && (
 							<>
-							<dt class="purchase-agreement__amount entry-label">
+							<dt className="purchase-agreement__amount entry-label">
 								{ __( 'Abolished', 'site-functionality' ) }
 							</dt>
-							<dd class="purchase-agreement__amount entry-value">
-								<span class="value">{ new Intl.NumberFormat().format( post.meta?.["amount"] ) }</span>
+							<dd className="purchase-agreement__amount entry-value">
+								<span className="value">{ new Intl.NumberFormat().format( post.meta?.["amount"] ) }</span>
 							</dd>
 							</>
 						) }
 						{ ( showTypes && purchaseTypes && types ) && (
 							<>
-							<dt class="purchase-agreement__type entry-label">
+							<dt className="purchase-agreement__type entry-label">
 								{ __( 'Type', 'site-functionality' ) }
 							</dt>
-							<dd class="purchase-agreement__type entry-value">
+							<dd className="purchase-agreement__type entry-value">
 								<a href={ types[0]?.link } rel="tag" dangerouslySetInnerHTML={{ __html: types[0]?.name }}></a>
 							</dd>
 							</>
 						) }
 						{ showNumber && post.meta?.["number"] && (
 							<>
-							<dt class="purchase-agreement__number entry-label">
+							<dt className="purchase-agreement__number entry-label">
 								{ __( 'Number of Debtors', 'site-functionality' ) }
 							</dt>
-							<dd class="purchase-agreement__number entry-value">
-								<span class="value">{ post.meta?.["number"] }</span>
+							<dd className="purchase-agreement__number entry-value">
+								<span className="value">{ post.meta?.["number"] }</span>
 							</dd>
 							</>
 						) }
 						{ showAverage && post.meta?.["average"] && (
 							<>
-							<dt class="purchase-agreement__average entry-label">
+							<dt className="purchase-agreement__average entry-label">
 								{ __( 'Abolished', 'site-functionality' ) }
 							</dt>
-							<dd class="purchase-agreement__average entry-value">
-								<span class="value">{ new Intl.NumberFormat().format( post.meta?.["average"] ) }</span>
+							<dd className="purchase-agreement__average entry-value">
+								<span className="value">{ new Intl.NumberFormat().format( post.meta?.["average"] ) }</span>
 							</dd>
 							</>
 						) }
 						{ showPurchasePrice && post.meta?.["price"] && (
 							<>
-							<dt class="purchase-agreement__purchase-price entry-label">
+							<dt className="purchase-agreement__purchase-price entry-label">
 								{ __( 'Abolished', 'site-functionality' ) }
 							</dt>
-							<dd class="purchase-agreement__purchase-price entry-value">
-								<span class="value">{ new Intl.NumberFormat().format( post.meta?.["price"] ) }</span>
+							<dd className="purchase-agreement__purchase-price entry-value">
+								<span className="value">{ new Intl.NumberFormat().format( post.meta?.["price"] ) }</span>
 							</dd>
 							</>
 						) }
