@@ -33,16 +33,16 @@ const variations = [
         },
         innerBlocks: [
             [ 'core/heading', { 
-                className: 'hero__heading h1',
+                className: 'hero__heading',
                 level: 1,
-                placeholder: __( 'Add Heading ...', 'debtcollective' ),
+                placeholder: __( 'Add Heading...', 'debtcollective' ),
                 content: __( 'Alone Our Debts are a Burden.<br/>Together They Make Us <strong>Powerful</strong>', 'debtcollective' ),
                 textColor: 'white'
             } ],
             [ 'core/heading', { 
-                className: 'hero__content h3',
+                className: 'hero__content',
                 level: 3,
-                placeholder: __( 'Add content ...', 'debtcollective' ),
+                placeholder: __( 'Add content...', 'debtcollective' ),
                 content: __( 'We are a debtors’ union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
                 textColor: 'white'
             } ],
@@ -50,15 +50,15 @@ const variations = [
                 className: 'buttons'
             }, [
                 [ 'core/button', { 
-                    className: 'hero__button button',
-                    placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                    className: 'hero__button btn',
+                    placeholder: __( 'Add Button Text...', 'debtcollective' ),
                     backgroundColor: 'emphasis',
                     textColor: 'white',
                     content: __( 'Join the Union', 'debtcollective' )
                 } ],
                 [ 'core/button', { 
                     className: 'hero__button button--minor' ,
-                    placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                    placeholder: __( 'Add Button Text...', 'debtcollective' ),
                     backgroundColor: 'white',
                     textColor: 'grey-dark',
                     content: __( 'Membership Benefits', 'debtcollective' )
@@ -78,7 +78,7 @@ const variations = [
                     name: 'core/heading',
                     attributes: {
                         content: __( 'Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'debtcollective' ),
-                        className: 'hero__heading h1',
+                        className: 'hero__heading',
                         level: 1,
                         textColor: 'white'
                     },
@@ -87,7 +87,7 @@ const variations = [
                     name: 'core/heading',
                     attributes: {
                         content: __( 'We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
-                        className: 'hero__heading h3',
+                        className: 'hero__heading',
                         level: 3,
                         textColor: 'white'
                     },
@@ -99,7 +99,7 @@ const variations = [
                             name: 'core/button',
                             attributes: {
                                 content: __( 'Join the Union', 'debtcollective' ),
-                                className: 'hero__button button',
+                                className: 'hero__button btn',
                                 backgroundColor: 'emphasis',
                                 textColor: 'white'
                             }
@@ -137,16 +137,16 @@ const variations = [
         },
         innerBlocks: [
             [ 'core/heading', { 
-                className: 'hero__heading h1',
+                className: 'hero__heading',
                 level: 1,
-                placeholder: __( 'Add Heading ...', 'debtcollective' ),
+                placeholder: __( 'Add Heading...', 'debtcollective' ),
                 content: __( 'Alone Our Debts are a Burden.<br/>Together They Make Us <strong>Powerful</strong>', 'debtcollective' ),
                 textColor: 'grey-darker'
             } ],
             [ 'core/heading', { 
-                className: 'hero__content h3',
+                className: 'hero__content',
                 level: 3,
-                placeholder: __( 'Add content ...', 'debtcollective' ),
+                placeholder: __( 'Add content...', 'debtcollective' ),
                 content: __( 'We are a debtors’ union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
                 textColor: 'grey-darker'
             } ]
@@ -163,7 +163,7 @@ const variations = [
                     name: 'core/heading',
                     attributes: {
                         content: __( 'Housing Debt', 'debtcollective' ),
-                        className: 'hero__heading h1',
+                        className: 'hero__heading',
                         level: 1,
                         textColor: 'grey-darker'
                     },
@@ -172,7 +172,7 @@ const variations = [
                     name: 'core/heading',
                     attributes: {
                         content: __( 'As of summer 2021, nearly 6 million US households were behind on rent payments, owing over $20 billion dollars. Those behind on rent debt are overwhelmingly low income and people of color. (Yup. Racial capitalism.) Sound like a lot of debt? Sounds like a lot of power over landlords to us!', 'debtcollective' ),
-                        className: 'hero__heading h3',
+                        className: 'hero__heading',
                         level: 3,
                         textColor: 'grey-darker'
                     },
