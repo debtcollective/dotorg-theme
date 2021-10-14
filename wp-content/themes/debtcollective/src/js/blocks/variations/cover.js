@@ -50,7 +50,7 @@ const variations = [
                 className: 'buttons'
             }, [
                 [ 'core/button', { 
-                    className: 'hero__button btn',
+                    className: 'hero__button button',
                     placeholder: __( 'Add Button Text...', 'debtcollective' ),
                     backgroundColor: 'emphasis',
                     textColor: 'white',
