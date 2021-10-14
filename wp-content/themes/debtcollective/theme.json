@@ -86,8 +86,8 @@
 			"color": "var(--wp--preset--color--grey-light)"
 		},
 		"layout": {
-            "contentSize": "800px",
-            "wideSize": "1000px"
+            "contentSize": "1200px",
+            "wideSize": "1600px"
         },
 		"spacing": {
             "customMargin": false,
@@ -329,7 +329,10 @@
 				}
 			},
 			"core/button": {
-				"typography": false,
+				"typography": {
+					"customFontSize": false,
+					"fontSizes": []
+				},
 				"color": {
 					"palette": [
 						{
@@ -352,8 +355,7 @@
 							"slug": "white",
 							"color": "var(--wp--preset--color--white)"
 						}
-					],
-					"text": false
+					]
 				},
 				"border": {
                     "customRadius": false
