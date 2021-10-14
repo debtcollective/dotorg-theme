@@ -14,10 +14,8 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button',
-                backgroundColor: 'emphasis',
-                textColor: 'white'
             } ]
         ],
         styles: [],
@@ -39,10 +37,8 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button--minor',
-                backgroundColor: 'white',
-                textColor: 'grey-dark'
             } ]
         ],
         styles: [],
@@ -63,10 +59,8 @@ const buttonsVariations = [
         },
         innerBlocks: [
             [ 'core/button', {
-                placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+                placeholder: __( 'Add Button Text...', 'debtcollective' ),
                 className: 'button--jade',
-                backgroundColor: 'jade',
-                textColor: 'white'
             } ]
         ],
         styles: [],
@@ -93,10 +87,8 @@ const buttonVariations = [
         parent: false,
         isDefault: true,
         attributes: {
-            placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button',
-            backgroundColor: 'emphasis',
-            textColor: 'white'
         },
         styles: [],
         scope: [
@@ -117,10 +109,8 @@ const buttonVariations = [
             __( 'action', 'debtcollective' )
         ],
         attributes: {
-            placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button--minor',
-            backgroundColor: 'white',
-            textColor: 'grey-dark'
         },
         styles: [],
         scope: [
@@ -128,9 +118,8 @@ const buttonVariations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-jade',
@@ -142,10 +131,8 @@ const buttonVariations = [
             __( 'action', 'debtcollective' )
         ],
         attributes: {
-            placeholder: __( 'Add Button Text ...', 'debtcollective' ),
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
             className: 'button--jade',
-            backgroundColor: 'jade',
-            textColor: 'white'
         },
         styles: [],
         scope: [
@@ -153,9 +140,8 @@ const buttonVariations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
 ];
 

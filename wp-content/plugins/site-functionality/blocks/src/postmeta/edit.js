@@ -98,7 +98,6 @@ const Edit = ( props ) => {
     ];
 
     const setField = ( value ) => {
-        console.log( value );
         setAttributes(
             {
                 field: value
@@ -115,7 +114,6 @@ const Edit = ( props ) => {
     }
 
     const setLabel = ( value ) => {
-        console.log( value );
         setAttributes(
             {
                 label: value
