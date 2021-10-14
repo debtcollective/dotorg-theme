@@ -118,9 +118,8 @@ const buttonVariations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-jade',
@@ -141,9 +140,8 @@ const buttonVariations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
     },
 ];
 
