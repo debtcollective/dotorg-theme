@@ -17,44 +17,44 @@ use DebtCollective\Inc\Customizer\Text_Editor_Custom_Control;
  */
 function customize_additional_scripts( $wp_customize ) {
 	// Register a setting.
-	$wp_customize->add_setting(
-		'header_scripts',
-		[
-			'default'           => '',
-			'sanitize_callback' => 'force_balance_tags',
-		]
-	);
+	// $wp_customize->add_setting(
+	// 	'header_scripts',
+	// 	[
+	// 		'default'           => '',
+	// 		'sanitize_callback' => 'force_balance_tags',
+	// 	]
+	// );
 
 	// Create the setting field.
-	$wp_customize->add_control(
-		'header_scripts',
-		[
-			'label'       => esc_attr__( 'Header Scripts', 'debtcollective' ),
-			'description' => esc_attr__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', 'debtcollective' ),
-			'section'     => 'additional_scripts_section',
-			'type'        => 'textarea',
-		]
-	);
+	// $wp_customize->add_control(
+	// 	'header_scripts',
+	// 	[
+	// 		'label'       => esc_attr__( 'Header Scripts', 'debtcollective' ),
+	// 		'description' => esc_attr__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', 'debtcollective' ),
+	// 		'section'     => 'additional_scripts_section',
+	// 		'type'        => 'textarea',
+	// 	]
+	// );
 
 	// Register a setting.
-	$wp_customize->add_setting(
-		'footer_scripts',
-		[
-			'default'           => '',
-			'sanitize_callback' => 'force_balance_tags',
-		]
-	);
+	// $wp_customize->add_setting(
+	// 	'footer_scripts',
+	// 	[
+	// 		'default'           => '',
+	// 		'sanitize_callback' => 'force_balance_tags',
+	// 	]
+	// );
 
 	// Create the setting field.
-	$wp_customize->add_control(
-		'footer_scripts',
-		[
-			'label'       => esc_attr__( 'Footer Scripts', 'debtcollective' ),
-			'description' => esc_attr__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', 'debtcollective' ),
-			'section'     => 'additional_scripts_section',
-			'type'        => 'textarea',
-		]
-	);
+	// $wp_customize->add_control(
+	// 	'footer_scripts',
+	// 	[
+	// 		'label'       => esc_attr__( 'Footer Scripts', 'debtcollective' ),
+	// 		'description' => esc_attr__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', 'debtcollective' ),
+	// 		'section'     => 'additional_scripts_section',
+	// 		'type'        => 'textarea',
+	// 	]
+	// );
 
 	$wp_customize->add_setting( 
 		'display_global_header', 
@@ -144,7 +144,7 @@ function customize_social_icons( $wp_customize ) {
 	}
 }
 
-add_action( 'customize_register', __NAMESPACE__ . '\customize_social_icons' );
+// add_action( 'customize_register', __NAMESPACE__ . '\customize_social_icons' );
 
 /**
  * Register copyright text setting.
@@ -169,13 +169,13 @@ function customize_copyright_text( $wp_customize ) {
 			$wp_customize,
 			'copyright_text',
 			[
-				'label'       => esc_attr__( 'Copyright Text', 'debtcollective' ),
-				'description' => esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'debtcollective' ),
-				'section'     => 'footer_section',
-				'type'        => 'textarea',
+				'label'       	=> esc_attr__( 'Copyright Text', 'debtcollective' ),
+				'description' 	=> esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'debtcollective' ),
+				'section'     	=> 'title_tagline',
+				'type'        	=> 'textarea',
+				'priority' 		=> 100,
 			]
 		)
 	);
 }
-
-add_action( 'customize_register', __NAMESPACE__ . '\customize_copyright_text' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_copyright_text', 12 );

@@ -8,18 +8,19 @@ registerBlockCollection( 'site-functionality', {
     title: __( 'Debt Collective', 'site-functionality' )
 } );
 
-
-import './variations';
 import './patterns';
+import './styles';
 
-import * as hero from './hero';
 import * as faqs from './faqs';
 import * as faq from './faq';
+import * as postmeta from './postmeta';
+import * as purchaseAgreements from './purchaseAgreements';
 
 const blocks = [
-	hero,
 	faqs,
-	faq
+	faq,
+	postmeta,
+	purchaseAgreements
 ];
 
 /**

@@ -38,7 +38,7 @@ class PurchaseAgreement extends PostType {
 		'number' 			=> 'number',
 		'average'			=> 'number',
 		'purchase_price'	=> 'number',
-		'pdf'				=> 'string',
+		'file'				=> 'string',
 	];
 
 	/**

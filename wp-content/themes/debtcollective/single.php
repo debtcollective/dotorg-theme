@@ -15,7 +15,15 @@ get_header(); ?>
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			if( 'post' === get_post_type() ) :
+
+				get_template_part( 'template-parts/content', get_post_format() );
+
+			else :
+
+				get_template_part( 'template-parts/content', get_post_type() );
+
+			endif;
 
 			the_post_navigation();
 

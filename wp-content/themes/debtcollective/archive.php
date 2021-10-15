@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package DebtCollective
  */
@@ -30,7 +30,15 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				if( 'post' === get_post_type() ) :
+
+					get_template_part( 'template-parts/content', get_post_format() );
+
+				else :
+
+					get_template_part( 'template-parts/content', get_post_type() );
+
+				endif;
 
 			endwhile;
 

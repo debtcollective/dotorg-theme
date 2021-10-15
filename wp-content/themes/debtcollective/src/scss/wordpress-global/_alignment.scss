@@ -1,18 +1,10 @@
 //--------------------------------------------------------------
 // WordPress Alignments
 //--------------------------------------------------------------
-.alignleft {
-	@apply float-left mb-16 mr-16;
-}
+.alignleft {}
 
-.alignright {
-	@apply float-right mb-16 ml-16;
-}
+.alignright {}
 
-.aligncenter {
-	@apply my-16 mx-auto;
-}
+.aligncenter {}
 
-.alignnone {
-	@apply mb-16;
-}
+.alignnone {}

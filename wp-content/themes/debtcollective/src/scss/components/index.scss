@@ -1,14 +1,5 @@
-@import 'environment/breakpoints';
-@import 'environment/colors';
-@import 'environment/extendables';
-@import 'environment/normalize';
-@import 'environment/typography';
-@import 'environment/variables';
-
-@import 'biomes/layout--global.scss';
-
-@import 'organisms/footer.scss';
-
-@import 'atoms/a.scss';
-@import 'atoms/input.scss';
-@import 'atoms/button.scss';
+@import 'environment/environment';
+@import 'biomes/biomes';
+@import 'organisms/organisms';
+@import 'molecules/molecules';
+@import 'atoms/atoms';

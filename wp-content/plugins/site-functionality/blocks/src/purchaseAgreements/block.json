@@ -1,0 +1,104 @@
+{
+	"apiVersion": 2,
+	"name": "site-functionality/purchase-agreements",
+	"title": "Purchase Agreements",
+	"icon": "bank",
+	"category": "components",
+	"description": "Display a List of Purchase Agreements",
+	"textdomain": "site-functionality",
+	"attributes": {
+		"queryId": {
+			"type": "number"
+		},
+		"query": {
+			"type": "object",
+			"default": {
+				"per_page": 6,
+				"event-tags": [],
+				"order": "desc",
+				"orderby": "start"
+			}
+		},
+		"taxonomy": {
+			"type": "string",
+			"default": "purchase_agreement_type"
+		},
+		"postType": {
+			"type": "string",
+			"default": "purchase_agreement"
+		},
+		"perPage": {
+			"type": "number",
+			"default": 3
+		},
+		"orderby": {
+			"type": "string",
+			"default": "date/desc",
+			"enum": [
+				"date/desc",
+				"date/asc",
+				"title/desc",
+				"title/asc"
+			]
+		},
+		"purchaseTypes": {
+			"type": "string",
+			"default": ""
+		},
+		"layout": {
+			"type": "object",
+			"default": {
+				"type": "grid"
+			}
+		},
+		"wrapperTagName": {
+			"type": "string",
+			"default": "div"
+		},
+		"tagName": {
+			"type": "string",
+			"default": "article"
+		},
+		"linkWrap": {
+			"type": "boolean",
+			"default": true
+		},
+		"display": {
+			"type": "object",
+			"default": {
+				"showTitle": true,
+				"showSummary": true,
+				"showDate": true,
+				"showTypes": true,
+				"showAmount": true,
+				"showNumber": true,
+				"showAverage": true,
+				"showPurchasePrice": true,
+				"showFile": true
+			}
+		}
+	},
+	"providesContext": {
+		"queryId": "queryId",
+		"query": "query",
+		"layout": "layout"
+	},
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": false,
+			"link": false,
+			"text": false,
+			"background": false
+		},
+		"typography": {
+			"fontSize": false,
+			"lineHeight": false,
+			"__experimentalFontWeight": false
+		}
+	},
+	"script": "site-functionality",
+	"style": "file:../../build/style-index.css",
+	"editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css"
+}

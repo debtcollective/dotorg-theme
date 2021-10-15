@@ -56,5 +56,7 @@ function scripts() {
 	// \wp_dequeue_style( 'flexy-breadcrumb' );
 	// \remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
 
+	\wp_dequeue_style( 'sssb-block-editor-css' );
+
 }
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts', 11 );
