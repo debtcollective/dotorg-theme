@@ -19,7 +19,6 @@ const variations = [
         },
         innerBlocks: [
             [ 'core/column', {
-                width: '33.33%',
                 verticalAlignment: 'top'
             }, [
                 [ 'core/embed', {
@@ -30,17 +29,16 @@ const variations = [
                 } ]
             ] ],
             [ 'core/column', {
-                width: '66.66%',
                 verticalAlignment: 'top'
             }, [
                 [ 'core/heading', {
                     level: 2,
                     className: 'banner__heading',
-                    placeholder: __( 'Add Heading ...', 'debtcollective' )
+                    placeholder: __( 'Add Heading...', 'debtcollective' )
                 } ],
                 [ 'core/paragraph', {
                     className: 'banner__content',
-                    placeholder: __( 'Add content ...', 'debtcollective' )
+                    placeholder: __( 'Add content...', 'debtcollective' )
                 } ]
             ] ],
         ],
