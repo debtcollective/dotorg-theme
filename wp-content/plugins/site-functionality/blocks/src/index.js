@@ -15,12 +15,14 @@ import * as faqs from './faqs';
 import * as faq from './faq';
 import * as postmeta from './postmeta';
 import * as purchaseAgreements from './purchaseAgreements';
+import * as userQuery from './userQuery';
 
 const blocks = [
 	faqs,
 	faq,
 	postmeta,
-	purchaseAgreements
+	purchaseAgreements,
+	userQuery
 ];
 
 /**

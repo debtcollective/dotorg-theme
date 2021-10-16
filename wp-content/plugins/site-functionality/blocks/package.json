@@ -19,6 +19,7 @@
 		"@wordpress/i18n": "^4.2.1"
 	},
 	"devDependencies": {
+		"@wordpress/api-fetch": "^5.2.3",
 		"@wordpress/scripts": "^17.1.0",
 		"currency-symbol-map": "^5.0.1",
 		"lodash.startcase": "^4.4.0"
