@@ -9,6 +9,7 @@ namespace Site_Functionality\CustomFields;
 
 use Site_Functionality\Abstracts\Base;
 use Site_Functionality\PostTypes\PurchaseAgreement;
+use Site_Functionality\CustomFields\UserFields as UserFields;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
