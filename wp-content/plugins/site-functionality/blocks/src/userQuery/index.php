@@ -41,6 +41,7 @@ function render( $attributes, $content, $block ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	$query = new \WP_User_Query( $args );
+
 	$output = '';
 
 	if( $query->get_results() ) : 
@@ -62,7 +63,7 @@ function render( $attributes, $content, $block ) {
 				'person'				=> $person,
 				'attributes'			=> $attributes,
 			] )
-			->getTemplatePart( $template_slug ); ?>
+			->getTemplatePart( 'person' ); ?>
 
 		<?php
 		endforeach; ?>
