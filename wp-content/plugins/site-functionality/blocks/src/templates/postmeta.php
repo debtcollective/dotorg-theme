@@ -4,9 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package DebtCollective
+ * @package site-functionality
  */
-// var_dump( $data );
 ?>
 
 <div <?php echo $data->wrapper_attributes ?>>
