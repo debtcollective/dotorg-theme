@@ -1,0 +1,16 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-site-functionality-user-query {
+
+
+    @media screen and ( min-width: 720px ) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+
+        .person {}
+    }
+}

@@ -54,5 +54,15 @@ function customize_sections( $wp_customize ) {
 			'panel'    => 'site-options',
 		]
 	);
+
+	// Register a default images
+	$wp_customize->add_section(
+		'media_defaults',
+		[
+			'title'    => esc_html__( 'Default Media Settings', 'debtcollective' ),
+			'priority' => 10,
+			'panel'    => 'site-options',
+		]
+	);
 }
 add_action( 'customize_register', __NAMESPACE__ . '\customize_sections' );

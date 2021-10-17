@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package DebtCollective
+ * @package site-functionality
  */
 $post_id = get_the_ID();
 $taxonomy = $data->args['taxonomy'];

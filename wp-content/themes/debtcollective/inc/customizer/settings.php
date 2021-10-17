@@ -56,6 +56,19 @@ function customize_additional_scripts( $wp_customize ) {
 	// 	]
 	// );
 
+	$wp_customize->add_setting( 'default_featured_image', [
+		'default'	=> '',
+		'transport'	=> 'refresh',
+		'type'      => 'option'
+	] );
+
+	$wp_customize->add_setting( 'default_avatar', [
+		'default'	=> '',
+		'transport'	=> 'refresh',
+		'type'      => 'option'
+	] );
+
+
 	$wp_customize->add_setting( 
 		'display_global_header', 
 		[
@@ -97,6 +110,28 @@ function customize_additional_scripts( $wp_customize ) {
 			
 		] 
 	);
+
+	$wp_customize->add_control( new \WP_Customize_Image_Control(
+		$wp_customize,
+		'default_featured_image',
+		array(
+			'label'      => esc_html__( 'Add a default post image', 'debtcollective' ),
+			'section'    => 'media_defaults',
+			'settings'   => 'default_featured_image',
+		)
+	) );
+
+	$wp_customize->add_control( new \WP_Customize_Image_Control(
+		$wp_customize,
+		'default_avatar',
+		array(
+			'label'      => esc_html__( 'Add a default user avatar image', 'debtcollective' ),
+			'section'    => 'media_defaults',
+			'settings'   => 'default_avatar',
+		)
+	) );
+
+
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\customize_additional_scripts' );
