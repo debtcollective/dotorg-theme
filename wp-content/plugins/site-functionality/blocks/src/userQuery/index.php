@@ -23,8 +23,8 @@ function render( $attributes, $content, $block ) {
 	$default_display = $block_type_attributes['display']['default'];
 
 	$defaults = [
-		'number'		=> get_option( 'posts_per_page' ),
-		'paged'         => $paged,
+		'number'		=> \get_option( 'posts_per_page' ),
+		'paged'         => 1,
 		'role'			=> [],
 		'orderby'		=> 'display_name'
 	];
@@ -34,13 +34,24 @@ function render( $attributes, $content, $block ) {
 		$attributes['display'],
 		$attributes,
 		[
-			'number'		=> $attributes['query']['number'],
+			'number'		=> $attributes['query']['per_page'],
 		]
 	);
 
 	$args = wp_parse_args( $args, $defaults );
 
-	$query = new \WP_User_Query( $args );
+	$query_args = [
+		'number'		=> $args['number'],
+		'paged'         => $args['paged'],
+		'order'			=> $args['order'],
+		'orderby'		=> $args['orderby'],
+	];
+
+	if( $roles = $args['roles'] ) {
+		$query_args = $roles;
+	}
+
+	$query = new \WP_User_Query( $query_args );
 
 	$output = '';
 
