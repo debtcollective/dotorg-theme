@@ -41,8 +41,9 @@ class RestAPI extends Base {
 	public function register_routes() {
 		\register_rest_route( self::API_NAMESPACE, '/roles', 
 			[
-				'methods' => 'GET',
-				'callback' => [ $this, 'get_user_roles' ],
+				'methods' 				=> 'GET',
+				'callback' 				=> [ $this, 'get_user_roles' ],
+				'permission_callback' 	=> \__return_true(),
 			]
 		);
 	}
