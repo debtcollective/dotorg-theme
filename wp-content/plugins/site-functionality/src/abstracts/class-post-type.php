@@ -88,6 +88,10 @@ abstract class PostType extends Base {
 			'filter_items_list'     => sprintf( /* translators: %s: post type title */ __( 'Filter %s list', 'wp-action-network-events' ), strtolower( $this::POST_TYPE['title'] ) ),
 			'featured_image'        => __( 'Featured Image', 'wp-action-network-events' ),
 		);
+		$rewrite = [
+			'slug'       => $this::POST_TYPE['archive'],
+			'with_front' => $this::POST_TYPE['with_front'],
+		];
 		$args = array(
 			'label'                 => $this::POST_TYPE['title'],
 			'labels'                => $labels,
@@ -102,11 +106,8 @@ abstract class PostType extends Base {
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,
 			'can_export'            => true,
-			'has_archive'        	=> $this::POST_TYPE['archive'],
-			'rewrite'            => [
-				'slug'       => $this::POST_TYPE['archive'],
-				'with_front' => true,
-			],
+			'has_archive'        	=> $this::POST_TYPE['has_archive'],
+			'rewrite'            	=> $rewrite,
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'capability_type'       => 'post',
