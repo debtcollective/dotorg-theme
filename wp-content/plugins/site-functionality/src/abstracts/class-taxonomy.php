@@ -78,6 +78,11 @@ abstract class Taxonomy extends Base {
 			'items_list_navigation'      => sprintf( /* translators: %s: post type title */ __( '%s list navigation', 'wp-action-network-events' ), $this::TAXONOMY['title'] ),
 		);
 
+		$rewrite = [
+			'slug'						=> $this::TAXONOMY['archive'],
+			'with_front'				=> $this::TAXONOMY['with_front']
+		];
+
 		$args = array(
 			'labels'                     => $labels,
 			'hierarchical'               => false,
@@ -86,13 +91,14 @@ abstract class Taxonomy extends Base {
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => true,
+			'rewrite'					 => $rewrite,
 			'show_in_rest'               => true,
 			'rest_base'             	 => $this::TAXONOMY['rest'],
 		);
 		\register_taxonomy( 
 			$this::TAXONOMY['id'], 
 			$this::TAXONOMY['post_types'], 
-			\apply_filters( \get_class( $this ) . '\Args', $args ) 
+			\apply_filters( \get_class( self ) . '\Args', $args ) 
 		);
 	}
 }
