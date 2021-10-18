@@ -98,7 +98,7 @@ abstract class Taxonomy extends Base {
 		\register_taxonomy( 
 			$this::TAXONOMY['id'], 
 			$this::TAXONOMY['post_types'], 
-			\apply_filters( \get_class( self ) . '\Args', $args ) 
+			\apply_filters( \get_class( $this ) . '\Args', $args ) 
 		);
 	}
 }
