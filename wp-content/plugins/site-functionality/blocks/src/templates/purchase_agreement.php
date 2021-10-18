@@ -45,7 +45,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Abolished', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__amount entry-value">
-					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $amount ) ); ?>
+					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $amount, 2 ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( \has_term( '', $taxonomy, $post_id ) ) : 
@@ -54,7 +54,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Type', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__type entry-value">
-					<?php echo \esc_html( $tags[0] ); ?>
+					<?php echo implode( '<span class="separator">/</span>', $tags ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( $number = \get_post_meta( $post_id, 'number', true ) ) : ?>
@@ -70,7 +70,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Average Debt/Debtor', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__average entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average, 2 ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
