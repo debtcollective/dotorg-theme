@@ -21,12 +21,14 @@ class PurchaseAgreement extends PostType {
 	 */
 	public const POST_TYPE = [
 		'id'       		=> 'purchase_agreement',
-		'archive'  		=> 'purchase-agreements',
 		'menu'    		=> 'Purchase Agreements',
 		'title'    		=> 'Agreements',
 		'singular' 		=> 'Agreement',
 		'icon'     		=> 'dashicons-bank',
 		'taxonomies'	=> [ 'purchase_agreement_type' ],
+		'has_archive'  	=> 'purchase-agreements',
+		'with_front'  	=> false,
+		'archive'  		=> 'purchase-agreements',
 		'rest_base'		=> 'purchase-agreements',
 	];
 
