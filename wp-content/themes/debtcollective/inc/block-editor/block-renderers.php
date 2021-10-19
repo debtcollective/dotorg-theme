@@ -75,8 +75,8 @@ function render_sssb_block( $content, $block ) {
         }
         $content = '
       
-          <' . $div . ' class="wp-block-social-sharing" >
-            <' . $ul . ' class="list-social-sharing">';
+          <' . $div . ' class="wp-block-social-sharing wp-block-socia-sharing">
+            <' . $ul . ' class="list-social-sharing list-socia-sharing left">';
       
           if( $attributes['show_email'] === 1 ) {
             $message = esc_attr( $attributes['text_email'] );
