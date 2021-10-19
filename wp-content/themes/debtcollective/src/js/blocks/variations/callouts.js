@@ -1,7 +1,7 @@
 import { registerBlockVariation } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 
-const variations = [
+const variation = [
     {
         name: 'impactful-callout',
         title: __( 'Impactful Callout', 'debtcollective' ),
@@ -75,7 +75,7 @@ const variations = [
     }
 ];
 
-registerBlockVariation(
-    'core/cover',
-    variations
-);
+// registerBlockVariation(
+//     'core/cover',
+//     variation
+// );
