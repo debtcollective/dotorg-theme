@@ -74,9 +74,13 @@ add_action( 'plugins_loaded' , __NAMESPACE__ . '\site_functionality_init' );
 // 	return Site_Functions::instance();
 // }
 
-function site_functionality_activate() {}
-\register_activation_hook( __FILE__, array( __NAMESPACE__ . '\site_functionality_activate', 'hooks' ) );
+function site_functionality_activate() {
+	\flush_rewrite_rules();
+}
+\register_activation_hook( __FILE__, __NAMESPACE__ . '\site_functionality_activate', );
 
-function site_functionality_deactivate() {}
-\register_deactivation_hook( __FILE__, array( __NAMESPACE__ . '\site_functionality_deactivate', 'hooks' ) );
+function site_functionality_deactivate() {
+	\flush_rewrite_rules();
+}
+\register_deactivation_hook( __FILE__, __NAMESPACE__ . '\site_functionality_deactivate' );
 
