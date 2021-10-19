@@ -49,7 +49,7 @@ function scripts() {
 
 
 	// Register styles & scripts.
-	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version'] );
+	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [ 'dashicons' ], $asset_file['version'] );
 	\wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 
 	// Disable 3rd-party styles & scripts
