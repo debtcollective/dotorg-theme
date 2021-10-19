@@ -1,6 +1,7 @@
 a {
-	color: $c__jade;
-	&:hover {
+	color: get-color(jade-dark);
+	&:hover, &:focus, &:active {
 		text-decoration: none;
+		color: get-color(jade-darker);
 	}
 }
