@@ -14,7 +14,7 @@
 		$parent_title = get_post_field( 'post_title', $parent );
 		?>
 		<nav class="pagenav">
-			<h2><?php echo esc_attr( $parent_title ); ?></h2>
+			<h3 class="widget-title"><?php echo esc_attr( $parent_title ); ?></h3>
 
 			<ul>
 				<?php

@@ -29,6 +29,7 @@ function debtcollective_get_theme_include_files() {
 		'inc/block-editor/block-patterns.php', // Custom patterns for this theme.
 		'inc/block-editor/block-styles.php', // Custom styles for this theme.
 		'inc/block-editor/block-variations.php', // Custom variations for this theme.
+		'inc/block-editor/block-renderers.php', // Custom dynamic block renderers for this theme.
 	];
 }
 
