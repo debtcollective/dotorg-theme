@@ -13,6 +13,7 @@ import './styles';
 
 import * as faqs from './faqs';
 import * as faq from './faq';
+import * as impactfulCallout from './impactfulCallout';
 import * as postmeta from './postmeta';
 import * as purchaseAgreements from './purchaseAgreements';
 import * as userQuery from './userQuery';
@@ -20,6 +21,7 @@ import * as userQuery from './userQuery';
 const blocks = [
 	faqs,
 	faq,
+	impactfulCallout,
 	postmeta,
 	purchaseAgreements,
 	userQuery
