@@ -21,6 +21,10 @@ function body_classes( $classes ) {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
 	global $is_IE, $is_edge, $is_safari;
 
+	if( get_theme_mod( 'display_global_header' ) ) {
+		$classes[] = 'has-globabl-header';
+	}
+
 	// If it's IE, add a class.
 	if ( $is_IE ) {
 		$classes[] = 'ie';
