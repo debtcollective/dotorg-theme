@@ -3,3 +3,4 @@ node_modules
 vendor
 *.min.js
 !/.*.js
+src/js/template-tags/hashquery.js
