@@ -44,13 +44,14 @@ function scripts() {
 		];
 	}
 
-	\wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
-	\wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
-
+	// \wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
+	// \wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
 
 	// Register styles & scripts.
 	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [ 'dashicons' ], $asset_file['version'] );
 	\wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
+}
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts', 11 );
 
 	// Disable 3rd-party styles & scripts
 	// \wp_dequeue_style( 'flexy-breadcrumb' );
