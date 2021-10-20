@@ -53,11 +53,22 @@ function scripts() {
 }
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts', 11 );
 
+/**
+ * Remove scripts and styles.
+ *
+ * @author Debt Collective
+ */
+function remove_scripts() {
+
 	// Disable 3rd-party styles & scripts
-	// \wp_dequeue_style( 'flexy-breadcrumb' );
+	\wp_dequeue_style( 'flexy-breadcrumb' );
+	\wp_dequeue_style( 'flexy-breadcrumb-font-awesome' );
 	// \remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
 
-	\wp_dequeue_style( 'sssb-block-editor-css' );
-
+	/**
+	 * Remove sidebar share styles
+	 */
+	\wp_dequeue_style( 'sssb-block-style' );
 }
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts', 11 );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_scripts', 11 );
+\remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
