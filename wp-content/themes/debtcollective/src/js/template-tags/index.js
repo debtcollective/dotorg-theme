@@ -5,8 +5,9 @@
  */
 
 import './mobile-menu';
-import './modal';
+// import './modal';
 import './navigation-primary';
 import './off-canvas';
 import './table';
 import './video';
+import './faqs';
