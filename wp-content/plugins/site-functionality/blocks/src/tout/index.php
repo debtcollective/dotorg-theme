@@ -25,7 +25,18 @@ function render( $attributes, $content, $block ) {
     $output = '<div ' . $wrapper_attributes . '>';
 
     foreach ( $block->inner_blocks as $inner_block ) { 
-        $output .= $inner_block->render(); 
+
+        if( 'core/image' === $inner_block->name ) {
+            $attributes = $inner_block->parsed_block['attrs'];
+
+            $output .= sprintf( '<picture class="%s">%s</picture>', 
+                    $attributes['className'] ?? 'tout__image',
+                    \wp_get_attachment_image( $attributes['id'], $attributes['sizeSlug'] ?? 'full' )
+            ); 
+        } else {
+            $output .= $inner_block->render(); 
+        }
+        
     }
 
     $output .= '</div>';
