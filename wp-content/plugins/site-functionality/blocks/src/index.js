@@ -16,6 +16,7 @@ import * as faq from './faq';
 import * as impactfulCallout from './impactfulCallout';
 import * as postmeta from './postmeta';
 import * as purchaseAgreements from './purchaseAgreements';
+import * as tout from './tout';
 import * as userQuery from './userQuery';
 
 const blocks = [
@@ -24,6 +25,7 @@ const blocks = [
 	impactfulCallout,
 	postmeta,
 	purchaseAgreements,
+	tout,
 	userQuery
 ];
 
