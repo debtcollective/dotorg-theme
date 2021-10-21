@@ -46,6 +46,10 @@ import {
 } from '@wordpress/date';
 import { __, sprintf } from '@wordpress/i18n';
 
+//  Import CSS.
+import './editor.scss';
+import './style.scss';
+
 const MAX_ITEMS = 50;
 
 const Edit = ( props ) => {
@@ -298,13 +302,13 @@ const Edit = ( props ) => {
 		}
 
 		return (
-			<div { ...blockProps } >
+			<>
 				{ posts.map( post => {
 					return (
 						<Post { ...post } key={post.id} />
 					);
 				}) }
-			</div>
+			</>
 		)
 	}
 
@@ -343,7 +347,7 @@ const Edit = ( props ) => {
 				{ showTitle && post.meta?.["show_title"] && post.title && (
 					<h3 className="purchase-agreement__title entry-title" dangerouslySetInnerHTML={{ __html: post?.title?.rendered }}></h3>
 				) }
-				{ showSummary && (
+				{ showSummary && post?.content?.rendered && (
 					<div className="purchase-agreement__summary entry-content" dangerouslySetInnerHTML={{ __html: post?.content?.rendered }}/>
 				) }
 				<div className="purchase-agreement__details">
