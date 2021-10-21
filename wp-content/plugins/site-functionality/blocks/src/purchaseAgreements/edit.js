@@ -2,6 +2,7 @@
  * External dependencies
  */
 import startCase from 'lodash.startcase';
+import classNames from 'classnames';
 
 /**
  * WordPress dependencies
@@ -287,7 +288,7 @@ const Edit = ( props ) => {
 		)
 	}
 
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps( { className: classNames( className, 'purchase-agreements', 'purchase-agreements__list' ) } );
 
 	const Posts = () => {
 
