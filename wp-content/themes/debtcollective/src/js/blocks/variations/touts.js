@@ -75,7 +75,7 @@ const variations = [
     }
 ];
 
-registerBlockVariation(
-    'core/cover',
-    variations
-);
+// registerBlockVariation(
+//     'core/cover',
+//     variations
+// );
