@@ -63,8 +63,8 @@ function body_classes( $classes ) {
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 
-	// Add a `has-sidebar` class if we're using the sidebar template.
-	if ( is_page_template( 'template-sidebar-right.php' ) ) {
+	// Add a `has-sidebar` class if we're using the default page template (page.php).
+	if ( !is_front_page() && is_page() && is_active_sidebar( 'sidebar-1' ) && !is_page_template() ) {
 		$classes[] = 'has-sidebar';
 	}
 
