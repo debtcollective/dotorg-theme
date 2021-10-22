@@ -42,7 +42,7 @@ get_header(); ?>
 		if ( $query->have_posts() ) :
 		?>
 
-			<div class="entry-content">
+			<div class="events__list">
 
 				<?php
 				/* Start the Loop */

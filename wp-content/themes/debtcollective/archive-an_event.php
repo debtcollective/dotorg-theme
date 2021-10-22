@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying event archive pages.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -20,7 +20,7 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<div class="post__list">
+			<div class="events__list">
 
 				<?php
 				/* Start the Loop */
