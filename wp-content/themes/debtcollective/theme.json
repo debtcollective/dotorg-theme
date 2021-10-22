@@ -391,6 +391,37 @@
 						}
 					]
 				}
+			},
+			"site-functionality/impactful-callout": {
+				"color": {
+					"palette": [
+						{
+							"name": "Jade",
+							"slug": "jade",
+							"color": "var(--wp--preset--color--jade)"
+						},
+						{
+							"name": "Canary",
+							"slug": "canary",
+							"color": "var(--wp--preset--color--canary)"
+						},
+						{
+							"name": "Salmon",
+							"slug": "salmon",
+							"color": "var(--wp--preset--color--salmon)"
+						},
+						{
+							"name": "Dark Gray",
+							"slug": "gray-darker",
+							"color": "var(--wp--preset--color--gray-darker)"
+						},
+						{
+							"name": "White",
+							"slug": "white",
+							"color": "var(--wp--preset--color--white)"
+						}
+					]
+				}				
 			}
 		}
 	},
