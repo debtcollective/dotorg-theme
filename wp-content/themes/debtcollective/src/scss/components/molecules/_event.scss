@@ -1,71 +1,102 @@
-article.event {
-	height: 337px;
-	margin: 0 1rem 2rem 0;
+.event {
+	// height: 337px;
+	// margin: 0 1rem 2rem 0;
+	
 	@media (min-width: get-breakpoint(sm)) {
-		margin: 0 2.5rem 2rem 0;
-		width: 283px;
+		// margin: 0 2.5rem 2rem 0;
+		// width: 283px;
+		// width: calc( 100% / 4 );
 	}
 	a {
 		display: grid;
 		grid-template-rows: 141px 4rem 2.5rem;
 		grid-template-columns: 100%;
+		padding: 2rem 1.2rem;
 		font-weight: 900;
 		color: get-color(grey-dark);
 		text-decoration: none;
-		.event__title {
-			height: 5.8rem;
-			font-size: get-font-size(h4);
-			line-height: 1.2;
-			padding: 0 1.2rem;
-			margin-top: 2.3rem;
+
+		&:hover,
+		&:focus {
+			color: currentColor;
 		}
-		div.event__date time {
-			font-size: get-font-size(h4);
-			line-height: 1;
-			font-weight: 300;
-			padding: 0 1.2rem;
-		}
-		div.event__time {
-			// font-size: 1.125rem;
-			padding: 0 1.2rem;
-		}
-		div.event__location {
-			font-weight: 400;
-			padding: 0 1.2rem;
-		}
-	}
-	&.event_tag-campaigns-and-trainings {
+		
 		background-color: get-color("salmon");
 	}
-	&.event_tag-learn-about-debt {
-		background-color: get-color(jade-dark);
+
+	&__tag {}
+
+	&__title {
+		height: 5.8rem;
+		font-size: get-font-size(h4);
+		line-height: 1.2;
+		// padding: 0 1.2rem;
+		margin-top: 0;
+	}
+	&__date time {
+		font-size: get-font-size(h4);
+		line-height: 1;
+		font-weight: 300;
+		// padding: 0 1.2rem;
+	}
+	&__time {
+		// font-size: 1.125rem;
+		// padding: 0 1.2rem;
+	}
+	&__location {
+		font-weight: 400;
+		// padding: 0 1.2rem;
+	}	
+
+	&_tag-campaigns-and-trainings {
 		a {
-			color: #fff;
+			background-color: get-color(salmon);
 		}
 	}
-	&.event_tag-welcome-calls {
-		background-color: get-color(grey-light);
+	&_tag-learn-about-debt {
+		a {
+			background-color: get-color(jade-dark);
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $white;
+			}
+			
+		}
+	}
+	&_tag-welcome-calls {
 		height: 208px;
 		&:nth-child(2) {
-			background-color: get-color(lilac);
+			a {
+				background-color: get-color(lilac);
+			}
 		}
 		a {
+			background-color: get-color(grey-light);
 			grid-template-rows: auto;
-			div.event__date {
-				padding: 2rem 1.2rem 1rem;
-				time {
-					padding: 0;
-					font-size: get-font-size(h3);
-					line-height: 0.86;
-					font-weight: 900;
+			border-radius: .25rem;
+
+			.event {
+				&__date {
+					// padding: 2rem 1.2rem 1rem;
+					padding-bottom: 1rem;
+					time {
+						padding: 0;
+						font-size: get-font-size(h3);
+						line-height: 0.86;
+						font-weight: 900;
+					}
 				}
+				&__time {
+					font-size: 1.125rem;
+				}
+				&__location {
+					font-weight: 700;
+				}					
 			}
-			div.event__time {
-				font-size: 1.125rem;
-			}
-			.event__location {
-				font-weight: 700;
-			}
+
 		}
 	}
+
 }
