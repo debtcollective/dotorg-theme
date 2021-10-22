@@ -3,21 +3,29 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-site-functionality-purchase-agreements {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+.wp-block-site-functionality-faqs .answer {
+  max-height: initial !important;
+  height: auto !important;
+  overflow: initial !important;
 }
-.wp-block-site-functionality-purchase-agreements .purchase-agreement {
-  width: auto !important;
+.wp-block-site-functionality-faqs .answer .answer-wrapper {
+  opacity: initial !important;
+  top: 1rem !important;
 }
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+
+.faq.is-selected {
+  background-color: #1e9981 !important;
+}
+.faq.is-selected .question,
+.faq.is-selected .answer {
+  background-color: #20a78c;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+}
+.faq.is-selected .question {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 /**
  * The following styles get applied inside the editor only.
  *
