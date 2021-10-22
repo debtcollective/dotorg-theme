@@ -13,7 +13,7 @@ import Save from './save';
 const { name, category } = metadata;
 
 const settings = {
-	edit: Edit
+	edit: Edit,
 };
 
 export { name, category, settings };

@@ -14,9 +14,9 @@ import icon from './icon';
 const { name, category } = metadata;
 
 const settings = {
-    icon,
+	icon,
 	edit: Edit,
-    save: Save
+	save: Save,
 };
 
 export { name, category, settings };

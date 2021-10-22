@@ -1,4 +1,3 @@
-
 /**
  * WordPress dependencies
  */
@@ -12,6 +11,6 @@ const icon = (
 			clipRule="evenodd"
 		/>
 	</SVG>
-    );
+);
 
 export default icon;

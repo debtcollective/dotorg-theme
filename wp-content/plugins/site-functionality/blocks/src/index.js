@@ -1,11 +1,8 @@
-import { 
-    registerBlockType,
-    registerBlockCollection
-} from '@wordpress/blocks';
+import { registerBlockType, registerBlockCollection } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 
-registerBlockCollection( 'site-functionality', { 
-    title: __( 'Debt Collective', 'site-functionality' )
+registerBlockCollection( 'site-functionality', {
+	title: __( 'Debt Collective', 'site-functionality' ),
 } );
 
 import './patterns';
@@ -26,7 +23,7 @@ const blocks = [
 	postmeta,
 	purchaseAgreements,
 	tout,
-	userQuery
+	userQuery,
 ];
 
 /**
@@ -35,7 +32,7 @@ const blocks = [
  * @param {Object} block The block to be registered.
  *
  */
- const registerBlock = ( block ) => {
+const registerBlock = ( block ) => {
 	if ( ! block ) {
 		return;
 	}
@@ -50,7 +47,7 @@ const blocks = [
 /**
  * Function to register blocks
  */
- export const registerBlocks = () => {
+export const registerBlocks = () => {
 	blocks.forEach( registerBlock );
 };
 
