@@ -3,6 +3,34 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-site-functionality-faqs .answer {
+  max-height: initial !important;
+  height: auto !important;
+  overflow: initial !important;
+}
+.wp-block-site-functionality-faqs .answer .answer-wrapper {
+  opacity: initial !important;
+  top: 1rem !important;
+}
+
+.faq.is-selected {
+  background-color: #1e9981 !important;
+}
+.faq.is-selected .question,
+.faq.is-selected .answer {
+  background-color: #20a78c;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+}
+.faq.is-selected .question {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
 @media screen and (min-width: 720px) {
   .wp-block-site-functionality-user-query {
     display: -ms-grid;
