@@ -19,7 +19,7 @@ const { name, category } = metadata;
 
 const settings = {
 	edit: Edit,
-    save: Save
+	save: Save,
 };
 
 export { name, category, settings };
