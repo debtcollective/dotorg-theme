@@ -8,30 +8,12 @@ const TEMPLATE = [
 	[
 		'core/heading',
 		{
-			placeholder: __( 'Add Secondary Heading...', 'site-functionality' ),
-			level: 3,
-			className: 'impactful-callout__subtitle',
-		},
-		[],
-	],
-	[
-		'core/heading',
-		{
 			placeholder: __( 'Add Heading...', 'site-functionality' ),
-			level: 2,
-			className: 'impactful-callout__title',
-		},
-		[],
-	],
-	[
-		'core/heading',
-		{
-			placeholder: __( 'Add Secondary Heading...', 'site-functionality' ),
 			level: 3,
-			className: 'impactful-callout__subtitle',
+			className: 'impactful-callout__content',
 		},
 		[],
-	],
+	]
 ];
 
 const ALLOWED_BLOCKS = [ 'core/heading' ];
