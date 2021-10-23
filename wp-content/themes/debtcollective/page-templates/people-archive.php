@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: People
- * 
+ *
  * The template for displaying a people list page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -21,23 +21,23 @@ get_header(); ?>
 		</header><!-- .page-header -->
 
 		<?php
-		$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+		$paged    = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		$per_page = get_option( 'posts_per_page' );
-		$args = [
-			'number'		=> $per_page,
-			'paged'         => $paged,
-			'role'			=> [],
-			'orderby'		=> 'display_name'
+		$args     = [
+			'number'  => $per_page,
+			'paged'   => $paged,
+			'role'    => [],
+			'orderby' => 'display_name',
 		];
-		$query = new \WP_User_Query( $args );
-		if ( !empty( $query->get_results() ) ) :
-		?>
+		$query    = new \WP_User_Query( $args );
+		if ( ! empty( $query->get_results() ) ) :
+			?>
 
 			<div class="people people__list">
 
 				<?php
 				/* Start the Loop */
-				foreach( $query->get_results() as $person ) :
+				foreach ( $query->get_results() as $person ) :
 					/**
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
@@ -45,7 +45,8 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/content', 'person', $person );
 
-				endforeach; ?>
+				endforeach;
+				?>
 
 			</div>
 

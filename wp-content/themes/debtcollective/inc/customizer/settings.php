@@ -18,119 +18,127 @@ use DebtCollective\Inc\Customizer\Text_Editor_Custom_Control;
 function customize_additional_scripts( $wp_customize ) {
 	// Register a setting.
 	// $wp_customize->add_setting(
-	// 	'header_scripts',
-	// 	[
-	// 		'default'           => '',
-	// 		'sanitize_callback' => 'force_balance_tags',
-	// 	]
+	// 'header_scripts',
+	// [
+	// 'default'           => '',
+	// 'sanitize_callback' => 'force_balance_tags',
+	// ]
 	// );
 
 	// Create the setting field.
 	// $wp_customize->add_control(
-	// 	'header_scripts',
-	// 	[
-	// 		'label'       => esc_attr__( 'Header Scripts', 'debtcollective' ),
-	// 		'description' => esc_attr__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', 'debtcollective' ),
-	// 		'section'     => 'additional_scripts_section',
-	// 		'type'        => 'textarea',
-	// 	]
+	// 'header_scripts',
+	// [
+	// 'label'       => esc_attr__( 'Header Scripts', 'debtcollective' ),
+	// 'description' => esc_attr__( 'Additional scripts to add to the header. Basic HTML tags are allowed.', 'debtcollective' ),
+	// 'section'     => 'additional_scripts_section',
+	// 'type'        => 'textarea',
+	// ]
 	// );
 
 	// Register a setting.
 	// $wp_customize->add_setting(
-	// 	'footer_scripts',
-	// 	[
-	// 		'default'           => '',
-	// 		'sanitize_callback' => 'force_balance_tags',
-	// 	]
+	// 'footer_scripts',
+	// [
+	// 'default'           => '',
+	// 'sanitize_callback' => 'force_balance_tags',
+	// ]
 	// );
 
 	// Create the setting field.
 	// $wp_customize->add_control(
-	// 	'footer_scripts',
-	// 	[
-	// 		'label'       => esc_attr__( 'Footer Scripts', 'debtcollective' ),
-	// 		'description' => esc_attr__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', 'debtcollective' ),
-	// 		'section'     => 'additional_scripts_section',
-	// 		'type'        => 'textarea',
-	// 	]
+	// 'footer_scripts',
+	// [
+	// 'label'       => esc_attr__( 'Footer Scripts', 'debtcollective' ),
+	// 'description' => esc_attr__( 'Additional scripts to add to the footer. Basic HTML tags are allowed.', 'debtcollective' ),
+	// 'section'     => 'additional_scripts_section',
+	// 'type'        => 'textarea',
+	// ]
 	// );
 
-	$wp_customize->add_setting( 'default_featured_image', [
-		'default'	=> '',
-		'transport'	=> 'refresh',
-		'type'      => 'option'
-	] );
-
-	$wp_customize->add_setting( 'default_avatar', [
-		'default'	=> '',
-		'transport'	=> 'refresh',
-		'type'      => 'option'
-	] );
-
-
-	$wp_customize->add_setting( 
-		'display_global_header', 
-		[
-			'default'	=> 'true'
-		] 
-	);
-
-	$wp_customize->add_setting( 
-		'display_site_branding', 
-		[
-			'default'	=> 'false'
-		] 
-	);
-
-	$wp_customize->add_control( 
-		'global_header_control', 
-		[
-			'label'      	=> esc_attr__( 'Display Global Header', 'debtcollective' ),
-			'section'    	=> 'title_tagline',
-			'settings'   	=> 'display_global_header',
-			'type'       	=> 'checkbox',
-			'choices'   => [
-				'true' 	=> esc_attr__( 'Display', 'debtcollective' )
-			]
-			
-		] 
-	);
-
-	$wp_customize->add_control( 
-		'site_branding_control', 
-		[
-			'label'      	=> esc_attr__( 'Display Site Branding', 'debtcollective' ),
-			'section'    	=> 'title_tagline',
-			'settings'   	=> 'display_site_branding',
-			'type'       	=> 'checkbox',
-			'choices'   => [
-				'true' 	=> esc_attr__( 'Display', 'debtcollective' )
-			]
-			
-		] 
-	);
-
-	$wp_customize->add_control( new \WP_Customize_Image_Control(
-		$wp_customize,
+	$wp_customize->add_setting(
 		'default_featured_image',
-		array(
-			'label'      => esc_html__( 'Add a default post image', 'debtcollective' ),
-			'section'    => 'media_defaults',
-			'settings'   => 'default_featured_image',
-		)
-	) );
+		[
+			'default'   => '',
+			'transport' => 'refresh',
+			'type'      => 'option',
+		]
+	);
 
-	$wp_customize->add_control( new \WP_Customize_Image_Control(
-		$wp_customize,
+	$wp_customize->add_setting(
 		'default_avatar',
-		array(
-			'label'      => esc_html__( 'Add a default user avatar image', 'debtcollective' ),
-			'section'    => 'media_defaults',
-			'settings'   => 'default_avatar',
-		)
-	) );
+		[
+			'default'   => '',
+			'transport' => 'refresh',
+			'type'      => 'option',
+		]
+	);
 
+	$wp_customize->add_setting(
+		'display_global_header',
+		[
+			'default' => 'true',
+		]
+	);
+
+	$wp_customize->add_setting(
+		'display_site_branding',
+		[
+			'default' => 'false',
+		]
+	);
+
+	$wp_customize->add_control(
+		'global_header_control',
+		[
+			'label'    => esc_attr__( 'Display Global Header', 'debtcollective' ),
+			'section'  => 'title_tagline',
+			'settings' => 'display_global_header',
+			'type'     => 'checkbox',
+			'choices'  => [
+				'true' => esc_attr__( 'Display', 'debtcollective' ),
+			],
+
+		]
+	);
+
+	$wp_customize->add_control(
+		'site_branding_control',
+		[
+			'label'    => esc_attr__( 'Display Site Branding', 'debtcollective' ),
+			'section'  => 'title_tagline',
+			'settings' => 'display_site_branding',
+			'type'     => 'checkbox',
+			'choices'  => [
+				'true' => esc_attr__( 'Display', 'debtcollective' ),
+			],
+
+		]
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Image_Control(
+			$wp_customize,
+			'default_featured_image',
+			array(
+				'label'    => esc_html__( 'Add a default post image', 'debtcollective' ),
+				'section'  => 'media_defaults',
+				'settings' => 'default_featured_image',
+			)
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Image_Control(
+			$wp_customize,
+			'default_avatar',
+			array(
+				'label'    => esc_html__( 'Add a default user avatar image', 'debtcollective' ),
+				'section'  => 'media_defaults',
+				'settings' => 'default_avatar',
+			)
+		)
+	);
 
 }
 
@@ -204,11 +212,11 @@ function customize_copyright_text( $wp_customize ) {
 			$wp_customize,
 			'copyright_text',
 			[
-				'label'       	=> esc_attr__( 'Copyright Text', 'debtcollective' ),
-				'description' 	=> esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'debtcollective' ),
-				'section'     	=> 'title_tagline',
-				'type'        	=> 'textarea',
-				'priority' 		=> 100,
+				'label'       => esc_attr__( 'Copyright Text', 'debtcollective' ),
+				'description' => esc_attr__( 'The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'debtcollective' ),
+				'section'     => 'title_tagline',
+				'type'        => 'textarea',
+				'priority'    => 100,
 			]
 		)
 	);

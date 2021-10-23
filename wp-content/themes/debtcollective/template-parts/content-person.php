@@ -6,11 +6,11 @@
  *
  * @package DebtCollective
  */
-$user = $args;
+$user    = $args;
 $user_id = (int) $args->data->ID;
 ?>
 
-<article id="user-<?php echo $user_id ?>" class='person-container person vcard'>
+<article id="user-<?php echo $user_id; ?>" class='person-container person vcard'>
 	<picture class="person__avatar"><?php echo get_avatar( intval( $user_id ), 120 ); ?></picture>
 	<div class="person_details">
 		<h3 class="person__name"><?php printf( '%s %s', esc_html( $user->first_name ) ?? '', esc_html( $user->last_name ) ?? '' ); ?></h3>
