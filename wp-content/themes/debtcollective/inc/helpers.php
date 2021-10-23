@@ -6,6 +6,7 @@
  *
  * @package DebtCollective
  */
+namespace DebtCollective\Inc;
 
 /**
  * Get an attachment ID from it's URL.
@@ -44,4 +45,15 @@ function get_attachment_id_from_url( $attachment_url = '' ) {
 	}
 
 	return $attachment_id;
+}
+
+/**
+ * Determine if post has children
+ *
+ * @param obj $post
+ * @return boolean
+ */
+function has_parent( $post = null ) {
+	$children = get_posts( [ 'post_type' => 'page','post_parent' => $post->ID, 'fields' => 'ids' ] );
+	return count( $children ) > 0;
 }
