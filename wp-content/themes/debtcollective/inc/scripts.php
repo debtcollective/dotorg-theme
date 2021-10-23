@@ -7,19 +7,19 @@
 namespace DebtCollective\Inc;
 
  /**
- * Register Google Fonts
- */
+  * Register Google Fonts
+  */
 function theme_fonts() {
 	$fonts_url = 'https://fonts.googleapis.com/css2';
 
-	$font_families = [];
+	$font_families   = [];
 	$font_families[] = 'Libre+Franklin:wght@200;300;400;500;800;900&';
 	$font_families[] = 'Material+Icons';
 
 	$query_args = array(
 		'family'  => implode( '|', $font_families ),
 		'subset'  => 'latin',
-		'display' => 'swap'
+		'display' => 'swap',
 	);
 
 	$fonts_url = \add_query_arg( $query_args, \esc_url( $fonts_url ) );

@@ -6,7 +6,7 @@
  *
  * @package DebtCollective
  */
-$post_id = get_the_ID();
+$post_id  = get_the_ID();
 $taxonomy = $data->args['taxonomy'];
 ?>
 
@@ -15,7 +15,7 @@ $taxonomy = $data->args['taxonomy'];
 		<?php \the_date(); ?>
 	</div><!-- .entry-meta -->
 
-	<?php if( \get_post_meta( $post_id, 'show_title', true ) ) : ?>
+	<?php if ( \get_post_meta( $post_id, 'show_title', true ) ) : ?>
 		<h3 class="purchase-agreement__title entry-title"><?php the_title(); ?></h3>
 	<?php endif; ?>
 
@@ -40,7 +40,7 @@ $taxonomy = $data->args['taxonomy'];
 
 	<div class="purchase-agreement__details">
 		<dl>
-			<?php if( $amount = \get_post_meta( $post_id, 'amount', true ) ) : ?>
+			<?php if ( $amount = \get_post_meta( $post_id, 'amount', true ) ) : ?>
 				<dt class="purchase-agreement__amount entry-value">
 					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $amount ) ); ?>
 				</dt>
@@ -48,8 +48,10 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'abolished', 'site-functionality' ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( \has_term( '', $taxonomy, $post_id ) ) :
-				$tags = \wp_get_post_terms( $post_id, $taxonomy, [ 'fields' => 'names' ] ); ?>
+			<?php
+			if ( \has_term( '', $taxonomy, $post_id ) ) :
+				$tags = \wp_get_post_terms( $post_id, $taxonomy, [ 'fields' => 'names' ] );
+				?>
 				<dt class="purchase-agreement__type entry-label">
 					<?php \esc_html_e( 'Type:', 'site-functionality' ); ?>
 				</dt>
@@ -57,7 +59,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php echo \esc_html( $tags[0] ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( $number = \get_post_meta( $post_id, 'number', true ) ) : ?>
+			<?php if ( $number = \get_post_meta( $post_id, 'number', true ) ) : ?>
 				<dt class="purchase-agreement__number entry-label">
 					<?php \esc_html_e( 'Number of Debtors:', 'site-functionality' ); ?>
 				</dt>
@@ -65,7 +67,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php printf( '<span class="value">%d</span>', number_format( $number ) ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
+			<?php if ( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
 				<dt class="purchase-agreement__average entry-label">
 					<?php \esc_html_e( 'Average Debt/Debtor:', 'site-functionality' ); ?>
 				</dt>
@@ -73,7 +75,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average ) ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
+			<?php if ( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
 				<dt class="purchase-agreement__purchase-price entry-label">
 					<?php \esc_html_e( 'Purchase Price:', 'site-functionality' ); ?>
 				</dt>
@@ -83,7 +85,8 @@ $taxonomy = $data->args['taxonomy'];
 			<?php endif; ?>
 		</dl>
 
-		<?php if( $file_id = \get_post_meta( $post_id, 'file', true ) ) :
+		<?php
+		if ( $file_id = \get_post_meta( $post_id, 'file', true ) ) :
 			$file = \wp_get_attachment_url( $file_id );
 			?>
 			<?php printf( '<a href="%s" aria-label="%s" target="_blank">%s</a>', \esc_url( $file ), \esc_attr__( 'Download Purchase Agreement as PDF', 'site-functionality' ), \esc_html__( 'Download Purchase Agreement', 'site-functionality' ) ); ?>

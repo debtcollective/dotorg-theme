@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Events Archive
- * 
+ *
  * The template for displaying the event archive page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -22,25 +22,25 @@ get_header(); ?>
 
 		<?php
 		$date_time = new \DateTime();
-		$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-		$args = [
-			'post_type'		=> [ 'an_event' ],
-			'paged'         => $paged,
-			'orderby'		=> 'meta_value',
-			'order'   		=> 'DESC',
-			'meta_key'		=> 'start_date',
-			'meta_type'		=> 'DATETIME',
-			'meta_query'	=> [
+		$paged     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+		$args      = [
+			'post_type'  => [ 'an_event' ],
+			'paged'      => $paged,
+			'orderby'    => 'meta_value',
+			'order'      => 'DESC',
+			'meta_key'   => 'start_date',
+			'meta_type'  => 'DATETIME',
+			'meta_query' => [
 				[
 					'key'     => 'start_date',
 					'value'   => $date_time->format( 'c' ),
-					'compare' => '<'
-				]
-			]
+					'compare' => '<',
+				],
+			],
 		];
-		$query = new \WP_Query( $args );
+		$query     = new \WP_Query( $args );
 		if ( $query->have_posts() ) :
-		?>
+			?>
 
 			<div class="events__list">
 
@@ -55,7 +55,8 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/content', get_post_type() );
 
-				endwhile; ?>
+				endwhile;
+				?>
 
 			</div>
 

@@ -57,10 +57,10 @@ function selective_refresh_support( $wp_customize ) {
 
 	// The <div> classname to append edit icon too.
 	$settings = [
-		'branding'			=> '.site-branding',
-		'blogname'          => '.site-title a',
-		'blogdescription'   => '.site-description',
-		'copyright_text' 	=> '.site-info',
+		'branding'        => '.site-branding',
+		'blogname'        => '.site-title a',
+		'blogdescription' => '.site-description',
+		'copyright_text'  => '.site-info',
 	];
 
 	// Loop through, and add selector partials.
