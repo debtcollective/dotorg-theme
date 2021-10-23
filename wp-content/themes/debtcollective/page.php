@@ -23,7 +23,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php if( !is_front_page() ) : ?>
+		<?php if ( ! is_front_page() ) : ?>
 			<?php get_sidebar(); ?>
 		<?php endif; ?>
 	</div>

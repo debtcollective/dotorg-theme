@@ -48,10 +48,10 @@ function setup() {
 	// Register navigation menus.
 	register_nav_menus(
 		[
-			'primary' 	=> esc_html__( 'Primary Menu', 'debtcollective' ),
-			'footer'  	=> esc_html__( 'Footer Menu', 'debtcollective' ),
-			'mobile'  	=> esc_html__( 'Mobile Menu', 'debtcollective' ),
-			'privacy'  	=> esc_html__( 'Privacy Menu', 'debtcollective' ),
+			'primary' => esc_html__( 'Primary Menu', 'debtcollective' ),
+			'footer'  => esc_html__( 'Footer Menu', 'debtcollective' ),
+			'mobile'  => esc_html__( 'Mobile Menu', 'debtcollective' ),
+			'privacy' => esc_html__( 'Privacy Menu', 'debtcollective' ),
 		]
 	);
 
@@ -100,33 +100,7 @@ function setup() {
 	/** Now defined in ./theme.json */
 
 	// Gutenberg support for full-width/wide alignment of supported blocks.
-	add_theme_support( 'align-wide' );	// Gutenberg defaults for font sizes.
-
-	// add_theme_support(
-	// 	'editor-font-sizes',
-	// 	[
-	// 		[
-	// 			'name' => __( 'Small', 'debtcollective' ),
-	// 			'size' => 12,
-	// 			'slug' => 'small',
-	// 		],
-	// 		[
-	// 			'name' => __( 'Normal', 'debtcollective' ),
-	// 			'size' => 16,
-	// 			'slug' => 'normal',
-	// 		],
-	// 		[
-	// 			'name' => __( 'Large', 'debtcollective' ),
-	// 			'size' => 36,
-	// 			'slug' => 'large',
-	// 		],
-	// 		[
-	// 			'name' => __( 'Huge', 'debtcollective' ),
-	// 			'size' => 50,
-	// 			'slug' => 'huge',
-	// 		],
-	// 	]
-	// );
+	add_theme_support( 'align-wide' );  // Gutenberg defaults for font sizes.
 
 	// Gutenberg editor styles support.
 	add_theme_support( 'editor-styles' );
@@ -165,7 +139,7 @@ function widgets_init() {
 	$sidebars = [
 		'sidebar-1' => esc_html__( 'Sidebar 1', 'debtcollective' ),
 		'sidebar-2' => esc_html__( 'Content Footer', 'debtcollective' ),
-		'footer' 	=> esc_html__( 'Footer', 'debtcollective' ),
+		'footer'    => esc_html__( 'Footer', 'debtcollective' ),
 	];
 
 	// Loop through each sidebar and register.

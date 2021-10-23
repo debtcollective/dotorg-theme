@@ -3,7 +3,7 @@
  * Block Patterns
  *
  * A place to put custom block patterns.
- * 
+ *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/
  *
  * @package DebtCollective
@@ -17,39 +17,39 @@ namespace DebtCollective\Inc;
  */
 function register_block_patterns() {
 
-    \register_block_pattern_category(
-        'components',
-        [
-            'label' => __( 'Components', 'debtcollective' ) 
-        ]
-    );
+	\register_block_pattern_category(
+		'components',
+		[
+			'label' => __( 'Components', 'debtcollective' ),
+		]
+	);
 
-    \register_block_pattern_category(
-        'landing-pages',
-        [
-            'label' => __( 'Landing Pages', 'debtcollective' ) 
-        ]
-    );
+	\register_block_pattern_category(
+		'landing-pages',
+		[
+			'label' => __( 'Landing Pages', 'debtcollective' ),
+		]
+	);
 
-    /**
-     * Touts
-     */
-    \register_block_pattern(
-        'debtcollective/landing-page-touts',
-        [
-            'title'         => __( 'Landing Page Touts', 'debtcollective' ),
-            'description'   => __( 'Touts for landing pages', 'debtcollective' ),
-            'categories'    => [ 
-                'components', 
-                'landing-pages', 
-                'layout'
-            ],
-            'keywords'      => [ 
-                __( 'touts', 'debtcollective' ),
-                __( 'layout', 'debtcollective' ),
-                __( 'components', 'debtcollective' )
-            ],
-            'content'       => '<!-- wp:columns -->
+	/**
+	 * Touts
+	 */
+	\register_block_pattern(
+		'debtcollective/landing-page-touts',
+		[
+			'title'       => __( 'Landing Page Touts', 'debtcollective' ),
+			'description' => __( 'Touts for landing pages', 'debtcollective' ),
+			'categories'  => [
+				'components',
+				'landing-pages',
+				'layout',
+			],
+			'keywords'    => [
+				__( 'touts', 'debtcollective' ),
+				__( 'layout', 'debtcollective' ),
+				__( 'components', 'debtcollective' ),
+			],
+			'content'     => '<!-- wp:columns -->
             <div class="wp-block-columns"><!-- wp:column -->
             <div class="wp-block-column"><!-- wp:cover {"overlayColor":"salmon","contentPosition":"top left","className":"tout tout\u002d\u002dsalmon"} -->
             <div class="wp-block-cover has-salmon-background-color has-background-dim has-custom-content-position is-position-top-left tout tout--salmon"><div class="wp-block-cover__inner-container"><!-- wp:heading {"placeholder":"Add Heading...","textColor":"gray-darker","className":"tout__heading h1"} -->
@@ -87,26 +87,26 @@ function register_block_patterns() {
             <!-- /wp:heading --></div></div>
             <!-- /wp:cover --></div>
             <!-- /wp:column --></div>
-            <!-- /wp:columns -->'
-        ]
-    );
+            <!-- /wp:columns -->',
+		]
+	);
 
-    \register_block_pattern(
-        'debtcollective/landing-page-touts-alt',
-        [
-            'title'         => __( 'Landing Page Touts', 'debtcollective' ),
-            'description'   => __( 'Touts for landing pages', 'debtcollective' ),
-            'categories'    => [ 
-                'components', 
-                'landing-pages', 
-                'layout'
-            ],
-            'keywords'      => [ 
-                __( 'touts', 'debtcollective' ),
-                __( 'layout', 'debtcollective' ),
-                __( 'components', 'debtcollective' )
-            ],
-            'content'       => '
+	\register_block_pattern(
+		'debtcollective/landing-page-touts-alt',
+		[
+			'title'       => __( 'Landing Page Touts', 'debtcollective' ),
+			'description' => __( 'Touts for landing pages', 'debtcollective' ),
+			'categories'  => [
+				'components',
+				'landing-pages',
+				'layout',
+			],
+			'keywords'    => [
+				__( 'touts', 'debtcollective' ),
+				__( 'layout', 'debtcollective' ),
+				__( 'components', 'debtcollective' ),
+			],
+			'content'     => '
             <!-- wp:columns -->
             <div class="wp-block-columns"><!-- wp:column -->
             <div class="wp-block-column"><!-- wp:cover {"url":"' . \get_stylesheet_directory_uri() . '/build/images/hero.png","id":136,"dimRatio":90,"overlayColor":"salmon","focalPoint":{"x":"0.00","y":"0.00"},"contentPosition":"top left","className":"tout tout\u002d\u002dsalmon"} -->
@@ -145,9 +145,9 @@ function register_block_patterns() {
             <!-- /wp:heading --></div></div>
             <!-- /wp:cover --></div>
             <!-- /wp:column --></div>
-            <!-- /wp:columns -->'
-        ]
-    );
+            <!-- /wp:columns -->',
+		]
+	);
 }
-   
+
 add_action( 'init', __NAMESPACE__ . '\register_block_patterns' );

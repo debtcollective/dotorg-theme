@@ -66,7 +66,7 @@ function render( $attributes, $content, $block ) {
 
 	if( $query->have_posts() ) : 
 
-		$wrapper_attributes = \get_block_wrapper_attributes( [ 'class' => 'purchase-agreeements__list' ] );
+		$wrapper_attributes = \get_block_wrapper_attributes( [ 'class' => 'purchase-agreeements purchase-agreeements__list' ] );
 		$loader_params = \Site_Functionality\Blocks\get_template_params();
 		$template_loader = new TemplateLoader( $loader_params );
 		

@@ -1,0 +1,63 @@
+{
+    "apiVersion": 2,
+    "version": "1.0.0",
+    "textdomain": "site-functionality",
+    "name": "site-functionality/tout",
+    "title": "Tout",
+    "category": "components",
+    "collection": "site-functionality",
+    "className": "tout",
+    "description": "Display a tout on page",
+    "keywords": [
+        "callout",
+        "tout"
+    ],
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "color": { 
+            "background": true,
+            "text": true,
+            "gradients": false,
+            "link": false
+        },
+        "customClassName": true,
+        "defaultStylePicker": false,
+        "__experimentalLayout": false
+    },
+    "example" : {
+        "attributes": {
+            "className": "tout salmon"
+        },
+        "innerBlocks": [
+            {
+                "name": "core/heading",
+                "attributes": {
+                    "level": 2,
+                    "className": "tout__heading",
+                    "content": "Alone our debts are a burden.<br /> Together they make us <em>powerful</em>."
+                }
+            },
+            {
+                "name": "core/paragraph",
+                "attributes": {
+                    "className": "tout__content",
+                    "content": "We are a debtors' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all."
+                }
+            },
+            {
+                "name": "core/image",
+                "attributes": {
+                    "className": "tout__image",
+                    "id": 134, 
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                }
+            }
+        ]
+    },
+    "script": "site-functionality",
+    "style": "file:../../build/style-index.css",
+    "editorScript": "file:../../build/index.js",
+	"editorStyle": "file:../../build/index.css"
+}

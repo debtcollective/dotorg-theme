@@ -12,6 +12,7 @@ include_once( \plugin_dir_path( __FILE__ ) . 'src/faq/index.php' );
 include_once( \plugin_dir_path( __FILE__ ) . 'src/impactfulCallout/index.php' );
 include_once( \plugin_dir_path( __FILE__ ) . 'src/postmeta/index.php' );
 include_once( \plugin_dir_path( __FILE__ ) . 'src/purchaseAgreements/index.php' );
+include_once( \plugin_dir_path( __FILE__ ) . 'src/tout/index.php' );
 include_once( \plugin_dir_path( __FILE__ ) . 'src/userQuery/index.php' );
 
 const TEMPLATE_PARAMS = [

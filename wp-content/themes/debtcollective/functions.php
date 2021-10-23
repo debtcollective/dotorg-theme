@@ -19,6 +19,7 @@ function debtcollective_get_theme_include_files() {
 		'inc/customizer/customizer.php', // Customizer additions.
 		'inc/extras.php', // Custom functions that act independently of the theme templates.
 		'inc/hooks.php', // Load custom filters and hooks.
+		'inc/helpers.php', // Helper functions.
 		'inc/security.php', // WordPress hardening.
 		'inc/scripts.php', // Load styles and scripts.
 		'inc/shortcodes.php', // Custom shortcodes.

@@ -5,6 +5,7 @@
     "name": "site-functionality/postmeta",
     "title": "Post Meta Field",
     "icon": "database",
+    "category": "components",
     "className": "entry-meta",
     "parent": "core/query",
     "description": "Display a custom field for post.",

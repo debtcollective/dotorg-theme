@@ -21,7 +21,7 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php if( $display_global_header ) : ?>
+	<?php if ( $display_global_header ) : ?>
 		<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ); ?>"></script>
 	<?php endif; ?>
 
@@ -33,7 +33,7 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 
 	<?php wp_body_open(); ?>
 
-	<?php if( $display_global_header ) : ?>
+	<?php if ( $display_global_header ) : ?>
 		<dc-header
 			logo=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-black.png' ); ?>
 			logosmall=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-small.png' ); ?>
@@ -51,7 +51,8 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 		<div class="container">
 
 			<?php
-			if( $display_site_branding ) : ?>
+			if ( $display_site_branding ) :
+				?>
 				<div class="site-branding">
 
 					<?php the_custom_logo(); ?>
@@ -92,6 +93,6 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 			?>
 		</nav><!-- #site-navigation-->
 
-		<?php echo do_shortcode( '[flexy_breadcrumb]'); ?> 
+		<?php echo do_shortcode( '[flexy_breadcrumb]' ); ?> 
 
 	</header><!-- .site-header-->
