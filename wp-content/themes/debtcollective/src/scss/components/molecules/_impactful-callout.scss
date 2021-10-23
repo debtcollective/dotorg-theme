@@ -17,7 +17,7 @@
 		margin: 0;
 	}
 	h3 {
-		color: #fff;
+		color: $white;
 		font-weight: 300;
 		text-transform: uppercase;
 		font-size: get-font-size(h5);
@@ -25,12 +25,15 @@
 			font-size: get-font-size(h4);
 		}
 	}
-	h2 {
-		color: get-color(canary);
+	h2,
+	.has-inline-color {
 		font-weight: 900;
 		font-size: get-font-size(h4);
 		@media (min-width: get-breakpoint(xs)) {
 			font-size: get-font-size(h3);
 		}
+	}
+	h2 {
+		color: get-color(canary);
 	}
 }
