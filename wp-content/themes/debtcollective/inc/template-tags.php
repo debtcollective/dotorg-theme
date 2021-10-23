@@ -8,10 +8,10 @@
  */
 
  /**
- * Prints HTML with meta information for the current post-date/time and author.
- *
- * @author Debt Collective
- */
+  * Prints HTML with meta information for the current post-date/time and author.
+  *
+  * @author Debt Collective
+  */
 function debtcollective_post_date() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
@@ -410,23 +410,56 @@ function debtcollective_display_numeric_pagination( $args = [], $query = null ) 
 }
 
 function debtcollective_render_section_navigation( $post = null ) {
-
-	if ( $post->post_parent ) {
-		$parent = $post->post_parent;
-	} else {
-		$parent = $post->ID;
+	if ( ! $post->post_parent ) {
+		return;
 	}
+	$parent = $post->post_parent;
+	$parent_title = get_post_field( 'post_title', $parent ); ?>
 
-		echo '<ul class="page-button-nav">';
+		<nav class="pagenav">
+			<h3 class="widget-title"><?php echo esc_attr( $parent_title ); ?></h3>
 
-		wp_list_pages( array(
-			'child_of'			=>	$parent,
-			'sort_column'		=> 'menu_order', // sort by menu order to enable custom sorting
-			'title_li'			=> '', // get rid of the annoying top level "Pages" title element
-		) );
+			<ul>
+				<?php
+				$args = [
+					'child_of' 		=> $parent,
+					'sort_column' 	=> 'menu_order', // sort by menu order to enable custom sorting
+					'depth'    		=> 1,
+					'title_li' 		=> false,
+				];
 
-		echo '</ul>';
+				wp_list_pages( $args );
+				?>
+			</ul>
+		</nav>
 
+<?php
+}
+
+function debtcollective_render_subpage_navigation( $post = null ) {
+	if( ! DebtCollective\Inc\has_parent( $post ) ) {
+		return;
+	}
+	?>
+
+	<nav class="pagenav">
+		<h3 class="widget-title"><?php echo esc_attr( $post->post_title ); ?></h3>
+
+		<ul>
+			<?php
+			$args = [
+				'child_of' 		=> $post->ID,
+				'sort_column' 	=> 'menu_order', // sort by menu order to enable custom sorting
+				'depth'    		=> 1,
+				'title_li' 		=> false,
+			];
+
+			wp_list_pages( $args );
+			?>
+		</ul>
+	</nav>
+
+<?php
 }
 
 /**
