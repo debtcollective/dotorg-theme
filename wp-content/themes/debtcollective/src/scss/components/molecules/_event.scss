@@ -61,7 +61,8 @@
 			grid-template-rows: auto;
 			background-color: get-color(grey-light);
 			.event__date {
-				padding: 2rem 1.2rem 1rem;
+				// padding: 2rem 1.2rem 1rem;
+				padding-bottom: 1rem;
 				time {
 					padding: 0;
 					font-size: get-font-size(h3);
