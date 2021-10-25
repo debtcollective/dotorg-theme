@@ -41,11 +41,11 @@ $taxonomy = 'purchase_agreement_type';
 	<div class="purchase-agreement__details">
 		<dl>
 			<?php if ( $amount = \get_post_meta( $post_id, 'amount', true ) ) : ?>
-				<dt class="purchase-agreement__amount entry-label">
-					<?php \esc_html_e( 'Abolished', 'debtcollective' ); ?>
+				<dt class="purchase-agreement__amount entry-value">
+					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $amount ) ); ?>
 				</dt>
-				<dd class="purchase-agreement__amount entry-value">
-					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $amount, 2 ) ); ?>
+				<dd class="purchase-agreement__amount entry-label">
+					<?php \esc_html_e( 'abolished', 'debtcollective' ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php
@@ -53,34 +53,34 @@ $taxonomy = 'purchase_agreement_type';
 				$tags = \wp_get_post_terms( $post_id, $taxonomy, [ 'fields' => 'names' ] );
 				?>
 				<dt class="purchase-agreement__type entry-label">
-					<?php \esc_html_e( 'Type', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Type:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__type entry-value">
-					<?php echo implode( '<span class="separator">/</span>', $tags ); ?>
+					<?php echo \esc_html( $tags[0] ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if ( $number = \get_post_meta( $post_id, 'number', true ) ) : ?>
 				<dt class="purchase-agreement__number entry-label">
-					<?php \esc_html_e( 'Number of Debtors', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Number of Debtors:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__number entry-value">
-					<?php printf( '<span class="value">%d</span>', number_format( $number ) ); ?>
+					<?php printf( '<span class="value">%s</span>', DebtCollective\Inc\convert_string_to_number( $number, false ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if ( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
 				<dt class="purchase-agreement__average entry-label">
-					<?php \esc_html_e( 'Average Debt/Debtor', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Average Debt/Debtor:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__average entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average, 2 ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $average ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if ( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
 				<dt class="purchase-agreement__purchase-price entry-label">
-					<?php \esc_html_e( 'Purchase Price', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Purchase Price:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__purchase-price entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $purchase_price, 2 ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $purchase_price ) ); ?>
 				</dd>
 			<?php endif; ?>
 		</dl>

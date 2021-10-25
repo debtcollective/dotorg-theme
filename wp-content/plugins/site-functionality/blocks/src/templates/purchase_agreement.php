@@ -45,7 +45,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Abolished', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__amount entry-value">
-					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $amount, 2 ) ); ?>
+					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), Site_Functionality\convert_string_to_number( $amount ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( \has_term( '', $taxonomy, $post_id ) ) : 
@@ -62,7 +62,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Number of Debtors', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__number entry-value">
-					<?php printf( '<span class="value">%d</span>', number_format( $number ) ); ?>
+					<?php printf( '<span class="value">%s</span>', Site_Functionality\convert_string_to_number( $number, false ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
@@ -70,7 +70,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Average Debt/Debtor', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__average entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average, 2 ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), Site_Functionality\convert_string_to_number( $average ) ); ?>
 				</dd>
 			<?php endif; ?>
 			<?php if( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
@@ -78,7 +78,7 @@ $taxonomy = $data->args['taxonomy'];
 					<?php \esc_html_e( 'Purchase Price', 'site-functionality' ); ?>
 				</dt>
 				<dd class="purchase-agreement__purchase-price entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $purchase_price, 2 ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), Site_Functionality\convert_string_to_number( $purchase_price ) ); ?>
 				</dd>
 			<?php endif; ?>
 		</dl>

@@ -57,3 +57,17 @@ function has_parent( $post = null ) {
 	$children = get_posts( [ 'post_type' => 'page','post_parent' => $post->ID, 'fields' => 'ids' ] );
 	return count( $children ) > 0;
 }
+
+/**
+ * Convert a string to currency-formatted number
+ *
+ * @param string $string
+ * @param boolean $decimal
+ * @return float $formatted
+ */
+function convert_string_to_number( $string, $decimal = true, $trim = true ) {
+	$cleaned_number = str_replace( ',', '', $string );
+	$formatted = number_format( $cleaned_number, $decimal ? 2 : 0 );
+	$formatted = $trim ? str_replace( '.00', '', $formatted ) : $formatted;
+	return $formatted;
+}
