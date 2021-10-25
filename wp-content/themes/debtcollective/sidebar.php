@@ -8,10 +8,18 @@
  */
 ?>
 <aside class="sidebar widget-area">
-	<?php debtcollective_render_section_navigation( $post ); ?>
 
-	<?php debtcollective_render_subpage_navigation( $post ); ?>
+	<?php 
+	$section_navigation = \get_post_meta( $post->ID, 'display_section_navigation', true );
+	if( 'sibling' === $section_navigation ) : ?>
 
+		<?php debtcollective_render_section_navigation( $post ); ?>
+
+	<?php elseif ( 'children' === $section_navigation ) : ?>
+
+		<?php debtcollective_render_subpage_navigation( $post ); ?>
+
+	<?php endif; ?>
 
 	<?php
 	if ( is_active_sidebar( 'sidebar-1' ) ) :

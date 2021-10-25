@@ -52,6 +52,7 @@ function site_functionality_init() {
 	include_once( SITE_CORE_DIR . '/src/taxonomies/class-taxonomies.php' 				);
 	include_once( SITE_CORE_DIR . '/src/custom-fields/class-custom-fields.php' 			);
 	include_once( SITE_CORE_DIR . '/src/custom-fields/class-user-fields.php' 			);
+	include_once( SITE_CORE_DIR . '/src/custom-fields/class-page-fields.php' 			);
 	
 	$restAPI = new API\RestAPI( VERSION, PLUGIN );
 
@@ -59,6 +60,7 @@ function site_functionality_init() {
 	$taxonomies = new Taxonomies\Taxonomies( VERSION, PLUGIN );
 	$customFields = new CustomFields\CustomFields( VERSION, PLUGIN );
 	$userFields = new CustomFields\UserFields( VERSION, PLUGIN );
+	$pageFields = new CustomFields\PageFields( VERSION, PLUGIN );
 }
 add_action( 'plugins_loaded' , __NAMESPACE__ . '\site_functionality_init' );
 
