@@ -3,11 +3,11 @@
 	color: $black;
 	background-color: get-color(canary-light);
 	padding: 1.125rem;
-	margin: 1rem;
-	width: 100%;
+	margin: 0.75rem 0;
 	@media (min-width: get-breakpoint(sm)){
+		// margin: 1rem;
+		// margin-left: 0;
 		width: 290px;
-
 	}
 	&__date {
 		font-size: get-font-size(h4);
@@ -39,7 +39,7 @@
 			margin-bottom: 0.5rem;
 		}
 	}
-	
+
 	a {
 		color: get-color(jade-darker);
 	}
@@ -64,9 +64,9 @@
 			display: table;
 			clear: left;
 			width: 100%;
-		} 
+		}
 	}
-	
+
 	@media (min-width: get-breakpoint(sm)){
 		dl {
 			display: flex;
