@@ -1,4 +1,4 @@
-article.purchase-agreement {
+.purchase-agreement {
 	height: min-content;
 	color: #000;
 	background-color: get-color(canary-light);
@@ -6,15 +6,15 @@ article.purchase-agreement {
 	margin: 1rem;
 	width: 100%;
 	@media (min-width: get-breakpoint(sm)){
-		width: 290px;
+		width: 28%;
 	}
-	div.purchase-agreement__date {
+	.purchase-agreement__date {
 		font-size: get-font-size(h4);
 		line-height: 1;
 		font-weight: 300;
 		margin-bottom: 0.5rem;
 	}
-	h3.purchase-agreement__title {
+	.purchase-agreement__title {
 		font-size: get-font-size(h5);
 		margin: 1rem 0 0.5rem;
 	}
@@ -24,7 +24,7 @@ article.purchase-agreement {
 			margin: 0;
 		}
 	}
-	div.purchase-agreement__details dl {
+	.purchase-agreement__details dl {
 		width: 250px;
 		margin-top: 0.5rem;
 		.purchase-agreement__amount {
