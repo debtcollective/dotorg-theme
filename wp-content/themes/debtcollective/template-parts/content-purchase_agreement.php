@@ -19,7 +19,7 @@ $taxonomy = 'purchase_agreement_type';
 		<h3 class="purchase-agreement__title entry-title"><?php the_title(); ?></h3>
 	<?php endif; ?>
 
-	<div class="purchase-agreement__summary entry-content">
+	<div class="purchase-agreement__summary">
 		<?php
 		\the_content(
 			sprintf(
