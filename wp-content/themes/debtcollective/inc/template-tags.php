@@ -426,6 +426,8 @@ function debtcollective_render_section_navigation( $post = null ) {
 					'sort_column' 	=> 'menu_order', // sort by menu order to enable custom sorting
 					'depth'    		=> 1,
 					'title_li' 		=> false,
+					'link_before'	=> '<span class="hangover">',
+					'link_after'	=> '</span>',
 				];
 
 				wp_list_pages( $args );
@@ -452,6 +454,8 @@ function debtcollective_render_subpage_navigation( $post = null ) {
 				'sort_column' 	=> 'menu_order', // sort by menu order to enable custom sorting
 				'depth'    		=> 1,
 				'title_li' 		=> false,
+				'link_before'	=> '<span class="hangover">',
+				'link_after'	=> '</span>',
 			];
 
 			wp_list_pages( $args );

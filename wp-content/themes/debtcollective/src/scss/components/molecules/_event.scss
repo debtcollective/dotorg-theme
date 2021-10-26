@@ -15,12 +15,18 @@
 		padding: 2.3rem 1.2rem;
 		background-color: get-color('salmon');
 
+		&:hover,
+		&:focus {
+			color: currentColor;
+		}
+
 		.event__title {
 			height: 5.8rem;
 			font-size: get-font-size(h4);
 			line-height: 1.2;
 			// padding: 0 1.2rem;
-			margin-top: 2.3rem;
+			// margin-top: 2.3rem;
+			margin-top: 0;
 		}
 		.event__date time {
 			font-size: get-font-size(h4);
@@ -47,6 +53,11 @@
 		a {
 			background-color: get-color(jade-dark);
 			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $white;
+			}
 		}
 	}
 	&.event_tag-welcome-calls {
@@ -60,7 +71,8 @@
 			grid-template-rows: auto;
 			background-color: get-color(grey-light);
 			.event__date {
-				padding: 2rem 1.2rem 1rem;
+				// padding: 2rem 1.2rem 1rem;
+				padding-bottom: 1rem;
 				time {
 					padding: 0;
 					font-size: get-font-size(h3);
