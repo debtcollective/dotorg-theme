@@ -45,7 +45,7 @@
 	}
 
 	dl {
-		width: 250px;
+		// width: 250px;
 		margin-top: 0.5rem;
 	}
 
@@ -67,6 +67,9 @@
 	}
 	
 	@media (min-width: get-breakpoint(sm)){
-		dl {}
+		dl {
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
 }
