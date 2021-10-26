@@ -10,6 +10,7 @@ namespace Site_Functionality\CustomFields;
 use Site_Functionality\Abstracts\Base;
 use Site_Functionality\CustomFields\UserFields as UserFields;
 use Site_Functionality\CustomFields\PurchaseAgreementFields as PurchaseAgreementFields;
+use Site_Functionality\CustomFields\PageFields as PageFields;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -39,10 +40,13 @@ class CustomFields extends Base {
 		parent::__construct( $version, $plugin_name );
 
 		include_once( SITE_CORE_DIR . '/src/custom-fields/class-user-fields.php' 						);
+		include_once( SITE_CORE_DIR . '/src/custom-fields/class-page-fields.php' 			);
 		include_once( SITE_CORE_DIR . '/src/custom-fields/class-purchase-agreement-fields.php' 			);
 
 		$userFields = new UserFields( $version, $plugin_name );
+		$pageFields = new PageFields( $version, $plugin_name );
 		$purchaseAggrementFields = new PurchaseAgreementFields( $version, $plugin_name );
+
 
 		\add_action( 'acf/init', 		[ $this, 'acf_settings' ] );
 		\add_action( 'acfe/init', 		[ $this, 'acfe_settings' ] );
