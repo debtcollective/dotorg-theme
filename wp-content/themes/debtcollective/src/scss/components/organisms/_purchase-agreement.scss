@@ -5,9 +5,7 @@
 	padding: 1.125rem;
 	margin: 0.75rem 0;
 	@media (min-width: get-breakpoint(sm)){
-		// margin: 1rem;
-		// margin-left: 0;
-		width: 290px;
+		width: 28%;
 	}
 	&__date {
 		font-size: get-font-size(h4);
