@@ -51,14 +51,12 @@ function site_functionality_init() {
 	include_once( SITE_CORE_DIR . '/src/post-types/class-post-types.php' 				);
 	include_once( SITE_CORE_DIR . '/src/taxonomies/class-taxonomies.php' 				);
 	include_once( SITE_CORE_DIR . '/src/custom-fields/class-custom-fields.php' 			);
-	include_once( SITE_CORE_DIR . '/src/custom-fields/class-user-fields.php' 			);
 	
 	$restAPI = new API\RestAPI( VERSION, PLUGIN );
 
 	$postTypes = new PostTypes\PostTypes( VERSION, PLUGIN );
 	$taxonomies = new Taxonomies\Taxonomies( VERSION, PLUGIN );
 	$customFields = new CustomFields\CustomFields( VERSION, PLUGIN );
-	$userFields = new CustomFields\UserFields( VERSION, PLUGIN );
 }
 add_action( 'plugins_loaded' , __NAMESPACE__ . '\site_functionality_init' );
 
