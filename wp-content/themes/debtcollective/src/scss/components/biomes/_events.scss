@@ -1,21 +1,30 @@
-.entry-header {
-	font-weight: 900;
-	margin: 1rem;
-	@media (min-width: get-breakpoint(sm)) {
-		margin: 1rem 4.5rem 0;
+.page-events {
+	.entry-header {
+		margin: 1rem;
+		@media (min-width: get-breakpoint(sm)) {
+			margin: 1rem 4.5rem 0;
+		}
+		.entry-title {
+			font-size: get-font-size(h2);
+		}
 	}
-	.entry-title {
-		font-size: get-font-size(h2);
-	}
-}
 
-.events__list {
-	display: flex;
-	flex-direction: column;
-	margin-left: 1rem;
-	@media (min-width: get-breakpoint(sm)) {
-		margin-left: 4.5rem;
-		flex-direction: row;
-		flex-wrap: wrap;
+	.taxonomy-description {
+		margin: 1.5rem 1rem;
+		@media (min-width: get-breakpoint(sm)) {
+			margin-left: 4.5rem;
+			max-width: 64rem;
+		}
+	}
+
+	.events__list {
+		display: flex;
+		flex-direction: column;
+		margin-left: 1rem;
+		@media (min-width: get-breakpoint(sm)) {
+			margin-left: 4.5rem;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
 	}
 }

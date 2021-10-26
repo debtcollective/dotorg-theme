@@ -84,5 +84,7 @@
 		"sync": "browser-sync start --https --proxy 'http://debtcollective.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"masonry-layout": "^4.2.2"
+	}
 }
