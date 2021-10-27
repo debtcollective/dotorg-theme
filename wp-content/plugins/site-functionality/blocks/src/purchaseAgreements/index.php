@@ -64,19 +64,19 @@ function render( $attributes, $content, $block ) {
 	$query = new \WP_Query( $args );
 	$output = '';
 
-	if( $query->have_posts() ) : 
+	if( $query->have_posts() ) :
 
-		$wrapper_attributes = \get_block_wrapper_attributes( [ 'class' => 'purchase-agreeements__list' ] );
+		$wrapper_attributes = \get_block_wrapper_attributes( [ 'class' => 'purchase-agreements purchase-agreements__list' ] );
 		$loader_params = \Site_Functionality\Blocks\get_template_params();
 		$template_loader = new TemplateLoader( $loader_params );
-		
+
 		ob_start();
 		?>
 
 		<<?php echo ( $args['wrapperTagName'] ); ?> <?php echo $wrapper_attributes; ?>>
 
 		<?php
-		while( $query->have_posts() ) : $query->the_post(); 
+		while( $query->have_posts() ) : $query->the_post();
 
 			$template_loader
 				->setTemplateData( [
@@ -87,7 +87,7 @@ function render( $attributes, $content, $block ) {
 
 		<?php
 		endwhile; ?>
-		
+
 		</<?php echo ( $args['wrapperTagName'] ); ?>>
 
 	<?php

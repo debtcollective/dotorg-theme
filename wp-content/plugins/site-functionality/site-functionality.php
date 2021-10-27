@@ -35,23 +35,25 @@ function site_functionality_init() {
 	include_once( SITE_CORE_DIR . '/src/filters.php' 									);
 	include_once( SITE_CORE_DIR . '/src/security.php' 									);
 	include_once( SITE_CORE_DIR . '/src/util/util.php' 									);
-	include_once( SITE_CORE_DIR . '/src/class-template-loader.php' 						);
 
-	include_once( SITE_CORE_DIR . '/src/api/rest-api.php' 								);
 	// include_once( SITE_CORE_DIR . '/src/api/graphql.php' 				);
 
-	include_once( SITE_CORE_DIR . '/src/admin/admin.php' 								);
 
 	include_once( SITE_CORE_DIR . '/src/abstracts/class-base.php' 						);
+	include_once( SITE_CORE_DIR . '/blocks/blocks.php' 									);
+
+	include_once( SITE_CORE_DIR . '/src/admin/admin.php' 								);
+	include_once( SITE_CORE_DIR . '/src/class-template-loader.php' 						);
 	include_once( SITE_CORE_DIR . '/src/abstracts/class-post-type.php' 					);
 	include_once( SITE_CORE_DIR . '/src/abstracts/class-taxonomy.php' 					);
 
-	include_once( SITE_CORE_DIR . '/blocks/blocks.php' 									);
-	
+	include_once( SITE_CORE_DIR . '/src/api/class-rest-api.php' 						);
 	include_once( SITE_CORE_DIR . '/src/post-types/class-post-types.php' 				);
 	include_once( SITE_CORE_DIR . '/src/taxonomies/class-taxonomies.php' 				);
 	include_once( SITE_CORE_DIR . '/src/custom-fields/class-custom-fields.php' 			);
 	
+	$restAPI = new API\RestAPI( VERSION, PLUGIN );
+
 	$postTypes = new PostTypes\PostTypes( VERSION, PLUGIN );
 	$taxonomies = new Taxonomies\Taxonomies( VERSION, PLUGIN );
 	$customFields = new CustomFields\CustomFields( VERSION, PLUGIN );
@@ -70,9 +72,13 @@ add_action( 'plugins_loaded' , __NAMESPACE__ . '\site_functionality_init' );
 // 	return Site_Functions::instance();
 // }
 
-function site_functionality_activate() {}
-\register_activation_hook( __FILE__, array( __NAMESPACE__ . '\site_functionality_activate', 'hooks' ) );
+function site_functionality_activate() {
+	\flush_rewrite_rules();
+}
+\register_activation_hook( __FILE__, __NAMESPACE__ . '\site_functionality_activate', );
 
-function site_functionality_deactivate() {}
-\register_deactivation_hook( __FILE__, array( __NAMESPACE__ . '\site_functionality_deactivate', 'hooks' ) );
+function site_functionality_deactivate() {
+	\flush_rewrite_rules();
+}
+\register_deactivation_hook( __FILE__, __NAMESPACE__ . '\site_functionality_deactivate' );
 

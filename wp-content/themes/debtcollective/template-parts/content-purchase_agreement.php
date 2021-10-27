@@ -6,7 +6,7 @@
  *
  * @package DebtCollective
  */
-$post_id = get_the_ID();
+$post_id  = get_the_ID();
 $taxonomy = 'purchase_agreement_type';
 ?>
 
@@ -15,11 +15,11 @@ $taxonomy = 'purchase_agreement_type';
 		<?php debtcollective_post_date(); ?>
 	</div><!-- .entry-meta -->
 
-	<?php if( \get_post_meta( $post_id, 'show_title', true ) ) : ?>
+	<?php if ( \get_post_meta( $post_id, 'show_title', true ) ) : ?>
 		<h3 class="purchase-agreement__title entry-title"><?php the_title(); ?></h3>
 	<?php endif; ?>
 
-	<div class="purchase-agreement__summary entry-content">
+	<div class="purchase-agreement__summary">
 		<?php
 		\the_content(
 			sprintf(
@@ -40,50 +40,53 @@ $taxonomy = 'purchase_agreement_type';
 
 	<div class="purchase-agreement__details">
 		<dl>
-			<?php if( $amount = \get_post_meta( $post_id, 'amount', true ) ) : ?>
-				<dt class="purchase-agreement__amount entry-label">
-					<?php \esc_html_e( 'Abolished', 'debtcollective' ); ?>
+			<?php if ( $amount = \get_post_meta( $post_id, 'amount', true ) ) : ?>
+				<dt class="purchase-agreement__amount entry-value">
+					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $amount ) ); ?>
 				</dt>
-				<dd class="purchase-agreement__amount entry-value">
-					<?php \printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $amount ) ); ?>
+				<dd class="purchase-agreement__amount entry-label">
+					<?php \esc_html_e( 'abolished', 'debtcollective' ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( \has_term( '', $taxonomy, $post_id ) ) : 
-				$tags = \wp_get_post_terms( $post_id, $taxonomy, [ 'fields' => 'names' ] ); ?>
+			<?php
+			if ( \has_term( '', $taxonomy, $post_id ) ) :
+				$tags = \wp_get_post_terms( $post_id, $taxonomy, [ 'fields' => 'names' ] );
+				?>
 				<dt class="purchase-agreement__type entry-label">
-					<?php \esc_html_e( 'Type', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Type:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__type entry-value">
 					<?php echo \esc_html( $tags[0] ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( $number = \get_post_meta( $post_id, 'number', true ) ) : ?>
+			<?php if ( $number = \get_post_meta( $post_id, 'number', true ) ) : ?>
 				<dt class="purchase-agreement__number entry-label">
-					<?php \esc_html_e( 'Number of Debtors', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Number of Debtors:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__number entry-value">
-					<?php printf( '<span class="value">%d</span>', number_format( $number ) ); ?>
+					<?php printf( '<span class="value">%s</span>', DebtCollective\Inc\convert_string_to_number( $number, false ) ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
+			<?php if ( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
 				<dt class="purchase-agreement__average entry-label">
-					<?php \esc_html_e( 'Average Debt/Debtor', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Average Debt/Debtor:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__average entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $average ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $average ) ); ?>
 				</dd>
 			<?php endif; ?>
-			<?php if( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
+			<?php if ( $purchase_price = \get_post_meta( $post_id, 'price', true ) ) : ?>
 				<dt class="purchase-agreement__purchase-price entry-label">
-					<?php \esc_html_e( 'Purchase Price', 'debtcollective' ); ?>
+					<?php \esc_html_e( 'Purchase Price:', 'debtcollective' ); ?>
 				</dt>
 				<dd class="purchase-agreement__purchase-price entry-value">
-					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), number_format( $purchase_price, 2 ) ); ?>
+					<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $purchase_price ) ); ?>
 				</dd>
 			<?php endif; ?>
 		</dl>
 
-		<?php if( $file_id = \get_post_meta( $post_id, 'file', true ) ) : 
+		<?php
+		if ( $file_id = \get_post_meta( $post_id, 'file', true ) ) :
 			$file = \wp_get_attachment_url( $file_id );
 			?>
 			<?php printf( '<a href="%s" aria-label="%s" target="_blank">%s</a>', \esc_url( $file ), \esc_attr__( 'Download Purchase Agreement as PDF', 'debtcollective' ), \esc_html__( 'Download Purchase Agreement', 'debtcollective' ) ); ?>

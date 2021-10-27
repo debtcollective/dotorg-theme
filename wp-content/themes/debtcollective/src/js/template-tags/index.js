@@ -10,3 +10,4 @@ import './navigation-primary';
 import './off-canvas';
 import './table';
 import './video';
+import './faqs';

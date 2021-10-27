@@ -21,6 +21,10 @@ function body_classes( $classes ) {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
 	global $is_IE, $is_edge, $is_safari;
 
+	if ( get_theme_mod( 'display_global_header' ) ) {
+		$classes[] = 'has-globabl-header';
+	}
+
 	// If it's IE, add a class.
 	if ( $is_IE ) {
 		$classes[] = 'ie';
@@ -59,13 +63,8 @@ function body_classes( $classes ) {
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 
-	// Add a cleaner class for the scaffolding page template.
-	if ( is_page_template( 'template-scaffolding.php' ) ) {
-		$classes[] = 'template-scaffolding';
-	}
-
-	// Add a `has-sidebar` class if we're using the sidebar template.
-	if ( is_page_template( 'template-sidebar-right.php' ) ) {
+	// Add a `has-sidebar` class if we're using the default page template (page.php).
+	if ( ! is_front_page() && is_page() && is_active_sidebar( 'sidebar-1' ) && ! is_page_template() ) {
 		$classes[] = 'has-sidebar';
 	}
 

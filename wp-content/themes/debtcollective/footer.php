@@ -22,7 +22,8 @@
 			</div>
 			
 			<?php
-		endif; ?>
+		endif;
+		?>
 
 		<nav id="site-footer-navigation" class="footer-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Footer Navigation', 'debtcollective' ); ?>">
 			<?php

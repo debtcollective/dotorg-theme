@@ -61,6 +61,20 @@ function get_nearest_timezone( $cur_lat, $cur_long, $country_code = '' ) {
 }
 
 /**
+ * Convert a string to currency-formatted number
+ *
+ * @param string $string
+ * @param boolean $decimal
+ * @return float $formatted
+ */
+function convert_string_to_number( $string, $decimal = true, $trim = true ) {
+	$cleaned_number = str_replace( ',', '', $string );
+	$formatted = number_format( $cleaned_number, $decimal ? 2 : 0 );
+	$formatted = $trim ? str_replace( '.00', '', $formatted ) : $formatted;
+	return $formatted;
+}
+
+/**
  * Debug Helper
  */
 if( !function_exists( 'console_log' ) ) {

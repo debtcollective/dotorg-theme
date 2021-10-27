@@ -5,4 +5,4 @@
  * See https://developer.wordpress.org/themes/basics/template-files/.
  */
 
-// import './template-name';
+import './purchase-agreements';

@@ -3,41 +3,21 @@ import { __ } from '@wordpress/i18n';
 
 const variations = [
     {
-        name: 'tout',
-        title: __( 'Standard Tout', 'debtcollective' ),
+        name: 'tout-jade',
+        title: __( 'Jade Tout', 'debtcollective' ),
         category: 'components',
-        description: __( 'Add a standard tout component.', 'debtcollective' ),
+        description: __( 'Display a jade tout on page.', 'debtcollective' ),
         keywords: [
             __( 'tout', 'debtcollective' ),
             __( 'call to action', 'debtcollective' ),
             __( 'callout', 'debtcollective' )
         ],
         attributes: {
-            className: 'tout',
-            contentPosition: 'top left',
+            className: 'tout jade',
         },
-        innerBlocks: [
-            [ 'core/heading', { 
-                className: 'tout__heading',
-                placeholder: __( 'Add Heading...', 'debtcollective' )
-            } ],
-            [ 'core/paragraph', { 
-                className: 'tout__content',
-                placeholder: __( 'Add content...', 'debtcollective' )
-            } ],
-            [ 'core/buttons', { className: 'buttons' }, [
-                [ 'core/button', { 
-                    className: 'tout__button button',
-                    placeholder: __( 'Add Button Text...', 'debtcollective' )
-                } ]
-            ] ],
-        ],
         example: {
             attributes: {
-                className: 'tout',
-                contentPosition: 'top left',
-                overlayColor: 'jade',
-                url: 'images/student.png'
+                className: 'tout jade',
             },
             innerBlocks: [
                 {
@@ -56,26 +36,112 @@ const variations = [
                     },
                 },
                 {
-                    name: 'core/buttons',
+                    name: 'core/image',
                     attributes: {
-                        className: 'tout__buttons',
+                        className: 'tout__image',
+                        id: 134, 
+                        sizeSlug: 'full',
+                        linkDestination: 'none',
+                    }
+                },
+            ],
+        }
+    },
+    {
+        name: 'tout-canary',
+        title: __( 'Canary Tout', 'debtcollective' ),
+        category: 'components',
+        description: __( 'Display a canary tout on page.', 'debtcollective' ),
+        keywords: [
+            __( 'tout', 'debtcollective' ),
+            __( 'call to action', 'debtcollective' ),
+            __( 'callout', 'debtcollective' )
+        ],
+        attributes: {
+            className: 'tout canary',
+        },
+        example: {
+            attributes: {
+                className: 'tout canary',
+            },
+            innerBlocks: [
+                {
+                    name: 'core/heading',
+                    attributes: {
+                        level: 2,
+                        className: 'tout__heading',
+                        content: __( 'Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'debtcollective' ),
                     },
-                    innerBlocks: [
-                        {
-                            name: 'core/button',
-                            attributes: {
-                                className: 'tout__button',
-                                content: __( 'Join the Union', 'debtcollective' ),
-                            }
-                        }
-                    ]
+                },
+                {
+                    name: 'core/paragraph',
+                    attributes: {
+                        className: 'tout__content',
+                        content: __( 'We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
+                    },
+                },
+                {
+                    name: 'core/image',
+                    attributes: {
+                        className: 'tout__image',
+                        id: 134, 
+                        sizeSlug: 'full',
+                        linkDestination: 'none',
+                    }
+                },
+            ],
+        }
+    },
+    {
+        name: 'tout-salmon',
+        title: __( 'Salmon Tout', 'debtcollective' ),
+        category: 'components',
+        description: __( 'Display a salmon tout on page.', 'debtcollective' ),
+        keywords: [
+            __( 'tout', 'debtcollective' ),
+            __( 'call to action', 'debtcollective' ),
+            __( 'callout', 'debtcollective' )
+        ],
+        attributes: {
+            className: 'tout salmon',
+        },
+        example: {
+            attributes: {
+                className: 'tout salmon',
+            },
+            innerBlocks: [
+                {
+                    name: 'core/heading',
+                    attributes: {
+                        level: 2,
+                        className: 'tout__heading',
+                        content: __( 'Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'debtcollective' ),
+                    },
+                },
+                {
+                    name: 'core/paragraph',
+                    attributes: {
+                        className: 'tout__content',
+                        content: __( 'We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
+                    },
+                },
+                {
+                    name: 'core/image',
+                    attributes: {
+                        className: 'tout__image',
+                        id: 134, 
+                        sizeSlug: 'full',
+                        linkDestination: 'none',
+                    }
                 },
             ],
         }
     }
 ];
 
-registerBlockVariation(
-    'core/cover',
-    variations
-);
+variations.forEach( ( variation ) => {
+    registerBlockVariation(
+        'site-functionality/tout',
+        variation
+    );
+} );

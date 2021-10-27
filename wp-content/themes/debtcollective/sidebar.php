@@ -10,27 +10,16 @@
 <aside class="sidebar widget-area">
 
 	<?php 
-	if( $parent = $post->post_parent ) : 
-		$parent_title = get_post_field( 'post_title', $parent );
-		?>
-		<nav class="pagenav">
-			<h2><?php echo esc_attr( $parent_title ); ?></h2>
+	$section_navigation = \get_post_meta( $post->ID, 'display_section_navigation', true );
+	if( 'sibling' === $section_navigation ) : ?>
 
-			<ul>
-				<?php
-				$args = [
-					'child_of' 	=> $parent,
-					'depth' 	=> 1,
-					'title_li'	=> false,
-				];
+		<?php debtcollective_render_section_navigation( $post ); ?>
 
-				wp_list_pages( $args );
-				?>
-			</ul>
-		</nav>
+	<?php elseif ( 'children' === $section_navigation ) : ?>
 
-		<?php 
-	endif; ?>
+		<?php debtcollective_render_subpage_navigation( $post ); ?>
+
+	<?php endif; ?>
 
 	<?php
 	if ( is_active_sidebar( 'sidebar-1' ) ) :
@@ -38,5 +27,6 @@
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		
 		<?php
-	endif; ?>
+	endif;
+	?>
 </aside><!-- .secondary -->

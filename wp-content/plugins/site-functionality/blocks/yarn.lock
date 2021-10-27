@@ -2057,6 +2057,15 @@
     "@wordpress/i18n" "^4.2.1"
     "@wordpress/url" "^3.2.1"
 
+"@wordpress/api-fetch@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@wordpress/api-fetch/-/api-fetch-5.2.3.tgz#8c844bf4de72418b5636834adf4615e2ee2cb7bc"
+  integrity sha512-hEGn9vXk76ejdvei1pBX/kaQ3xnKlE2dwtCXszgem8PdDF5GYzgESEwYaWvfgPAfJs7xF283FN1QsNzA4M+N9A==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@wordpress/i18n" "^4.2.3"
+    "@wordpress/url" "^3.2.3"
+
 "@wordpress/autop@^3.2.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@wordpress/autop/-/autop-3.2.1.tgz#8676ec896796fc9f938a068e4c298d2dac65c414"
@@ -2329,10 +2338,30 @@
     react "^17.0.1"
     react-dom "^17.0.1"
 
+"@wordpress/element@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-4.0.2.tgz#6bdd1fc8763e333df0d630573af7a35ea508dd4b"
+  integrity sha512-qBNpkLb7Hh3r9aSwBOBMwRUevScbN5iR1M5B8/ZOuSZbeXYNcgWxX4WqVrt5Y52CNm8WwoQTdqcuIziNN6lhig==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@types/react" "^16.9.0"
+    "@types/react-dom" "^16.9.0"
+    "@wordpress/escape-html" "^2.2.2"
+    lodash "^4.17.21"
+    react "^17.0.1"
+    react-dom "^17.0.1"
+
 "@wordpress/escape-html@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@wordpress/escape-html/-/escape-html-2.2.1.tgz#5fd699cffebf59b174f5043b43b6b3dd770e2755"
   integrity sha512-+5hMa+1BLYgHdOxPK7TF+hfAaKJY1UE6osZL8s4boYeaq/O23PFv4aCPQF+z9/4cIKyvOJPGk26Z1Op6DwJLGA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+
+"@wordpress/escape-html@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@wordpress/escape-html/-/escape-html-2.2.2.tgz#1695562f271fd4a31e2f4c2a4bb4018cb404f43e"
+  integrity sha512-NuPury2dyaqF7zpDaUOKaoM0FrEuqaDE1c3j7rM6kceJ4ZFDHnCLf5NivwchOLo7Xs0oVtqBdDza/dcSQaLFGg==
   dependencies:
     "@babel/runtime" "^7.13.10"
 
@@ -2365,6 +2394,13 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@wordpress/hooks@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@wordpress/hooks/-/hooks-3.2.1.tgz#d7981cf0bcc234c6037131c521b4a2c1dc495b47"
+  integrity sha512-yI8MHs6UsvgJdDsOnXGkY7/7hrOCEv/M7vwdEVA5r6nGzgJaJxf8pjBqzRkCq3nVaWqxoNZgCMHJSul6Q8RR2g==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+
 "@wordpress/html-entities@^3.2.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@wordpress/html-entities/-/html-entities-3.2.1.tgz#05345a0bd8752fbfc321b8b5e8f528e79acda81f"
@@ -2379,6 +2415,19 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@wordpress/hooks" "^3.2.0"
+    gettext-parser "^1.3.1"
+    lodash "^4.17.21"
+    memize "^1.1.0"
+    sprintf-js "^1.1.1"
+    tannin "^1.2.0"
+
+"@wordpress/i18n@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@wordpress/i18n/-/i18n-4.2.3.tgz#5ff69a6fbf228a474afb8ea9d5e3ded7b9189dea"
+  integrity sha512-iaL7WVmFBVLyUJR0FVeaI0YJK3BiYg6Ir+s3PoJN3ppm+YsZUGThstHL8zSfQFMF0WaQ0OFWjnDqNl1th2annA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@wordpress/hooks" "^3.2.1"
     gettext-parser "^1.3.1"
     lodash "^4.17.21"
     memize "^1.1.0"
@@ -2478,6 +2527,15 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@wordpress/element" "^4.0.0"
+    classnames "^2.3.1"
+
+"@wordpress/primitives@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@wordpress/primitives/-/primitives-3.0.2.tgz#2a431b9a4fd05ee0ff8f013d98d84b4e8690aa85"
+  integrity sha512-/r7EuKEyzM8aPhjGS/NC1+lgr3Dk/mCbICndAh7sZP86OmWqoSpnh0VPZp/DxT4JdGiCa/NycXdOiP7ylngG6A==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@wordpress/element" "^4.0.2"
     classnames "^2.3.1"
 
 "@wordpress/priority-queue@^2.2.1":
@@ -2608,6 +2666,14 @@
     "@babel/runtime" "^7.13.10"
     lodash "^4.17.21"
     react-native-url-polyfill "^1.1.2"
+
+"@wordpress/url@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@wordpress/url/-/url-3.2.3.tgz#8c433051e0084d0c00d54916a6a9cf3d36335284"
+  integrity sha512-sepFDMcshaLBEPHDuHDAsXWsrRInyOa3an3Y8OfqLFwAoMZGAKJTClx1k4DnJwRRGhjv03veTl0IqxTdMH/CiA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    lodash "^4.17.21"
 
 "@wordpress/warning@^2.2.1":
   version "2.2.1"

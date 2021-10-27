@@ -1,15 +1,11 @@
-div.is-style-callout {
+.impactful-callout {
 	background-color: get-color(emphasis);
 	padding: 0.5rem 0.5rem 1rem;
-	margin: 0 0.25rem;
 	@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
 		padding: 0.75rem 1.25rem;
-		margin: 0 0.75rem;
 	}
 	@media (min-width: get-breakpoint(sm)) {
 		padding: 1.25rem 2.25rem;
-		margin: 0 1.5rem;
-		max-width: 54rem;
 	}
 	h3, h2, h3 p {
 		font-style: italic;
@@ -17,7 +13,7 @@ div.is-style-callout {
 		margin: 0;
 	}
 	h3 {
-		color: #fff;
+		color: $white;
 		font-weight: 300;
 		text-transform: uppercase;
 		font-size: get-font-size(h5);
@@ -25,12 +21,15 @@ div.is-style-callout {
 			font-size: get-font-size(h4);
 		}
 	}
-	h2 {
-		color: get-color(canary);
+	h2,
+	.has-inline-color {
 		font-weight: 900;
 		font-size: get-font-size(h4);
 		@media (min-width: get-breakpoint(xs)) {
 			font-size: get-font-size(h3);
 		}
+	}
+	h2 {
+		color: get-color(canary);
 	}
 }

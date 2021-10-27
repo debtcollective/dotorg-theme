@@ -1,12 +1,8 @@
-import { 
-    InnerBlocks, 
-    useBlockProps
-} from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 const Save = ( props ) => {
-
 	// return <InnerBlocks.Content />;
-    return null;
+	return null;
 };
 
 export default Save;

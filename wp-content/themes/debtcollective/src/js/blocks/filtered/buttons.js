@@ -34,8 +34,8 @@ function filterButtonSettings( settings, name ) {
     }
     return settings;
 }
-addFilter(
-    'blocks.registerBlockType',
-    'debtcollective/button/settings',
-    filterButtonSettings,
-);
+// addFilter(
+//     'blocks.registerBlockType',
+//     'debtcollective/button/settings',
+//     filterButtonSettings,
+// );

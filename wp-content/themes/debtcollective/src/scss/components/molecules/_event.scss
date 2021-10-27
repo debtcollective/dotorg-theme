@@ -1,9 +1,9 @@
-article.event {
-	height: 337px;
+.event {
+	// height: 337px;
 	margin: 0 1rem 2rem 0;
 	@media (min-width: get-breakpoint(sm)) {
 		margin: 0 2.5rem 2rem 0;
-		width: 283px;
+		max-width: 283px;
 	}
 	a {
 		display: grid;
@@ -12,47 +12,67 @@ article.event {
 		font-weight: 900;
 		color: get-color(grey-dark);
 		text-decoration: none;
+		padding: 2.3rem 1.2rem;
+		background-color: get-color('salmon');
+
+		&:hover,
+		&:focus {
+			color: currentColor;
+		}
+
 		.event__title {
 			height: 5.8rem;
 			font-size: get-font-size(h4);
 			line-height: 1.2;
-			padding: 0 1.2rem;
-			margin-top: 2.3rem;
+			// padding: 0 1.2rem;
+			// margin-top: 2.3rem;
+			margin-top: 0;
 		}
-		div.event__date time {
+		.event__date time {
 			font-size: get-font-size(h4);
 			line-height: 1;
 			font-weight: 300;
-			padding: 0 1.2rem;
+			// padding: 0 1.2rem;
 		}
-		div.event__time {
+		.event__time {
 			// font-size: 1.125rem;
-			padding: 0 1.2rem;
+			// padding: 0 1.2rem;
 		}
-		div.event__location {
+		.event__location {
 			font-weight: 400;
-			padding: 0 1.2rem;
+			// padding: 0 1.2rem;
 		}
 	}
 	&.event_tag-campaigns-and-trainings {
-		background-color: get-color("salmon");
+		a {
+			background-color: get-color('salmon');
+		}
 	}
 	&.event_tag-learn-about-debt {
-		background-color: get-color(jade-dark);
+		
 		a {
-			color: #fff;
+			background-color: get-color(jade-dark);
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $white;
+			}
 		}
 	}
 	&.event_tag-welcome-calls {
-		background-color: get-color(grey-light);
 		height: 208px;
 		&:nth-child(2) {
-			background-color: get-color(lilac);
+			a {
+				background-color: get-color(lilac);
+			}
 		}
 		a {
 			grid-template-rows: auto;
-			div.event__date {
-				padding: 2rem 1.2rem 1rem;
+			background-color: get-color(grey-light);
+			.event__date {
+				// padding: 2rem 1.2rem 1rem;
+				padding-bottom: 1rem;
 				time {
 					padding: 0;
 					font-size: get-font-size(h3);
@@ -60,7 +80,7 @@ article.event {
 					font-weight: 900;
 				}
 			}
-			div.event__time {
+			.event__time {
 				font-size: 1.125rem;
 			}
 			.event__location {
