@@ -68,6 +68,5 @@ Command | Action
 `yarn run watch` | Builds assets and starts Live Reload and Browsersync servers
 `yarn run start` | Builds assets and starts Live Reload server
 `yarn run build` | Builds production-ready assets for a deployment
-`yarn run lint` | Check all CSS, JS, MD, and PHP files for errors
-`yarn run format` | Fix all CSS, JS, MD, and PHP formatting errors automatically
-
+`yarn run lint` | Check all cs, js, md, and php files for errors
+`yarn run format` | Fix all css, js, md, and php formatting errors automatically
