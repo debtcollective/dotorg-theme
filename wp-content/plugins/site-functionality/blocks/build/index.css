@@ -41,6 +41,17 @@
 .wp-block-site-functionality-purchase-agreements .purchase-agreement {
   width: auto !important;
 }
+.wp-block-site-functionality-purchase-agreements dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wp-block-site-functionality-purchase-agreements dl dt {
+  width: calc( 100% / 3 );
+  margin-right: 0.125rem;
+}
+.wp-block-site-functionality-purchase-agreements dl dd {
+  width: calc( ( 100% / 1.5 ) - .125rem );
+}
 /**
  * The following styles get applied inside the editor only.
  *
