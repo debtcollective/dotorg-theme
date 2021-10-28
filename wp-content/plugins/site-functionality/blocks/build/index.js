@@ -2342,7 +2342,7 @@ const Edit = props => {
   };
 
   const Post = post => {
-    var _post$meta2, _post$title, _post$content, _post$content2, _post$meta3, _post$meta4, _types$, _types$2, _post$meta5, _post$meta6, _post$meta7, _post$meta8, _post$meta9, _post$meta10;
+    var _post$meta2, _post$title, _post$content, _post$content2, _post$meta3, _post$meta4, _post$meta5, _post$meta6, _post$meta7, _post$meta8, _post$meta9, _post$meta10;
 
     const types = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_6__["useSelect"])(select => {
       if (!purchaseTypes) {
@@ -2367,6 +2367,10 @@ const Edit = props => {
         context: 'view'
       });
     }, []);
+    const format = {
+      style: 'currency',
+      currency: 'USD'
+    };
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("article", {
       className: "purchase-agreement"
     }, showDate && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -2385,41 +2389,44 @@ const Edit = props => {
       }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "purchase-agreement__details"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dl", null, showAmount && ((_post$meta3 = post.meta) === null || _post$meta3 === void 0 ? void 0 : _post$meta3['amount']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
-      className: "purchase-agreement__amount entry-label"
-    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Abolished', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dl", null, showAmount && ((_post$meta3 = post.meta) === null || _post$meta3 === void 0 ? void 0 : _post$meta3['amount']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
       className: "purchase-agreement__amount entry-value"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
       className: "value"
-    }, new Intl.NumberFormat().format((_post$meta4 = post.meta) === null || _post$meta4 === void 0 ? void 0 : _post$meta4['amount'])))), showTypes && purchaseTypes && types && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
+    }, new Intl.NumberFormat('us-EN', format).format(parseFloat((_post$meta4 = post.meta) === null || _post$meta4 === void 0 ? void 0 : _post$meta4['amount'].replace(/,/g, ''))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
+      className: "purchase-agreement__amount entry-label"
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Abolished', 'site-functionality'))), showTypes && purchaseTypes && types && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
       className: "purchase-agreement__type entry-label"
     }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Type', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
       className: "purchase-agreement__type entry-value"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      href: (_types$ = types[0]) === null || _types$ === void 0 ? void 0 : _types$.link,
+    }, types.map((type, index) => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+      href: type === null || type === void 0 ? void 0 : type.link,
+      id: type === null || type === void 0 ? void 0 : type.id,
       rel: "tag",
       dangerouslySetInnerHTML: {
-        __html: (_types$2 = types[0]) === null || _types$2 === void 0 ? void 0 : _types$2.name
+        __html: type === null || type === void 0 ? void 0 : type.name
       }
-    }))), showNumber && ((_post$meta5 = post.meta) === null || _post$meta5 === void 0 ? void 0 : _post$meta5['number']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
+    }), types.length - 1 !== index && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
+      className: "separator"
+    }, "/"))))), showNumber && ((_post$meta5 = post.meta) === null || _post$meta5 === void 0 ? void 0 : _post$meta5['number']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
       className: "purchase-agreement__number entry-label"
     }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Number of Debtors', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
       className: "purchase-agreement__number entry-value"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
       className: "value"
-    }, (_post$meta6 = post.meta) === null || _post$meta6 === void 0 ? void 0 : _post$meta6['number']))), showAverage && ((_post$meta7 = post.meta) === null || _post$meta7 === void 0 ? void 0 : _post$meta7['average']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
+    }, new Intl.NumberFormat().format(parseInt((_post$meta6 = post.meta) === null || _post$meta6 === void 0 ? void 0 : _post$meta6['number'].replace(/,/g, '')))))), showAverage && ((_post$meta7 = post.meta) === null || _post$meta7 === void 0 ? void 0 : _post$meta7['average']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
       className: "purchase-agreement__average entry-label"
-    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Abolished', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Average Debt/Debtor', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
       className: "purchase-agreement__average entry-value"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
       className: "value"
-    }, new Intl.NumberFormat().format((_post$meta8 = post.meta) === null || _post$meta8 === void 0 ? void 0 : _post$meta8['average'])))), showPurchasePrice && ((_post$meta9 = post.meta) === null || _post$meta9 === void 0 ? void 0 : _post$meta9['price']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
+    }, new Intl.NumberFormat('us-EN', format).format(parseFloat((_post$meta8 = post.meta) === null || _post$meta8 === void 0 ? void 0 : _post$meta8['average'].replace(/,/g, '')))))), showPurchasePrice && ((_post$meta9 = post.meta) === null || _post$meta9 === void 0 ? void 0 : _post$meta9['price']) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dt", {
       className: "purchase-agreement__purchase-price entry-label"
-    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Abolished', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Purchase Price', 'site-functionality')), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("dd", {
       className: "purchase-agreement__purchase-price entry-value"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
       className: "value"
-    }, new Intl.NumberFormat().format((_post$meta10 = post.meta) === null || _post$meta10 === void 0 ? void 0 : _post$meta10['price'])))))), media && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+    }, new Intl.NumberFormat('us-EN', format).format(parseFloat((_post$meta10 = post.meta) === null || _post$meta10 === void 0 ? void 0 : _post$meta10['price'].replace(/,/g, '')))))))), media && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
       href: media.source_url,
       "aria-label": Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_10__["__"])('Download Purchase Agreement as PDF', 'site-functionality'),
       target: "_blank"

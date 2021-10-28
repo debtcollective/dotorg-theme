@@ -12,4 +12,18 @@
     .purchase-agreement {
         width: auto !important;
     }
+
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+
+        dt {
+            width: calc( 100% / 3 );
+            margin-right: .125rem;
+        }
+
+        dd {
+            width: calc( ( 100% / 1.5 ) - .125rem )
+        }
+    }
 }

@@ -351,6 +351,11 @@ const Edit = ( props ) => {
 			return select( 'core' ).getMedia( file, { context: 'view' } );
 		}, [] );
 
+		const format = {
+			style: 'currency',
+			currency: 'USD'
+		}
+
 		return (
 			<article className="purchase-agreement">
 				{ showDate && (
@@ -380,16 +385,19 @@ const Edit = ( props ) => {
 					<dl>
 						{ showAmount && post.meta?.[ 'amount' ] && (
 							<>
-								<dt className="purchase-agreement__amount entry-label">
-									{ __( 'Abolished', 'site-functionality' ) }
-								</dt>
 								<dd className="purchase-agreement__amount entry-value">
 									<span className="value">
-										{ new Intl.NumberFormat().format(
-											post.meta?.[ 'amount' ]
+										{ new Intl.NumberFormat(
+											'us-EN',
+											format
+										).format(
+											parseFloat( post.meta?.[ 'amount' ].replace( /,/g, '' ) )
 										) }
 									</span>
 								</dd>
+								<dt className="purchase-agreement__amount entry-label">
+									{ __( 'Abolished', 'site-functionality' ) }
+								</dt>
 							</>
 						) }
 						{ showTypes && purchaseTypes && types && (
@@ -398,13 +406,22 @@ const Edit = ( props ) => {
 									{ __( 'Type', 'site-functionality' ) }
 								</dt>
 								<dd className="purchase-agreement__type entry-value">
-									<a
-										href={ types[ 0 ]?.link }
-										rel="tag"
-										dangerouslySetInnerHTML={ {
-											__html: types[ 0 ]?.name,
-										} }
-									></a>
+
+									{ types.map( ( type, index ) =>
+										<>
+											<a
+												href={ type?.link }
+												id={ type?.id }
+												rel="tag"
+												dangerouslySetInnerHTML={ {
+													__html: type?.name,
+												} }
+											></a>
+											{ ( types.length - 1 !== index ) && (
+												<span className="separator">/</span>
+											) }
+										</>
+									) }
 								</dd>
 							</>
 						) }
@@ -418,7 +435,9 @@ const Edit = ( props ) => {
 								</dt>
 								<dd className="purchase-agreement__number entry-value">
 									<span className="value">
-										{ post.meta?.[ 'number' ] }
+										{ new Intl.NumberFormat().format(
+											parseInt( post.meta?.[ 'number' ].replace( /,/g, '' ) )
+										) }
 									</span>
 								</dd>
 							</>
@@ -426,12 +445,15 @@ const Edit = ( props ) => {
 						{ showAverage && post.meta?.[ 'average' ] && (
 							<>
 								<dt className="purchase-agreement__average entry-label">
-									{ __( 'Abolished', 'site-functionality' ) }
+									{ __( 'Average Debt/Debtor', 'site-functionality' ) }
 								</dt>
 								<dd className="purchase-agreement__average entry-value">
 									<span className="value">
-										{ new Intl.NumberFormat().format(
-											post.meta?.[ 'average' ]
+										{ new Intl.NumberFormat(
+											'us-EN',
+											format
+										).format(
+											parseFloat( post.meta?.[ 'average' ].replace( /,/g, '' ) )
 										) }
 									</span>
 								</dd>
@@ -440,12 +462,15 @@ const Edit = ( props ) => {
 						{ showPurchasePrice && post.meta?.[ 'price' ] && (
 							<>
 								<dt className="purchase-agreement__purchase-price entry-label">
-									{ __( 'Abolished', 'site-functionality' ) }
+									{ __( 'Purchase Price', 'site-functionality' ) }
 								</dt>
 								<dd className="purchase-agreement__purchase-price entry-value">
 									<span className="value">
-										{ new Intl.NumberFormat().format(
-											post.meta?.[ 'price' ]
+										{ new Intl.NumberFormat(
+											'us-EN',
+											format
+										).format(
+											parseFloat( post.meta?.[ 'price' ].replace( /,/g, '' ) )
 										) }
 									</span>
 								</dd>
