@@ -68,12 +68,13 @@ function get_nearest_timezone( $cur_lat, $cur_long, $country_code = '' ) {
  * @return float $formatted
  */
 function convert_string_to_number( $string, $decimal = true, $trim = true ) {
-	$cleaned_number = str_replace( ',', '', $string );
+	$pattern = '/[^0-9\.{1}]/';
+	// $cleaned_number = preg_replace( $pattern, '', $string );
+	$cleaned_number = filter_var( preg_replace( $pattern, '', $string ), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
 	$formatted = number_format( $cleaned_number, $decimal ? 2 : 0 );
 	$formatted = $trim ? str_replace( '.00', '', $formatted ) : $formatted;
 	return $formatted;
 }
-
 /**
  * Debug Helper
  */
