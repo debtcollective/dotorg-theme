@@ -13,11 +13,11 @@ const variations = [
             __( 'callout', 'debtcollective' )
         ],
         attributes: {
-            className: 'tout jade',
+            className: 'jade',
         },
         example: {
             attributes: {
-                className: 'tout jade',
+                className: 'jade',
             },
             innerBlocks: [
                 {
@@ -45,7 +45,12 @@ const variations = [
                     }
                 },
             ],
-        }
+        },
+        scope: [
+            'block',
+            'inserter',
+            'transform'
+        ]
     },
     {
         name: 'tout-canary',
@@ -58,11 +63,11 @@ const variations = [
             __( 'callout', 'debtcollective' )
         ],
         attributes: {
-            className: 'tout canary',
+            className: 'canary',
         },
         example: {
             attributes: {
-                className: 'tout canary',
+                className: 'canary',
             },
             innerBlocks: [
                 {
@@ -90,7 +95,12 @@ const variations = [
                     }
                 },
             ],
-        }
+        },
+        scope: [
+            'block',
+            'inserter',
+            'transform'
+        ]
     },
     {
         name: 'tout-salmon',
@@ -103,11 +113,11 @@ const variations = [
             __( 'callout', 'debtcollective' )
         ],
         attributes: {
-            className: 'tout salmon',
+            className: 'salmon',
         },
         example: {
             attributes: {
-                className: 'tout salmon',
+                className: 'salmon',
             },
             innerBlocks: [
                 {
@@ -135,7 +145,12 @@ const variations = [
                     }
                 },
             ],
-        }
+        },
+        scope: [
+            'block',
+            'inserter',
+            'transform'
+        ]
     }
 ];
 
