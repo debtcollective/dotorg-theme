@@ -26,6 +26,11 @@
 					&:hover {
 						text-decoration: underline;
 					}
+					span {
+						display: inline-block;
+						padding-left: 0.25rem;
+						padding-right: 0.25rem;
+					}
 				}
 				&.current_page_item a {
 					text-decoration: line-through;
