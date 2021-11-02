@@ -37,6 +37,11 @@
 					text-decoration: line-through;
 					text-decoration-color: get-color(emphasis);
 					text-decoration-thickness: 0.25rem;
+					.hangover::before,
+					.hangover::after {
+						content: "\00a0";
+						display: inline;
+					}
 				}
 			}
 		}
