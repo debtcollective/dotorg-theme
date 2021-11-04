@@ -20,16 +20,13 @@
 	&.jade a {
 		background-color: get-color(jade);
 	}
-	&.outlined a {
+	&.outlined a, &.link a {
 		background-color: white;
-		color: $black;
+		color: get-color(grey-darker);
 	}
 	&.link a {
-		background-color: white;
-		color: $black;
 		text-decoration: underline;
-		border: none;
-		padding: 0.6rem 0;
+		background-color: transparent;
 		&:hover, &:active, &:focus {
 			text-decoration: none;
 		}
