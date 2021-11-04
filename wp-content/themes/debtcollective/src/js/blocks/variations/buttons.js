@@ -96,7 +96,7 @@ const buttonVariations = [
 	{
         name: 'button-link',
         title: __( 'Link Button', 'debtcollective' ),
-        description: __( 'Add a white button with no outline.', 'debtcollective' ),
+        description: __( 'Add a button that looks like a link.', 'debtcollective' ),
         keywords: [
             __( 'component', 'debtcollective' ),
             __( 'link', 'debtcollective' ),
