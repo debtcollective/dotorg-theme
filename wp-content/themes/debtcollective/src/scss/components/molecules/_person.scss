@@ -1,0 +1,20 @@
+.person {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1.5rem;
+	.person__avatar {
+		img {
+			width: 15rem;
+			height: 15rem;
+			padding: 0.75rem;
+			border-radius: 50%;
+			background: #FCFCF8;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		}
+	}
+	.person__name {
+		font-size: get-font-size(h5);
+		margin-top: 1rem;
+	}
+}

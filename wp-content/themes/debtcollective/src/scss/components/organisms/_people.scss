@@ -1,0 +1,6 @@
+.people {
+	@media (min-width: get-breakpoint(sm)) {
+		display: grid;
+		grid-template-columns: 18rem 18rem 18rem;
+	}
+}
