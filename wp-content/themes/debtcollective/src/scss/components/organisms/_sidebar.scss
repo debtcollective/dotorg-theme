@@ -16,9 +16,9 @@
 	}
 	@media (min-width: get-breakpoint(md)) {
 		padding: 1rem 1rem 0;
-		position: fixed;
+		position: absolute;
 		right: 0;
-		top: 8.3rem;
+		top: 8rem;
 		z-index: 1;
 		width: 315px;
 	}
