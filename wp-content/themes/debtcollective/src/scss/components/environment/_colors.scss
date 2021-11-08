@@ -27,7 +27,7 @@ $c__green--1: rgba(91, 203, 181, 0.1);
 // Usage  `map.get($colors, "emphasis");``
 $colors: (
   "emphasis": $c__orange,
-  "orange:": $c__orange,
+  "orange": $c__orange,
   "jade": $c__jade,
   "jade-dark": $c__jade--dark,
   "jade-darker": $c__jade--darker,
@@ -42,9 +42,23 @@ $colors: (
   "grey": $c__gray--mid,
   "grey-light":  $c__gray--light,
   "grey-dark": $c__gray--dark,
+	"grey-darker": $c__gray--darker,
 	"green-1": $c__green--1
 );
 
 @function get-color($key) {
   @return map-get($colors, $key);
+}
+
+@mixin color-utility($attribute: 'color') {
+  @each $name, $hex in $colors {
+    &-#{$name}-#{$attribute} {
+      #{$attribute}: $hex;
+    }
+  }
+}
+
+.has {
+	@include color-utility();
+	@include color-utility('background-color');
 }
