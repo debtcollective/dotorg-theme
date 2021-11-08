@@ -1,36 +1,47 @@
-a.wp-block-button__link, button[type="submit"] {
-	font-size: 1rem;
-	line-height: 1.1875;
-	font-weight: 900;
-	display: flex;
-	align-items: center;
-	text-align: center;
-	border: transparent solid 1px;
-	border-radius: 6px;
-	padding: 0.8rem 2.25rem;
+.btn {
+	a {
+		background-color: get-color(emphasis);
+		color: #ffff;
+		font-size: 1rem;
+		line-height: 1.2;
+		font-weight: 900;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		border: transparent solid 1px;
+		border-radius: 8px;
+		padding: 0.6rem 1rem;
+	}
+	&.minor a {
+		background-color: white;
+		color: $black;
+		border: 1px solid $black;
+	}
+	&.jade a {
+		background-color: get-color(jade);
+	}
+	&.outlined a, &.link a {
+		background-color: white;
+		color: get-color(grey-darker);
+	}
+	&.link a {
+		text-decoration: underline;
+		background-color: transparent;
+		&:hover, &:active, &:focus {
+			text-decoration: none;
+		}
+	}
 }
 
-button[type="submit"], a.has-emphasis-background-color {
+.yikes-easy-mc-submit-button {
 	background-color: get-color(emphasis);
 	color: #ffff;
-	&.yikes-easy-mc-submit-button {
-		// border-radius: 6px;
-		height: 2.5rem;
-		align-self: flex-end;
-	}
+	border-radius: 6px;
+	height: 2.5rem;
+	align-self: flex-end;
 }
 
-a.wp-block-button__link {
-	&.has-gray-darkest-color {
-		color: get-color(grey-dark);
-	}
-	&.has-jade-background-color {
-		background-color: get-color(jade);
-		color: #fff;
-	}
-}
-
-.hero__buttons .wp-block-button a.wp-block-button__link {
+.hero__buttons .wp-block-button__link {
 	border-radius: 4px;
 	padding: 1.125rem;
 	background-color: get-color(emphasis);
