@@ -93,6 +93,28 @@ const buttonVariations = [
         isActive: ( blockAttributes, variationAttributes ) =>
             blockAttributes.className === variationAttributes.className,
     },
+	{
+        name: 'button-link',
+        title: __( 'Link Button', 'debtcollective' ),
+        description: __( 'Add a button that looks like a link.', 'debtcollective' ),
+        keywords: [
+            __( 'component', 'debtcollective' ),
+            __( 'link', 'debtcollective' ),
+            __( 'action', 'debtcollective' )
+        ],
+        attributes: {
+            placeholder: __( 'Add Button Text...', 'debtcollective' ),
+            className: 'btn link',
+        },
+        styles: [],
+        scope: [
+            'block',
+            'inserter',
+            'transform'
+        ],
+        isActive: ( blockAttributes, variationAttributes ) =>
+            blockAttributes.className === variationAttributes.className,
+    }
 ];
 
 // buttonsVariations.forEach( ( variation ) => {
