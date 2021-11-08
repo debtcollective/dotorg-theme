@@ -1,6 +1,8 @@
 .people {
-	@media (min-width: get-breakpoint(sm)) {
-		display: grid;
-		grid-template-columns: 18rem 18rem 18rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	.person {
+		margin: 0 1rem 1.5rem;
 	}
 }
