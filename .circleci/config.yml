@@ -4,18 +4,32 @@ orbs:
   aws-cli: circleci/aws-cli@1.4.1
 jobs:
   deploy_stage:
-    executor: aws-cli/default
-    environment:
-      ECS_CLUSTER: test
-      ECS_SERVICE: wordpress
+    docker: # run the steps with Docker
+      - image: cimg/php:7.4.22
     steps:
       - checkout
-      - aws-cli/setup:
-          profile-name: wordpress_stage
+      - run:
+          name: Install Node
+          command: |
+            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+      - run: sudo npm install --global yarn 
+      - run:
+          name: install composer version 
+          command: |
+            sudo composer self-update 1.10.22
+      - run:
+          name: install dependencies
+          command: |
+            yarn install
+      - run:
+          name: build site in dev mode
+          command: |
+            yarn run build:dev
       - run:
           name: Deploy over SSH
           command: |
-            scp -P $SSH_PORT -o StrictHostKeyChecking=accept-new -r * $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            rsync -e 'ssh -p $SSH_PORT -o StrictHostKeyChecking=accept-new' -avzh . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
 
   deploy_prod:
     environment:
