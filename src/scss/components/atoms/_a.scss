@@ -1,0 +1,7 @@
+a {
+	color: get-color(jade-dark);
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+		color: get-color(jade-darker);
+	}
+}

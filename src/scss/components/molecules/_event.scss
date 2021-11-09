@@ -1,0 +1,90 @@
+.event {
+	margin-bottom: 2rem;
+	width: 100%;
+	@media (min-width: get-breakpoint(sm)) {
+		margin: 0 2.5rem 2rem 0;
+		max-width: 283px;
+	}
+	a {
+		height: 17rem;
+		display: grid;
+		grid-template-rows: 6.5rem 4.5rem 2.5rem;
+		grid-template-columns: 100%;
+		font-weight: 900;
+		color: get-color(grey-dark);
+		text-decoration: none;
+		padding: 2.3rem 1.2rem;
+		background-color: get-color('salmon');
+
+		&:hover,
+		&:focus {
+			color: currentColor;
+		}
+
+		.event__title {
+			height: 5.8rem;
+			font-size: get-font-size(h4);
+			line-height: 1.2;
+			margin-top: 0;
+		}
+		.event__date time {
+			font-size: get-font-size(h4);
+			line-height: 1;
+			font-weight: 300;
+		}
+		.event__time {
+			// font-size: 1.125rem;
+			// padding: 0 1.2rem;
+		}
+		.event__location {
+			font-weight: 400;
+		}
+	}
+	&.event_tag-campaigns-and-trainings {
+		a {
+			background-color: get-color('salmon');
+		}
+	}
+	&.event_tag-learn-about-debt {
+
+		a {
+			background-color: get-color(jade-dark);
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $white;
+			}
+		}
+	}
+	&.event_tag-welcome-calls {
+		@media (min-width: get-breakpoint(sm)) {
+			height: 13rem;
+		}
+		&:nth-child(2) {
+			a {
+				background-color: get-color(lilac);
+			}
+		}
+		a {
+			height: auto;
+			grid-template-rows: auto;
+			background-color: get-color(grey-light);
+			.event__date {
+				padding-bottom: 1rem;
+				time {
+					padding: 0;
+					font-size: get-font-size(h3);
+					line-height: 0.86;
+					font-weight: 900;
+				}
+			}
+			.event__time {
+				font-size: 1.125rem;
+			}
+			.event__location {
+				font-weight: 700;
+			}
+		}
+	}
+}

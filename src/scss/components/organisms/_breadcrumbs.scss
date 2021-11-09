@@ -1,0 +1,55 @@
+.fbc-page {
+	ol {
+		padding-left: 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+
+		li {
+			font-weight: 300;
+			line-height: 1.25;
+			padding-right: .125rem;
+			padding-left: .125rem;
+
+			&:first-child {
+				padding-left: 0;
+			}
+			a {
+				text-decoration: none;
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+					text-decoration-color: $black;
+				}
+				i {
+					color: $black;
+					margin: 0;
+					&:hover,
+					&:focus {
+						text-decoration: underline;
+					}
+				}
+				span {
+					color: $black
+				}
+
+				/** Add Icon */
+				.material-icons {
+					background-image: url( ../images/icons/home.svg );
+					background-repeat: no-repeat;
+					display: inline-block;
+					height: 19px;
+					line-height: inherit;
+					width: 24px;
+				}
+
+			}
+			.fbc-separator {
+				color: $black
+			}
+		}
+		li.active span {
+			color: $black;
+		}
+	}
+}

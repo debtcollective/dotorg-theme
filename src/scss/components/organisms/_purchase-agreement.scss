@@ -1,0 +1,74 @@
+.purchase-agreement {
+	height: min-content;
+	color: $black;
+	background-color: get-color(canary-light);
+	padding: 1.125rem;
+	margin: 0.75rem 0;
+	@media (min-width: get-breakpoint(sm)){
+		width: 28%;
+	}
+	&__date {
+		font-size: get-font-size(h4);
+		line-height: 1;
+		font-weight: 300;
+		margin-bottom: 0.5rem;
+	}
+	&__title {
+		font-size: get-font-size(h5);
+		margin: 1rem 0 0.5rem;
+	}
+	&__summary {
+		padding: 0;
+		p {
+			margin: 0;
+		}
+	}
+	&__amount {
+		font-weight: 900;
+		line-height: 1.2;
+		color: get-color(emphasis);
+		width: 100%;
+
+		&.entry-value {
+			font-size: get-font-size(h4);
+			margin-left: 0.25rem;
+		}
+		&.entry-label {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	a {
+		color: get-color(jade-darker);
+	}
+
+	dl {
+		// width: 250px;
+		margin-top: 0.5rem;
+	}
+
+	dt {
+		display: inline-block;
+		clear: left;
+		margin-right: .125rem;
+	}
+	dd {
+		display: inline-block;
+		margin-left: 0;
+		font-weight: 700;
+
+		&::after {
+			content: "";
+			display: table;
+			clear: left;
+			width: 100%;
+		}
+	}
+
+	@media (min-width: get-breakpoint(sm)){
+		dl {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+}
