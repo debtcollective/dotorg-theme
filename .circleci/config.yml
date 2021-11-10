@@ -12,7 +12,7 @@ jobs:
           name: Install Node
           command: |
             curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs
+            sudo apt-get install -y nodejs rsync grsync
       - run: sudo npm install --global yarn 
       - run:
           name: install composer version 
@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            scp -P $SSH_PORT -o StrictHostKeyChecking=accept-new -r * $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --exclude 'node_modules' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
 
   deploy_prod:
     environment:
