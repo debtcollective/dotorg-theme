@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('lodash', 'wp-blocks', 'wp-i18n', 'wp-polyfill'), 'version' => '22c22a9b1f9e0bdc2a81a42cd3a3c5e9');
+<?php return array('dependencies' => array('lodash', 'wp-blocks', 'wp-i18n', 'wp-polyfill'), 'version' => '7f2155f05ad7b435b47c096da590f7dc');
