@@ -1,10 +1,25 @@
 .site-header {
-	margin: 4rem 1.5rem 0;
+	margin: 4rem 1.25rem 0;
 	@media (min-width: get-breakpoint(sm)) {
 		margin: 4rem 2.25rem 0;
 	}
 	@media (min-width: get-breakpoint(md)) {
 		margin: 4rem 4.25rem 0;
+	}
+}
+
+.admin-bar {
+	#wpadminbar {
+		position: fixed;
+	}
+	.site-header {
+		margin: 6rem 1.25rem 0;
+		@media (min-width: get-breakpoint(sm)) {
+			margin: 6rem 2.25rem 0;
+		}
+		@media (min-width: get-breakpoint(md)) {
+			margin: 6rem 4.25rem 0;
+		}
 	}
 }
 

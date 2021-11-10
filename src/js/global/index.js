@@ -7,3 +7,4 @@
 import './js-enabled';
 import './window-ready';
 import './sidebar';
+import './admin-bar';
