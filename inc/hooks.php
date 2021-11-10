@@ -22,7 +22,7 @@ function body_classes( $classes ) {
 	global $is_IE, $is_edge, $is_safari;
 
 	if ( get_theme_mod( 'display_global_header' ) ) {
-		$classes[] = 'has-globabl-header';
+		$classes[] = 'has-global-header';
 	}
 
 	// If it's IE, add a class.
