@@ -1,0 +1,8 @@
+.taxonomy-description {
+	font-size: get-font-size(h5);
+	font-weight: 300;
+	line-height: 1.25;
+	@media (min-width: get-breakpoint(xs)) {
+		font-size: get-font-size(h4);
+	}
+}
