@@ -1,8 +1,11 @@
 .people {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	.person {
-		margin: 0 1rem 1.5rem;
+	display: grid;
+	grid-template-columns: repeat(2,minmax(0,1fr));
+	gap: 2.5rem;
+	@media (min-width: get-breakpoint(sm)) {
+		grid-template-columns: repeat(3,minmax(0,1fr));
+	}
+	@media (min-width: get-breakpoint(xl)) {
+		grid-template-columns: repeat(4,minmax(0,1fr));
 	}
 }
