@@ -72,3 +72,7 @@ function remove_scripts() {
 }
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_scripts', 11 );
 \remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
+
+// if( ! defined( 'YIKES_MAILCHIMP_EXCLUDE_STYLES' ) ) { 
+// 	define( 'YIKES_MAILCHIMP_EXCLUDE_STYLES', true ); 
+// }
