@@ -3,17 +3,36 @@
 	flex-direction: column;
 	align-items: center;
 	.person__avatar {
-		img {
-			width: 15rem;
-			height: 15rem;
-			padding: 0.75rem;
-			border-radius: 50%;
-			background: #FCFCF8;
-			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		width: 100%;
+		max-width: 16rem;
+		/* this is cool */
+		aspect-ratio: 1 / 1;
+	}
+	img {
+		border-radius: 50%;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+		background: #FCFCF8;
+		&:hover, &:active, &:focus {
+			background: get-color(canary);
+		}
+		width: 100%;
+		height: 100%;
+		padding: 0.5rem;
+		box-sizing: border-box;
+		@media (min-width: get-breakpoint(lg)) {
+			padding: 1rem;
 		}
 	}
+	.person__name,
+	.person__title {
+		text-align: center;
+		font-weight: 900;
+	}
 	.person__name {
-		font-size: get-font-size(h5);
 		margin-top: 1rem;
+		font-size: get-font-size(h4);
+	}
+	.person__title {
+		font-weight: 300;
 	}
 }
