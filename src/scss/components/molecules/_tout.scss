@@ -1,0 +1,41 @@
+.tout {
+	position: relative;
+	overflow: hidden;
+	background-color: get-color(jade-lightened);
+	height: 25rem;
+	&:hover {
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+		.tout__title {
+			text-decoration: underline;
+		}
+	}
+	.tout__title {
+		position: absolute;
+		margin: 3rem 3rem 1rem;
+		font-size: get-font-size(h3);
+		line-height: 1.15;
+	}
+	.tout__content {
+		position: absolute;
+		top: 12rem;
+		margin: 1.5rem 3rem 0;
+	}
+	.tout__image img {
+		width: 100%;
+		object-fit: cover;
+		mix-blend-mode: multiply;
+		position: absolute;
+		bottom: 0;
+		// transform: rotate(-45deg);
+	}
+	&.salmon {
+		background-color: get-color('salmon');
+	}
+	&.canary {
+		background-color: get-color(canary);
+	}
+	&.jade {
+		background-color: get-color(jade);
+		color: $white;
+	}
+}
