@@ -1,0 +1,26 @@
+.hero {
+	.wp-block-cover__inner-container {
+		@media (min-width: get-breakpoint(sm)) {
+			padding: 1.75rem 2.5rem;
+		}
+		.hero__heading {
+			font-size: get-font-size(h3);
+			line-height: 1.15;
+			@media (min-width: get-breakpoint(sm)) {
+				font-size: get-font-size(h2);
+			}
+			strong {
+				color: get-color(canary);
+			}
+		}
+		.hero__content {
+			font-size: get-font-size(h5);
+			line-height: 1.5;
+			margin: 1rem 0;
+			@media (min-width: get-breakpoint(sm)) {
+				font-size: get-font-size(h4);
+				margin: 2.5rem 0;
+			}
+		}
+	}
+}

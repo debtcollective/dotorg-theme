@@ -1,0 +1,8 @@
+.events__list {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: get-breakpoint(sm)) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}

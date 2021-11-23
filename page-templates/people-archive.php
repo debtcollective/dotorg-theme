@@ -62,6 +62,8 @@ get_header(); ?>
 		endif;
 		?>
 
+		<?php get_sidebar( 'content-footer' ); ?>
+
 	</main><!-- #main -->
 
 <?php get_footer(); ?>

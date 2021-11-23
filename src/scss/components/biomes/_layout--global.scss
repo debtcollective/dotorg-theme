@@ -29,6 +29,10 @@
 }
 
 
+.site-main {
+	max-width: get-breakpoint(lg);
+	margin: 0 auto;
+}
 
 #main {
 	margin: 0 1rem;

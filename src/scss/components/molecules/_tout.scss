@@ -14,8 +14,8 @@
 	}
 	&::after {
 		display: block;
-		height: 0;
-		overflow: hidden;
+		// height: 0;
+		// overflow: hidden;
 		content: " ";
 		position: absolute;
 		width: calc(100% - 6rem);
@@ -23,19 +23,10 @@
 		bottom: -2rem;
 		border-bottom: 2rem solid transparent;
 		background-color: transparent;
-		// border-bottom: 2rem;
-		// border-style: solid;
-		// border-color: transparent;
-		z-index: 2;
-		transition-property: bottom border-color;
-		transition-duration: 0.2s;
-		transition-timing-function: ease-out;
+		transition: bottom 0.2s ease-out;
 	}
 	&:hover::after {
-		display: block;
-		text-decoration: none;
 		bottom: 0;
-		background-color: get-color(text);
 		border-color: get-color(text);
 	}
 	.tout__title {
@@ -43,8 +34,6 @@
 		font-size: get-font-size(h3);
 		line-height: 1.15;
 	}
-	// .tout__content {
-	// }
 	.tout__image {
 		display: block;
 		position: absolute;
@@ -67,5 +56,8 @@
 	&.jade {
 		background-color: get-color(jade);
 		color: $white;
+		&:hover::after {
+			border-color: $white;
+		}
 	}
 }
