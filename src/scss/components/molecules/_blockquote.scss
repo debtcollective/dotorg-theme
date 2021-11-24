@@ -8,4 +8,7 @@ blockquote {
 	@media (min-width: get-breakpoint(sm)) {
 		font-size: get-font-size(h4);
 	}
+	p {
+		line-height: 1.25;
+	}
 }
