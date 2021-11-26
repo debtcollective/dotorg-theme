@@ -45,7 +45,7 @@
 }
 
 @media (min-width: get-breakpoint(md)) {
-	body.has-sidebar {
+	.has-sidebar {
 		max-width: calc(100vw - 372px);
 		#main {
 			margin-left: 4rem;
