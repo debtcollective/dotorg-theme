@@ -1,0 +1,18 @@
+.bullet-list,
+.is-style-bullet-list {
+	list-style: none;
+	padding: 0;
+	li {
+		margin-bottom: 2rem;
+		&::before {
+			content: "";
+			display: inline-block;
+			background: center no-repeat url(../images/icons/rectangle-jade.svg);
+			width: 0.5rem;
+			height: 0.75rem;
+			// padding-right: 0.4rem;
+			// padding-top: 0.1rem;
+			margin-right: 1rem;
+		}
+	}
+}
