@@ -3,9 +3,21 @@
 	color: $white;
 	position: absolute;
 	width: 100vw;
-	margin-top: 1rem;
+	margin-top: 3rem;
+	padding-top: 3rem;
 
-	
+	.container {
+		max-width: get-breakpoint(lg);
+	  margin: 0 auto;
+	}
+
+	@media (min-width: get-breakpoint(sm)) {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+	}
+	@media (min-width: get-breakpoint(md)) {
+	}
+
 	.widget {
 		padding: 0 1rem;
 		@media (min-width: get-breakpoint(sm)) {
@@ -25,7 +37,6 @@
 			h3 {
 				width: auto;
 				font-size: get-font-size(h3);
-				padding: 1rem 0;
 			}
 			p {
 				font-size: get-font-size(h4);
@@ -40,7 +51,7 @@
 			padding: 0;
 			right: 0.75rem;
 			@media (min-width: get-breakpoint(sm)) {
-				top: 2rem;
+				top: 3rem;
 				right: 2.35rem;
 			}
 			.wp-block-social-links {
@@ -67,6 +78,8 @@
 				line-height: 1.2;
 				span {
 					font-weight: 500;
+					display: inline-block;
+					margin-bottom: 0.5rem;
 				}
 				&:nth-child(5) {
 					width: 1px;
@@ -74,8 +87,11 @@
 					margin: -1px;
 				}
 			}
-			button {
-				margin: 0 !important;
+			.btn {
+				@extend .wp-block-button;
+				margin: 0;
+				border: 0;
+				outline: 0;
 			}
 			@media (min-width: get-breakpoint(sm)) {
 				display: flex;
@@ -89,32 +105,35 @@
 						margin-left: 0;
 					}
 				}
-				button {
-					margin: 0.5rem !important;
-					margin-right: 0 !important;
+				.btn {
+					margin: 0.5rem;
+					margin-right: 0;
 				}
 			}
 		}
 	}
 	#footer-menu {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+		display: grid;
+		// flex-direction: column;
+		// justify-content: space-between;
+    grid-template-columns: 1fr;
 		margin: 0 1rem 5rem;
 		padding: 1rem 0;
 		border-top: solid $white 1px;
 		@media (min-width: get-breakpoint(xs)) {
-			flex-direction: row;
+			grid-template-columns: 1fr 1fr;
 		}
 		@media (min-width: get-breakpoint(sm)) {
 			margin: 0 2.875rem 5rem;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@media (min-width: get-breakpoint(md)) {
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 		}
 		> li {
 			list-style: none;
 			margin-right: 0.5rem;
-			@media (min-width: get-breakpoint(xs)) {
-				width: 20%;
-			}
+			margin-bottom: 2rem;
 			> a {
 				font-size: 1.25rem;
 				line-height: 2.67;
@@ -124,15 +143,22 @@
 			}
 			.sub-menu {
 				list-style: none;
-				padding-left: 0.5rem;
-				@media (min-width: get-breakpoint(sm)) {
-					padding-left: 0;
-				}
+				padding-left: 0;
 				a {
 					color: $white;
 					text-decoration: none;
 					line-height: 2.5;
 				}
+			}
+		}
+	}
+	.site-info {
+		ul {
+			list-style: none;
+			display: inline-block;
+			li {
+				display: inline-block;
+				margin-right: 1rem;
 			}
 		}
 	}
