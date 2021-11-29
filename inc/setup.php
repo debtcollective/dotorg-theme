@@ -144,13 +144,14 @@ function widgets_init() {
 
 	// Loop through each sidebar and register.
 	foreach ( $sidebars as $sidebar_id => $sidebar_name ) {
+
 		register_sidebar(
 			[
 				'name'          => $sidebar_name,
 				'id'            => $sidebar_id,
 				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', 'debtcollective' ), $sidebar_name ),
-				'before_widget' => '<aside class="widget %2$s">',
-				'after_widget'  => '</aside>',
+				'before_widget' => '<div class="widget %2$s">',
+				'after_widget'  => '</div>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
 			]

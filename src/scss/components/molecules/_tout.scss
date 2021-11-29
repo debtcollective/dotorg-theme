@@ -1,0 +1,67 @@
+.tout {
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	background-color: get-color(jade-lightened);
+	min-height: 30rem;
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+	@media (min-width: get-breakpoint(sm)) {
+		padding: 3rem;
+	}
+	&:hover {
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+		.tout__title {
+			text-decoration: underline;
+		}
+	}
+	&::after {
+		display: block;
+		content: " ";
+		position: absolute;
+		width: calc(100% - 6rem);
+		left: 3rem;
+		bottom: -2rem;
+		top: auto;
+		border-bottom: 2rem solid transparent;
+		background-color: transparent;
+		transition: bottom 0.2s ease-out;
+		border-color: get-color(text);
+	}
+	&:focus::after,
+	&:hover::after {
+		bottom: 0;
+		transition: bottom 0.2s ease-out;
+	}
+	.tout__title {
+		margin: 0;
+		font-size: get-font-size(h3);
+		line-height: 1.15;
+	}
+	.tout__image {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		img {
+			display: block;
+			width: 100%;
+			object-fit: contain;
+			mix-blend-mode: multiply;
+		}
+	}
+	&.salmon {
+		background-color: get-color('salmon');
+	}
+	&.canary {
+		background-color: get-color(canary);
+	}
+	&.jade {
+		background-color: get-color(jade);
+		color: $white;
+		&:hover::after {
+			border-color: $white;
+		}
+	}
+}

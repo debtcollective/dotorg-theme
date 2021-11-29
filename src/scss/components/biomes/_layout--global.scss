@@ -29,6 +29,10 @@
 }
 
 
+.site-main {
+	max-width: get-breakpoint(lg);
+	margin: 0 auto;
+}
 
 #main {
 	margin: 0 1rem;
@@ -41,7 +45,7 @@
 }
 
 @media (min-width: get-breakpoint(md)) {
-	body.has-sidebar {
+	.has-sidebar {
 		max-width: calc(100vw - 372px);
 		#main {
 			margin-left: 4rem;
