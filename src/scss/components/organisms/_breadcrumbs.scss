@@ -11,6 +11,10 @@
 			padding-right: .125rem;
 			padding-left: .125rem;
 
+			&.post-page {
+				display: none;
+			}
+
 			&:first-child {
 				padding-left: 0;
 			}
