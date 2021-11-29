@@ -22,13 +22,16 @@
 		width: calc(100% - 6rem);
 		left: 3rem;
 		bottom: -2rem;
+		top: auto;
 		border-bottom: 2rem solid transparent;
 		background-color: transparent;
 		transition: bottom 0.2s ease-out;
+		border-color: get-color(text);
 	}
+	&:focus::after,
 	&:hover::after {
 		bottom: 0;
-		border-color: get-color(text);
+		transition: bottom 0.2s ease-out;
 	}
 	.tout__title {
 		margin: 0;
