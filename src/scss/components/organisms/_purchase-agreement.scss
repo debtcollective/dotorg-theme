@@ -1,11 +1,22 @@
 .purchase-agreement {
 	height: min-content;
 	color: $black;
-	background-color: get-color(canary-light);
-	padding: 1.125rem;
-	margin: 0.75rem 0;
+	padding: 1rem;
+	box-sizing: border-box;
+	margin: 0;
 	@media (min-width: get-breakpoint(sm)){
-		width: 28%;
+		width: 45%;
+		padding: 0 0 1rem 0;
+		padding-right: 0.5rem;
+	}
+	@media (min-width: get-breakpoint(lg)){
+		width: 30%;
+		padding-right: 1rem;
+	}
+	.wrapper {
+		box-sizing: border-box;
+		padding: 1.125rem;
+		background-color: get-color(canary-light);
 	}
 	&__date {
 		font-size: get-font-size(h4);
