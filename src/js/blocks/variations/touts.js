@@ -154,9 +154,9 @@ const variations = [
     }
 ];
 
-variations.forEach( ( variation ) => {
-    registerBlockVariation(
-        'site-functionality/tout',
-        variation
-    );
-} );
+// variations.forEach( ( variation ) => {
+//     registerBlockVariation(
+//         'site-functionality/tout',
+//         variation
+//     );
+// } );
