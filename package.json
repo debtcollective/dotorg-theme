@@ -86,6 +86,7 @@
 		"watch": "run-p start sync"
 	},
 	"dependencies": {
+		"hashquery": "^1.0.0",
 		"masonry-layout": "^4.2.2",
 		"sticky-js": "^1.3.0"
 	}

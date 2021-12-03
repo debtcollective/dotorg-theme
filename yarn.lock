@@ -9307,6 +9307,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
+hashquery@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hashquery/-/hashquery-1.0.0.tgz#d4b0b18449f454b625e2840ba115bf09784e9ff4"
+  integrity sha1-1LCxhEn0VLYl4oQLoRW/CXhOn/Q=
+
 hast-to-hyperscript@^9.0.0:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/hast-to-hyperscript/-/hast-to-hyperscript-9.0.1.tgz#9b67fd188e4c81e8ad66f803855334173920218d"
