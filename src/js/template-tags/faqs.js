@@ -36,17 +36,28 @@ import * as hashquery from 'hashquery';
 		el.classList.remove('active');
 	};
 
+	// a bit convoluted, but it allows us to have multiple faq elements per page (for example in tabs groupd)
 	dc.faqs.handleDeeplink = function() {
-    var faqHash = hashquery.get('faq')
-    if (faqHash) {
-			console.log('handleDeepLink', faqHash)
-      dc.faqs.onFAQClicked(faqHash)
-      //console.log( 'document.getElementById(faqHash)', document.getElementById(faqHash) )
-      setTimeout( function() {
-        // not setting a await was causing some weird stuff!
-        document.getElementById(faqHash).scrollIntoView()
-      }, 500)
-    }
+		var hash = window.location.hash
+		var hashValues = hash.split('&')
+		hashValues.forEach( function(hashVal) {
+			var keyVal = hashVal.split('=')
+			var key = keyVal[0].split('#')[1]
+			var val = keyVal[1]
+			if (key.indexOf('faqs') > -1) {
+				var faqHash = hashquery.get(key)
+				if( faqHash ) {
+					var faqElement = document.getElementById(faqHash)
+					if (faqElement) {
+						dc.faqs.onFAQClicked(val)
+						setTimeout( function() {
+			        // not setting a await was causing some weird stuff!
+			        document.getElementById(faqHash).scrollIntoView()
+			      }, 500)
+					}
+				}
+			}
+		})
   };
 
 
