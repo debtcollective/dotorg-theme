@@ -11,43 +11,48 @@
 		width: 1rem;
 		height: 1rem;
 		margin: 0 1rem;
+		border-radius: 50%;
+		padding: 0.875rem;
+		&:hover, &:focus {
+			background-color: get-color(jade-dark);
+			font-weight: 900;
+			color: $white;
+			transition: background-color 0.2s ease-out;
+			transition: font-weight 0.2s ease-out;
+		}
 		&:first-child {
 			margin-left: 0;
 		}
 		&:last-child {
 			margin-right: 0;
 		}
-		&:hover {
-			text-decoration: underline;
-		}
 		&.current {
 			color: $white;
 			font-weight: 900;
 			background-color: get-color(emphasis);
-			border-radius: 50%;
-			padding: 0.875rem;
-			&:hover {
-				text-decoration: none;
-			}
 		}
 	}
 	.prev, .next {
-		visibility: hidden;
+		color: transparent;
 		position: relative;
+		&:hover, &:focus {
+			background-color: transparent;
+			outline: dashed get-color(jade-dark) 1px;
+		}
 		&::after {
 			content: "";
 			background: center/contain no-repeat url(../images/icons/chevron-right.svg);
-			visibility: visible;
 			width: 7px;
 			height: 12px;
+			padding-top: 1px;
 		}
 	}
 	.prev::after {
+		position: absolute;
 		transform: rotate(180deg);
 	}
 	.next::after {
 		position: absolute;
-		bottom: 3px;
-		left: 4px;
+		padding-bottom: 1px;
 	}
 }
