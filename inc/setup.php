@@ -122,7 +122,7 @@ function add_image_sizes_to_admin( $sizes ) {
 		'large' 		=> __( 'Large' ),
 	) );
 }
-add_filter( 'image_size_names_choose', __NAMESPACE__ . 'add_image_sizes_to_admin' );
+add_filter( 'image_size_names_choose', __NAMESPACE__ . '\add_image_sizes_to_admin' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
