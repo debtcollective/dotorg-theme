@@ -9,6 +9,10 @@
 	@media (min-width: get-breakpoint(sm)) {
 		padding: 3rem;
 	}
+	.tout__link {
+		color: get-color(text);
+		text-decoration: none;
+	}
 	&:hover {
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 		.tout__title {
@@ -44,6 +48,7 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		margin: 0;
 		img {
 			display: block;
 			width: 100%;
@@ -58,8 +63,11 @@
 		background-color: get-color(canary);
 	}
 	&.jade {
-		background-color: get-color(jade);
+		background-color: get-color(jade-dark);
 		color: $white;
+		.tout__link {
+			color: $white;
+		}
 		&:hover::after {
 			border-color: $white;
 		}
