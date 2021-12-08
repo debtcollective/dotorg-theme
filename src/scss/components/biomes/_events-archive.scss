@@ -5,7 +5,7 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		.event__tag {
-			font-size: 1.25rem;
+			font-size: get-font-size(h5);
 			line-height: .855;
 			margin-bottom: 0.75rem;
 		}
