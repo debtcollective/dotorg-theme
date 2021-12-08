@@ -117,9 +117,9 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
 function add_image_sizes_to_admin( $sizes ) {
 	return array_merge( $sizes, array(
-		'thumbnail' 	=> __( 'Thumbnail' ),
-		'medium' 		=> __( 'Medium' ),
-		'large' 		=> __( 'Large' ),
+		'thumbnail' 	=> __( 'Thumbnail', 'debtcollective' ),
+		'medium' 		=> __( 'Medium', 'debtcollective' ),
+		'large' 		=> __( 'Large', 'debtcollective' ),
 	) );
 }
 add_filter( 'image_size_names_choose', __NAMESPACE__ . '\add_image_sizes_to_admin' );
