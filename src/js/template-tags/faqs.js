@@ -62,7 +62,7 @@ import * as hashquery from 'hashquery';
 
 
 	// Make sure everything is loaded first.
-	if (window) {
+	if (window && document.querySelectorAll('.faq-list').length > 0) {
 		if (
 			( 'complete' === document.readyState ||
 				'loading' !== document.readyState ) &&
