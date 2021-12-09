@@ -9,7 +9,7 @@
 		font-weight: 900;
 		display: flex;
 		align-items: center;
-		text-align: center;
+		justify-content: center;
 		border: transparent solid 1px;
 		border-radius: 8px;
 		padding: 0.6rem 1rem;
@@ -28,7 +28,7 @@
 			background-color: get-color(jade);
 		}
 	}
-	&.outlined, 
+	&.outlined,
 	&.link {
 		a,
 		.wp-block-button__link {
@@ -41,8 +41,8 @@
 		.wp-block-button__link {
 			text-decoration: underline;
 			background-color: transparent;
-			&:hover, 
-			&:active, 
+			&:hover,
+			&:active,
 			&:focus {
 				text-decoration: none;
 			}
