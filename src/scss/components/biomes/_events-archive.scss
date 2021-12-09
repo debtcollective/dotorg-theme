@@ -10,13 +10,13 @@
 			margin-bottom: 0.75rem;
 		}
 		&.event_tag-welcome-calls {
-			height: auto;
 			@media (min-width: get-breakpoint(sm)) {
 				width: 17.7rem;
 			}
 			a {
-				height: 17rem;
-				grid-template-rows: 5.5rem 2rem 2rem;
+				box-sizing: content-box;
+				height: 18rem;
+				grid-template-rows: 6.5rem 2rem 2rem;
 			}
 		}
 	}
