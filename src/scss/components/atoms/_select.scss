@@ -8,4 +8,9 @@ select {
 	&[multiple="multiple"] {
 		height: auto;
 	}
+	&:not([multiple="multiple"]) option {
+		background: $white;
+    color: get-color(text);
+    font-family: 'Libre Franklin', sans-serif !important;
+	}
 }
