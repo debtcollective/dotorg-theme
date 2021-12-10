@@ -59,11 +59,13 @@
 	}
 }
 
-.yikes-easy-mc-submit-button {
-	background-color: get-color(emphasis);
-	color: #ffff;
+.yikes-easy-mc-submit-button, input[type="submit"] {
+	@extend .wp-block-button__link;
 	border-radius: 6px;
-	height: 2.5rem;
+	height: 3.2rem;
 	align-self: flex-end;
+	width: 100%;
+	@media (min-width: get-breakpoint(sm)) {
+		width: auto;
+	}
 }
-

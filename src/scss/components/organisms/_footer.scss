@@ -81,6 +81,9 @@
 					display: inline-block;
 					margin-bottom: 0.5rem;
 				}
+				input {
+					height: 2.5rem;
+				}
 				&:nth-child(5) {
 					width: 1px;
 					height: 1px;
@@ -92,6 +95,7 @@
 				margin: 0;
 				border: 0;
 				outline: 0;
+				height:	2.5rem;
 			}
 			@media (min-width: get-breakpoint(sm)) {
 				display: flex;
