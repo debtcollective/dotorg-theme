@@ -9,7 +9,7 @@
 		.wpcf7-list-item {
 			position: relative;
 			border-radius: 6px;
-			padding: 1rem;
+			padding: 1rem 1.25rem;
 			margin: 0;
 			&.checked {
 				background-color: get-color(green-1);
@@ -30,8 +30,8 @@
 						&::after {
 							position: absolute;
 							display: block;
-							top: 0.25em;
-							left: 1.125em;
+							top: 0.15em;
+							left: 1.33em;
 							width: 0.5em;
 							height: 1.33em;
 							border-right: 0.33em solid get-color(jade);//#24BA9D;
@@ -56,7 +56,7 @@
 						float: left;
 						width: 1.125em;
 						height: 1.125em;
-						margin-top: .125em;
+						margin-top: .1rem;
 						vertical-align: top;
 						cursor: pointer;
 						text-align: center;
