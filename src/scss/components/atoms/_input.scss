@@ -1,6 +1,11 @@
 input[type="text"], input[type="email"] {
+	box-sizing: border-box;
 	background-color: get-color(green-1) !important;
 	border: 1px solid #219653 !important;
 	border-radius: 6px;
-	height: 2.5rem;
+	line-height: 1.2;
+	height: 3.2rem;
+	&.minor {
+		height: 2.5rem;
+	}
 }
