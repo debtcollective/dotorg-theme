@@ -1,0 +1,16 @@
+select {
+	background-color: get-color(green-1) !important;
+	border: 1px solid #219653 !important;
+	border-radius: 6px;
+	height: 2.5rem;
+	padding: 0 1rem;
+	margin: 0.5rem 0;
+	&[multiple="multiple"] {
+		height: auto;
+	}
+	&:not([multiple="multiple"]) option {
+		background: $white;
+    color: get-color(text);
+    font-family: 'Libre Franklin', sans-serif !important;
+	}
+}
