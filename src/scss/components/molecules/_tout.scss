@@ -5,10 +5,6 @@
 	background-color: get-color(jade-lightened);
 	min-height: 30rem;
 	margin-bottom: 2rem;
-	padding: 1.5rem;
-	@media (min-width: get-breakpoint(sm)) {
-		padding: 3rem;
-	}
 	&:hover {
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 		.tout__title {
@@ -37,17 +33,27 @@
 		margin: 0;
 		font-size: get-font-size(h3);
 		line-height: 1.15;
+		padding-top: 2rem;
+	}
+	.tout__title,
+	.tout__content {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	.tout__content {
+		min-height: 6rem;
 	}
 	.tout__image {
 		display: block;
-		position: absolute;
-		bottom: 0;
-		left: 0;
+		// position: absolute;
+		// bottom: 0;
+		// left: 0;
 		width: 100%;
 		img {
 			display: block;
 			width: 100%;
-			object-fit: contain;
+			height: auto;
+			// object-fit: contain;
 			mix-blend-mode: multiply;
 		}
 	}
@@ -59,9 +65,15 @@
 	}
 	&.jade {
 		background-color: get-color(jade);
-		color: $white;
+		.tout__title,
+		.tout__content {
+			color: $white;
+		}
 		&:hover::after {
 			border-color: $white;
 		}
+	}
+	.wp-block-image {
+		margin-bottom: 0 !important;
 	}
 }

@@ -43,7 +43,10 @@ function setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'full-width', 1920, 1080, false );
+
+	add_image_size( 'thumbnail', 854, 480, false );
+	add_image_size( 'medium', 1080, 720, false );
+	add_image_size( 'large', 1920, 1080, false );
 
 	// Register navigation menus.
 	register_nav_menus(
@@ -111,6 +114,15 @@ function setup() {
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
+
+function add_image_sizes_to_admin( $sizes ) {
+	return array_merge( $sizes, array(
+		'thumbnail' 	=> __( 'Thumbnail' ),
+		'medium' 		=> __( 'Medium' ),
+		'large' 		=> __( 'Large' ),
+	) );
+}
+add_filter( 'image_size_names_choose', __NAMESPACE__ . '\add_image_sizes_to_admin' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
