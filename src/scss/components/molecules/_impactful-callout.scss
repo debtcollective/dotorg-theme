@@ -1,8 +1,23 @@
-.impactful-callout {
+%dc-ic-default {
+	background-color: get-color(emphasis);
+	color: get-color(lightest);
+	strong {
+		color: get-color(canary);
+	}
+	.impactful-callout__content {
+		color: get-color(lightest);
+		a {
+			color: get-color(lightest);
+		}
+	}
+}
+
+.impactful-callout,
+.impactful-callout.has-emphasis-background-color {
+	@extend %dc-ic-default;
 	&:not(.block-editor-block-list__block) {
 		left: -2.25rem;
 	}
-	background-color: get-color(emphasis);
 	padding: 0.5rem 0.5rem 1rem;
 	position: relative;
 	margin-bottom: 2rem;
@@ -13,16 +28,12 @@
 		padding: 1.25rem 2.25rem;
 	}
 	.impactful-callout__content {
-		color: get-color(lightest);
 		font-style: italic;
 		font-weight: 300;
 		line-height: 1.15;
 		margin: 0;
 		strong {
 			font-weight: 900;
-		}
-		a {
-			color: get-color(lightest);
 		}
 	}
 	&.has-jade-background-color {
@@ -44,19 +55,6 @@
 			}
 			a {
 				color: get-color(jade-dark);
-			}
-		}
-	}
-	&.has-emphasis-background-color {
-		background-color: get-color(emphasis) !important;
-		color: get-color(lightest);
-		strong {
-			color: get-color(canary)
-		}
-		.impactful-callout__content {
-			color: get-color(lightest);
-			a {
-				color: get-color(jade-darker);
 			}
 		}
 	}
