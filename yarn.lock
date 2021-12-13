@@ -7320,6 +7320,11 @@ enzyme@^3.11.0:
     rst-selector-parser "^2.2.3"
     string.prototype.trim "^1.2.1"
 
+eq.js@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/eq.js/-/eq.js-1.9.0.tgz#8c2a1244cdc0a3244c8ece15f6273c40a26b4fd4"
+  integrity sha1-jCoSRM3AoyRMjs4V9ic8QKJrT9Q=
+
 equivalent-key-map@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/equivalent-key-map/-/equivalent-key-map-0.2.2.tgz#be4d57049bb8d46a81d6e256c1628465620c2a13"
