@@ -18,17 +18,17 @@ const variation = [
             contentPosition: 'top left',
         },
         innerBlocks: [
-            [ 'core/heading', { 
+            [ 'core/heading', {
                 className: 'callout__content',
                 level: 3,
                 placeholder: __( 'Add content...', 'debtcollective' )
             } ],
-            [ 'core/heading', { 
+            [ 'core/heading', {
                 className: 'callout__heading',
                 level: 2,
                 placeholder: __( 'Add Heading...', 'debtcollective' )
             } ],
-            [ 'core/heading', { 
+            [ 'core/heading', {
                 className: 'callout__content',
                 level: 3,
                 placeholder: __( 'Add content...', 'debtcollective' )

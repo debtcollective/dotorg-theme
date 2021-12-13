@@ -45,7 +45,8 @@ $colors: (
   "grey-light":  $c__gray--light,
   "grey-dark": $c__gray--dark,
 	"grey-darker": $c__gray--darker,
-	"green-1": $c__green--1
+	"green-1": $c__green--1,
+  "lightest": $white,
 );
 
 @function get-color($key) {

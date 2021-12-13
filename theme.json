@@ -191,6 +191,16 @@
 							"color": "var(--wp--preset--color--jade)"
 						},
 						{
+							"name": "Jade Dark",
+							"slug": "jade-dark",
+							"color": "var(--wp--preset--color--jade-dark)"
+						},
+						{
+							"name": "Jade Darker",
+							"slug": "jade-darker",
+							"color": "var(--wp--preset--color--jade-darker)"
+						},
+						{
 							"name": "Mint",
 							"slug": "mint",
 							"color": "var(--wp--preset--color--mint)"
@@ -225,35 +235,11 @@
                 "typography": {}
             },
 			"core/paragraph": {
-                "color": {
-					"palette": [
-						{
-							"name": "Emphasis",
-							"slug": "emphasis",
-							"color": "var(--wp--preset--color--emphasis)"
-						},
-						{
-							"name": "Jade",
-							"slug": "jade",
-							"color": "var(--wp--preset--color--jade)"
-						},
-						{
-							"name": "Dark Gray",
-							"slug": "gray-dark",
-							"color": "var(--wp--preset--color--gray-dark)"
-						},
-						{
-							"name": "White",
-							"slug": "white",
-							"color": "var(--wp--preset--color--white)"
-						}
-					]
-				},
-                "custom": {},
-                "layout": {},
-                "spacing": {},
-                "typography": {}
-            },
+          "custom": {},
+          "layout": {},
+          "spacing": {},
+          "typography": {}
+      },
 			"core/heading": {
 				"typography": {
 					"customFontSize": false,
@@ -367,6 +353,11 @@
 							"color": "var(--wp--preset--color--canary)"
 						},
 						{
+							"name": "Emphasis",
+							"slug": "emphasis",
+							"color": "var(--wp--preset--color--emphasis)"
+						},
+						{
 							"name": "Salmon",
 							"slug": "salmon",
 							"color": "var(--wp--preset--color--salmon)"
@@ -428,5 +419,5 @@
         }
 
 	}
-	
+
 }

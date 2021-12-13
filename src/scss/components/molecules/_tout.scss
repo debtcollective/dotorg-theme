@@ -72,10 +72,6 @@
 		&:hover::after {
 			border-color: $white;
 		}
-		img {
-			mix-blend-mode: screen;
-			filter: invert(1);
-		}
 	}
 	.wp-block-image {
 		margin-bottom: 0 !important;
