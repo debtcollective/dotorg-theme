@@ -73,6 +73,26 @@ function remove_scripts() {
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_scripts', 11 );
 \remove_action( 'wp_head', [ '\Flexy_Breadcrumb_Typography', 'breadcrumb_typography' ] );
 
-// if( ! defined( 'YIKES_MAILCHIMP_EXCLUDE_STYLES' ) ) { 
-// 	define( 'YIKES_MAILCHIMP_EXCLUDE_STYLES', true ); 
-// }
+
+
+// MatchHeights for touts
+/**
+ * Enqueue scripts and styles.
+ *
+ * @author Debt Collective
+ */
+function frontend_scripts() {
+    wp_register_script(
+        'toutmatchheight',
+        get_template_directory_uri() . '/build/toutmatchheight.js',
+        array(),
+        null,
+        true
+    );
+		var_dump('i fired early');
+    if ( has_block( 'site-functionality/tout' ) ) {
+				var_dump('i fired');
+        wp_enqueue_script( 'toutmatchheight' );
+    }
+}
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\frontend_scripts', 99 );
