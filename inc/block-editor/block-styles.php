@@ -31,3 +31,5 @@ namespace DebtCollective\Inc;
  */
 // \unregister_block_style( 'core/button', 'fill' );
 // \unregister_block_style( 'core/button', 'outline' );
+
+// \unregister_block_style( 'core/image', 'rounded' );

@@ -69,12 +69,9 @@
 		.tout__content {
 			color: $white;
 		}
+		&::after,
 		&:hover::after {
 			border-color: $white;
-		}
-		img {
-			mix-blend-mode: screen;
-			filter: invert(1);
 		}
 	}
 	.wp-block-image {
