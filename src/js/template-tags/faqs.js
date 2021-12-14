@@ -44,7 +44,7 @@ import * as hashquery from 'hashquery';
 			var keyVal = hashVal.split('=')
 			var key = keyVal[0].split('#')[1]
 			var val = keyVal[1]
-			if (key.indexOf('faqs') > -1) {
+			if (key && key.indexOf('faqs') > -1) {
 				var faqHash = hashquery.get(key)
 				if( faqHash ) {
 					var faqElement = document.getElementById(faqHash)
