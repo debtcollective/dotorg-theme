@@ -23,9 +23,9 @@ jobs:
           command: |
             yarn install
       - run:
-          name: build site in dev mode
+          name: build site in production mode
           command: |
-            yarn run build:dev
+            yarn run build
       - run:
           name: Deploy over SSH
           command: |
