@@ -110,33 +110,7 @@
 					"name": "More Gothic"
 				}
 			],
-			"fontSizes": [
-				{
-					"name": "Small",
-					"size": "14px",
-					"slug": "small"
-				},
-				{
-					"name": "Body/H5",
-					"size": "16px",
-					"slug": "body"
-				},
-				{
-					"name": "H3/Lede",
-					"size": "26.88px",
-					"slug": "h3"
-				},
-				{
-					"name": "H2",
-					"size": "41.88px",
-					"slug": "h2"
-				},
-				{
-					"name": "H1",
-					"size": "67.776px",
-					"slug": "h1"
-				}
-			],
+			"fontSizes": [],
 			"fontWeights": [
 				{
 					"name": "Light",
@@ -191,6 +165,16 @@
 							"color": "var(--wp--preset--color--jade)"
 						},
 						{
+							"name": "Jade Dark",
+							"slug": "jade-dark",
+							"color": "var(--wp--preset--color--jade-dark)"
+						},
+						{
+							"name": "Jade Darker",
+							"slug": "jade-darker",
+							"color": "var(--wp--preset--color--jade-darker)"
+						},
+						{
 							"name": "Mint",
 							"slug": "mint",
 							"color": "var(--wp--preset--color--mint)"
@@ -225,35 +209,11 @@
                 "typography": {}
             },
 			"core/paragraph": {
-                "color": {
-					"palette": [
-						{
-							"name": "Emphasis",
-							"slug": "emphasis",
-							"color": "var(--wp--preset--color--emphasis)"
-						},
-						{
-							"name": "Jade",
-							"slug": "jade",
-							"color": "var(--wp--preset--color--jade)"
-						},
-						{
-							"name": "Dark Gray",
-							"slug": "gray-dark",
-							"color": "var(--wp--preset--color--gray-dark)"
-						},
-						{
-							"name": "White",
-							"slug": "white",
-							"color": "var(--wp--preset--color--white)"
-						}
-					]
-				},
-                "custom": {},
-                "layout": {},
-                "spacing": {},
-                "typography": {}
-            },
+          "custom": {},
+          "layout": {},
+          "spacing": {},
+          "typography": {}
+      },
 			"core/heading": {
 				"typography": {
 					"customFontSize": false,
@@ -355,34 +315,8 @@
 			},
 			"site-functionality/impactful-callout": {
 				"color": {
-					"palette": [
-						{
-							"name": "Jade",
-							"slug": "jade",
-							"color": "var(--wp--preset--color--jade)"
-						},
-						{
-							"name": "Canary",
-							"slug": "canary",
-							"color": "var(--wp--preset--color--canary)"
-						},
-						{
-							"name": "Salmon",
-							"slug": "salmon",
-							"color": "var(--wp--preset--color--salmon)"
-						},
-						{
-							"name": "Dark Gray",
-							"slug": "gray-darker",
-							"color": "var(--wp--preset--color--gray-darker)"
-						},
-						{
-							"name": "White",
-							"slug": "white",
-							"color": "var(--wp--preset--color--white)"
-						}
-					]
-				}
+					"pallete": []
+			  }
 			}
 		}
 	},
@@ -428,5 +362,5 @@
         }
 
 	}
-	
+
 }

@@ -2890,6 +2890,13 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@tannerhodges/match-height@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@tannerhodges/match-height/-/match-height-1.1.3.tgz#6b3e77d9cae4050d40a1d39b71b7607ee7e37cbd"
+  integrity sha512-AcLyyljVSpYn/8EqeLVbXLeN0eWJXNZtsbTonMwXk5deSeTj9axvX4b1WmpJvp862jw/ul1A6ua2PwRXkAdm3Q==
+  dependencies:
+    element-closest "^3.0.2"
+
 "@tannin/compile@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@tannin/compile/-/compile-1.1.0.tgz#1e4d1c5364cbfeffa1c20352c053e19ef20ffe93"
@@ -7130,6 +7137,11 @@ electron-to-chromium@^1.3.793:
   version "1.3.796"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.796.tgz#bd74a4367902c9d432d129f265bf4542cddd9f54"
   integrity sha512-agwJFgM0FUC1UPPbQ4aII3HamaaJ09fqWGAWYHmzxDWqdmTleCHyyA0kt3fJlTd5M440IaeuBfzXzXzCotnZcQ==
+
+element-closest@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/element-closest/-/element-closest-3.0.2.tgz#3814a69a84f30e48e63eaf57341f4dbf4227d2aa"
+  integrity sha512-JxKQiJKX0Zr5Q2/bCaTx8P+UbfyMET1OQd61qu5xQFeWr1km3fGaxelSJtnfT27XQ5Uoztn2yIyeamAc/VX13g==
 
 element-resize-detector@^1.2.2:
   version "1.2.3"
@@ -11772,6 +11784,11 @@ masonry-layout@^4.2.2:
   dependencies:
     get-size "^2.0.2"
     outlayer "^2.1.0"
+
+matchheight@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/matchheight/-/matchheight-0.1.2.tgz#1751d330e1150000a2147f7a8c39e12ed331805f"
+  integrity sha512-LNb9lwOxWa5osBU96kDA2cONRtAz15tm2Cjpm1PxeJVNyi17VKpDH6JlC3b4XaFxYKKrQd6zQzYfEaChZrQDMw==
 
 mathml-tag-names@^2.1.3:
   version "2.1.3"

@@ -1,35 +1,82 @@
 .impactful-callout {
-	background-color: get-color(emphasis);
+	// a little overhang (interferes with block editor though since the contextual menu gets similarly shifted)
+
+	position: relative;
+	margin-bottom: 2rem;
 	padding: 0.5rem 0.5rem 1rem;
-	@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
-		padding: 0.75rem 1.25rem;
-	}
+
 	@media (min-width: get-breakpoint(sm)) {
 		padding: 1.25rem 2.25rem;
 	}
-	h3, h2, h3 p {
+
+	@media (min-width: get-breakpoint(md)) {
+		&:not(.block-editor-block-list__block) {
+			left: -2.25rem;
+		}
+	}
+
+	.callout__content {
+
 		font-style: italic;
+		font-size: get-font-sizez(h4);
+		font-weight: 300 !important;
 		line-height: 1.15;
 		margin: 0;
-	}
-	h3 {
-		color: $white;
-		font-weight: 300;
-		text-transform: uppercase;
-		font-size: get-font-size(h5);
-		@media (min-width: get-breakpoint(xs)) {
-			font-size: get-font-size(h4);
+
+		@media (min-width: get-greak-point(sm)) {
+			font-size: get-font-sizez(h3);
+		}
+
+		strong {
+			font-weight: 900;
 		}
 	}
-	h2,
-	.has-inline-color {
-		font-weight: 900;
-		font-size: get-font-size(h4);
-		@media (min-width: get-breakpoint(xs)) {
-			font-size: get-font-size(h3);
+	&.emphasis {
+		background-color: get-color(emphasis);
+		.callout__content {
+			color: get-color(lightest);
+			a {
+				color: get-color(lightest);
+			}
+			strong {
+				color: get-color(canary)
+			}
 		}
 	}
-	h2 {
-		color: get-color(canary);
+	&.jade {
+		background-color: get-color(jade);
+		.callout__content {
+			color: get-color(lightest);
+			strong {
+				color: get-color(canary);
+			}
+			a {
+				color: get-color(canary);
+			}
+		}
+	}
+	&.canary {
+		background-color: get-color(canary) !important;
+		.callout__content {
+			color: get-color(text);
+			strong {
+				color: get-color(text);
+			}
+			a {
+				color: get-color(jade-dark);
+			}
+		}
+	}
+	&.salmon {
+		background-color: get-color('salmon') !important;
+		.callout__content {
+			color: get-color(text);
+			strong {
+				color: get-color(jade-darker);
+			}
+			a {
+				color: get-color(jade-darker);
+			}
+		}
 	}
 }
