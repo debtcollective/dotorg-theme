@@ -69,6 +69,7 @@
 		.tout__content {
 			color: $white;
 		}
+		&::after,
 		&:hover::after {
 			border-color: $white;
 		}

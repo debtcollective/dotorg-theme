@@ -1,54 +1,63 @@
-%dc-ic-default {
-	background-color: get-color(emphasis);
-	color: get-color(lightest);
-	strong {
-		color: get-color(canary);
-	}
-	.impactful-callout__content {
-		color: get-color(lightest);
-		a {
-			color: get-color(lightest);
-		}
-	}
-}
+.impactful-callout {
+	// a little overhang (interferes with block editor though since the contextual menu gets similarly shifted)
 
-.impactful-callout,
-.impactful-callout.has-emphasis-background-color {
-	@extend %dc-ic-default;
-	&:not(.block-editor-block-list__block) {
-		left: -2.25rem;
-	}
-	padding: 0.5rem 0.5rem 1rem;
 	position: relative;
 	margin-bottom: 2rem;
-	@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
-		padding: 0.75rem 1.25rem;
-	}
+	padding: 0.5rem 0.5rem 1rem;
+
 	@media (min-width: get-breakpoint(sm)) {
 		padding: 1.25rem 2.25rem;
 	}
-	.impactful-callout__content {
+
+	@media (min-width: get-breakpoint(md)) {
+		&:not(.block-editor-block-list__block) {
+			left: -2.25rem;
+		}
+	}
+
+	.callout__content {
+
 		font-style: italic;
-		font-weight: 300;
+		font-size: get-font-sizez(h4);
+		font-weight: 300 !important;
 		line-height: 1.15;
 		margin: 0;
+
+		@media (min-width: get-greak-point(sm)) {
+			font-size: get-font-sizez(h3);
+		}
+
 		strong {
 			font-weight: 900;
 		}
 	}
-	&.has-jade-background-color {
-		background-color: get-color(jade);
-		color: get-color(lightest);
-		.impactful-callout__content {
+	&.emphasis {
+		background-color: get-color(emphasis);
+		.callout__content {
 			color: get-color(lightest);
+			a {
+				color: get-color(lightest);
+			}
+			strong {
+				color: get-color(canary)
+			}
+		}
+	}
+	&.jade {
+		background-color: get-color(jade);
+		.callout__content {
+			color: get-color(lightest);
+			strong {
+				color: get-color(canary);
+			}
 			a {
 				color: get-color(canary);
 			}
 		}
 	}
-	&.has-canary-background-color {
-		background-color: get-color(canary);
-		.impactful-callout__content {
+	&.canary {
+		background-color: get-color(canary) !important;
+		.callout__content {
 			color: get-color(text);
 			strong {
 				color: get-color(text);
@@ -58,14 +67,13 @@
 			}
 		}
 	}
-	&.has-salmon-background-color {
+	&.salmon {
 		background-color: get-color('salmon') !important;
-		color: get-color(text);
-		strong {
-			color: get-color(jade-darker)
-		}
-		.impactful-callout__content {
+		.callout__content {
 			color: get-color(text);
+			strong {
+				color: get-color(jade-darker);
+			}
 			a {
 				color: get-color(jade-darker);
 			}

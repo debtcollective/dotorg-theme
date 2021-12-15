@@ -5,7 +5,8 @@ const variations = [
     {
         name: 'tout-jade',
         title: __( 'Jade Tout', 'debtcollective' ),
-        category: 'components',
+        category: 'touts',
+        isDefault: true,
         description: __( 'Display a jade tout on page.', 'debtcollective' ),
         keywords: [
             __( 'tout', 'debtcollective' ),
@@ -39,7 +40,7 @@ const variations = [
                     name: 'core/image',
                     attributes: {
                         className: 'tout__image',
-                        id: 134, 
+                        id: 134,
                         sizeSlug: 'full',
                         linkDestination: 'none',
                     }
@@ -55,7 +56,7 @@ const variations = [
     {
         name: 'tout-canary',
         title: __( 'Canary Tout', 'debtcollective' ),
-        category: 'components',
+        category: 'touts',
         description: __( 'Display a canary tout on page.', 'debtcollective' ),
         keywords: [
             __( 'tout', 'debtcollective' ),
@@ -89,7 +90,7 @@ const variations = [
                     name: 'core/image',
                     attributes: {
                         className: 'tout__image',
-                        id: 134, 
+                        id: 134,
                         sizeSlug: 'full',
                         linkDestination: 'none',
                     }
@@ -97,15 +98,13 @@ const variations = [
             ],
         },
         scope: [
-            'block',
-            'inserter',
             'transform'
         ]
     },
     {
         name: 'tout-salmon',
         title: __( 'Salmon Tout', 'debtcollective' ),
-        category: 'components',
+        category: 'touts',
         description: __( 'Display a salmon tout on page.', 'debtcollective' ),
         keywords: [
             __( 'tout', 'debtcollective' ),
@@ -139,7 +138,7 @@ const variations = [
                     name: 'core/image',
                     attributes: {
                         className: 'tout__image',
-                        id: 134, 
+                        id: 134,
                         sizeSlug: 'full',
                         linkDestination: 'none',
                     }
@@ -147,16 +146,7 @@ const variations = [
             ],
         },
         scope: [
-            'block',
-            'inserter',
             'transform'
         ]
     }
 ];
-
-// variations.forEach( ( variation ) => {
-//     registerBlockVariation(
-//         'site-functionality/tout',
-//         variation
-//     );
-// } );

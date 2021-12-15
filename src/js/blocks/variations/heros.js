@@ -13,6 +13,7 @@ const variations = [
         name: 'hero',
         title: __( 'Hero', 'debtcollective' ),
         description: __( 'Add a hero with background image.', 'debtcollective' ),
+        isDefault: true,
         keywords: [
             __( 'banner', 'debtcollective' ),
             __( 'tout', 'debtcollective' ),
@@ -28,7 +29,7 @@ const variations = [
         attributes: {
             className: 'hero',
             contentPosition: 'top left',
-            url: 'https://wordpress-cdn-test.debtcollective.org/wp-content/uploads/2021/08/24080707/hero-1.png',
+            url: 'https://wordpress-cdn-test.debtcollective.org/wp-content/uploads/2021/12/08161136/dummy-banner.png',
             id: 307,
             dimRatio: 0,
         },
@@ -37,32 +38,24 @@ const variations = [
                 className: 'hero__heading',
                 level: 1,
                 placeholder: __( 'Add Heading...', 'debtcollective' ),
-                content: __( 'Alone Our Debts are a Burden.<br/>Together They Make Us <strong>Powerful</strong>', 'debtcollective' ),
                 textColor: 'white'
             } ],
             [ 'core/heading', { 
                 className: 'hero__content',
                 level: 3,
                 placeholder: __( 'Add content...', 'debtcollective' ),
-                content: __( 'We are a debtors’ union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
                 textColor: 'white'
             } ],
             [ 'core/buttons', { 
                 className: 'buttons'
             }, [
                 [ 'core/button', { 
-                    className: 'hero__button button',
+                    className: 'hero__button btn',
                     placeholder: __( 'Add Button Text...', 'debtcollective' ),
-                    backgroundColor: 'emphasis',
-                    textColor: 'white',
-                    content: __( 'Join the Union', 'debtcollective' )
                 } ],
                 [ 'core/button', { 
-                    className: 'hero__button button--minor' ,
+                    className: 'hero__button btn minor' ,
                     placeholder: __( 'Add Button Text...', 'debtcollective' ),
-                    backgroundColor: 'white',
-                    textColor: 'grey-dark',
-                    content: __( 'Membership Benefits', 'debtcollective' )
                 } ]
             ] ],
         ],
@@ -101,17 +94,13 @@ const variations = [
                             attributes: {
                                 content: __( 'Join the Union', 'debtcollective' ),
                                 className: 'hero__button btn',
-                                backgroundColor: 'emphasis',
-                                textColor: 'white'
                             }
                         },
                         {
                             name: 'core/button',
                             attributes: {
                                 content: __( 'Membership Benefits', 'debtcollective' ),
-                                className: 'hero__button button--minor' ,
-                                backgroundColor: 'white',
-                                textColor: 'grey-dark'
+                                className: 'hero__button btn minor' ,
                             }
                         }
                     ]
@@ -141,15 +130,11 @@ const variations = [
                 className: 'hero__heading',
                 level: 1,
                 placeholder: __( 'Add Heading...', 'debtcollective' ),
-                content: __( 'Alone Our Debts are a Burden.<br/>Together They Make Us <strong>Powerful</strong>', 'debtcollective' ),
-                textColor: 'grey-darker'
             } ],
             [ 'core/heading', { 
                 className: 'hero__content',
                 level: 3,
                 placeholder: __( 'Add content...', 'debtcollective' ),
-                content: __( 'We are a debtors’ union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
-                textColor: 'grey-darker'
             } ]
         ],
         example: {
@@ -166,7 +151,6 @@ const variations = [
                         content: __( 'Housing Debt', 'debtcollective' ),
                         className: 'hero__heading',
                         level: 1,
-                        textColor: 'grey-darker'
                     },
                 },
                 {
@@ -175,7 +159,6 @@ const variations = [
                         content: __( 'As of summer 2021, nearly 6 million US households were behind on rent payments, owing over $20 billion dollars. Those behind on rent debt are overwhelmingly low income and people of color. (Yup. Racial capitalism.) Sound like a lot of debt? Sounds like a lot of power over landlords to us!', 'debtcollective' ),
                         className: 'hero__heading',
                         level: 3,
-                        textColor: 'grey-darker'
                     },
                 }
             ],
