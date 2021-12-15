@@ -89,9 +89,7 @@ function frontend_scripts() {
         null,
         true
     );
-		var_dump('i fired early');
     if ( has_block( 'site-functionality/tout' ) ) {
-				var_dump('i fired');
         wp_enqueue_script( 'toutmatchheight' );
     }
 }
