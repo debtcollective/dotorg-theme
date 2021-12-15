@@ -9,3 +9,12 @@ if (eventsTout[0]) {
 		})
 	})
 }
+
+const singleEventTout = document.querySelectorAll('.event-tout')
+if (singleEventTout[0]) {
+	singleEventTout.forEach(tout => {
+		eqjs.definePts(tout, {
+			large: 400
+		})
+	})
+}
