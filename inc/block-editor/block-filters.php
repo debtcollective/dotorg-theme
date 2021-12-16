@@ -31,5 +31,19 @@ function custom_render_block_core_cover(
 
 	return $block_content;
 }
-
 // add_filter( 'render_block', __NAMESPACE__. '\custom_render_block_core_cover', null, 2 );
+
+
+// removes h1 tags from the block editor
+function mu_remove_h1_gutenberg_editor() {
+	echo '<style>
+	#editor .block-library-heading-level-toolbar .components-toolbar-group button:first-child {
+		width: 3px;
+		min-width: auto;
+		padding: 3px 0;
+		pointer-events: none;
+		visibility: hidden;
+	}
+	</style>';
+}
+add_action( 'admin_head', 'mu_remove_h1_gutenberg_editor' );
