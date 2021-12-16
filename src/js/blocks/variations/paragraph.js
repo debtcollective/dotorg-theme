@@ -3,24 +3,24 @@ import { __ } from '@wordpress/i18n';
 
 const variations = [
     {
-        name: 'lede',
-        title: __( 'Lede', 'debtcollective' ),
-        description: __( 'Add opening sentence or paragraph.', 'debtcollective' ),
-        category: 'components',
+        name: 'paragraph',
+        title: __( 'Paragraph', 'debtcollective' ),
+        description: __( 'A standard paragraph.', 'debtcollective' ),
+        isDefault: true,
+        category: 'text',
         keywords: [
             __( 'intro', 'debtcollective' ),
             __( 'paragraph', 'debtcollective' ),
             __( 'sentence', 'debtcollective' )
         ],
-        icon: 'editor-justify',
+        icon: 'editor-alignleft',
         attributes: {
-            className: 'lede',
+            className: 'ptag',
             placeholder: __( 'Add content...', 'debtcollective' )
         },
         example: {
             attributes: {
-                className: 'lede',
-                content: __( 'We are a membership-powered movement. Some supporting copy reenforcing the message and sentiment we’re looking to convey.', 'debtcollective' )
+                content: __( 'This is a bock for displaying the opening paragraph, the big idea, the tl;dr.', 'debtcollective' )
             },
         },
         scope: [
@@ -28,9 +28,19 @@ const variations = [
             'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className
-        // }
+    },
+    {
+        name: 'lede',
+        title: __( 'Lede', 'debtcollective' ),
+        description: __( 'Add opening sentence or paragraph.', 'debtcollective' ),
+        icon: 'editor-justify',
+        attributes: {
+            className: 'lede',
+            placeholder: __( 'Add content...', 'debtcollective' )
+        },
+        scope: [
+            'transform'
+        ],
     }
 ];
 
