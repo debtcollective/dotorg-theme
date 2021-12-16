@@ -4,9 +4,9 @@ import { __ } from '@wordpress/i18n';
 const variations = [
     {
         name: 'list',
-        title: __( 'A basic list', 'debtcollective' ),
-        description: __( 'Display stylized list.', 'debtcollective' ),
-        category: 'components',
+        title: __( 'Basic List', 'debtcollective' ),
+        description: __( 'Display a basic list.', 'debtcollective' ),
+        isDefault: true,
         attributes: {
             className: 'basic',
             placeholder: __( 'Add list items ...', 'debtcollective' )
@@ -24,17 +24,11 @@ const variations = [
     },
     {
         name: 'inline-bullet-list',
-        title: __( 'Inline Bullet List', 'debtcollective' ),
+        title: __( 'Columned Bullet List', 'debtcollective' ),
         description: __( 'A list with three item rows, side by side.', 'debtcollective' ),
-        category: 'components',
         attributes: {
             className: 'inline-bullet-list',
             placeholder: __( 'Add list items ...', 'debtcollective' )
-        },
-        example: {
-            attributes: {
-                className: 'inline-bullet-list',
-            },
         },
         scope: [
             'transform'
@@ -43,16 +37,10 @@ const variations = [
     {
         name: 'bullet-list',
         title: __( 'Bullet List', 'debtcollective' ),
-        description: __( 'A regular list, with fancy bullets.', 'debtcollective' ),
-        category: 'components',
+        description: __( 'A regular list, with fancy Jade bullets.', 'debtcollective' ),
         attributes: {
             className: 'bullet-list',
             placeholder: __( 'Add list items ...', 'debtcollective' )
-        },
-        example: {
-            attributes: {
-                className: 'bullet-list',
-            },
         },
         scope: [
             'transform'

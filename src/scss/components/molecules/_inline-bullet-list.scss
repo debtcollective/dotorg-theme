@@ -5,14 +5,20 @@
 	display: grid;
 	column-gap: 2rem;
 	grid-template-columns: 1fr;
-	@media (min-width: get-breakpoint(md)) {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
+
 	li {
 		position: relative;
 		display: inline-block;
 		margin-bottom: 1.5rem;
 		column-gap: 0.5rem;
+	}
+
+	@media (min-width: get-breakpoint(md)) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+ul.inline-bullet-list li {
 		&::before {
 			content: "";
 			display: inline-block;
@@ -22,6 +28,21 @@
 			width: 0.5rem;
 			height: 1rem;
 			background-color: get-color(jade);
+		}
+}
+
+ol.inline-bullet-list {
+	counter-reset: acounter;
+	li {
+		counter-increment: acounter;
+		&::before {
+			content: counter(acounter);
+			left: -1rem;
+			top: -0.15rem;
+			position: absolute;
+			font-weight: 900 !important;
+			font-size: 1.2em;
+			color: get-color(jade);
 		}
 	}
 }
