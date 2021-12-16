@@ -18,13 +18,13 @@
 	.callout__content {
 
 		font-style: italic;
-		font-size: get-font-sizez(h4);
+		font-size: get-font-size(h4);
 		font-weight: 300 !important;
 		line-height: 1.15;
 		margin: 0;
 
 		@media (min-width: get-greak-point(sm)) {
-			font-size: get-font-sizez(h3);
+			font-size: get-font-size(h3);
 		}
 
 		strong {

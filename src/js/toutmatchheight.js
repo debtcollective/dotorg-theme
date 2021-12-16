@@ -4,18 +4,15 @@ console.log('hello, from toutmatchheight.js')
 
 if( window ) {
   window.addEventListener('DOMContentLoaded', function() {
-    console.log('hi')
     // touts really should only live in columns (and if they arent, they shouldnt matchheight with anything)
     const cols = document.querySelectorAll('.wp-block-columns')
     cols.forEach( function(col,i){
-      console.log('col', i)
-      let touts = col.querySelectorAll('.tout')
+      const touts = col.querySelectorAll('.tout')
       touts.forEach( function(tout, j) {
-        console.log('tout', j)
         // group titles and contents in a wrapper here to get easier less awkward layouts.
-        let title = tout.querySelector('.tout__title')
-        let content = tout.querySelector('.tout__content')
-        let wrapper = document.createElement('div')
+        const title = tout.querySelector('.tout__title')
+        const content = tout.querySelector('.tout__content')
+        const wrapper = document.createElement('div')
         wrapper.classList.add('content__wrapper')
         tout.prepend(wrapper)
         wrapper.append(title)
@@ -29,6 +26,7 @@ if( window ) {
 }
 
 function toutMatchHeight() {
+  console.log('toutMatchHeight')
   const cols = document.querySelectorAll('.wp-block-columns')
   cols.forEach( function(col){
     const touts = col.querySelectorAll('.tout')

@@ -1,26 +1,48 @@
-.inline-bullet-list,
-.is-style-inline-bullet-list {
-	margin: 0;
+.inline-bullet-list {
+	margin: 0 0 2rem 0;
 	padding: 0;
 	list-style: none;
-	display: flex;
-	flex-direction: column;
-	@media (min-width: get-breakpoint(md)) {
-		flex-direction: row;
-	}
+	display: grid;
+	column-gap: 2rem;
+	grid-template-columns: 1fr;
+
 	li {
-		@media (min-width: get-breakpoint(md)) {
-			width: 33.33%;
-			margin-right: 1.75rem;
-		}
+		position: relative;
+		display: inline-block;
 		margin-bottom: 1.5rem;
-		display: flex;
 		column-gap: 0.5rem;
+	}
+
+	@media (min-width: get-breakpoint(md)) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+ul.inline-bullet-list li {
 		&::before {
 			content: "";
-			background: center/contain no-repeat url(../images/icons/rectangle-jade.svg);
-			width: 2.4rem;
-			height: 1.65rem;
+			display: inline-block;
+			position: absolute;
+			top: 0.25rem;
+			left: -0.825rem;
+			width: 0.5rem;
+			height: 1rem;
+			background-color: get-color(jade);
+		}
+}
+
+ol.inline-bullet-list {
+	counter-reset: acounter;
+	li {
+		counter-increment: acounter;
+		&::before {
+			content: counter(acounter);
+			left: -1rem;
+			top: -0.15rem;
+			position: absolute;
+			font-weight: 900 !important;
+			font-size: 1.2em;
+			color: get-color(jade);
 		}
 	}
 }

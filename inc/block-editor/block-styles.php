@@ -8,21 +8,8 @@
  *
  * @package DebtCollective
  */
+
 namespace DebtCollective\Inc;
-
-\register_block_style(
-    'core/list', [
-    'name'         => 'inline-bullet-list',
-    'label'        => __( 'Inline Bullet List', 'debtcollective' ),
-    ]
-);
-
-\register_block_style(
-    'core/list', [
-    'name'         => 'bullet-list',
-    'label'        => __( 'Bullet List', 'debtcollective' ),
-    ]
-);
 
 /**
  * Unregister Core Block Styles
@@ -31,5 +18,3 @@ namespace DebtCollective\Inc;
  */
 // \unregister_block_style( 'core/button', 'fill' );
 // \unregister_block_style( 'core/button', 'outline' );
-
-// \unregister_block_style( 'core/image', 'rounded' );
