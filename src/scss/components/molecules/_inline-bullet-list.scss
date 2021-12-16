@@ -1,6 +1,6 @@
 .inline-bullet-list {
-	margin: 0 0 2rem 0;
-	padding: 0;
+	margin: 0 0 1rem 0;
+	padding: 0 0 0 2rem;
 	list-style: none;
 	display: grid;
 	column-gap: 2rem;
@@ -15,6 +15,7 @@
 
 	@media (min-width: get-breakpoint(md)) {
 		grid-template-columns: 1fr 1fr 1fr;
+		padding: 0 0 0 0;
 	}
 }
 
