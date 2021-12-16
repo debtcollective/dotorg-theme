@@ -37,10 +37,10 @@ ol.inline-bullet-list {
 		counter-increment: acounter;
 		&::before {
 			content: counter(acounter);
-			left: -0.825rem;
+			left: -1rem;
 			top: -0.15rem;
 			position: absolute;
-			font-weight: 900;
+			font-weight: 900 !important;
 			font-size: 1.2em;
 			color: get-color(jade);
 		}
