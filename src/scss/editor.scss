@@ -4,3 +4,37 @@
 
 @import 'blocks/index.scss';
 @import 'components/index.scss';
+
+.block-editor-rich-text__editable  {
+  .is-selected &,
+  &.is-selected, {
+    background-color: rgba(#fec, 0.8) !important;
+  }
+}
+
+.hero {
+  .block-editor-rich-text__editable  {
+    .is-selected &,
+    &.is-selected {
+      background-color: rgba(#000, 0.6) !important;
+    }
+  }
+}
+
+.impactful-callout {
+  &.is-selected .block-editor-rich-text__editable {
+    background-color: rgba(#000, 0.125) !important;
+  }
+  .block-editor-rich-text__editable.is-selected {
+    background-color: rgba(#000, 0.125) !important;
+  }
+}
+
+.tout {
+  .block-editor-rich-text__editable  {
+    .is-selected &,
+    &.is-selected {
+      background-color: inherit !important;
+    }
+  }
+}
