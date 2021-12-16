@@ -90,7 +90,7 @@ function frontend_scripts() {
         true
     );
     if ( has_block( 'site-functionality/tout' ) ) {
-        wp_enqueue_script( 'toutmatchheight' );
+				wp_enqueue_script( 'toutmatchheight' );
     }
 }
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\frontend_scripts', 99 );

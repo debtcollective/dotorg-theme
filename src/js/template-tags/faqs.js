@@ -38,17 +38,16 @@ import * as hashquery from 'hashquery';
 
 	// a bit convoluted, but it allows us to have multiple faq elements per page (for example in tabs groupd)
 	dc.faqs.handleDeeplink = function() {
-		var hash = window.location.hash
-		var hashValues = hash.split('&')
+		const hash = window.location.hash
+		const hashValues = hash.split('&')
 		hashValues.forEach( function(hashVal) {
-			var keyVal = hashVal.split('=')
-			var key = keyVal[0].split('#')[1]
-			var val = keyVal[1]
+			const keyVal = hashVal.split('=')
+			const key = keyVal[0].split('#')[1]
+			const val = keyVal[1]
 			if (key && key.indexOf('faqs') > -1) {
-				var faqHash = hashquery.get(key)
+				const faqHash = hashquery.get(key)
 				if( faqHash ) {
-					var faqElement = document.getElementById(faqHash)
-					if (faqElement) {
+					if (document.getElementById(faqHash)) {
 						dc.faqs.onFAQClicked(val)
 						setTimeout( function() {
 			        // not setting a await was causing some weird stuff!

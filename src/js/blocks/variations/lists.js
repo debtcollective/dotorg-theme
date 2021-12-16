@@ -3,9 +3,29 @@ import { __ } from '@wordpress/i18n';
 
 const variations = [
     {
+        name: 'list',
+        title: __( 'A basic list', 'debtcollective' ),
+        description: __( 'Display stylized list.', 'debtcollective' ),
+        category: 'components',
+        attributes: {
+            className: 'basic',
+            placeholder: __( 'Add list items ...', 'debtcollective' )
+        },
+        example: {
+            attributes: {
+                className: 'basic',
+            },
+        },
+        scope: [
+            'block',
+            'inserter',
+            'transform'
+        ],
+    },
+    {
         name: 'inline-bullet-list',
         title: __( 'Inline Bullet List', 'debtcollective' ),
-        description: __( 'Display stylized list.', 'debtcollective' ),
+        description: __( 'A list with three item rows, side by side.', 'debtcollective' ),
         category: 'components',
         attributes: {
             className: 'inline-bullet-list',
@@ -17,18 +37,13 @@ const variations = [
             },
         },
         scope: [
-            'block',
-            'inserter',
             'transform'
         ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className 
-        // }
     },
     {
         name: 'bullet-list',
         title: __( 'Bullet List', 'debtcollective' ),
-        description: __( 'Display bullet list.', 'debtcollective' ),
+        description: __( 'A regular list, with fancy bullets.', 'debtcollective' ),
         category: 'components',
         attributes: {
             className: 'bullet-list',
@@ -40,13 +55,8 @@ const variations = [
             },
         },
         scope: [
-            'block',
-            'inserter',
             'transform'
-        ],
-        // isActive: ( blockAttributes, variationAttributes ) => {
-        //     blockAttributes.className === variationAttributes.className 
-        // }
+        ]
     }
 ];
 
