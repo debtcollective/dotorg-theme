@@ -218,7 +218,8 @@ add_action( 'wp_footer', __NAMESPACE__ . '\display_customizer_footer_scripts', 9
  */
 function add_og_tags() {
 	// Bail if Yoast is installed, since it will handle things.
-	if ( class_exists( 'WPSEO_Options' ) ) {
+	// Or if SEO Framework is active
+	if ( class_exists( 'WPSEO_Options' ) || defined( 'THE_SEO_FRAMEWORK_PRESENT' ) ) {
 		return '';
 	}
 
