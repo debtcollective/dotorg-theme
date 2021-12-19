@@ -16,5 +16,6 @@ namespace DebtCollective\Inc;
  *
  * @see https://developer.wordpress.org/reference/functions/unregister_block_style/
  */
-// \unregister_block_style( 'core/button', 'fill' );
-// \unregister_block_style( 'core/button', 'outline' );
+
+// \unregister_block_style( 'components/button', 'fill' );
+// \unregister_block_style( 'components/button', 'outline' );
