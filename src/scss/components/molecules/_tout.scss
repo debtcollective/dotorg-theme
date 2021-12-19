@@ -41,21 +41,23 @@
 		padding-right: 2rem;
 	}
 	.tout__content {
-		min-height: 6rem;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 	.tout__image {
 		display: block;
-		// position: absolute;
-		// bottom: 0;
-		// left: 0;
 		width: 100%;
 		img {
 			display: block;
 			width: 100%;
 			height: auto;
-			// object-fit: contain;
 			mix-blend-mode: multiply;
 		}
+	}
+	.btn {
+		 margin-left: 2rem;
 	}
 	&.salmon {
 		background-color: get-color('salmon');

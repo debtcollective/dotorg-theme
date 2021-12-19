@@ -7,7 +7,7 @@ const variations = [
         title: __( 'Jade Tout', 'debtcollective' ),
         category: 'touts',
         isDefault: true,
-        description: __( 'Display a jade tout on page.', 'debtcollective' ),
+        description: __( 'A tout with a jade background color.', 'debtcollective' ),
         keywords: [
             __( 'tout', 'debtcollective' ),
             __( 'call to action', 'debtcollective' ),
@@ -56,46 +56,9 @@ const variations = [
     {
         name: 'tout-canary',
         title: __( 'Canary Tout', 'debtcollective' ),
-        category: 'touts',
-        description: __( 'Display a canary tout on page.', 'debtcollective' ),
-        keywords: [
-            __( 'tout', 'debtcollective' ),
-            __( 'call to action', 'debtcollective' ),
-            __( 'callout', 'debtcollective' )
-        ],
+        description: __( 'A tout with a canary yellow color.', 'debtcollective' ),
         attributes: {
             className: 'canary',
-        },
-        example: {
-            attributes: {
-                className: 'canary',
-            },
-            innerBlocks: [
-                {
-                    name: 'core/heading',
-                    attributes: {
-                        level: 2,
-                        className: 'tout__heading',
-                        content: __( 'Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'debtcollective' ),
-                    },
-                },
-                {
-                    name: 'core/paragraph',
-                    attributes: {
-                        className: 'tout__content',
-                        content: __( 'We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
-                    },
-                },
-                {
-                    name: 'core/image',
-                    attributes: {
-                        className: 'tout__image',
-                        id: 134,
-                        sizeSlug: 'full',
-                        linkDestination: 'none',
-                    }
-                },
-            ],
         },
         scope: [
             'transform'
@@ -104,46 +67,20 @@ const variations = [
     {
         name: 'tout-salmon',
         title: __( 'Salmon Tout', 'debtcollective' ),
-        category: 'touts',
-        description: __( 'Display a salmon tout on page.', 'debtcollective' ),
-        keywords: [
-            __( 'tout', 'debtcollective' ),
-            __( 'call to action', 'debtcollective' ),
-            __( 'callout', 'debtcollective' )
-        ],
+        description: __( 'A tout with a salmon background color.', 'debtcollective' ),
         attributes: {
             className: 'salmon',
         },
-        example: {
-            attributes: {
-                className: 'salmon',
-            },
-            innerBlocks: [
-                {
-                    name: 'core/heading',
-                    attributes: {
-                        level: 2,
-                        className: 'tout__heading',
-                        content: __( 'Alone our debts are a burden.<br /> Together they make us <em>powerful</em>.', 'debtcollective' ),
-                    },
-                },
-                {
-                    name: 'core/paragraph',
-                    attributes: {
-                        className: 'tout__content',
-                        content: __( 'We are a debtors\' union fighting to cancel debts and defend millions of households. Join us to build a world where college is publicly funded, healthcare is universal and housing is guaranteed for all.', 'debtcollective' ),
-                    },
-                },
-                {
-                    name: 'core/image',
-                    attributes: {
-                        className: 'tout__image',
-                        id: 134,
-                        sizeSlug: 'full',
-                        linkDestination: 'none',
-                    }
-                },
-            ],
+        scope: [
+            'transform'
+        ]
+    },
+    {
+        name: 'tout-dcorange',
+        title: __( 'DC Orange Tout', 'debtcollective' ),
+        description: __( 'A tout with the DebtCollective brand orange background color.', 'debtcollective' ),
+        attributes: {
+            className: 'emphasis',
         },
         scope: [
             'transform'
