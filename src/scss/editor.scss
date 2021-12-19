@@ -5,17 +5,17 @@
 @import 'blocks/index.scss';
 @import 'components/index.scss';
 
-.block-editor-rich-text__editable  {
+.block-editor-rich-text__editable:not(.wp-block-button__link)  {
   .is-selected &,
   &.is-selected, {
-    background-color: rgba(#fec, 0.8) !important;
+    background-color: rgba(#fec, 0.8);
   }
 }
 
 .hero {
   .block-editor-rich-text__editable  {
-    .is-selected &,
-    &.is-selected {
+    .is-selected &:not(.wp-block-button__link),
+    &:not(.wp-block-button__link).is-selected {
       background-color: rgba(#000, 0.6) !important;
     }
   }
@@ -30,11 +30,33 @@
   }
 }
 
+.wp-block-buttons,
+.wp-block-button,
+.button {
+  .is-selected &.wp-block-button__link,
+  &.is-selected .wp-block-button__link {
+    // background-color: revert !important;
+    border: 2px saturate(get-color(darkest),30);
+    // color: get-color(grey-dark) !important;
+  }
+}
+
+.button-tout,
 .tout {
-  .block-editor-rich-text__editable  {
-    .is-selected &,
-    &.is-selected {
-      background-color: inherit !important;
-    }
+  &.is-selected .block-editor-rich-text__editable:not(.wp-block-button__link),
+  .block-editor-rich-text__editable.is-selected:not(.wp-block-button__link) {
+    background-color: rgba(get-color(darkest), 0.15) !important;
+  }
+}
+
+.block-editor-block-list__layout.is-root-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (min-width: get-breakpoint(1200px)) {
+    border: 8px #0f0 solid;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

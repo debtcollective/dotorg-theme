@@ -26,7 +26,7 @@ const buttonVariations = [
     {
         name: 'button-minor',
         title: __( 'Minor Button', 'debtcollective' ),
-        description: __( 'Add a secondary button.', 'debtcollective' ),
+        description: __( 'A button with a white background and text-colored outline.', 'debtcollective' ),
         scope: [
             'transform'
         ],

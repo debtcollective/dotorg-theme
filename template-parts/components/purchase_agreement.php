@@ -10,6 +10,7 @@ $post_id  = get_the_ID();
 $taxonomy = $data->args['taxonomy'];
 ?>
 
+<!-- PA -->
 <article <?php \post_class( 'purchase-agreement-container purchase-agreement' ); ?>>
 	<div class="wrapper">
 		<div class="purchase-agreement__date entry-meta">
@@ -93,5 +94,6 @@ $taxonomy = $data->args['taxonomy'];
 				<?php printf( '<a href="%s" aria-label="%s" target="_blank">%s</a>', \esc_url( $file ), \esc_attr__( 'Download Purchase Agreement as PDF', 'debtcollective' ), \esc_html__( 'Download Purchase Agreement', 'debtcollective' ) ); ?>
 			<?php endif; ?>
 		</div>
-	</div>
+
+	</div><!-- wrapper -->
 </article><!-- #post-## -->
