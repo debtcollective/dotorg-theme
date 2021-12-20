@@ -1,7 +1,8 @@
 .video-banner {
-	background: url(../images/video-banner-bg-img.svg) 0 center no-repeat;
-	padding: 1rem;
-	margin-bottom: 1rem;
+	background-image: url(../images/video-banner-bg-img.svg);
+	background-size: cover;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
 	display: flex;
 	flex-direction: column;
 	@media (min-width: get-breakpoint(sm)) {
@@ -29,10 +30,10 @@
 		.video-banner__heading {
 			font-style: italic;
 			line-height: 1;
-			margin: 0;
-			font-size: get-font-size(h3);
+			margin: 0 0 0.75rem 0;
+			font-size: get-font-size(h4);
 			@media (min-width: get-breakpoint(sm)) {
-				font-size: get-font-size(h2);
+				font-size: get-font-size(h3);
 			}
 			strong {
 				color: get-color(emphasis);
@@ -42,9 +43,7 @@
 			line-height: 1.25;
 			font-weight: 300;
 			margin: 0;
-			@media (min-width: get-breakpoint(sm)) {
-				font-size: get-font-size(h4);
-			}
+			font-size: get-font-size(body);
 		}
 	}
 }
