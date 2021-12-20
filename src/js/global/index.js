@@ -8,3 +8,4 @@ import './js-enabled';
 import './window-ready';
 import './sidebar';
 import './admin-bar';
+import './chatwoot-link';
