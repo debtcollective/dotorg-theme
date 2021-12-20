@@ -1,3 +1,5 @@
+$sidebar-width: 300px;
+
 .site-header {
 	margin: 6rem 1.25rem 0;
 	@media (min-width: get-breakpoint(sm)) {
@@ -20,28 +22,53 @@
 }
 
 .site-main {
+
 	max-width: get-breakpoint(lg);
   margin: 0 auto;
-}
+	box-sizing: border-box;
 
-#main {
-	margin: 0 1rem;
-	@media (min-width: get-breakpoint(sm)) {
-		margin: 0 2rem;
-	}
-	@media (min-width: get-breakpoint(md)) {
-		margin: 0 4rem;
-	}
-}
+	.content-container {
 
-@media (min-width: get-breakpoint(md)) {
-	.has-sidebar {
-		max-width: calc(100vw - 220px);
-		#main {
-			margin-left: 4rem;
+		box-sizing: border-box;
+		max-width: get-breakpoint(lg);
+
+		@media (min-width: get-breakpoint(sm)) {
+			padding-right: 2rem;
+		}
+
+		@media (min-width: get-breakpoint(lg)) {
+			padding-right: 6rem;
+		}
+	}
+
+	.has-sidebar & {
+
+		.sidebar {
+			padding: 1rem;
+			box-sizing: border-box;
+			h3 {
+				color: $black;
+				font-size: get-font-size(h5);
+				line-height: 1.5;
+				border-bottom: solid 2px $black;
+				padding-bottom: 0.5rem;
+				margin: 2.5rem 0 1.5rem;
+			}
+		}
+		@media (min-width: get-breakpoint(md)) {
+			display: flex;
+			.content-container {
+				flex-grow: 1;
+				max-width: calc( #{get-breakpoint(lg)} - #{$sidebar-width});
+			}
+			.sidebar {
+				padding: 1rem 1rem 0;
+				min-width: $sidebar-width;
+			}
 		}
 	}
 }
+
 .page-header h1 {
 	font-size: get-font-size(h2);
 	line-height: 1.15;
@@ -51,7 +78,6 @@
 	max-width: 100vw;
 	object-fit: contain;
 }
-
 
 .three-points {
   display: grid;

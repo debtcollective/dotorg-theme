@@ -30,8 +30,9 @@
 			font-style: italic;
 			line-height: 1;
 			margin: 0;
-			@media (max-width: get-breakpoint(sm)) {
-				font-size: get-font-size(h3);
+			font-size: get-font-size(h3);
+			@media (min-width: get-breakpoint(sm)) {
+				font-size: get-font-size(h2);
 			}
 			strong {
 				color: get-color(emphasis);

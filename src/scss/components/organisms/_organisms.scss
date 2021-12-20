@@ -1,5 +1,5 @@
 @import 'footer';
-@import 'sidebar';
+// @import 'sidebar'; // moved this to layout, just to have it closer to the container elements, and nest properly
 @import 'breadcrumbs';
 @import 'purchase-agreement';
 @import 'people';

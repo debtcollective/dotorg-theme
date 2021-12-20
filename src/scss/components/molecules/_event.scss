@@ -1,15 +1,7 @@
 .event {
-	margin-bottom: 2rem;
-	width: 100%;
-	@media (min-width: get-breakpoint(sm)) {
-		max-width: 286px;
-		margin: 0 2.5rem 2rem 0;
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+
 	a {
-		height: 18rem;
+		box-sizing: border-box;
 		display: grid;
 		grid-template-rows: 6.5rem 5.5rem 2.5rem;
 		grid-template-columns: 100%;
@@ -18,6 +10,7 @@
 		text-decoration: none;
 		padding: 2.3rem 1.2rem;
 		background-color: get-color('salmon');
+
 		&:hover,
 		&:focus {
 			color: currentColor;
@@ -63,14 +56,10 @@
 		}
 		a {
 			box-sizing: border-box;
-			height: 13rem;
 			grid-template-rows: auto;
 			background-color: get-color(grey-light);
 			.event__date {
 				padding-bottom: 1rem;
-				@media (min-width: get-breakpoint(sm)) {
-					max-width: 11rem;
-				}
 				time {
 					padding: 0;
 					font-size: get-font-size(h3);
