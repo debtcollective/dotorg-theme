@@ -4,7 +4,6 @@
 	overflow: hidden;
 	background-color: get-color(jade-lightened);
 	min-height: 30rem;
-	margin-bottom: 2rem;
 	&:hover {
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 		.tout__title {
@@ -54,6 +53,13 @@
 			width: 100%;
 			height: auto;
 			mix-blend-mode: multiply;
+		}
+	}
+	> a {
+		color: get-color(text);
+		text-decoration: none;
+		&:hover {
+			color: get-color(text);
 		}
 	}
 	.btn {

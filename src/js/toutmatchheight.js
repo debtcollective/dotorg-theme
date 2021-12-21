@@ -13,11 +13,18 @@ if( window ) {
         const title = tout.querySelector('.tout__title')
         const content = tout.querySelector('.tout__content')
         const wrapper = document.createElement('div')
-        wrapper.classList.add('content__wrapper')
-        tout.prepend(wrapper)
-        wrapper.append(title)
-        wrapper.append(content)
-
+        if(tout.classList.contains('link-tout')) {
+          const wrappingLink = tout.querySelector('a')
+          console.log('wrappingLink', wrappingLink, j)
+          if(wrappingLink) {
+            wrapper.classList.add('content__wrapper')
+            wrappingLink.prepend(wrapper)
+            wrapper.append(title)
+            wrapper.append(content)
+          }
+        } else {
+          //@Todo: Accomodate non-link-tout height matching.
+        }
       })
     })
     toutMatchHeight()

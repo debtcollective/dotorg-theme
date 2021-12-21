@@ -1,4 +1,5 @@
 .page-events {
+
 	.site-header {
 		margin: 6rem 1.5rem 0;
 		@media (min-width: get-breakpoint(sm)) {
@@ -8,8 +9,8 @@
 			margin: 6rem 4rem 0;
 		}
 	}
-	#main {
-		margin: 0 1.5rem;
+
+	.content-container {
 		.entry-header {
 			margin: 1rem 0;
 			@media (min-width: get-breakpoint(sm)) {
