@@ -56,6 +56,13 @@
 			mix-blend-mode: multiply;
 		}
 	}
+	> a {
+		color: get-color(text);
+		text-decoration: none;
+		&:hover {
+			color: get-color(text);
+		}
+	}
 	.btn {
 		 margin-left: 2rem;
 	}
