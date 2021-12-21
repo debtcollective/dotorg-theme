@@ -1,5 +1,4 @@
 .impactful-callout {
-	// a little overhang (interferes with block editor though since the contextual menu gets similarly shifted)
 
 	position: relative;
 	margin-bottom: 2rem;
@@ -10,12 +9,16 @@
 	}
 
 	@media (min-width: get-breakpoint(md)) {
+		// a little overhang (interferes with block editor though since the contextual menu gets similarly shifted)
 		&:not(.block-editor-block-list__block) {
 			left: -2.25rem;
 		}
 	}
 
-	.callout__content {
+	.callout__content,
+	h1,
+	h2,
+	h3 {
 
 		font-style: italic;
 		font-size: get-font-size(h4);
@@ -76,6 +79,23 @@
 			}
 			a {
 				color: get-color(jade-darker);
+			}
+		}
+	}
+
+	&.two-col {
+		background-color: get-color(emphasis);
+		left: 0;
+		&:not(.block-editor-block-list__block) {
+			display: grid;
+			@media (min-width: get-breakpoint(md)) {
+				grid-template-columns: repeat(6, 1fr);
+				> *:nth-child(1) {
+					grid-column: span 4;
+				}
+				> *:nth-child(2) {
+					grid-column: span 2;
+				}
 			}
 		}
 	}

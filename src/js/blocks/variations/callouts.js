@@ -85,7 +85,36 @@ const variation = [
     scope: [
       'transform'
     ]
+  },
+  {
+    name: 'callout-twocol',
+    title: __( 'Callout two col', 'debtcollective' ),
+    description: __( 'A two column callout for call to actions and value proposition', 'debtcollective' ),
+    attributes: {
+      className: 'impactful-callout two-col',
+    },
+    innerBlocks: [
+      [
+        'core/heading',
+        {
+          className: 'content-column-lede',
+          level: 3,
+          placeholder: __( 'Call to action...', 'debtcollective' )
+        }
+      ],
+      [
+        'core/paragraph',
+        {
+          className: 'content-column-follow',
+          placeholder: __( 'Value proposition...', 'debtcollective' )
+        }
+      ]
+    ],
+    scope: [
+      'transform'
+    ]
   }
+
 ];
 
 registerBlockVariation(
