@@ -14,7 +14,7 @@ if( window ) {
         const content = tout.querySelector('.tout__content')
         const wrapper = document.createElement('div')
         wrapper.classList.add('content__wrapper')
-        tout.prepend(wrapper)
+        tout.querySelector('> a').prepend(wrapper)
         wrapper.append(title)
         wrapper.append(content)
 
