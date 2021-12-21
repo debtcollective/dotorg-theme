@@ -1,5 +1,12 @@
 $sidebar-width: 300px;
 
+
+.admin-bar {
+	#wpadminbar {
+		position: fixed;
+	}
+}
+
 .site-header {
 	margin: 6rem 1.25rem 0;
 	@media (min-width: get-breakpoint(sm)) {
@@ -10,15 +17,19 @@ $sidebar-width: 300px;
 	}
 }
 
-.admin-bar {
-	#wpadminbar {
-		position: fixed;
-	}
-}
-
 .entry-header .entry-title {
 	font-size: get-font-size(h2);
 	line-height: 1.15;
+}
+
+.page-header h1 {
+	font-size: get-font-size(h2);
+	line-height: 1.15;
+}
+
+.site-branding img {
+	max-width: 100vw;
+	object-fit: contain;
 }
 
 .site-main {
@@ -28,7 +39,7 @@ $sidebar-width: 300px;
 	box-sizing: border-box;
 
 	.content-container {
-
+		border:2px #0af solid;
 		box-sizing: border-box;
 		max-width: get-breakpoint(lg);
 		padding-left: 2rem;
@@ -41,6 +52,11 @@ $sidebar-width: 300px;
 		@media (min-width: get-breakpoint(lg)) {
 			padding-right: 6rem;
 		}
+	}
+
+	.page-template-fullwidth & {
+			padding-left: 3.5rem;
+			padding-right: 3.5rem;
 	}
 
 	.has-sidebar & {
@@ -57,6 +73,7 @@ $sidebar-width: 300px;
 				margin: 2.5rem 0 1.5rem;
 			}
 		}
+
 		@media (min-width: get-breakpoint(md)) {
 			display: flex;
 			.content-container {
@@ -69,16 +86,6 @@ $sidebar-width: 300px;
 			}
 		}
 	}
-}
-
-.page-header h1 {
-	font-size: get-font-size(h2);
-	line-height: 1.15;
-}
-
-.site-branding img {
-	max-width: 100vw;
-	object-fit: contain;
 }
 
 .three-points {
