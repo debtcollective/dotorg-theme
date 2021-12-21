@@ -85,8 +85,12 @@
 
 	&.two-col {
 		background-color: get-color(emphasis);
-		width: 70%;
 		left: 0;
+
+		@media (min-width: get-breakpoint(sm)) {
+			width: 70%;
+		}
+
 		* {
 			color: #fff;
 			a {
@@ -107,6 +111,11 @@
 		}
 		&:not(.block-editor-block-list__block) {
 			display: grid;
+			> *:nth-child(2) {
+				margin-top: 1rem;
+				padding-top: 1.5rem;
+				border-top: 1px get-color(lightest) solid;
+			}
 			@media (min-width: get-breakpoint(md)) {
 				grid-template-columns: repeat(6, 1fr);
 				> *:nth-child(1) {
@@ -116,6 +125,9 @@
 					grid-column: span 2;
 					padding-left: 2rem;
 					margin-left: 2rem;
+					margin-top: 0;
+					padding-top: 0;
+					border-top: none;
 					border-left: 1px get-color(lightest) solid;
 				}
 			}
