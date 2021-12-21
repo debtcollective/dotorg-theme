@@ -71,6 +71,23 @@
   }
 }
 
+
+.wp-block-site-functionality-impactful-callout {
+  .block-editor-block-list__layout {
+    @media (min-width: get-breakpoint(md)) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      > .wp-block:nth-child(1) {
+        grid-column: span 4;
+      }
+      > .wp-block:nth-child(2) {
+        grid-column: span;
+      }
+    }
+  }
+}
+
+
 // hide h1 from editor
 .components-toolbar-group {
   .components-toolbar-button[aria-label="Heading 1"] {
