@@ -70,3 +70,13 @@
     padding-right: 0;
   }
 }
+
+// hide h1 from editor
+.components-toolbar-group {
+  .components-toolbar-button[aria-label="Heading 1"] {
+    display: none !important;
+    position: fixed;
+    left: -100vw;
+    top: -100vh;
+  }
+}
