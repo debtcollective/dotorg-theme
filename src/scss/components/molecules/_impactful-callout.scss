@@ -85,7 +85,26 @@
 
 	&.two-col {
 		background-color: get-color(emphasis);
+		width: 70%;
 		left: 0;
+		* {
+			color: #fff;
+			a {
+				color: get-color(canary);
+				text-decoration: underline;
+			}
+		}
+		h2,
+		h3,
+		h4 {
+			margin-top: 0;
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+		}
+		a,
+		strong {
+			font-weight: 900;
+		}
 		&:not(.block-editor-block-list__block) {
 			display: grid;
 			@media (min-width: get-breakpoint(md)) {
@@ -95,6 +114,9 @@
 				}
 				> *:nth-child(2) {
 					grid-column: span 2;
+					padding-left: 2rem;
+					margin-left: 2rem;
+					border-left: 1px get-color(lightest) solid;
 				}
 			}
 		}
