@@ -18,8 +18,8 @@
 		a,
 		.wp-block-button__link {
 			background-color: $white;
-			color: $black;
-			border: 1px solid $black;
+			color: get-color(darkest);
+			border: 1px solid get-color(darkest);
 		}
 	}
 	&.jade {
