@@ -1,5 +1,9 @@
 .page-events {
 
+	.entry-header {
+		display: none;
+	}
+	
 	.site-header {
 		margin: 6rem 1.5rem 0;
 		@media (min-width: get-breakpoint(sm)) {
