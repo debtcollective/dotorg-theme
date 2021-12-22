@@ -3,50 +3,50 @@
 	.entry-header {
 		display: none;
 	}
-	
-	.site-header {
-		margin: 6rem 1.5rem 0;
-		@media (min-width: get-breakpoint(sm)) {
-			margin: 6rem 2.333rem 0;
-		}
-		@media (min-width: get-breakpoint(md)) {
-			margin: 6rem 4rem 0;
-		}
-	}
 
 	.content-container {
+
 		.entry-header {
+
 			margin: 1rem 0;
+
 			@media (min-width: get-breakpoint(sm)) {
 				margin: 1rem 0.75rem;
 			}
+
 			@media (min-width: get-breakpoint(md)) {
-				// margin: 1rem 3rem 0;
 				margin: 1rem 0;
 			}
+
 			.entry-title {
 				font-size: get-font-size(h2);
 			}
 		}
+
 		.entry-content {
+
 			@media (min-width: get-breakpoint(sm)) and (max-width: get-breakpoint(md)) {
 				margin-left: 1rem;
 			}
+
 			.taxonomy-label {
+
 				margin-left: -1rem;
+
 				@media (min-width: get-breakpoint(sm)) and (max-width: get-breakpoint(md)) {
 					margin-left: -1.5rem;
 				}
+
 				@media (min-width: get-breakpoint(md)) {
 					margin-left: -2.75rem;
 				}
 			}
 
 			.taxonomy-description {
-				// margin: 1.5rem 1.2rem;
+
 				margin: 1rem 0;
+
 				@media (min-width: get-breakpoint(md)) {
-					// margin-left: 3rem;
 					max-width: 64rem;
 				}
 			}

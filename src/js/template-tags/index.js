@@ -11,5 +11,6 @@ import './off-canvas';
 import './table';
 import './video';
 import './faqs';
+import './events';
 import './event-touts';
 import './form-elements';

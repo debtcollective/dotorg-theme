@@ -1,40 +1,51 @@
 .purchase-agreement {
+
 	height: min-content;
-	color: $black;
+	color: get-color(darkest);
 	padding: 1rem;
 	box-sizing: border-box;
 	margin: 0;
+
 	@media (min-width: get-breakpoint(sm)){
 		width: 45%;
 		padding: 0 0 1rem 0;
 		padding-right: 0.5rem;
 	}
+
 	@media (min-width: get-breakpoint(lg)){
 		width: 30%;
-		padding-right: 1rem;
+		padding-right: 0;
 	}
+
 	.wrapper {
 		box-sizing: border-box;
+		border-radius: 0.325rem;
 		padding: 1.125rem;
 		background-color: get-color(canary-light);
 	}
+
 	&__date {
 		font-size: get-font-size(h4);
 		line-height: 1;
 		font-weight: 300;
 		margin-bottom: 0.5rem;
 	}
+
 	&__title {
 		font-size: get-font-size(h5);
 		margin: 1rem 0 0.5rem;
 	}
+
 	&__summary {
 		padding: 0;
+
 		p {
 			margin: 0;
 		}
 	}
+
 	&__amount {
+
 		font-weight: 900;
 		line-height: 1.2;
 		color: get-color(emphasis);
@@ -44,6 +55,7 @@
 			font-size: get-font-size(h4);
 			margin-left: 0.25rem;
 		}
+
 		&.entry-label {
 			margin-bottom: 0.5rem;
 		}
@@ -63,6 +75,7 @@
 		clear: left;
 		margin-right: .125rem;
 	}
+
 	dd {
 		display: inline-block;
 		margin-left: 0;
