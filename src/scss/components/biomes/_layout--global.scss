@@ -87,13 +87,8 @@ $sidebar-width: 300px;
 	}
 }
 
-.three-points {
-  display: grid;
-  grid-template-columns: 1fr;
-  column-gap: 2rem;
-  @media (min-width: get-breakpoint(md)) {
-    grid-template-columns: 1fr 1fr 1fr
-  }
+.grid-three {
+	@include grid-three;
 }
 
 .four-points {
