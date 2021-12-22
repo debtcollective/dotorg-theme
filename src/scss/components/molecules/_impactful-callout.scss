@@ -87,10 +87,6 @@
 		background-color: get-color(emphasis);
 		left: 0;
 
-		@media (min-width: get-breakpoint(sm)) {
-			width: 70%;
-		}
-
 		* {
 			color: #fff;
 			a {
