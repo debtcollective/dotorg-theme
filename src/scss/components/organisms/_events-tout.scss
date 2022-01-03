@@ -14,18 +14,13 @@
 	}
 
 	.events__list {
-
-		flex-wrap: nowrap;
-		flex-direction: column;
-		justify-content: space-between;
-		margin-bottom: 1rem;
+		grid-template-columns: 1fr;
+		column-gap: 1rem;
+		row-gap: 1rem;
+		margin-bottom: 1.5rem;
 
 		.event {
 			max-width: 100%;
-
-			&:last-child {
-				margin-right: 0;
-			}
 
 			a {
 				border-radius: 0.5rem;
@@ -53,7 +48,7 @@
 		}
 	}
 
-	&[data-eq-state="large"] {
+	&[data-eq-state="large"] { // attr set by eq.js
 		padding: 3rem 1.75rem 2.75rem;
 		.events-tout__title {
 			font-size: get-font-size(h3);
@@ -61,8 +56,8 @@
 		}
 
 		.events__list {
-			column-gap: 1rem;
-			row-gap: 1rem;
+			grid-template-columns: 1fr 1fr 1fr;
+			margin-bottom: 3rem;
 			// .event {
 			// 	a {
 			// 		padding: 1.5rem 1rem;
