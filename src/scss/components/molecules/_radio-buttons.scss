@@ -9,7 +9,7 @@
 		.wpcf7-list-item {
 			position: relative;
 			border-radius: 6px;
-			padding: 1rem 1.25rem;
+			padding: 1rem 1.125rem;
 			margin: 0;
 			&.checked-radio {
 				background-color: get-color(green-1);
@@ -44,7 +44,6 @@
 				+ span {
 					font-size: 1rem;
 					line-height: 1.2;
-					font-weight: 700;
 					margin-left: 1.5rem;
 					&::before {
 						content: "";

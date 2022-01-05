@@ -25,7 +25,6 @@
 				cursor: pointer;
 				&:checked {
 					+ span {
-						font-weight: 700;
 						&::after {
 							position: absolute;
 							display: block;
@@ -42,11 +41,10 @@
 				+ span {
 					font-size: 1rem;
 					line-height: 1.2;
-					font-weight: 400;
 					margin-left: 1.5rem;
 					&::before {
 						content: "";
-						border: 0.1em solid get-color("grey");
+						border: 3px solid get-color("text");
 						border-radius: 0.25em;
 						background-color: transparent;
 						display: block;
