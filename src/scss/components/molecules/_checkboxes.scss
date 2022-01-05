@@ -16,38 +16,36 @@
 			}
 			input[type="checkbox"] {
 				position: absolute;
-				left: 1rem;
+				left: 2.5%;
 				width: 95%;
-				height: 1.75rem;
+				bottom: 7.5%;
+				height: 85%;
 				opacity: 0;
 				z-index: 1;
-				@media (min-width: get-breakpoint(sm)) {
-					width: 85%;
-				}
+				cursor: pointer;
 				&:checked {
 					+ span {
-						font-weight: 900;
+						font-weight: 700;
 						&::after {
 							position: absolute;
 							display: block;
-							top: 0.15em;
-							left: 1.33em;
+							top: 0.5em;
+							left: 1.6em;
 							width: 0.5em;
 							height: 1.33em;
-							border-right: 0.33em solid get-color(jade);//#24BA9D;
-							border-bottom: 0.33em solid get-color(jade);
+							border-right: 0.33em solid get-color(jade-light);
+							border-bottom: 0.33em solid get-color(jade-light);
 							transform: rotate(45deg);
 						}
 					}
 				}
 				+ span {
-					font-size: 1.3rem;
-					line-height: 1.35;
+					font-size: 1rem;
+					line-height: 1.2;
 					font-weight: 400;
-					margin-left: 1rem;
+					margin-left: 1.5rem;
 					&::before {
 						content: "";
-						background: transparent;
 						border: 0.1em solid get-color("grey");
 						border-radius: 0.25em;
 						background-color: transparent;
@@ -56,10 +54,8 @@
 						float: left;
 						width: 1.125em;
 						height: 1.125em;
-						margin-top: .1rem;
-						vertical-align: top;
-						cursor: pointer;
-						text-align: center;
+						position: relative;
+						top: .2em;
 					}
 				}
 			}
