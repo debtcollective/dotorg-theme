@@ -34,6 +34,9 @@
 		line-height: 1.15;
 		padding-top: 2rem;
 	}
+	.wp-block-column &:not([data-eq-state="large"]) .tout__title {
+		font-size: get-font-size(h4);
+	}
 	.tout__title,
 	.tout__content {
 		padding-left: 2rem;
@@ -55,7 +58,14 @@
 			mix-blend-mode: multiply;
 		}
 	}
+	&.button-tout,
 	> a {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	> a {
+		min-height: 30rem;
 		color: get-color(text);
 		text-decoration: none;
 		&:hover {
@@ -64,6 +74,7 @@
 	}
 	.btn {
 		 margin-left: 2rem;
+		 margin-right: 2rem;
 	}
 	&.salmon {
 		background-color: get-color('salmon');
