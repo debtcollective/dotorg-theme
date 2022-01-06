@@ -38,6 +38,16 @@ $sidebar-width: 300px;
 		padding: 0 3.5rem;
 	}
 
+	.wp-block-columns .wp-block-column {
+		margin-bottom: 2rem;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		@media (min-width: 782px) {
+			margin-bottom: 0;
+		}
+	}
+
 	.content-container {
 		box-sizing: border-box;
 	  max-width: get-breakpoint(lg);
