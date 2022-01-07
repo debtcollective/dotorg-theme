@@ -6,14 +6,13 @@
  *
  * @package DebtCollective
  */
-
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
-		<?php if ( ! is_front_page() ) : ?>
+		<?php if ( ! is_front_page() && ! DebtCollective\Inc\show_featured_image_header() ) : ?>
 			<header class="entry-header">
-				<?php debtcollective_featured_image(); ?>
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
 		<?php endif; ?>
 
@@ -22,10 +21,10 @@
 				the_content();
 
 				wp_link_pages(
-					[
+					array(
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'debtcollective' ),
 						'after'  => '</div>',
-					]
+					)
 				);
 				?>
 		</div><!-- .entry-content -->
