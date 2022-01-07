@@ -82,17 +82,23 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 		<nav id="site-navigation" class="main-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Main Navigation', 'debtcollective' ); ?>">
 			<?php
 			wp_nav_menu(
-				[
+				array(
 					'fallback_cb'    => false,
 					'theme_location' => 'primary',
 					'menu_id'        => 'primary-menu',
 					'menu_class'     => 'menu dropdown container',
 					'container'      => false,
-				]
+				)
 			);
 			?>
 		</nav><!-- #site-navigation-->
 
 		<?php echo do_shortcode( '[flexy_breadcrumb]' ); ?> 
+
+		<?php
+		if ( DebtCollective\Inc\show_featured_image_header() ) {
+			get_template_part( 'template-parts/components/featured-image', 'header' );
+		}
+		?>
 
 	</header><!-- .site-header-->
