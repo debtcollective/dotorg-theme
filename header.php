@@ -22,7 +22,7 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php if ( $display_global_header ) : ?>
-		<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@latest/dist/header/header.esm.js' ); ?>"></script>
+		<script type="module" src="<?php echo esc_url( 'https://unpkg.com/@debtcollective/dc-header-component@4.1.0/dist/header/header.esm.js' ); ?>"></script>
 	<?php endif; ?>
 
 	<?php wp_head(); ?>
@@ -93,6 +93,6 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 			?>
 		</nav><!-- #site-navigation-->
 
-		<?php echo do_shortcode( '[flexy_breadcrumb]' ); ?> 
+		<?php echo do_shortcode( '[flexy_breadcrumb]' ); ?>
 
 	</header><!-- .site-header-->
