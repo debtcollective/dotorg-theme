@@ -42,7 +42,10 @@
 				color: get-color(lightest);
 			}
 			strong {
-				color: get-color(canary)
+				color: get-color(canary);
+				a {
+					color: get-color(canary);
+				}
 			}
 		}
 	}
@@ -94,6 +97,7 @@
 				text-decoration: underline;
 			}
 		}
+
 		h2,
 		h3,
 		h4 {
