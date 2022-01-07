@@ -103,35 +103,6 @@ function debtcollective_entry_footer() {
 }
 
 /**
- * Render Featured Image
- *
- * @return void
- */
-function debtcollective_featured_image() {
-	$featured_image_is_hero = get_post_meta( get_the_ID(), 'featured_image_is_hero', true );
-	if( $featured_image_is_hero && has_post_thumbnail() ) : ?>
-
-		<div class="wp-block-cover has-background-color hero">
-			<?php the_post_thumbnail( 'large', array(
-				'class'	=> 'wp-block-cover__image-background',
-				'title' => esc_attr( get_the_title() ),
-			) ); ?>
-			<div class="wp-block-cover__inner-container">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</div>
-		</div><!-- .entry-header -->
-
-	<?php
-	else: ?>
-		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header><!-- .entry-header -->
-	<?php
-	endif;
-}
-
-
-/**
  * Display SVG Markup.
  *
  * @author Debt Collective
