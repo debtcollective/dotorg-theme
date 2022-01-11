@@ -9,7 +9,16 @@
 ?>
 <aside class="sidebar widget-area">
 
-	<?php 
+	<?php
+	if ( is_active_sidebar( 'above-nav' ) ) :
+		?>
+			<?php dynamic_sidebar( 'above-nav' ); ?>
+
+		<?php
+	endif;
+	?>
+
+	<?php
 	$section_navigation = \get_post_meta( $post->ID, 'display_section_navigation', true );
 	if( 'sibling' === $section_navigation ) : ?>
 
@@ -22,11 +31,12 @@
 	<?php endif; ?>
 
 	<?php
-	if ( is_active_sidebar( 'sidebar-1' ) ) :
+	if ( is_active_sidebar( 'below-nav' ) ) :
 		?>
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		
+			<?php dynamic_sidebar( 'below-nav' ); ?>
+
 		<?php
 	endif;
 	?>
+
 </aside><!-- .secondary -->
