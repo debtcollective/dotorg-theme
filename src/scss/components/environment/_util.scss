@@ -17,3 +17,13 @@
     grid-template-columns: 1fr 1fr 1fr
   }
 }
+
+
+@mixin grid-two {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+  @media (min-width: get-breakpoint(md)) {
+    grid-template-columns: 1fr 1fr
+  }
+}

@@ -13,8 +13,7 @@
 	if ( is_active_sidebar( 'above-nav' ) ) :
 		?>
 			<?php dynamic_sidebar( 'above-nav' ); ?>
-
-		<?php
+	<?php
 	endif;
 	?>
 
@@ -32,10 +31,9 @@
 
 	<?php
 	if ( is_active_sidebar( 'below-nav' ) ) :
-		?>
+	?>
 			<?php dynamic_sidebar( 'below-nav' ); ?>
-
-		<?php
+	<?php
 	endif;
 	?>
 
