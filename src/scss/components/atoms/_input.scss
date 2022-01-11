@@ -1,6 +1,7 @@
 input {
 	&[type="text"],
 	&[type="email"],
+	
 	&[type="tel"] {
 		box-sizing: border-box;
 		background-color: get-color(green-1) !important;

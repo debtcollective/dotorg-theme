@@ -18,6 +18,7 @@ namespace DebtCollective\Inc;
  * @return array Body classes.
  */
 function body_classes( $classes ) {
+
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.
 	global $is_IE, $is_edge, $is_safari;
 
@@ -64,7 +65,10 @@ function body_classes( $classes ) {
 	$classes[] = 'no-js';
 
 	// Add a `has-sidebar` class if we're using the default page template (page.php).
-	if ( ! is_front_page() && is_page() && is_active_sidebar( 'sidebar-1' ) && ! is_page_template() ) {
+	if ( ! is_front_page()
+		&& is_page()
+		&& ( is_active_sidebar( 'above-nav' ) || is_active_sidebar( 'below-nav' ) )
+		&& ! is_page_template() ) {
 		$classes[] = 'has-sidebar';
 	}
 

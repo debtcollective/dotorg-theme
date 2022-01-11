@@ -1,7 +1,7 @@
 .events__list {
 	display: grid;
 	grid-template-columns: 1fr;
-	@media (min-width: get-breakpoint(sm)) {
+	@media (min-width: get-breakpoint(xs)) {
 		grid-template-columns: 1fr 1fr;
 		column-gap: 1rem;
 		row-gap: 1rem;

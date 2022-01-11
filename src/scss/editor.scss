@@ -41,9 +41,7 @@
 .button {
   .is-selected &.wp-block-button__link,
   &.is-selected .wp-block-button__link {
-    // background-color: revert !important;
-    border: 2px saturate(get-color(darkest),30);
-    // color: get-color(grey-dark) !important;
+    border: 2px saturate(get-color(darkest), 30);
   }
 }
 
@@ -65,7 +63,6 @@
   max-width: 1200px;
   margin: 0 auto;
   @media (min-width: get-breakpoint(1200px)) {
-    border: 8px #0f0 solid;
     padding-left: 0;
     padding-right: 0;
   }

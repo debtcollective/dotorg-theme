@@ -1,15 +1,16 @@
 .fbc-page {
+
 	ol {
 		padding-left: 0;
 		list-style: none;
 		display: flex;
-		align-items: center;
+		align-items: center; // certical alignment
 
 		li {
 			font-weight: 300;
 			line-height: 1.25;
-			padding-right: .125rem;
-			padding-left: .125rem;
+			padding-right: 0.125rem;
+			padding-left: 0.125rem;
 
 			&.post-page {
 				display: none;
@@ -23,10 +24,10 @@
 				&:hover,
 				&:focus {
 					text-decoration: underline;
-					text-decoration-color: $black;
+					text-decoration-color: get-color(darkest);
 				}
 				i {
-					color: $black;
+					color: get-color(darkest);
 					margin: 0;
 					&:hover,
 					&:focus {
@@ -34,7 +35,7 @@
 					}
 				}
 				span {
-					color: $black
+					color: get-color(darkest)
 				}
 
 				/** Add Icon */
@@ -49,11 +50,11 @@
 
 			}
 			.fbc-separator {
-				color: $black
+				color: get-color(darkest)
 			}
 		}
 		li.active span {
-			color: $black;
+			color: get-color(darkest);
 		}
 	}
 }

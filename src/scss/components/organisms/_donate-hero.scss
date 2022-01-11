@@ -1,0 +1,24 @@
+.donate-hero {
+
+  position: relative;
+
+  .donation-widget {
+
+    position: absolute;
+
+    @media (min-width: get-breakpoint(sm)) {
+      min-width: 80%;
+    }
+
+    @media (min-width: get-breakpoint(md)) {
+      min-width: 400px;
+    }
+  }
+
+  figure,
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

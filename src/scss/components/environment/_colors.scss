@@ -8,6 +8,7 @@ $black: #000;
 $c__orange: #FF4630;
 
 $c__jade: #20A78C;
+$c__jade--light: #24BA9D;
 $c__jade--dark: #1E9981;
 $c__jade--darker: #146656;
 $c__jade--lightened: #D6FFF7;
@@ -30,6 +31,7 @@ $colors: (
   "emphasis": $c__orange,
   "orange": $c__orange,
   "jade": $c__jade,
+	"jade-light": $c__jade--light,
   "jade-dark": $c__jade--dark,
   "jade-darker": $c__jade--darker,
 	"jade-lightened": $c__jade--lightened,

@@ -42,7 +42,10 @@
 				color: get-color(lightest);
 			}
 			strong {
-				color: get-color(canary)
+				color: get-color(canary);
+				a {
+					color: get-color(canary);
+				}
 			}
 		}
 	}
@@ -87,10 +90,6 @@
 		background-color: get-color(emphasis);
 		left: 0;
 
-		@media (min-width: get-breakpoint(sm)) {
-			width: 70%;
-		}
-
 		* {
 			color: #fff;
 			a {
@@ -98,6 +97,7 @@
 				text-decoration: underline;
 			}
 		}
+
 		h2,
 		h3,
 		h4 {
