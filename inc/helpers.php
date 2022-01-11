@@ -59,6 +59,18 @@ function has_parent( $post = null ) {
 }
 
 /**
+ * Determine if post should show featured image in header
+ *
+ * @param obj $post
+ * @return boolean
+ */
+function show_featured_image_header() {
+	global $post;
+	$featured_image_is_hero = get_post_meta( get_the_ID(), 'featured_image_is_hero', true );
+	return $featured_image_is_hero && has_post_thumbnail();
+}
+
+/**
  * Convert a string to currency-formatted number
  *
  * @param string $string
