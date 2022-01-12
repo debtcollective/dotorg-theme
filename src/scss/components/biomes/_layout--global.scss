@@ -1,4 +1,4 @@
-$sidebar-width: 300px;
+$sidebar-width: 240px;
 
 .admin-bar {
 	#wpadminbar {
@@ -98,7 +98,7 @@ $sidebar-width: 300px;
 	}
 
 	.has-sidebar & {
-
+		padding-right: 0;
 		.sidebar {
 			padding: 1rem;
 			box-sizing: border-box;
