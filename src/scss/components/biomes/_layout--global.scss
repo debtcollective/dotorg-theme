@@ -1,4 +1,4 @@
-$sidebar-width: 240px;
+$sidebar-width: 280px;
 
 .admin-bar {
 	#wpadminbar {
@@ -99,9 +99,11 @@ $sidebar-width: 240px;
 
 	.has-sidebar & {
 		padding-right: 0;
+
 		.sidebar {
-			padding: 1rem;
+			padding: 0;
 			box-sizing: border-box;
+
 			.widget-title {
 				color: get-color(text);
 				font-size: get-font-size(h5);
@@ -109,6 +111,10 @@ $sidebar-width: 240px;
 				border-bottom: solid 2px get-color(text);
 				padding-bottom: 0.5rem;
 				margin: 2.5rem 0 1.5rem;
+			}
+
+			@media (min-width: get-breakpoint(md)) {
+				padding: 1rem;
 			}
 		}
 

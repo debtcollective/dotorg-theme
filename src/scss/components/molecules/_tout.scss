@@ -4,12 +4,18 @@
 	overflow: hidden;
 	background-color: get-color(jade-lightened);
 	min-height: 30rem;
+
+	.content__wrapper {
+		box-sizing: border-box;
+	}
+
 	&:hover {
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 		.tout__title {
 			text-decoration: underline;
 		}
 	}
+
 	&::after {
 		display: block;
 		content: " ";
@@ -23,65 +29,80 @@
 		transition: bottom 0.2s ease-out;
 		border-color: get-color(text);
 	}
+
 	&:focus::after,
 	&:hover::after {
 		bottom: 0;
 		transition: bottom 0.2s ease-out;
 	}
+
 	.tout__title {
 		margin: 0;
 		font-size: get-font-size(h3);
 		line-height: 1.15;
 		padding-top: 2rem;
 	}
+
 	.tout__title,
 	.tout__content {
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
+
 	.tout__content {
 		margin-top: 0;
 		margin-bottom: 0;
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
 	}
+
 	.tout__image {
 		display: block;
 		width: 100%;
-		img {
-			display: block;
-			width: 100%;
-			height: auto;
-			mix-blend-mode: multiply;
-		}
 	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		mix-blend-mode: multiply;
+	}
+
 	> a {
 		color: get-color(text);
 		text-decoration: none;
+
 		&:hover {
 			color: get-color(text);
 		}
 	}
+
 	.btn {
 		 margin-left: 2rem;
 	}
+
 	&.salmon {
 		background-color: get-color('salmon');
 	}
+
 	&.canary {
 		background-color: get-color(canary);
 	}
+
 	&.jade {
 		background-color: get-color(jade);
+
 		.tout__title,
 		.tout__content {
 			color: $white;
 		}
+
 		&::after,
 		&:hover::after {
 			border-color: $white;
 		}
 	}
+
 	.wp-block-image {
 		margin-bottom: 0 !important;
 	}
