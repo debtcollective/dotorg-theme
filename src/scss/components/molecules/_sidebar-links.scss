@@ -1,0 +1,61 @@
+.sidebar-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    padding: 0;
+    margin-bottom: 2px;
+
+    h4 {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    color: get-color(lightest);
+    border-bottom: 0.5rem transparent solid;
+    background-color: get-color(jade);
+
+    &:focus,
+    &:hover {
+      color: get-color(lightest);
+      text-decoration: underline;
+      border-bottom: 0.5rem get-color(lightest) solid;
+    }
+  }
+
+  &.emphasis {
+    a {
+      color: get-color(lightest);
+      background-color: get-color(emphasis);
+    }
+  }
+
+  &.canary {
+    a {
+      color: get-color(text);
+      background-color: get-color(canary);
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+        border-bottom: 0.5rem get-color(text) solid;
+      }
+    }
+  }
+
+  &.salmon {
+    a {
+      color: get-color(text);
+      background-color: get-color('salmon');
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+        border-bottom: 0.5rem get-color(text) solid;
+      }
+    }
+  }
+}

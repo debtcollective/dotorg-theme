@@ -40,8 +40,6 @@ function toutMatchHeight() {
     const wrapper = grp.querySelectorAll('.content__wrapper')
     const content = grp.querySelectorAll('.tout__content')
     if (touts.length > 1) {
-      MatchHeight.add(title)
-      MatchHeight.add(content)
       MatchHeight.add(wrapper)
       MatchHeight.add(touts)
     }
