@@ -1,0 +1,48 @@
+.join-tout {
+  margin-top: 3rem;
+  padding-left: 1.5rem;
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 15rem;
+  left: -1.25rem;
+  box-sizing: border-box;
+
+  a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  .entry-title {
+    font-family: get-font(more) !important;
+    font-size: get-font-size(h3) !important;
+    color: get-color(text) !important;
+    margin: 0;
+    max-width: 12rem;
+    line-height: 1;
+    padding-top: 2rem;
+    border: none !important;
+  }
+
+  svg {
+    position: absolute;
+    top: 6rem;
+    left: -0.75rem;
+    width: 16rem;
+    height: 200px;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: get-color(canary);
+    width: 100%;
+    height: 100%;
+  }
+}

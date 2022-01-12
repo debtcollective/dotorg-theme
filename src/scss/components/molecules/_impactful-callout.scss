@@ -1,5 +1,4 @@
 .impactful-callout {
-
 	position: relative;
 	margin-bottom: 2rem;
 	padding: 0.5rem 0.5rem 1rem;
@@ -19,7 +18,6 @@
 	h1,
 	h2,
 	h3 {
-
 		font-style: italic;
 		font-size: get-font-size(h4);
 		font-weight: 300 !important;
@@ -34,52 +32,69 @@
 			font-weight: 900;
 		}
 	}
+
 	&.emphasis {
 		background-color: get-color(emphasis);
+
 		.callout__content {
 			color: get-color(lightest);
+
 			a {
 				color: get-color(lightest);
 			}
+
 			strong {
 				color: get-color(canary);
+
 				a {
 					color: get-color(canary);
 				}
 			}
 		}
 	}
+
 	&.jade {
 		background-color: get-color(jade);
+
 		.callout__content {
 			color: get-color(lightest);
+
 			strong {
 				color: get-color(canary);
 			}
+
 			a {
 				color: get-color(canary);
 			}
 		}
 	}
+
 	&.canary {
 		background-color: get-color(canary) !important;
+
 		.callout__content {
 			color: get-color(text);
+
 			strong {
 				color: get-color(text);
 			}
+
 			a {
 				color: get-color(jade-dark);
 			}
 		}
 	}
+
 	&.salmon {
 		background-color: get-color('salmon') !important;
+
 		.callout__content {
 			color: get-color(text);
+
 			strong {
 				color: get-color(jade-darker);
 			}
+
 			a {
 				color: get-color(jade-darker);
 			}
@@ -92,6 +107,7 @@
 
 		* {
 			color: #fff;
+
 			a {
 				color: get-color(canary);
 				text-decoration: underline;
@@ -105,26 +121,32 @@
 			padding-top: 0.25rem;
 			padding-bottom: 0.25rem;
 		}
+
 		a,
 		strong {
 			font-weight: 900;
 		}
+
 		&:not(.block-editor-block-list__block) {
 			display: grid;
+
 			> *:nth-child(2) {
 				margin-top: 1rem;
 				padding-top: 1.5rem;
 				border-top: 1px get-color(lightest) solid;
 			}
+
 			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(6, 1fr);
+				grid-template-columns: repeat(12, 1fr);
+
 				> *:nth-child(1) {
-					grid-column: span 4;
+					grid-column: span 7;
 				}
+
 				> *:nth-child(2) {
-					grid-column: span 2;
-					padding-left: 2rem;
-					margin-left: 2rem;
+					grid-column: span 5;
+					padding-left: 1.75rem;
+					margin-left: 1.75rem;
 					margin-top: 0;
 					padding-top: 0;
 					border-top: none;
