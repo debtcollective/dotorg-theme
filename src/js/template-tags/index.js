@@ -12,6 +12,5 @@ import './table';
 import './video';
 import './faqs';
 import './events';
-import './touts'
 import './event-touts';
 import './form-elements';

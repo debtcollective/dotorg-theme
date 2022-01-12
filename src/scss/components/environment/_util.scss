@@ -12,7 +12,8 @@
 @mixin grid-three {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 2rem;
+	gap: 2rem;
+	margin-bottom: 2rem;
   @media (min-width: get-breakpoint(md)) {
     grid-template-columns: 1fr 1fr 1fr
   }

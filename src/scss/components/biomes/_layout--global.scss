@@ -9,7 +9,7 @@ $sidebar-width: 300px;
 .site-header {
 	margin: 6rem 1.25rem 0;
 	@media (min-width: get-breakpoint(sm)) {
-		margin: 6rem 3.5rem 0;
+		margin: 7rem 3.5rem 0;
 	}
 }
 
@@ -38,13 +38,16 @@ $sidebar-width: 300px;
 		padding: 0 3.5rem;
 	}
 
-	.wp-block-columns .wp-block-column {
+	.wp-block-columns {
 		margin-bottom: 2rem;
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-		@media (min-width: 782px) {
-			margin-bottom: 0;
+		.wp-block-column {
+			margin-bottom: 2rem;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+			@media (min-width: 600px) {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -55,15 +58,16 @@ $sidebar-width: 300px;
 
 	.has-sidebar & {
 		.content-container {
-			@media (min-width: get-breakpoint(sm)) {
-				padding-right: 2rem;
-			}
+			// @media (min-width: get-breakpoint(sm)) {
+			// 	padding-right: 2rem;
+			// }
 			@media (min-width: get-breakpoint(lg)) {
 				padding-right: 6rem;
 			}
 		}
 
 		.sidebar {
+			padding: 1rem;
 			box-sizing: border-box;
 			h3 {
 				color: get-color(text);
