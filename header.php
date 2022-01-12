@@ -37,10 +37,10 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 		<dc-header
 			logo=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-black.png' ); ?>
 			logosmall=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-small.png' ); ?>
-			community="<?php getenv('COMMUNITY_URL'); ?>"
+			community="<?php echo getenv('COMMUNITY_URL'); ?>"
 			homepage="/"
-			wordpress="<?php getenv('WORDPRESS_URL'); ?>"
-			returnurl="<?php getenv('RETURN_URL'); ?>"
+			wordpress="<?php echo getenv('WORDPRESS_URL'); ?>"
+			returnurl="<?php echo getenv('RETURN_URL'); ?>"
 			id="dc-header"
 		></dc-header>
 	<?php endif; ?>
