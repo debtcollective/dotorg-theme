@@ -1,8 +1,11 @@
 import MatchHeight from '@tannerhodges/match-height'
+
+const groupSelector = '.wp-block-group'
+
 if( window ) {
   window.addEventListener('DOMContentLoaded', function() {
     // touts really should only live in columns (and if they arent, they shouldnt matchheight with anything)
-    const groups = document.querySelectorAll('.wp-block-group')
+    const groups = document.querySelectorAll(groupSelector)
     groups.forEach( function(grp,i){
       const touts = grp.querySelectorAll('.tout')
       if (touts.length < 2) return;
@@ -30,7 +33,7 @@ if( window ) {
 }
 
 function toutMatchHeight() {
-  const groups = document.querySelectorAll('.wp-block-group')
+  const groups = document.querySelectorAll(groupSelector)
   groups.forEach( function(grp,i){
     const touts = grp.querySelectorAll('.tout')
     if (touts.length < 2) return;
@@ -38,10 +41,10 @@ function toutMatchHeight() {
     const title = grp.querySelectorAll('.tout__title')
     const content = grp.querySelectorAll('.tout__content')
     if (touts.length > 1) {
-      MatchHeight.add(touts)
-      MatchHeight.add(wrapper)
       MatchHeight.add(title)
       MatchHeight.add(content)
+      MatchHeight.add(wrapper)
+      MatchHeight.add(touts)
     }
   })
 }
