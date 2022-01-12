@@ -30,6 +30,10 @@
 	<?php endif; ?>
 
 	<?php
+		get_template_part( 'template-parts/components/join-tout', 'sidebar' );
+	?>
+
+	<?php
 	if ( is_active_sidebar( 'below-nav' ) ) :
 	?>
 			<?php dynamic_sidebar( 'below-nav' ); ?>
