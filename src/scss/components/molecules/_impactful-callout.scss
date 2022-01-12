@@ -117,14 +117,14 @@
 				border-top: 1px get-color(lightest) solid;
 			}
 			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(6, 1fr);
+				grid-template-columns: repeat(12, 1fr);
 				> *:nth-child(1) {
-					grid-column: span 4;
+					grid-column: span 7;
 				}
 				> *:nth-child(2) {
-					grid-column: span 2;
-					padding-left: 2rem;
-					margin-left: 2rem;
+					grid-column: span 5;
+					padding-left: 1.75rem;
+					margin-left: 1.75rem;
 					margin-top: 0;
 					padding-top: 0;
 					border-top: none;

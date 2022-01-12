@@ -24,7 +24,7 @@ if( window ) {
         }
       })
     })
-    toutMatchHeight()
+    setTimeout(toutMatchHeight, 200)
     window.onResize = toutMatchHeight()
   })
 }
