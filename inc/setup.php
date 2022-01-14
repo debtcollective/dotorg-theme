@@ -41,12 +41,21 @@ function setup() {
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * @link https://developer.wordpress.org/reference/functions/add_image_size/#reserved-image-size-names
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'thumbnail', 854, 480, false );
-	add_image_size( 'medium', 1080, 720, false );
-	add_image_size( 'large', 1920, 1080, false );
+	update_option( 'thumbnail_size_w', 854 );
+	update_option( 'thumbnail_size_h', 480 );
+	update_option( 'thumbnail_crop', 0 );
+
+	update_option( 'medium_size_w', 1080 );
+	update_option( 'medium_size_h', 720 );
+	update_option( 'medium_crop', 0 );
+
+	update_option( 'large_size_w', 1920 );
+	update_option( 'large_size_h', 1080 );
+	update_option( 'large_crop', 0 );
 
 	// Register navigation menus.
 	register_nav_menus(
@@ -112,7 +121,6 @@ function setup() {
 	// Gutenberg responsive embed support.
 	add_theme_support( 'responsive-embeds' );
 }
-
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
 function add_image_sizes_to_admin( $sizes ) {
