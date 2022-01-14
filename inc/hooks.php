@@ -136,6 +136,23 @@ function get_the_content( $content ) {
 add_filter( 'the_content', __NAMESPACE__ . '\get_the_content', 20 );
 
 /**
+ * Change Default Avatar Theme Mod Setting
+ * Modifies the default avatar set by `wp-user-avatars`
+ *
+ * @link https://wordpress.org/plugins/wp-user-avatars/
+ *
+ * @param string $mystery
+ * @return string $mystery maybe changed
+ */
+function get_mystery_url( $mystery ) : string {
+	if ( $default_avatar = \get_option( 'default_avatar' ) ) {
+		$mystery = \esc_url( $default_avatar );
+	}
+	return $mystery;
+}
+add_filter( 'wp_user_avatars_get_mystery_url', __NAMESPACE__ . '\get_mystery_url' );
+
+/**
  * Enable custom mime types.
  *
  * @author Debt Collective
