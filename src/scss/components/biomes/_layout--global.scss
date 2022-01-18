@@ -7,15 +7,16 @@ $sidebar-width: 280px;
 }
 
 .site-header {
-	margin: 6rem 0 0 0;
+	max-width: get-breakpoint(lg);
+	margin: 6rem auto 0;
+	@media (min-width: get-breakpoint(sm)) {
+		margin: 7rem auto 0;
+	}
 
 	.fbc,
 	.container {
 		padding: 0 1.25rem;
 		@media (min-width: get-breakpoint(sm)) {
-			padding: 0 2.25rem;
-		}
-		@media (min-width: get-breakpoint(md)) {
 			padding: 0 3.5rem;
 		}
 	}
@@ -80,21 +81,27 @@ $sidebar-width: 280px;
 	max-width: get-breakpoint(lg);
   margin: 0 auto;
 	box-sizing: border-box;
+	padding: 0 1rem;
+	@media (min-width: get-breakpoint(sm)) {
+		padding: 0 3.5rem;
+	}
 
-	padding-left: 3.5rem;
-	padding-right: 3.5rem;
+	.wp-block-columns {
+		margin-bottom: 2rem;
+		.wp-block-column {
+			margin-bottom: 2rem;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+			@media (min-width: 600px) {
+				margin-bottom: 0;
+			}
+		}
+	}
 
 	.content-container {
 		box-sizing: border-box;
 	  max-width: get-breakpoint(lg);
-
-	  @media (min-width: get-breakpoint(sm)) {
-	    padding-right: 2rem;
-	  }
-
-	  @media (min-width: get-breakpoint(lg)) {
-	    padding-right: 6rem;
-	  }
 	}
 
 	.has-sidebar & {

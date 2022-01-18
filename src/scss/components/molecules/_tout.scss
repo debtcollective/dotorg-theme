@@ -42,7 +42,6 @@
 		line-height: 1.15;
 		padding-top: 2rem;
 	}
-
 	.tout__title,
 	.tout__content {
 		padding-left: 2rem;
@@ -69,6 +68,9 @@
 	}
 
 	> a {
+		height: 100%;
+		display: grid;
+		grid-template-rows: auto 1fr;
 		color: get-color(text);
 		text-decoration: none;
 
@@ -79,6 +81,7 @@
 
 	.btn {
 		 margin-left: 2rem;
+		 margin-right: 2rem;
 	}
 
 	&.salmon {
