@@ -3,7 +3,6 @@
 	position: relative;
 	background-color: get-color("canary-light-50%");
 	color: get-color(emphasis);
-	// font-size: 1.125rem;
 	font-weight: 900;
 	padding: 1.5rem 2rem;
 	.event-tout__tag {
@@ -25,11 +24,9 @@
 		font-size: get-font-size(h5);
 		font-weight: 400;
 	}
-	// .event-tout__button .wp-block-button__link {
-	// 	position: absolute;
-	// 	bottom: 3rem;
-	// 	height: 3rem;
-	// }
+	.event-tout__button {
+		margin: 0;
+	}
 	.event-tout__image {
 		position: absolute;
 		bottom: 0;

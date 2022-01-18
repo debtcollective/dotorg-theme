@@ -25,10 +25,6 @@
 
 		.entry-content {
 
-			@media (min-width: get-breakpoint(sm)) and (max-width: get-breakpoint(md)) {
-				margin-left: 1rem;
-			}
-
 			.taxonomy-label {
 
 				margin-left: -1rem;
