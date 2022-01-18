@@ -9,10 +9,10 @@
 ?>
 <div class="featured-image-header" role="banner">
 	<?php the_post_thumbnail( 'full', array(
-		'class'	=> 'featured-image-header__image-background',
+		'class'	=> 'image',
 		'title' => esc_attr( get_the_title() ),
 	) ); ?>
-	<div class="featured-image-header__inner-container">
+	<div class="container">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</div>
 </div><!-- .entry-header -->

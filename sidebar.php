@@ -19,15 +19,19 @@
 
 	<?php
 	$section_navigation = \get_post_meta( $post->ID, 'display_section_navigation', true );
-	if( 'sibling' === $section_navigation ) : ?>
-
-		<?php debtcollective_render_section_navigation( $post ); ?>
-
-	<?php elseif ( 'children' === $section_navigation ) : ?>
+	if( 'children' === $section_navigation ) : ?>
 
 		<?php debtcollective_render_subpage_navigation( $post ); ?>
 
+	<?php elseif ( ! empty( $section_navigation ) ) : ?>
+
+		<?php debtcollective_render_section_navigation( $post ); ?>
+
 	<?php endif; ?>
+
+	<?php
+		get_template_part( 'template-parts/components/join-tout', 'sidebar' );
+	?>
 
 	<?php
 	if ( is_active_sidebar( 'below-nav' ) ) :

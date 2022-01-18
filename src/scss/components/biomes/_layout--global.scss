@@ -1,4 +1,4 @@
-$sidebar-width: 300px;
+$sidebar-width: 280px;
 
 .admin-bar {
 	#wpadminbar {
@@ -7,13 +7,61 @@ $sidebar-width: 300px;
 }
 
 .site-header {
-	margin: 6rem 1.25rem 0;
+	max-width: get-breakpoint(lg);
+	margin: 6rem auto 0;
 	@media (min-width: get-breakpoint(sm)) {
-		margin: 7rem 3.5rem 0;
+		margin: 7rem auto 0;
+	}
+
+	.fbc,
+	.container {
+		padding: 0 1.25rem;
+		@media (min-width: get-breakpoint(sm)) {
+			padding: 0 3.5rem;
+		}
 	}
 }
 
-.entry-header .entry-title {
+
+.featured-image-header {
+	position: relative;
+	height: 18rem;
+
+	&::after {
+		position: absolute;
+		z-index: 3;
+		display: block;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, rgba(get-color(darkest), 0.7) , transparent 70%);
+	}
+
+	.image {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		object-fit: cover;
+		height: 18rem;
+	}
+
+	.container {
+		position: absolute;
+		z-index: 5;
+		left: 0;
+		bottom: 0;
+		color: get-color(lightest);
+		h1 {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.entry-title {
 	font-size: get-font-size(h2);
 	line-height: 1.15;
 }
@@ -57,25 +105,23 @@ $sidebar-width: 300px;
 	}
 
 	.has-sidebar & {
-		.content-container {
-			// @media (min-width: get-breakpoint(sm)) {
-			// 	padding-right: 2rem;
-			// }
-			@media (min-width: get-breakpoint(lg)) {
-				padding-right: 6rem;
-			}
-		}
+		padding-right: 0;
 
 		.sidebar {
-			padding: 1rem;
+			padding: 0;
 			box-sizing: border-box;
-			h3 {
+
+			.widget-title {
 				color: get-color(text);
 				font-size: get-font-size(h5);
 				line-height: 1.5;
 				border-bottom: solid 2px get-color(text);
 				padding-bottom: 0.5rem;
 				margin: 2.5rem 0 1.5rem;
+			}
+
+			@media (min-width: get-breakpoint(md)) {
+				padding: 1rem;
 			}
 		}
 
@@ -97,6 +143,7 @@ $sidebar-width: 300px;
 	@include grid-three;
 }
 
+.grid-two,
 .four-points {
 	@include grid-two;
 }

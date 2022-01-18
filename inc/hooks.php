@@ -48,7 +48,16 @@ function body_classes( $classes ) {
 
 	// Give all pages a unique class.
 	if ( is_page() ) {
-		$classes[] = 'page-' . basename( get_permalink() );
+		global $post;
+		$classes[] = 'page-' . $post->post_name;
+
+		// Add a `has-sidebar` class if we're using the default page template (page.php).
+		if ( ! is_front_page() && ! is_page_template() ) {
+			$section_navigation = get_post_meta( $post->ID, 'display_section_navigation', true );
+			if ( is_active_sidebar( 'above-nav' ) || is_active_sidebar( 'below-nav' ) || ! empty( $section_navigation ) ) {
+				$classes[] = 'has-sidebar';
+			}
+		}
 	}
 
 	// Adds a class of hfeed to non-singular pages.
@@ -63,14 +72,6 @@ function body_classes( $classes ) {
 
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
-
-	// Add a `has-sidebar` class if we're using the default page template (page.php).
-	if ( ! is_front_page()
-		&& is_page()
-		&& ( is_active_sidebar( 'above-nav' ) || is_active_sidebar( 'below-nav' ) )
-		&& ! is_page_template() ) {
-		$classes[] = 'has-sidebar';
-	}
 
 	return $classes;
 }
@@ -133,6 +134,23 @@ function get_the_content( $content ) {
 	return ! empty( $content ) ? $content : false;
 }
 add_filter( 'the_content', __NAMESPACE__ . '\get_the_content', 20 );
+
+/**
+ * Change Default Avatar Theme Mod Setting
+ * Modifies the default avatar set by `wp-user-avatars`
+ *
+ * @link https://wordpress.org/plugins/wp-user-avatars/
+ *
+ * @param string $mystery
+ * @return string $mystery maybe changed
+ */
+function get_mystery_url( $mystery ) : string {
+	if ( $default_avatar = \get_option( 'default_avatar' ) ) {
+		$mystery = \esc_url( $default_avatar );
+	}
+	return $mystery;
+}
+add_filter( 'wp_user_avatars_get_mystery_url', __NAMESPACE__ . '\get_mystery_url' );
 
 /**
  * Enable custom mime types.
