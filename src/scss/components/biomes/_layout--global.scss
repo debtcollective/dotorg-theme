@@ -105,8 +105,15 @@ $sidebar-width: 280px;
 	}
 
 	.has-sidebar & {
-		padding-right: 0;
-
+		// padding-right: 0;
+		.content-container {
+			@media (min-width: get-breakpoint(md)) and (max-width: get-breakpoint(lg)) {
+				padding-right: 1.75rem;
+			}
+			@media (min-width: get-breakpoint(lg)) {
+				padding-right: 3.5rem;
+			}
+		}
 		.sidebar {
 			padding: 0;
 			box-sizing: border-box;
