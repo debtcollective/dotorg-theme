@@ -10,7 +10,9 @@ $sidebar-width: 280px;
 	max-width: get-breakpoint(lg);
 	margin: 6rem auto 0;
 	@media (min-width: get-breakpoint(sm)) {
-		margin: 7rem auto 0;
+		.home & {
+			margin: 7rem auto 0;			
+		}
 	}
 
 	.fbc,
@@ -105,8 +107,15 @@ $sidebar-width: 280px;
 	}
 
 	.has-sidebar & {
-		padding-right: 0;
-
+		// padding-right: 0;
+		.content-container {
+			@media (min-width: get-breakpoint(md)) and (max-width: get-breakpoint(lg)) {
+				padding-right: 1.75rem;
+			}
+			@media (min-width: get-breakpoint(lg)) {
+				padding-right: 3.5rem;
+			}
+		}
 		.sidebar {
 			padding: 0;
 			box-sizing: border-box;
