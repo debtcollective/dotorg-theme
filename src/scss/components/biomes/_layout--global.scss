@@ -10,7 +10,9 @@ $sidebar-width: 280px;
 	max-width: get-breakpoint(lg);
 	margin: 6rem auto 0;
 	@media (min-width: get-breakpoint(sm)) {
-		margin: 7rem auto 0;
+		.home & {
+			margin: 7rem auto 0;			
+		}
 	}
 
 	.fbc,
