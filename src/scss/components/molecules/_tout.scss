@@ -9,7 +9,7 @@
 		box-sizing: border-box;
 	}
 
-	&:hover {
+	&:hover, &:focus-within {
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 		.tout__title {
 			text-decoration: underline;
@@ -30,7 +30,7 @@
 		border-color: get-color(text);
 	}
 
-	&:focus::after,
+	&:focus-within::after,
 	&:hover::after {
 		bottom: 0;
 		transition: bottom 0.2s ease-out;
@@ -74,7 +74,7 @@
 		color: get-color(text);
 		text-decoration: none;
 
-		&:hover {
+		&:hover, &:focus {
 			color: get-color(text);
 		}
 	}
@@ -101,7 +101,8 @@
 		}
 
 		&::after,
-		&:hover::after {
+		&:hover::after,
+		&:focus-within::after {
 			border-color: $white;
 		}
 	}
