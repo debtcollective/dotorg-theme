@@ -3,6 +3,8 @@
 	"settings": {
 		"color": {
             "custom": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
             "customDuotone": false,
             "customGradient": false,
             "link": false,
