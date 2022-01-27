@@ -27,7 +27,7 @@
 					color: get-color(grey-dark);
 					text-decoration: none;
 
-					&:hover {
+					&:hover, &:focus {
 						text-decoration: underline;
 					}
 
