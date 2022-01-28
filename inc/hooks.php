@@ -405,3 +405,22 @@ function disable_wpautop_for_gutenberg() {
 	}
 }
 add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
+
+/**
+ * Replace page title with display name
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/the_title/
+ *
+ * @param string $title   Post title
+ * @param int    $post_id Post ID
+ * @return string New post tilte
+ */
+function replace_page_title( $title, $post_id ) {
+	$post_type = \get_post_type( $post_id );
+
+	if ( $new_title = \get_post_meta( $post_id, 'display_name', true ) ) {
+		$title = $new_title;
+	}
+
+	return $title;
+}
