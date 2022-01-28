@@ -109,11 +109,11 @@ function debtcollective_entry_footer() {
  *
  * @param array $args The parameters needed to get the SVG.
  */
-function debtcollective_display_svg( $args = [] ) {
+function debtcollective_display_svg( $args = array() ) {
 	$kses_defaults = wp_kses_allowed_html( 'post' );
 
-	$svg_args = [
-		'svg'   => [
+	$svg_args = array(
+		'svg'   => array(
 			'class'           => true,
 			'aria-hidden'     => true,
 			'aria-labelledby' => true,
@@ -124,20 +124,20 @@ function debtcollective_display_svg( $args = [] ) {
 			'viewbox'         => true, // <= Must be lower case!
 			'color'           => true,
 			'stroke-width'    => true,
-		],
-		'g'     => [ 'color' => true ],
-		'title' => [
+		),
+		'g'     => array( 'color' => true ),
+		'title' => array(
 			'title' => true,
 			'id'    => true,
-		],
-		'path'  => [
+		),
+		'path'  => array(
 			'd'     => true,
 			'color' => true,
-		],
-		'use'   => [
+		),
+		'use'   => array(
 			'xlink:href' => true,
-		],
-	];
+		),
+	);
 
 	$allowed_tags = array_merge(
 		$kses_defaults,
@@ -159,7 +159,7 @@ function debtcollective_display_svg( $args = [] ) {
  *
  * @return string Error string or SVG markup.
  */
-function debtcollective_get_svg( $args = [] ) {
+function debtcollective_get_svg( $args = array() ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return esc_attr__( 'Please define default parameters in the form of an array.', 'debtcollective' );
@@ -171,7 +171,7 @@ function debtcollective_get_svg( $args = [] ) {
 	}
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'color'        => '',
 		'icon'         => '',
 		'title'        => '',
@@ -179,7 +179,7 @@ function debtcollective_get_svg( $args = [] ) {
 		'stroke-width' => '',
 		'height'       => '',
 		'width'        => '',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -262,12 +262,12 @@ function debtcollective_get_svg( $args = [] ) {
  *
  * @return string The title.
  */
-function debtcollective_get_the_title( $args = [] ) {
+function debtcollective_get_the_title( $args = array() ) {
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'length' => 12,
 		'more'   => '...',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -285,14 +285,14 @@ function debtcollective_get_the_title( $args = [] ) {
  *
  * @return string The excerpt.
  */
-function debtcollective_get_the_excerpt( $args = [] ) {
+function debtcollective_get_the_excerpt( $args = array() ) {
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'length' => 20,
 		'more'   => '...',
 		'post'   => '',
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -323,12 +323,12 @@ function debtcollective_display_copyright_text() {
 function debtcollective_display_social_network_links() {
 	// Create an array of our social links for ease of setup.
 	// Change the order of the networks in this array to change the output order.
-	$social_networks = [
+	$social_networks = array(
 		'facebook',
 		'instagram',
 		'linkedin',
 		'twitter',
-	];
+	);
 
 	?>
 	<ul class="flex social-icons menu">
@@ -346,11 +346,11 @@ function debtcollective_display_social_network_links() {
 					<a href="<?php echo esc_url( $network_url ); ?>">
 						<?php
 						debtcollective_display_svg(
-							[
+							array(
 								'icon'   => $network . '-square',
 								'width'  => '24',
 								'height' => '24',
-							]
+							)
 						);
 						?>
 						<span class="screen-reader-text">
@@ -377,7 +377,7 @@ function debtcollective_display_social_network_links() {
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
-function debtcollective_display_numeric_pagination( $args = [], $query = null ) {
+function debtcollective_display_numeric_pagination( $args = array(), $query = null ) {
 	if ( ! $query ) {
 		global $wp_query;
 		$query = $wp_query;
@@ -387,12 +387,12 @@ function debtcollective_display_numeric_pagination( $args = [], $query = null ) 
 	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
 	// Set defaults.
-	$defaults = [
+	$defaults = array(
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
 		'mid_size'  => 4,
 		'total'     => $total_pages,
-	];
+	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
@@ -555,7 +555,7 @@ function debtcollective_display_mobile_menu() {
 	<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Mobile Menu', 'debtcollective' ); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		// Mobile menu args.
-		$mobile_args = [
+		$mobile_args = array(
 			'theme_location'  => $menu_location,
 			'container'       => 'div',
 			'container_class' => 'off-canvas-content',
@@ -564,7 +564,7 @@ function debtcollective_display_mobile_menu() {
 			'menu_class'      => 'mobile-menu',
 			'fallback_cb'     => false,
 			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		];
+		);
 
 		// Display the mobile menu.
 		wp_nav_menu( $mobile_args );
