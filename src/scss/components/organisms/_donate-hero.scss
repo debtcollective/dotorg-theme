@@ -1,24 +1,57 @@
 .donate-hero {
 
   position: relative;
+	height: 36rem;
+	left: -1rem;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	@media (min-width: get-breakpoint(sm)) {
+		display: block;
+		left: -3.5rem;
+	}
+	@media (min-width: get-breakpoint(md)) {
+		width: calc(100% + 3.5rem);
+	}
 
   .donation-widget {
-
     position: absolute;
-
-    @media (min-width: get-breakpoint(sm)) {
-      min-width: 80%;
-    }
-
+		background-color: #F7F7F7;
+		border-radius: 1.25rem;
+		margin: 1rem;
+		// margin: 2.25rem;
+    // @media (min-width: get-breakpoint(sm)) {
+    //   min-width: 80%;
+    // }
     @media (min-width: get-breakpoint(md)) {
-      min-width: 400px;
+			min-width: 24rem;
     }
-  }
+		> div {
+			// override default max-width
+			max-width: 100% !important;
+			@media (min-width: get-breakpoint(sm)) {
+				max-width: 24rem !important;
+			}
 
-  figure,
-  figure img {
-    display: block;
-    width: 100%;
-    height: auto;
+			> div { //, .sc-bdfBwQ {
+				// necessary for border-radius to apply to the top corners, using this specificity to avoid altering other child divs
+				background: transparent;
+				> div {
+					background: transparent;
+				}
+			}
+		}
+		p {
+			margin: 0 2rem 1rem;
+		}
+
   }
+	figure {
+		// width: 100%;
+		img {
+			object-fit: cover;
+			height: 19rem;
+			object-position: 19%;
+		}
+	}
 }
