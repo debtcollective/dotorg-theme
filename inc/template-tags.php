@@ -409,61 +409,75 @@ function debtcollective_display_numeric_pagination( $args = [], $query = null ) 
 	<?php
 }
 
+/**
+ * Display Sibling Pages
+ *
+ * @param object $post
+ * @return void
+ */
 function debtcollective_render_section_navigation( $post = null ) {
 	if ( ! $post->post_parent ) {
 		return;
 	}
 	$parent = $post->post_parent;
-	$parent_title = get_post_field( 'post_title', $parent ); ?>
+	add_filter( 'the_title', 'DebtCollective\Inc\replace_page_title', 10, 2 );
+	?>
 
 		<nav class="pagenav">
-			<h3 class="widget-title"><?php echo esc_attr( $parent_title ); ?></h3>
+			<h3 class="widget-title"><?php echo esc_attr( get_the_title( $parent ) ); ?></h3>
 
 			<ul>
 				<?php
-				$args = [
-					'child_of' 		=> $parent,
-					'sort_column' 	=> 'menu_order', // sort by menu order to enable custom sorting
-					'depth'    		=> 1,
-					'title_li' 		=> false,
-					'link_before'	=> '<span class="hangover">',
-					'link_after'	=> '</span>',
-				];
-
+				$args = array(
+					'child_of'    => $parent,
+					'sort_column' => 'menu_order', // sort by menu order to enable custom sorting
+					'depth'       => 1,
+					'title_li'    => false,
+					'link_before' => '<span class="hangover">',
+					'link_after'  => '</span>',
+				);
 				wp_list_pages( $args );
+				remove_filter( 'the_title', 'DebtCollective\Inc\replace_page_title', 10, 2 );
 				?>
 			</ul>
 		</nav>
 
-<?php
+	<?php
 }
 
+/**
+ * Display Subpages
+ *
+ * @param object $post
+ * @return void
+ */
 function debtcollective_render_subpage_navigation( $post = null ) {
-	if( ! DebtCollective\Inc\has_parent( $post ) ) {
+	if ( ! DebtCollective\Inc\has_parent( $post ) ) {
 		return;
 	}
+	add_filter( 'the_title', 'DebtCollective\Inc\replace_page_title', 10, 2 );
 	?>
 
 	<nav class="pagenav">
-		<h3 class="widget-title"><?php echo esc_attr( $post->post_title ); ?></h3>
+		<h3 class="widget-title"><?php echo esc_attr( get_the_title( $post ) ); ?></h3>
 
 		<ul>
 			<?php
-			$args = [
-				'child_of' 		=> $post->ID,
-				'sort_column' 	=> 'menu_order', // sort by menu order to enable custom sorting
-				'depth'    		=> 1,
-				'title_li' 		=> false,
-				'link_before'	=> '<span class="hangover">',
-				'link_after'	=> '</span>',
-			];
-
+			$args = array(
+				'child_of'    => $post->ID,
+				'sort_column' => 'menu_order', // sort by menu order to enable custom sorting
+				'depth'       => 1,
+				'title_li'    => false,
+				'link_before' => '<span class="hangover">',
+				'link_after'  => '</span>',
+			);
 			wp_list_pages( $args );
+			remove_filter( 'the_title', 'DebtCollective\Inc\replace_page_title', 10, 2 );
 			?>
 		</ul>
 	</nav>
 
-<?php
+	<?php
 }
 
 /**
