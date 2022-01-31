@@ -3,6 +3,8 @@
 	"settings": {
 		"color": {
             "custom": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
             "customDuotone": false,
             "customGradient": false,
             "link": false,
@@ -97,6 +99,11 @@
 		"typography": {
 			"customFontSize": false,
 			"customLineHeight": false,
+			"fontStyle": false, 
+			"fontWeight": false, 
+			"letterSpacing": false, 
+			"textDecoration": false, 
+			"textTransform": false,
 			"dropCap": false,
 			"fontFamilies": [
 				{
