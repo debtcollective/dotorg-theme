@@ -61,7 +61,13 @@
 			}
 		}
 	}
+	&.big {
+		a {
+			font-size: get-font-size(h3);
+		}
+	}
 }
+
 .hero__buttons {
 	.wp-block-button {
 		&__link {
