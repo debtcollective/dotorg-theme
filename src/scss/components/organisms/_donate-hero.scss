@@ -1,24 +1,69 @@
 .donate-hero {
-
   position: relative;
+	left: -1rem;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	padding: 2rem 0;
+	@media (min-width: get-breakpoint(sm)) {
+		display: block;
+		left: -3.5rem;
+		padding-top: 3rem;
+	}
+	@media (min-width: get-breakpoint(md)) {
+		width: calc(100% + 3.5rem);
+	}
+	@media (min-width: get-breakpoint(lg)) {
+		left: -2.25rem;
+	}
 
   .donation-widget {
-
-    position: absolute;
-
+		background-color: #F7F7F7;
+		border-radius: 1.25rem;
+		margin: 0 1rem;
+    @media (min-width: get-breakpoint(xs)) {
+      max-width: 80%;
+    }
     @media (min-width: get-breakpoint(sm)) {
-      min-width: 80%;
-    }
+			max-width: 24rem;
+			margin: 0 3.5rem;
+		}
 
-    @media (min-width: get-breakpoint(md)) {
-      min-width: 400px;
-    }
-  }
+		> div {
+			// override default max-width, then reapply at sm breakpoint
+			max-width: 100% !important;
+			@media (min-width: get-breakpoint(sm)) {
+				max-width: 24rem !important;
+			}
 
-  figure,
-  figure img {
-    display: block;
-    width: 100%;
-    height: auto;
+			> div {
+				// necessary for border-radius to apply to the top corners, using this specificity to avoid altering other child divs
+				background: transparent;
+				> div {
+					background: transparent;
+				}
+			}
+		}
+		p {
+			padding: 0 1rem 1rem;
+		}
+		button {
+			border: none;
+		}
   }
+	figure {
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		height: 60%;
+		@media (min-width: get-breakpoint(sm)) {
+			height: 69%;
+		}
+
+		img {
+			object-fit: cover;
+			height: 100%;
+			object-position: 19%;
+		}
+	}
 }
