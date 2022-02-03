@@ -10,9 +10,9 @@
 <aside class="content-footer widget-area">
 
 	<?php
-	if ( ! is_front_page() && is_active_sidebar( 'sidebar-2' ) ) :
+	if ( ! is_front_page() && is_active_sidebar( 'content-footer' ) ) :
 		?>
-			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+			<?php dynamic_sidebar( 'content-footer' ); ?>
 		
 		<?php
 	endif;
