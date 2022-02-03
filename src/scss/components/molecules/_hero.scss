@@ -30,9 +30,33 @@
 	}
 
 	&.dept-of-ed-action {
-		.ptag {
-			max-width: 35%;
-			color: get-color(text);
+		> img {
+			object-position: 30% 50% !important;
+			@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
+				object-position: 20% 50% !important;
+			}
+		}
+		.wp-block-cover__inner-container {
+			.wp-block-image {
+				margin: 0;
+			}
+			.ptag {
+				color: get-color(text);
+				padding-bottom: 1.5rem;
+				max-width: 40%;
+				@media (min-width: get-breakpoint(xs)) {
+					padding-bottom: 1rem;
+				}
+				@media (min-width: get-breakpoint(sm)) {
+					max-width: 35%;
+				}
+			}
+			.buttons {
+				padding-bottom: 1.5rem;
+				@media (min-width: get-breakpoint(xs)) {
+					padding-bottom: 0;
+				}
+			}
 		}
 	}
 }
