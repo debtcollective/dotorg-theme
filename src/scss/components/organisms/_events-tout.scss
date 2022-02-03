@@ -1,15 +1,14 @@
 .events-tout {
 
-	background: rgba(22, 115, 97, 0.2);
 	border-radius: 10px;
-	padding: 1.5rem 1rem;
+	padding: 0.5rem 1rem;
 
 	.events-tout__title {
 		margin-top: 0;
 		margin-bottom: 1.5rem;
-		font-size: get-font-size(h4);
 		line-height: 1.15;
 		color: get-color(jade-darker);
+		font-size: get-font-size(h3);
 	}
 
 	.events__list {
@@ -19,13 +18,16 @@
 		margin-bottom: 1.5rem;
 
 		.event {
+
 			max-width: 100%;
 
 			a {
-				border-radius: 0.5rem;
+				display: block;
 				grid-template-rows: auto;
 				height: 100%;
 				color: get-color(jade-darker);
+				background-color: get-color(lightest) !important;
+				box-shadow: 0 0.25rem 1rem rba( get-color(darkest), 0.3 );
 
 				.event__title {
 					height: auto;
@@ -47,28 +49,67 @@
 		}
 	}
 
-	&[data-eq-state="large"] { // attr set by eq.js
-		padding: 3rem 1.75rem 2.75rem;
-		.events-tout__title {
-			font-size: get-font-size(h3);
-			margin-bottom: 3rem;
+	&[data-eq-state$="small"] { // attr set by eq.js
+		.events__list {
+			br {
+				display: none;
+			}
+
+			.event__date {
+				padding-bottom: 0;
+			}
+
+			.event {
+
+				padding-bottom: 1rem;
+				
+				a {
+					padding: 0;
+				}
+			}
 		}
+	}
+
+	&[data-eq-state~="medium"] { // attr set by eq.js
 
 		.events__list {
+			margin-top: 1.5rem;
 			grid-template-columns: 1fr 1fr 1fr;
-			margin-bottom: 3rem;
-			// .event {
-			// 	a {
-			// 		padding: 1.5rem 1rem;
-			// 		.event__date {
-			// 			padding-bottom: 0.75rem;
-			// 			max-width: 8.5rem;
-			// 			time {
-			// 				font-size: calc( #{get-font-size(lede)} / 1.25) !important;
-			// 			}
-			// 		}
-			// 	}
-			// }
+
+			.event {
+				margin-bottom: 1.5rem;
+				box-shadow: 0 0.25rem 0.75rem rgba( 0,0,0, 0.2 );
+				padding-bottom: 3rem;
+				.event__date {
+
+					time {
+						font-size: get-font-size(h3);
+					}
+				}
+			}
+		}
+	}
+
+	&[data-eq-state$="medium"] { // attr set by eq.js
+
+	}
+
+	&[data-eq-state-="large"] { // attr set by eq.js
+		.event {
+			background-color: get-color(lightest) !important;
+			padding-bottom: 2rem;
+			a {
+				background-color: get-color(lightest) !important;
+			}
+		}
+	}
+	&[data-eq-state$="xl"] { // attr set by eq.js
+		.event {
+			.event__date {
+				time {
+					font-size: get-font-size(h2) !important;
+				}
+			}
 		}
 	}
 }
