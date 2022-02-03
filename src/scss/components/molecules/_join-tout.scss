@@ -1,11 +1,14 @@
 .join-tout {
-  margin-top: 3rem;
+
+	margin: 3rem auto 0;
   padding-left: 1.5rem;
   position: relative;
   aspect-ratio: 1;
   max-width: 15rem;
-  left: -1.25rem;
   box-sizing: border-box;
+	@media (min-width: get-breakpoint(md)) {
+		left: -1.25rem;
+	}
 
   a {
     display: block;

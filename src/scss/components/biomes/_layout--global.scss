@@ -11,7 +11,7 @@ $sidebar-width: 280px;
 	margin: 6rem auto 0;
 	@media (min-width: get-breakpoint(sm)) {
 		.home & {
-			margin: 7rem auto 0;			
+			margin: 7rem auto 0;
 		}
 	}
 
@@ -119,6 +119,14 @@ $sidebar-width: 280px;
 		.sidebar {
 			padding: 0;
 			box-sizing: border-box;
+			@media (min-width: get-breakpoint(sm)) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 2rem;
+			}
+			@media (min-width: get-breakpoint(md)) {
+				display: block;
+			}
 
 			.widget-title {
 				color: get-color(text);
