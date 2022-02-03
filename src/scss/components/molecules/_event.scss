@@ -1,19 +1,45 @@
 .event {
-
+	position: relative;
+	overflow: hidden;
+	&:hover,
+	&:focus-within {
+		box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+		a {
+			color: currentColor;
+			.event__title {
+				text-decoration: underline;
+			}
+		}
+	}
 	a {
 		box-sizing: border-box;
 		display: grid;
-		grid-template-rows: 6.5rem 5.5rem 2.5rem;
+		grid-template-rows: 6.5rem 5.5rem 2.5rem 2.5rem;
 		grid-template-columns: 100%;
 		font-weight: 900;
 		color: get-color(grey-dark);
 		text-decoration: none;
-		padding: 2.3rem 1.2rem 1.2rem 1.2rem;
+		padding: 2.3rem 1.2rem;
 		background-color: get-color('salmon');
+		border: solid 1px transparent;
 
-		&:hover,
-		&:focus {
-			color: currentColor;
+		&::after {
+			display: block;
+			content: " ";
+			position: absolute;
+			width: calc(100% - 6rem);
+			left: 3rem;
+			bottom: -1.5rem;
+			top: auto;
+			border-bottom: 1.5rem solid transparent;
+			background-color: transparent;
+			transition: bottom 0.2s ease-out;
+			border-color: currentColor;
+		}
+		&:focus::after,
+		&:hover::after {
+			bottom: 0;
+			transition: bottom 0.2s ease-out;
 		}
 
 		.event__title {
@@ -57,9 +83,13 @@
 			}
 		}
 		a {
-			box-sizing: border-box;
 			grid-template-rows: auto;
 			background-color: get-color(grey-light);
+			&:hover, &:focus {
+				.event__date time {
+					text-decoration: underline;
+				}
+			}
 			.event__date {
 				padding-bottom: 1rem;
 				time {
