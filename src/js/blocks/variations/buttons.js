@@ -19,49 +19,64 @@ const buttonVariations = [
             'block',
             'inserter',
             'transform'
-        ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        ]
+        // isActive: ( blockAttributes, variationAttributes ) =>
+        //     blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-minor',
         title: __( 'Minor Button', 'debtcollective' ),
         description: __( 'A button with a white background and text-colored outline.', 'debtcollective' ),
+        attributes: {
+          className: 'btn minor',
+        },
         scope: [
             'transform'
-        ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        ]
     },
     {
         name: 'button-jade',
         title: __( 'Jade Button', 'debtcollective' ),
         description: __( 'Add a jade-colored button.', 'debtcollective' ),
+        attributes: {
+          className: 'btn jade',
+        },
         scope: [
             'transform'
-        ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        ]
     },
     {
         name: 'button-outlined',
         title: __( 'Outlined Button', 'debtcollective' ),
         description: __( 'Add a white button with outline.', 'debtcollective' ),
+        attributes: {
+          className: 'btn outline',
+        },
         scope: [
             'transform'
-        ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        ]
     },
-	{
-        name: 'button-link',
-        title: __( 'Link Button', 'debtcollective' ),
-        description: __( 'Add a button that looks like a link.', 'debtcollective' ),
+    {
+        name: 'big',
+        title: __( 'Big Button', 'debtcollective' ),
+        description: __( 'Add a big ol button.', 'debtcollective' ),
+        attributes: {
+          className: 'btn big',
+        },
         scope: [
             'transform'
-        ],
-        isActive: ( blockAttributes, variationAttributes ) =>
-            blockAttributes.className === variationAttributes.className,
+        ]
+  	},
+    {
+      name: 'button-link',
+      title: __( 'Link Button', 'debtcollective' ),
+      description: __( 'Add a button that looks like a link.', 'debtcollective' ),
+      attributes: {
+        className: 'btn link',
+      },
+      scope: [
+          'transform'
+      ]
     }
 ];
 

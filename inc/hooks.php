@@ -136,6 +136,23 @@ function get_the_content( $content ) {
 add_filter( 'the_content', __NAMESPACE__ . '\get_the_content', 20 );
 
 /**
+ * Change Default Avatar Theme Mod Setting
+ * Modifies the default avatar set by `wp-user-avatars`
+ *
+ * @link https://wordpress.org/plugins/wp-user-avatars/
+ *
+ * @param string $mystery
+ * @return string $mystery maybe changed
+ */
+function get_mystery_url( $mystery ) : string {
+	if ( $default_avatar = \get_option( 'default_avatar' ) ) {
+		$mystery = \esc_url( $default_avatar );
+	}
+	return $mystery;
+}
+add_filter( 'wp_user_avatars_get_mystery_url', __NAMESPACE__ . '\get_mystery_url' );
+
+/**
  * Enable custom mime types.
  *
  * @author Debt Collective
@@ -388,3 +405,22 @@ function disable_wpautop_for_gutenberg() {
 	}
 }
 add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
+
+/**
+ * Replace page title with display name
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/the_title/
+ *
+ * @param string $title   Post title
+ * @param int    $post_id Post ID
+ * @return string New post tilte
+ */
+function replace_page_title( $title, $post_id ) {
+	$post_type = \get_post_type( $post_id );
+
+	if ( $new_title = \get_post_meta( $post_id, 'display_name', true ) ) {
+		$title = $new_title;
+	}
+
+	return $title;
+}

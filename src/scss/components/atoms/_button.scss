@@ -13,6 +13,10 @@
 		border: transparent solid 1px;
 		border-radius: 8px;
 		padding: 0.6rem 1rem;
+		&:hover, &:focus {
+			background-color: darken(get-color(emphasis), 25%);
+			transition: background-color 0.2s ease-in-out;
+		}
 	}
 	&.minor {
 		a,
@@ -20,12 +24,18 @@
 			background-color: $white;
 			color: get-color(darkest);
 			border: 1px solid get-color(darkest);
+			&:hover, &:focus {
+				background-color: darken($white, 15%);
+			}
 		}
 	}
 	&.jade {
 		a,
 		.wp-block-button__link {
 			background-color: get-color(jade);
+			&:hover, &:focus {
+				background-color: darken(get-color(jade), 10%);
+			}
 		}
 	}
 	&.outlined,
@@ -34,6 +44,9 @@
 		.wp-block-button__link {
 			background-color: $white;
 			color: get-color(grey-darker);
+			&:hover, &:focus {
+				background-color: darken($white, 15%);
+			}
 		}
 	}
 	&.link {
@@ -48,7 +61,13 @@
 			}
 		}
 	}
+	&.big {
+		a {
+			font-size: get-font-size(h3);
+		}
+	}
 }
+
 .hero__buttons {
 	.wp-block-button {
 		&__link {
