@@ -11,7 +11,7 @@ $sidebar-width: 280px;
 	margin: 6rem auto 0;
 	@media (min-width: get-breakpoint(sm)) {
 		.home & {
-			margin: 7rem auto 0;			
+			margin: 7rem auto 0;
 		}
 	}
 
@@ -52,11 +52,13 @@ $sidebar-width: 280px;
 	}
 
 	.container {
+		box-sizing: border-box;
 		position: absolute;
 		z-index: 5;
 		left: 0;
 		bottom: 0;
 		color: get-color(lightest);
+
 		h1 {
 			margin-bottom: 0;
 		}
@@ -64,7 +66,10 @@ $sidebar-width: 280px;
 }
 
 .entry-title {
-	font-size: get-font-size(h2);
+	font-size: get-font-size(h3);
+	@media (min-width: get-breakpoint(xs)) {
+		font-size: get-font-size(h2);
+	}
 	line-height: 1.15;
 }
 
@@ -83,7 +88,9 @@ $sidebar-width: 280px;
 	max-width: get-breakpoint(lg);
   margin: 0 auto;
 	box-sizing: border-box;
+
 	padding: 0 1rem;
+
 	@media (min-width: get-breakpoint(sm)) {
 		padding: 0 3.5rem;
 	}
@@ -107,45 +114,95 @@ $sidebar-width: 280px;
 	}
 
 	.has-sidebar & {
-		// padding-right: 0;
+
+		display: grid;
+		grid-column-gap: 1rem;
+		grid-row-gap: 1rem;
+
 		.content-container {
-			@media (min-width: get-breakpoint(md)) and (max-width: get-breakpoint(lg)) {
-				padding-right: 1.75rem;
-			}
-			@media (min-width: get-breakpoint(lg)) {
-				padding-right: 3.5rem;
-			}
+ 			grid-row: 2/3;
 		}
-		.sidebar {
-			padding: 0;
-			box-sizing: border-box;
 
-			.widget-title {
-				color: get-color(text);
-				font-size: get-font-size(h5);
-				line-height: 1.5;
-				border-bottom: solid 2px get-color(text);
-				padding-bottom: 0.5rem;
-				margin: 2.5rem 0 1.5rem;
+		aside.primary {
+			grid-row: 1/2;
+		}
+
+		aside.subnav {
+			grid-row: 3/4;
+			padding-left: 1rem;
+		}
+
+		aside.secondary {
+			grid-row: 4/5;
+		}
+
+		@media (min-width: get-breakpoint(xs)) {
+
+			grid-template-columns: repeat(2, 1fr);
+
+			.content-container,
+      aside.primary {
+        grid-column: span 2;
+      }
+
+			.content-container {
+				grid-row: span;
+				grid-column: span 2;
+				padding-right: 2rem;
 			}
 
-			@media (min-width: get-breakpoint(md)) {
-				padding: 1rem;
-			}
+      aside.subnav {
+        grid-row: 3/4;
+        grid-column: 1/2;
+      }
+
+      aside.secondary {
+        grid-row: 3/4;
+        grid-column: 2/3;
+      }
 		}
 
 		@media (min-width: get-breakpoint(md)) {
-			display: flex;
-			.content-container {
-				flex-grow: 1;
-				max-width: calc( #{get-breakpoint(lg)} - #{$sidebar-width});
-			}
-			.sidebar {
-				padding: 1rem 1rem 0;
-				min-width: $sidebar-width;
-			}
-		}
+
+			grid-template-columns: repeat(12, 1fr);
+			padding-right: 0;
+
+      .content-container {
+        grid-row: span 4	;
+        grid-column: span 9;
+      }
+
+      aside.primary {
+        grid-row: 1/2;
+        grid-column: 10/13;
+        // padding: 0.24rem;
+      }
+
+      aside.subnav {
+        grid-row: 2/3;
+        grid-column: 10/13;
+				padding-left: 0;
+      }
+
+      aside.secondary {
+        grid-row: 3/4;
+        grid-column: 10/13;
+      }
+
+      aside {
+        grid-column: 10/13;
+      }
+ 		}
 	}
+}
+
+.sidebar .widget-title {
+	color: get-color(text);
+	font-size: get-font-size(h5);
+	line-height: 1.5;
+	border-bottom: solid 2px get-color(text);
+	padding-bottom: 0.5rem;
+	margin: 2.5rem 0 1.5rem;
 }
 
 .grid-three {

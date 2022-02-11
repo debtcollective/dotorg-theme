@@ -28,3 +28,43 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+%breakpoint-indicator {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "—";
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  border-radius: 0 0 0 0.25rem;
+
+  @media (min-width: get-breakpoint(xs)) {
+    content: "xs";
+  }
+  @media (min-width: get-breakpoint(sm)) {
+    content: "sm";
+  }
+  @media (min-width: get-breakpoint(md)) {
+    content: "md";
+  }
+  @media (min-width: get-breakpoint(lg)) {
+    content: "lg";
+  }
+  @media (min-width: get-breakpoint(xl)) {
+    content: "xl";
+  }
+  @media (min-width: get-breakpoint(xxl)) {
+    content: "xxl";
+  }
+}
+
+.site-main {
+  &::before {
+    @extend %breakpoint-indicator;
+  }
+}

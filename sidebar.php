@@ -7,8 +7,7 @@
  * @package DebtCollective
  */
 ?>
-<aside class="sidebar widget-area">
-
+<aside class="sidebar primary widget-area ">
 	<?php
 	if ( is_active_sidebar( 'above-nav' ) ) :
 		?>
@@ -16,23 +15,15 @@
 	<?php
 	endif;
 	?>
-
+</aside>
+<aside class="sidebar subnav widget-area ">
 	<?php
 	$section_navigation = \get_post_meta( $post->ID, 'display_section_navigation', true );
 	if( 'children' === $section_navigation ) : ?>
-
 		<?php debtcollective_render_subpage_navigation( $post ); ?>
-
 	<?php elseif ( ! empty( $section_navigation ) ) : ?>
-
 		<?php debtcollective_render_section_navigation( $post ); ?>
-
 	<?php endif; ?>
-
-	<?php
-		get_template_part( 'template-parts/components/join-tout', 'sidebar' );
-	?>
-
 	<?php
 	if ( is_active_sidebar( 'below-nav' ) ) :
 	?>
@@ -40,5 +31,9 @@
 	<?php
 	endif;
 	?>
-
+</aside>
+<aside class="sidebar secondary widget-area ">
+	<?php
+		get_template_part( 'template-parts/components/join-tout', 'sidebar' );
+	?>
 </aside><!-- .secondary -->
