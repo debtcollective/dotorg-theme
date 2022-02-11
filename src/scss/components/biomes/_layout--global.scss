@@ -193,39 +193,6 @@ $sidebar-width: 280px;
         grid-column: 10/13;
       }
  		}
-
-		@media (max-width: get-breakpoint(md)) {
-
-			.sidebar-links {
-
-				li {
-					vertical-align: middle;
-					display: inline-block;
-					margin-right: 0.125rem;
-					padding-bottom: 0;
-					height: 3.25rem;
-
-					a {
-						max-width: 6rem;
-						height: 100%;
-						padding: 0.5rem;
-						padding-bottom: 0.125rem;
-						border-bottom: none;
-						color: get-color(jade-dark);
-						background-color: rgba( get-color(jade), 0.15);
-					}
-
-					.sidebar-link__title {
-						font-size: get-font-size(h5);
-						font-weight: normal;
-					}
-
-					.sidebar-link__content {
-						display: none;
-					}
-				}
-			}
-		}
 	}
 }
 
