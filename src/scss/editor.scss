@@ -85,6 +85,9 @@
 }
 
 
+.events-by-tag .wp-block-heading.is-selected {
+  color: #000 !important;
+}
 // hide h1 from editor
 .components-toolbar-group {
   .components-toolbar-button[aria-label="Heading 1"] {
