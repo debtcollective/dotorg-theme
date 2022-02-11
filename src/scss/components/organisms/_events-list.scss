@@ -1,10 +1,10 @@
 .events__list {
 	display: grid;
 	grid-template-columns: 1fr;
+	column-gap: 1rem;
+	row-gap: 1rem;
 	@media (min-width: get-breakpoint(xs)) {
 		grid-template-columns: 1fr 1fr;
-		column-gap: 1rem;
-		row-gap: 1rem;
 	}
 	@media (min-width: get-breakpoint(md)) {
 		grid-template-columns: 1fr 1fr 1fr;
