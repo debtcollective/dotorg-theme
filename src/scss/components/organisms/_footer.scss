@@ -43,8 +43,9 @@
 			right: 0;
 			margin: 0;
 			padding: 0;
-			@media (min-width: get-breakpoint(sm)) {
-				.wp-social-link {
+			.wp-social-link {
+				color: $white !important;
+				@media (min-width: get-breakpoint(sm)) {
 					svg {
 						width: 2.5rem;
 						height: 2.5rem;
