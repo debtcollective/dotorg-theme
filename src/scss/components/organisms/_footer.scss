@@ -4,7 +4,7 @@
 	position: absolute;
 	width: 100vw;
 	margin-top: 3rem;
-	padding-top: 3rem;
+	padding: 1.5rem 1rem 0;
 
 	.container {
 		max-width: get-breakpoint(lg);
@@ -12,15 +12,12 @@
 	}
 
 	@media (min-width: get-breakpoint(sm)) {
-		margin-top: 3rem;
-		padding-top: 1.5rem;
+		padding-left: 2.875rem;
+		padding-right: 2.875rem;
 	}
 
 	.widget {
-		padding: 0 1rem;
-		@media (min-width: get-breakpoint(sm)) {
-			padding: 0 2.875rem;
-		}
+		position: relative;
 		h3 {
 			margin: 0;
 			padding-bottom: 1rem;
@@ -41,92 +38,44 @@
 			}
 		}
 
-		&:nth-child(1) {
-			display: flex;
-			justify-content: flex-end;
+		.wp-block-social-links {
 			position: absolute;
-			width: 97%;
+			right: 0;
+			margin: 0;
 			padding: 0;
-			right: 0.75rem;
 			@media (min-width: get-breakpoint(sm)) {
-				top: 3rem;
-				right: 2.35rem;
-			}
-			.wp-block-social-links {
-				margin: 0;
 				.wp-social-link {
-					margin: 0;
-					a {
-						padding: 0;
-						@media (min-width: get-breakpoint(sm)){
-							svg {
-								width: 2.25rem;
-								height: 2.25rem;
-							}
-						}
+					svg {
+						width: 2.5rem;
+						height: 2.5rem;
 					}
 				}
 			}
 		}
 	}
-	.widget_yikes_easy_mc_widget {
-		.yikes-easy-mc-form {
-			margin: 1rem 0;
-			label {
-				line-height: 1.2;
-				span {
-					font-weight: 500;
-					display: inline-block;
-					margin-bottom: 0.5rem;
-				}
-				input {
-					height: 2.5rem;
-				}
-				&:nth-child(5) {
-					width: 1px;
-					height: 1px;
-					margin: -1px;
-				}
-			}
-			.btn {
-				@extend .wp-block-button;
-				margin: 0;
-				border: 0;
-				outline: 0;
-				height:	2.5rem;
-			}
-			@media (min-width: get-breakpoint(sm)) {
-				display: flex;
-				justify-content: space-between;
-				label {
-					margin: 0 0.5rem;
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-end;
-					&:nth-child(1) {
-						margin-left: 0;
-					}
-				}
-				.btn {
-					margin: 0.5rem;
-					margin-right: 0;
-				}
-			}
+	.wpcf7-form {
+		padding: 1rem 0;
+		@media (min-width: get-breakpoint(sm)) {
+			padding: 2rem 0;
+		}
+		@media (min-width: get-breakpoint(md)) {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			column-gap: 1rem;
+			row-gap: 0.5rem;
 		}
 	}
+
 	#footer-menu {
 		display: grid;
-		// flex-direction: column;
-		// justify-content: space-between;
     grid-template-columns: 1fr;
-		margin: 0 1rem 5rem;
-		padding: 1rem 0;
+		margin-bottom: 5rem;
+		padding: 2rem 0 0;
 		border-top: solid $white 1px;
 		@media (min-width: get-breakpoint(xs)) {
 			grid-template-columns: 1fr 1fr;
 		}
 		@media (min-width: get-breakpoint(sm)) {
-			margin: 0 2.875rem 5rem;
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 		@media (min-width: get-breakpoint(md)) {
@@ -158,6 +107,7 @@
 		ul {
 			list-style: none;
 			display: inline-block;
+			padding: 0;
 			li {
 				display: inline-block;
 				margin-right: 1rem;
