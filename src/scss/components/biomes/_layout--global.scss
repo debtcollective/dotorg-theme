@@ -196,13 +196,15 @@ $sidebar-width: 280px;
 	}
 }
 
-.sidebar .widget-title {
-	color: get-color(text);
-	font-size: get-font-size(h5);
-	line-height: 1.5;
-	border-bottom: solid 2px get-color(text);
-	padding-bottom: 0.5rem;
-	margin: 2.5rem 0 1.5rem;
+.sidebar, .content-footer {
+	 .widget-title {
+		color: get-color(text);
+		font-size: get-font-size(h5);
+		line-height: 1.5;
+		border-bottom: solid 2px get-color(text);
+		padding-bottom: 0.5rem;
+		margin: 2.5rem 0 1.5rem;
+	}
 }
 
 .grid-three {
