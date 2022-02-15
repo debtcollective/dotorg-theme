@@ -14,7 +14,11 @@ if (radioInputs) {
 if (checkboxes) {
 	checkboxes.forEach(c => {
 		c.addEventListener('change', () => {
-			c.parentElement.classList.toggle('checked')
+			if (c.parentElement.tagName === 'LABEL') {
+				c.parentElement.parentElement.classList.toggle('checked')
+			} else {
+				c.parentElement.classList.toggle('checked')
+			}
 		})
 	})
 }
