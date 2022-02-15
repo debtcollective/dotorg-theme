@@ -2,14 +2,18 @@
 
 	height: min-content;
 	color: get-color(darkest);
-	padding: 1rem;
 	box-sizing: border-box;
 	margin: 0;
+	padding-bottom: 1rem;
 
 	@media (min-width: get-breakpoint(sm)){
 		width: 45%;
 		padding: 0 0 1rem 0;
 		padding-right: 0.5rem;
+	}
+
+	@media (min-width: get-breakpoint(md)){
+		padding-left: 1rem;
 	}
 
 	@media (min-width: get-breakpoint(lg)){
