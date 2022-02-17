@@ -62,9 +62,14 @@
 			.event {
 
 				padding-bottom: 1rem;
-				
+
 				a {
 					padding: 0;
+					padding-bottom: 1rem;
+					&::after {
+						width: 100%;
+						left: 0;
+					}
 				}
 			}
 		}

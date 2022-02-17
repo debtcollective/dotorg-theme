@@ -1,63 +1,65 @@
-.radio-buttons {
-	.wpcf7-radio {
-		display: flex;
-		flex-direction: column;
-		@media (min-width: get-breakpoint(sm)) {
-			flex-direction: row;
-			flex-wrap: wrap;
+.wpcf7-radio {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+	@media (min-width: get-breakpoint(md)) {
+		grid-template-columns: 1fr 1fr;
+	}
+	.wpcf7-list-item {
+		position: relative;
+		border-radius: 6px;
+		padding: 1rem 1.125rem;
+		margin: 0;
+		&.checked-radio {
+			background-color: get-color(green-1);
 		}
-		.wpcf7-list-item {
-			position: relative;
-			border-radius: 6px;
-			padding: 1rem 1.125rem;
-			margin: 0;
-			&.checked-radio {
-				background-color: get-color(green-1);
-			}
-			input[type="radio"] {
-				position: absolute;
-				left: 2.5%;
-				width: 95%;
-				bottom: 7.5%;
-				height: 85%;
-				opacity: 0;
-				z-index: 1;
-				cursor: pointer;
-				&:checked {
-					+ span {
-						&::before {
-							border: none;
-						}
-						&::after {
-							position: absolute;
-							display: block;
-							top: 0.7em;
-							left: 1.55em;
-							width: 0.5em;
-							height: 1.33em;
-							border-right: 0.33em solid get-color(jade-light);
-							border-bottom: 0.33em solid get-color(jade-light);
-							transform: rotate(45deg);
-						}
+		&:focus-within {
+			outline: 5px auto Highlight;
+			outline: 5px auto -webkit-focus-ring-color;
+		}
+		input[type="radio"] {
+			position: absolute;
+			left: 2.5%;
+			width: 95%;
+			bottom: 7.5%;
+			height: 85%;
+			opacity: 0;
+			z-index: 1;
+			cursor: pointer;
+			&:checked {
+				+ span {
+					&::before {
+						border: none;
+					}
+					&::after {
+						position: absolute;
+						display: block;
+						top: 0.7em;
+						left: 1.55em;
+						width: 0.5em;
+						height: 1.33em;
+						border-right: 0.33em solid get-color(jade-light);
+						border-bottom: 0.33em solid get-color(jade-light);
+						transform: rotate(45deg);
 					}
 				}
-				+ span {
-					font-size: 1rem;
-					line-height: 1.2;
-					margin-left: 1.5rem;
-					&::before {
-						content: "";
-						position: relative;
-						top: 0.125em;
-						border: 0.2em solid $black;
-						border-radius: 1rem;
-						background-color: transparent;
-						display: block;
-						box-sizing: border-box;
-						float: left;
-						width: 1.25em;
-						height: 1.25em;
-					}
+			}
+			+ span {
+				font-size: 1rem;
+				line-height: 1.2;
+				margin-left: 1.5rem;
+				&::before {
+					content: "";
+					position: relative;
+					top: 0.125em;
+					border: 0.2em solid $black;
+					border-radius: 1rem;
+					background-color: transparent;
+					display: block;
+					box-sizing: border-box;
+					float: left;
+					width: 1.25em;
+					height: 1.25em;
 				}
 			}
 		}
