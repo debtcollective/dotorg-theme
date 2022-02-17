@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 1rem;
+	margin-top: 0.5rem;
 	@media (min-width: get-breakpoint(md)) {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -10,7 +11,7 @@
 		border-radius: 6px;
 		padding: 1rem 1.125rem;
 		margin: 0;
-		&.checked-radio {
+		&.checked {
 			background-color: get-color(green-1);
 		}
 		&:focus-within {
