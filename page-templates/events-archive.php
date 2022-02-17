@@ -23,22 +23,22 @@ get_header(); ?>
 		<?php
 		$date_time = new \DateTime();
 		$paged     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-		$args      = [
-			'post_type'  => [ 'an_event' ],
+		$args  = array(
+			'post_type'  => array( 'an_event' ),
 			'paged'      => $paged,
 			'orderby'    => 'meta_value',
 			'order'      => 'DESC',
 			'meta_key'   => 'start_date',
 			'meta_type'  => 'DATETIME',
-			'meta_query' => [
-				[
+			'meta_query' => array(
+				array(
 					'key'     => 'start_date',
 					'value'   => $date_time->format( 'c' ),
 					'compare' => '<',
-				],
-			],
-		];
-		$query     = new \WP_Query( $args );
+				),
+			),
+		);
+		$query = new \WP_Query( $args );
 		if ( $query->have_posts() ) :
 			?>
 
