@@ -23,22 +23,35 @@ get_header(); ?>
 		<?php
 		$date_time = new \DateTime();
 		$paged     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-		$args      = [
-			'post_type'  => [ 'an_event' ],
-			'paged'      => $paged,
-			'orderby'    => 'meta_value',
-			'order'      => 'DESC',
-			'meta_key'   => 'start_date',
-			'meta_type'  => 'DATETIME',
-			'meta_query' => [
-				[
+		$scope     = get_post_meta( get_the_ID(), 'event_scope', true );
+		var_dump( $scope );
+		$args = array(
+			'post_type' => array( 'an_event' ),
+			'paged'     => $paged,
+			'orderby'   => 'meta_value',
+			'order'     => 'DESC',
+			'meta_key'  => 'start_date',
+			'meta_type' => 'DATETIME',
+		);
+		if ( 'future' === $scope ) {
+			$args['meta_query'] = array(
+				array(
+					'key'     => 'start_date',
+					'value'   => $date_time->format( 'c' ),
+					'compare' => '>',
+				),
+			);
+		} elseif ( 'past' === $scope ) {
+			$args['meta_query'] = array(
+				array(
 					'key'     => 'start_date',
 					'value'   => $date_time->format( 'c' ),
 					'compare' => '<',
-				],
-			],
-		];
-		$query     = new \WP_Query( $args );
+				),
+			);
+		}
+
+		$query = new \WP_Query( $args );
 		if ( $query->have_posts() ) :
 			?>
 
