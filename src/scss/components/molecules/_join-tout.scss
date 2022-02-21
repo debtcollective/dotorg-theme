@@ -6,8 +6,9 @@
   aspect-ratio: 1;
   max-width: 15rem;
   box-sizing: border-box;
+
 	@media (min-width: get-breakpoint(md)) {
-		left: -1.25rem;
+		margin-left: 0;
 	}
 
   a {
@@ -19,7 +20,8 @@
   }
 
   .entry-title {
-    font-family: get-font(more) !important;
+    font-family: MoreGothic, sans-serif;
+		font-weight: 700;
     font-size: get-font-size(h3) !important;
     color: get-color(text) !important;
     margin: 0;

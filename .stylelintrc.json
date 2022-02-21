@@ -4,6 +4,7 @@
 		"stylelint-config-prettier"
 	],
 	"rules": {
+		"function-url-quotes": null,
 		"at-rule-empty-line-before": null,
 		"declaration-colon-newline-after": null,
 		"function-parentheses-space-inside": null,

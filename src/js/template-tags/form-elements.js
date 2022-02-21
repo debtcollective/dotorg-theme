@@ -1,12 +1,24 @@
-const radioInputs = document.querySelectorAll(`input[type="radio"]`)
 const checkboxes = document.querySelectorAll(`.wpcf7-list-item input[type="checkbox"]`)
+const radioGroups = document.querySelectorAll(`.wpcf7-radio`)
 
-if (radioInputs) {
-	radioInputs.forEach(r => {
-		r.addEventListener('change', () => {
-			const checked = document.querySelector('.wpcf7-list-item.checked-radio')
-			if (checked)  checked.classList.remove('checked-radio')
-			if(r.checked) r.parentElement.classList.add('checked-radio')
+if (radioGroups) {
+	radioGroups.forEach(rGroup => {
+		const radioInputs = rGroup.querySelectorAll(`input[type="radio"]`)
+		rGroup.addEventListener('change', () => {
+			const currentlyChecked = rGroup.querySelectorAll('.checked')
+			if (currentlyChecked[0]) {
+				currentlyChecked[0].classList.toggle('checked')
+			}
+
+			radioInputs.forEach(rInput => {
+				if (rInput.checked) {
+					if (rInput.parentElement.tagName === 'LABEL') {
+						rInput.parentElement.parentElement.classList.toggle('checked')
+					} else {
+						rInput.parentElement.classList.toggle('checked')
+					}
+				}
+			})
 		})
 	})
 }

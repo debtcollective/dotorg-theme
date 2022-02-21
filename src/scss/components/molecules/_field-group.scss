@@ -6,10 +6,10 @@
 		line-height: 1.2;
 		margin-bottom: 0.5rem;
 	}
-	.wpcf7-form-control-wrap {
-		margin-bottom: 1rem;
+	&.social {
+		@media (min-width: get-breakpoint(xs)) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }
-fieldset.field-group {
-	padding: 1rem;
-}
+
