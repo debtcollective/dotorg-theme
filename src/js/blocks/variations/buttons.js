@@ -15,6 +15,9 @@ const buttonVariations = [
         ],
         parent: false,
         isDefault: true,
+        attributes: {
+          className: 'btn default',
+        },
         scope: [
             'block',
             'inserter',
