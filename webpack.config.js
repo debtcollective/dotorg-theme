@@ -54,7 +54,7 @@ module.exports = {
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: 'url-loader',
 						options: {
 							name: 'fonts/[name].[hash:8].[ext]',
 						},
@@ -108,7 +108,7 @@ module.exports = {
 		 * @see https://www.npmjs.com/package/clean-webpack-plugin
 		 */
 		new CleanWebpackPlugin( {
-			cleanAfterEveryBuildPatterns: [ '!fonts/**', '!*.woff2' ],
+			cleanAfterEveryBuildPatterns: [ '!fonts/**', '!*.woff2', '!*.woff' ],
 		} ),
 
 		/**
