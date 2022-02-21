@@ -2,7 +2,7 @@
 .wp-block-button {
 	a,
 	&__link {
-		background-color: get-color(emphasis);
+		background-color: get-color(darkest);
 		color: $white;
 		font-size: 1.125rem;
 		line-height: 1.2;
@@ -14,7 +14,7 @@
 		border-radius: 8px;
 		padding: 0.6rem 1rem;
 		&:hover, &:focus {
-			background-color: darken(get-color(emphasis), 25%);
+			background-color: get-color(emphasis);
 			transition: background-color 0.2s ease-in-out;
 		}
 	}
@@ -62,8 +62,9 @@
 		}
 	}
 	&.big {
+		> .wp-block-button__link,
 		a {
-			font-size: get-font-size(h3);
+			font-size: get-font-size(h3) !important;
 		}
 	}
 }

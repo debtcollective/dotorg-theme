@@ -1,6 +1,17 @@
-// @import url(https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,500;1,700;1,900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* eslint function-url-quotes: "off" */
+@font-face {
+  font-family: MoreGothic;
+  src: url('/src/fonts/static/d4f2739ea91e6b163eecd4826de1c604.eot'); /* IE9*/
+  src: url('/src/fonts/static/d4f2739ea91e6b163eecd4826de1c604.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/src/fonts/static/d4f2739ea91e6b163eecd4826de1c604.woff2') format('woff2'), /* chrome、firefox */
+  url('/src/fonts/static/d4f2739ea91e6b163eecd4826de1c604.woff') format('woff'), /* chrome、firefox */
+  url('/src/fonts/static/d4f2739ea91e6b163eecd4826de1c604.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('/src/fonts/static/d4f2739ea91e6b163eecd4826de1c604.svg#More Gothic Bold') format('svg'); /* iOS 4.1- */
+  font-weight: 700;
+}
 
 .material-icons {
   font-family: 'Material Icons';
@@ -35,25 +46,25 @@ Golden ratio typescale
 https://type-scale.com/?size=16&scale=1.618&text=A%20Visual%20Type%20Scale&font=Libre%20Franklin&fontweight=900&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
 */
 $font-sizes: (
-  "body": 1.125rem,
-  "h1": 6.854rem,
-  "h2": 4.236rem,
-  "h3": 2.618rem,
-  "h4": 1.618rem,
-  "h5": 1rem,
-  "h6": 0.618rem,
-  "page_title": 6.854rem,
-  "small": 0.618rem,
-  "lede": 1.618rem,
-  "button--large": 2.618rem,
-  "button--md": 1.618rem,
-  "button--small": 1rem,
-  "card__title": 1rem
+  'body': 1.125rem,
+  'h1': 6.854rem,
+  'h2': 4.236rem,
+  'h3': 2.618rem,
+  'h4': 1.618rem,
+  'h5': 1rem,
+  'h6': 0.618rem,
+  'page_title': 6.854rem,
+  'small': 0.618rem,
+  'lede': 1.618rem,
+  'button--large': 2.618rem,
+  'button--md': 1.618rem,
+  'button--small': 1rem,
+  'card__title': 1rem
 );
 
 $fonts: (
-  "base": "Libre Franklin",
-  "more": "More Gothic"
+  'base': 'Libre Franklin',
+  'more': 'More Gothic'
 );
 
 
