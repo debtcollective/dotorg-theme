@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 
 const buttonVariations = [
     {
-        name: 'btn',
+        name: 'button-default',
         title: __( 'Button', 'debtcollective' ),
         description: __( 'Add a standard button.', 'debtcollective' ),
         isDefault: true,
@@ -15,13 +15,14 @@ const buttonVariations = [
         ],
         parent: false,
         isDefault: true,
+        attributes: {
+          className: 'btn default',
+        },
         scope: [
             'block',
             'inserter',
             'transform'
         ]
-        // isActive: ( blockAttributes, variationAttributes ) =>
-        //     blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-minor',

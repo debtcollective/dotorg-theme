@@ -32,9 +32,9 @@
 	&.jade {
 		a,
 		.wp-block-button__link {
-			background-color: get-color(jade);
+			background-color: darken(get-color(jade), 10%);
 			&:hover, &:focus {
-				background-color: darken(get-color(jade), 10%);
+				background-color: get-color(jade);
 			}
 		}
 	}
@@ -65,16 +65,6 @@
 		> .wp-block-button__link,
 		a {
 			font-size: get-font-size(h3) !important;
-		}
-	}
-}
-
-.hero__buttons {
-	.wp-block-button {
-		&__link {
-			border-radius: 4px;
-			padding: 1.125rem;
-			background-color: get-color(emphasis);
 		}
 	}
 }
