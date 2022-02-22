@@ -136,12 +136,10 @@
 		}
 		a {
 			color: get-color(lightest);
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
-	}
-
-	.footer-widgets .btn-primary {
-		background-color: get-color(emphasis) !important;
-		color: get-color(darkest) !important;
 	}
 }
