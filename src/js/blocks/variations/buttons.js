@@ -69,6 +69,17 @@ const buttonVariations = [
         ]
   	},
     {
+      name: 'button-inverse',
+      title: __( 'Dark grey on Orange Button', 'debtcollective' ),
+      description: __( 'Mostly just for the footer. But other dark backgrounds.', 'debtcollective' ),
+      attributes: {
+        className: 'btn inverse',
+      },
+      scope: [
+          'transform'
+      ]
+    },
+    {
       name: 'button-link',
       title: __( 'Link Button', 'debtcollective' ),
       description: __( 'Add a button that looks like a link.', 'debtcollective' ),

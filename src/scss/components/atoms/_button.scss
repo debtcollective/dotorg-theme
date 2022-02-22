@@ -67,6 +67,19 @@
 			font-size: get-font-size(h3) !important;
 		}
 	}
+	&.inverse {
+		background-color: get-color(emphasis);
+		> .wp-block-button__link,
+		a {
+			color: get-color(darkest);
+		}
+		&:hover {
+			background-color: get-color(emphasis);
+			a {
+				color: get-color(lightest);
+			}
+		}
+	}
 }
 
 .yikes-easy-mc-submit-button, input[type="submit"] {
