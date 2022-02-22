@@ -136,6 +136,9 @@
 		}
 		a {
 			color: get-color(lightest);
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 	}
