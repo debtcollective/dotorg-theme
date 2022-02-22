@@ -1,4 +1,4 @@
-.site-footer {
+	.site-footer {
 	box-sizing: border-box;
 	background-color: $c__gray--dark;
 	color: $white;
@@ -134,5 +134,14 @@
 				margin-right: 1rem;
 			}
 		}
+		a {
+			color: get-color(lightest);
+		}
+
+	}
+
+	.footer-widgets .btn-primary {
+		background-color: get-color(emphasis) !important;
+		color: get-color(darkest) !important;
 	}
 }
