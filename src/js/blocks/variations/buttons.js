@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 
 const buttonVariations = [
     {
-        name: 'btn',
+        name: 'button-default',
         title: __( 'Button', 'debtcollective' ),
         description: __( 'Add a standard button.', 'debtcollective' ),
         isDefault: true,
@@ -15,13 +15,14 @@ const buttonVariations = [
         ],
         parent: false,
         isDefault: true,
+        attributes: {
+          className: 'btn default',
+        },
         scope: [
             'block',
             'inserter',
             'transform'
         ]
-        // isActive: ( blockAttributes, variationAttributes ) =>
-        //     blockAttributes.className === variationAttributes.className,
     },
     {
         name: 'button-minor',
@@ -67,6 +68,17 @@ const buttonVariations = [
             'transform'
         ]
   	},
+    {
+      name: 'button-inverse',
+      title: __( 'Dark grey on Orange Button', 'debtcollective' ),
+      description: __( 'Mostly just for the footer. But other dark backgrounds.', 'debtcollective' ),
+      attributes: {
+        className: 'btn inverse',
+      },
+      scope: [
+          'transform'
+      ]
+    },
     {
       name: 'button-link',
       title: __( 'Link Button', 'debtcollective' ),

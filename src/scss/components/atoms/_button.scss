@@ -32,9 +32,9 @@
 	&.jade {
 		a,
 		.wp-block-button__link {
-			background-color: get-color(jade);
+			background-color: darken(get-color(jade), 10%);
 			&:hover, &:focus {
-				background-color: darken(get-color(jade), 10%);
+				background-color: get-color(jade);
 			}
 		}
 	}
@@ -67,14 +67,17 @@
 			font-size: get-font-size(h3) !important;
 		}
 	}
-}
-
-.hero__buttons {
-	.wp-block-button {
-		&__link {
-			border-radius: 4px;
-			padding: 1.125rem;
+	&.inverse {
+		background-color: get-color(emphasis);
+		> .wp-block-button__link,
+		a {
+			color: get-color(darkest);
+		}
+		&:hover {
 			background-color: get-color(emphasis);
+			a {
+				color: get-color(lightest);
+			}
 		}
 	}
 }
