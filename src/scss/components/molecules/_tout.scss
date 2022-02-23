@@ -110,4 +110,13 @@
 	.wp-block-image {
 		margin-bottom: 0 !important;
 	}
+
+	&.jade.minor {
+		min-height: auto;
+		.tout__title {
+			font-size: get-font-size(h4);
+		}
+	}
+
+
 }
