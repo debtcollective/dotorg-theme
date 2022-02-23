@@ -9,7 +9,7 @@
 $post_id  = get_the_ID();
 $taxonomy = 'event_tag';
 
-$date_format          = \has_term( [ 'welcome-call', 'welcome-calls' ], $taxonomy, $post_id ) ? 'D, M j' : 'l F j, Y';
+$date_format          = \has_term( array( 'welcome-call', 'welcome-calls' ), $taxonomy, $post_id ) ? 'D, M j' : 'l F j, Y';
 $time_format          = 'g:ia';
 $default_timezone     = \get_option( 'timezone_string' );
 $timezone             = \get_post_meta( $post_id, 'timezone', true ) ?? $default_timezone;
@@ -30,7 +30,7 @@ $timezone_abbr = $generic_date->format( 'T' );
 <article <?php \post_class( 'event-container event' ); ?>>
 	<?php
 	if ( \has_term( '', $taxonomy, $post_id ) ) :
-		$tags = \wp_get_post_terms( $post_id, $taxonomy, [ 'fields' => 'names' ] );
+		$tags = \wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'names' ) );
 		?>
 
 		<div class="event__tag entry-meta">
@@ -41,7 +41,7 @@ $timezone_abbr = $generic_date->format( 'T' );
 	
 	<a href="<?php echo \esc_url( \get_permalink() ); ?>">
 
-		<h3 class="event__title entry-title<?php echo \has_term( [ 'welcome-calls', 'welcome-call' ], $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>
+		<h3 class="event__title entry-title<?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>
 
 		<div class="event__date">
 			<time dateTime=<?php echo \esc_attr( $raw_start_date ); ?>><?php echo $formatted_start_date; ?></time>
