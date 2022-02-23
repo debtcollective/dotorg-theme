@@ -1,5 +1,7 @@
 .wp-block-outermost-social-sharing, .wp-block-social-links {
 	margin-left: 0.25rem !important;
+	display: flex;
+	gap: 0.5em;
 	.outermost-social-sharing-link, .wp-social-link {
 		color: get-color(text) !important;
 		font-size: 1.5rem;

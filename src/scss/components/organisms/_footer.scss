@@ -45,8 +45,15 @@
 			right: 0;
 			margin: 0;
 			padding: 0;
+			z-index: 1;
 			.wp-social-link {
 				color: $white !important;
+				&:hover, &:active, &:focus {
+					svg {
+						color: get-color(emphasis);
+					}
+				}
+
 				@media (min-width: get-breakpoint(sm)) {
 					svg {
 						width: 2.5rem;
