@@ -15,7 +15,9 @@
 		padding: 0.6rem 1rem;
 		&:hover, &:focus {
 			background-color: get-color(emphasis);
-			transition: background-color 0.2s ease-in-out;
+			transition-property: background-color, color;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
 		}
 	}
 	&.minor {
@@ -67,28 +69,34 @@
 			font-size: get-font-size(h3) !important;
 		}
 	}
-	&.inverse {
-		background-color: get-color(emphasis);
-		> .wp-block-button__link,
+	&.outline--reverse {
+		border: 0.125rem solid get-color(lightest) !important;
+		background-color: transparent !important;
+		color: get-color(lightest) !important;
 		a {
-			color: get-color(darkest);
+			color: get-color(lightest) !important;
 		}
 		&:hover {
-			background-color: get-color(emphasis);
+			background-color: get-color(emphasis) !important;
 			a {
-				color: get-color(lightest);
+				color: get-color(lightest) !important;
 			}
 		}
 	}
-}
-
-.yikes-easy-mc-submit-button, input[type="submit"] {
-	@extend .wp-block-button__link;
-	border-radius: 6px;
-	height: 3.2rem;
-	align-self: flex-end;
-	width: 100%;
-	@media (min-width: get-breakpoint(sm)) {
-		width: auto;
+	&.inverse {
+		background-color: get-color(emphasis) !important;
+		color: get-color(darkest) !important;
+		letter-spacing: 1px;
+		> .wp-block-button__link,
+		a {
+			color: get-color(darkest) !important;
+		}
+		&:hover {
+			background-color: get-color(emphasis) !important;
+			color: get-color(lightest) !important;
+			a {
+				color: get-color(lightest) !important;
+			}
+		}
 	}
 }
