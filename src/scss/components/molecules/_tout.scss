@@ -111,10 +111,12 @@
 		margin-bottom: 0 !important;
 	}
 
-	&.minor {
+	&.jade.minor {
 		min-height: auto;
 		.tout__title {
 			font-size: get-font-size(h4);
 		}
 	}
+
+
 }

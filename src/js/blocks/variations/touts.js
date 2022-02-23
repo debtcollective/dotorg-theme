@@ -91,7 +91,7 @@ const variations = [
         title: __( 'DC Canary Minor Tout', 'debtcollective' ),
         description: __( 'A minor tout with the canary background color.', 'debtcollective' ),
         attributes: {
-            className: 'canary minor',
+            className: 'tout canary minor',
         },
         scope: [
             'transform'
@@ -102,7 +102,7 @@ const variations = [
         title: __( 'DC Jade Minor Tout', 'debtcollective' ),
         description: __( 'A minor tout with the DebtCollective brand orange background color.', 'debtcollective' ),
         attributes: {
-            className: 'jade minor',
+            className: 'tout jade minor',
         },
         scope: [
             'transform'
@@ -113,7 +113,7 @@ const variations = [
         title: __( 'DC Orange Minor Tout', 'debtcollective' ),
         description: __( 'A minor tout with the DebtCollective brand orange background color.', 'debtcollective' ),
         attributes: {
-            className: 'emphasis minor',
+            className: 'tout emphasis minor',
         },
         scope: [
             'transform'
