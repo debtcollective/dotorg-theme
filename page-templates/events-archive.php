@@ -24,7 +24,6 @@ get_header(); ?>
 		$date_time = new \DateTime();
 		$paged     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		$scope     = get_post_meta( get_the_ID(), 'event_scope', true );
-		var_dump( $scope );
 		$args = array(
 			'post_type' => array( 'an_event' ),
 			'paged'     => $paged,
