@@ -58,6 +58,17 @@ const buttonVariations = [
         ]
     },
     {
+        name: 'button-outlined--reverse',
+        title: __( 'Outlined Button Reversed', 'debtcollective' ),
+        description: __( 'Add button with white outline for dark backgrounds.', 'debtcollective' ),
+        attributes: {
+          className: 'btn outline--reverse',
+        },
+        scope: [
+            'transform'
+        ]
+    },
+    {
         name: 'big',
         title: __( 'Big Button', 'debtcollective' ),
         description: __( 'Add a big ol button.', 'debtcollective' ),

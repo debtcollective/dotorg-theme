@@ -70,8 +70,15 @@
 		input {
 			color: $white;
 		}
+
 		.wpcf7-submit {
 			margin-top: 0.5rem;
+			@extend .wp-block-button__link;
+			border-radius: 6px;
+			height: 3.2rem;
+			display: block;
+			width: 100%;
+			cursor: pointer;
 			@media (min-width: get-breakpoint(md)) {
 				margin-top: 0;
 			}
