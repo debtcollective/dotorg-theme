@@ -5,6 +5,12 @@
 @import 'blocks/index.scss';
 @import 'components/index.scss';
 
+.wp-block-post-title {
+  font-size: get-font-size(h2);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .block-editor-rich-text__editable:not(.wp-block-button__link)  {
   .is-selected &,
   &.is-selected, {
