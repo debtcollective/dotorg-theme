@@ -110,4 +110,11 @@
 	.wp-block-image {
 		margin-bottom: 0 !important;
 	}
+
+	&.minor {
+		min-height: auto;
+		.tout__title {
+			font-size: get-font-size(h4);
+		}
+	}
 }
