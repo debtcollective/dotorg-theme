@@ -233,4 +233,11 @@ $sidebar-width: 280px;
 .grid-two,
 .four-points {
 	@include grid-two;
+	.tout {
+		margin-bottom: 2rem;
+	}
+}
+
+.rc-anchor-alert {
+	display: none !important;
 }

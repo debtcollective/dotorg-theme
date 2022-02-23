@@ -85,5 +85,45 @@ const variations = [
         scope: [
             'transform'
         ]
-    }
+    },
+    {
+        name: 'tout-canary-minor',
+        title: __( 'DC Canary Minor Tout', 'debtcollective' ),
+        description: __( 'A minor tout with the canary background color.', 'debtcollective' ),
+        attributes: {
+            className: 'tout canary minor',
+        },
+        scope: [
+            'transform'
+        ]
+    },
+    {
+        name: 'tout-jade-minor',
+        title: __( 'DC Jade Minor Tout', 'debtcollective' ),
+        description: __( 'A minor tout with the DebtCollective brand orange background color.', 'debtcollective' ),
+        attributes: {
+            className: 'tout jade minor',
+        },
+        scope: [
+            'transform'
+        ]
+    },
+    {
+        name: 'tout-dcorange-minor',
+        title: __( 'DC Orange Minor Tout', 'debtcollective' ),
+        description: __( 'A minor tout with the DebtCollective brand orange background color.', 'debtcollective' ),
+        attributes: {
+            className: 'tout emphasis minor',
+        },
+        scope: [
+            'transform'
+        ]
+    },
 ];
+
+variations.forEach( ( variation ) => {
+    registerBlockVariation(
+        'site-functionality/tout',
+        variation
+    );
+} );
