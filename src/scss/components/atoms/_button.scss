@@ -84,12 +84,13 @@
 		}
 	}
 	&.inverse {
-		background-color: get-color(emphasis) !important;
-		color: get-color(darkest) !important;
-		letter-spacing: 1px;
+		box-sizing: border-box;
+		border: 0.25rem get-color(emphasis) solid !important;
+		background-color: transparent !important;
+		color: get-color(lightest) !important;
 		> .wp-block-button__link,
 		a {
-			color: get-color(darkest) !important;
+			color: get-color(lightest) !important;
 		}
 		&:hover {
 			background-color: get-color(emphasis) !important;
