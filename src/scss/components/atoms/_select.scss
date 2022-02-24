@@ -8,7 +8,8 @@ select {
 		height: auto;
 	}
 	&:not([multiple="multiple"]) option {
-   	color: get-color(lightest);
+   	background-color: $white;
+		color: $black;
     font-family: 'Libre Franklin', sans-serif !important;
 	}
 }
