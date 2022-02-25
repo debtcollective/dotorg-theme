@@ -12,6 +12,7 @@ $c__jade--light: #24BA9D;
 $c__jade--dark: #1E9981;
 $c__jade--darker: #146656;
 $c__jade--lightened: #D6FFF7;
+$c__jade--form-bg: #f1f9f7;
 
 $c__canary: #FFED9C;
 $c__canary-light: #FFF4C3;
@@ -50,7 +51,8 @@ $colors: (
 	"grey-darker": $c__gray--darker,
 	"green-1": $c__green--1,
   "lightest": $white,
-  "darkest": $c__gray--darker
+  "darkest": $c__gray--darker,
+  "formbg": $c__jade--form-bg,
 );
 
 @function get-color($key) {
