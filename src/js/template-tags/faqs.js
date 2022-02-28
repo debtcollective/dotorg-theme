@@ -9,9 +9,16 @@ import * as hashquery from 'hashquery';
 		const faqLists = document.querySelectorAll(groupSelector)
 		faqLists.forEach(function (faqList, i) {
 			const faqs = faqList.querySelectorAll(faqSelector)
+			const internalLinks = faqList.querySelectorAll('.answer-wrapper a');
+			internalLinks.forEach( function(link) {
+				link.setAttribute('target', '_blank');
+				link.addEventListener('click', function(e) {
+					e.stopPropagation();
+				})
+			});
 			faqs.forEach(function (aFaq, j) {
 				aFaq.addEventListener('click', function (e) {
-					e.preventDefault();
+					e.preventDefault()
 					hashquery.set(faqList.id || 'faq', aFaq.id)
 					dc.faqs.onFAQClicked(aFaq.id);
 				});
