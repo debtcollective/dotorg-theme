@@ -11,6 +11,10 @@
 			}
 		}
 	}
+	&:not([class*="event_tag"]) a {
+		height: 100%;
+		margin-top: 1.5rem;
+	}
 	a {
 		box-sizing: border-box;
 		display: grid;
