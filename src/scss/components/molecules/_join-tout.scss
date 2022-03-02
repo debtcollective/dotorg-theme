@@ -36,6 +36,8 @@
     top: 6rem;
     left: -0.75rem;
     width: 16rem;
+		max-width: 100%;
+		overflow: visible;
   }
 
   &::after {
