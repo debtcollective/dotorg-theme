@@ -83,12 +83,15 @@ $sidebar-width: 280px;
 	object-fit: contain;
 }
 
+.wp-block-image img, img {
+	max-width: 100%;
+}
+
 .site-main {
 
 	max-width: get-breakpoint(lg);
   margin: 0 auto;
 	box-sizing: border-box;
-
 	padding: 0 1rem;
 
 	@media (min-width: get-breakpoint(sm)) {
