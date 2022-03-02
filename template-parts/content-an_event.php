@@ -12,7 +12,7 @@ $taxonomy = 'event_tag';
 $date_format          = \has_term( array( 'welcome-call', 'welcome-calls' ), $taxonomy, $post_id ) ? 'D, M j' : 'l F j, Y';
 $time_format          = 'g:ia';
 $default_timezone     = \get_option( 'timezone_string' );
-$timezone             = \get_post_meta( $post_id, 'timezone', true ) ?? $default_timezone;
+$timezone             = ( $tm = \get_post_meta( $post_id, 'timezone', true ) ) ? $tm : $default_timezone;
 $raw_start_date       = \get_post_meta( $post_id, 'start_date', true );
 $raw_end_date         = \get_post_meta( $post_id, 'end_date', true );
 $start_datetime       = new \DateTime( $raw_start_date );
