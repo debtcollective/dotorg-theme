@@ -52,7 +52,7 @@ function body_classes( $classes ) {
 		$classes[] = 'page-' . $post->post_name;
 
 		// Add a `has-sidebar` class if we're using the default page template (page.php).
-		if ( ! is_front_page() && ! is_page_template() ) {
+		if ( ( ! is_front_page() && ! is_page_template() ) || ( is_page_template( 'page-templates/events-archive.php' ) && \get_post_meta( get_the_ID(), 'has_sidebar', true ) ) ) {
 			$section_navigation = get_post_meta( $post->ID, 'display_section_navigation', true );
 			if ( is_active_sidebar( 'above-nav' ) || is_active_sidebar( 'below-nav' ) || ! empty( $section_navigation ) ) {
 				$classes[] = 'has-sidebar';
@@ -408,7 +408,7 @@ add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
 
 /**
  * Replace page title with display name
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/the_title/
  *
  * @param string $title   Post title

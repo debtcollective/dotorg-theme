@@ -82,9 +82,17 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
-		?>
 
-		<?php get_sidebar( 'content-footer' ); ?>
+		if( \get_post_meta( get_the_ID(), 'has_sidebar', true ) ) :
+
+			get_sidebar(); 
+
+		else :
+		
+			get_sidebar( 'content-footer' ); 
+		
+		endif;
+		?>
 
 	</main><!-- #main -->
 
