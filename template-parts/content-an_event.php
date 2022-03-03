@@ -28,28 +28,9 @@ $timezone_abbr = $generic_date->format( 'T' );
 ?>
 
 <article <?php \post_class( 'event-container event' ); ?>>
-	<?php
-	if ( \has_term( '', $taxonomy, $post_id ) ) :
-		$tags = \wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'names' ) );
-		?>
-
-		<div class="event__tag entry-meta">
-			<?php
-			 	$tag = '';
-				if ($tags[0] === 'homepage'):
-					$tag = (count($tags) > 1)? $tags[1] : '';
-				else:
-					$tag = $tags[0];
-				endif;
-				echo \esc_html( $tag );
-			?>
-		</div>
-
-	<?php endif; ?>
-
 	<a href="<?php echo \esc_url( \get_permalink() ); ?>">
 
-		<h3 class="event__title entry-title<?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>
+		<h3 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>
 
 		<div class="event__date">
 			<time dateTime=<?php echo \esc_attr( $raw_start_date ); ?>><?php echo $formatted_start_date; ?></time>
