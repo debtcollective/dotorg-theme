@@ -18,7 +18,7 @@ const variations = [
             verticalAlignment: 'center'
         },
         innerBlocks: [
-            [ 'core/column', {
+            [ 'core/group', {
                 verticalAlignment: 'top'
             }, [
                 [ 'core/embed', {
@@ -28,19 +28,15 @@ const variations = [
                     className:"wp-embed-aspect-16-9 wp-has-aspect-ratio banner__media"
                 } ]
             ] ],
-            [ 'core/column', {
-                verticalAlignment: 'top'
-            }, [
-                [ 'core/heading', {
-                    level: 2,
-                    className: 'banner__heading',
-                    placeholder: __( 'Add Heading...', 'debtcollective' )
-                } ],
-                [ 'core/paragraph', {
-                    className: 'banner__content',
-                    placeholder: __( 'Add content...', 'debtcollective' )
-                } ]
-            ] ],
+            [ 'core/heading', {
+                level: 2,
+                className: 'banner__heading',
+                placeholder: __( 'Add Heading...', 'debtcollective' )
+            } ],
+            [ 'core/paragraph', {
+                className: 'banner__content',
+                placeholder: __( 'Add content...', 'debtcollective' )
+            } ],
         ],
         example: {
             attributes: {
