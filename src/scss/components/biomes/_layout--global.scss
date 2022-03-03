@@ -65,16 +65,11 @@ $sidebar-width: 280px;
 	}
 }
 
-.entry-title {
+.entry-title, .page-header h1 {
 	font-size: get-font-size(h3);
 	@media (min-width: get-breakpoint(xs)) {
 		font-size: get-font-size(h2);
 	}
-	line-height: 1.15;
-}
-
-.page-header h1 {
-	font-size: get-font-size(h2);
 	line-height: 1.15;
 }
 
