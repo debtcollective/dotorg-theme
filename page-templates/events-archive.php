@@ -9,7 +9,10 @@
  * @package DebtCollective
  */
 
-get_header(); ?>
+get_header();
+
+$has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
+?>
 
 	<main id="main" class="container site-main">
 
