@@ -132,7 +132,11 @@ $sidebar-width: 280px;
 
 	.content-container {
 		box-sizing: border-box;
-	  max-width: get-breakpoint(lg);
+		max-width: get-breakpoint(lg);
+
+		.entry-content {
+			max-width: calc(100vw - 2rem);
+		}
 	}
 
 	.has-sidebar & {
