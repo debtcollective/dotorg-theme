@@ -32,6 +32,9 @@
 				.event__title {
 					height: auto;
 				}
+				.event__date {
+					padding-bottom: 0.5rem;
+				}
 			}
 
 			&.event_tag-welcome-calls {
@@ -79,7 +82,6 @@
 
 		.events__list {
 			margin-top: 1.5rem;
-			grid-template-columns: 1fr 1fr 1fr;
 
 			.event {
 				margin-bottom: 1.5rem;
@@ -89,6 +91,7 @@
 
 					time {
 						font-size: get-font-size(h3);
+						font-weight: 900;
 					}
 				}
 			}
@@ -99,20 +102,32 @@
 
 	}
 
-	&[data-eq-state-="large"] { // attr set by eq.js
-		.event {
-			background-color: get-color(lightest) !important;
-			padding-bottom: 2rem;
-			a {
+	&[data-eq-state~="large"] { // attr set by eq.js
+		.events__list {
+			grid-template-columns: 1fr 1fr 1fr;
+			.event {
 				background-color: get-color(lightest) !important;
+				padding-bottom: 2rem;
+				a {
+					background-color: get-color(lightest) !important;
+					.event__date {
+						max-width: 77%;
+					}
+				}
 			}
 		}
 	}
+
 	&[data-eq-state$="xl"] { // attr set by eq.js
-		.event {
-			.event__date {
-				time {
-					font-size: get-font-size(h2) !important;
+		.events__list {
+			.event {
+				a {
+					.event__date {
+						max-width: none;
+						time {
+							font-size: get-font-size(h2);
+						}
+					}
 				}
 			}
 		}

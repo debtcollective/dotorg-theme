@@ -7,7 +7,7 @@ if (eventsTout[0]) {
 		eqjs.definePts(tout, {
 			small: 250,
 			medium: 540,
-			large: 720,
+			large: 780,
 			xl: 1000
 		})
 	})
