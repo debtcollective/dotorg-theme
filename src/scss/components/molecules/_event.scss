@@ -15,9 +15,8 @@
 
 	a {
 		box-sizing: border-box;
-		display: grid;
-		grid-template-rows: 6.5rem 5.5rem 2.5rem 2.5rem;
-		grid-template-columns: 100%;
+		display: block;
+		height: 100%;
 		font-weight: 900;
 		color: get-color(grey-dark);
 		text-decoration: none;
