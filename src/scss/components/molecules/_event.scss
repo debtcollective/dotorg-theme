@@ -1,6 +1,7 @@
 .event {
 	position: relative;
 	overflow: hidden;
+
 	&:hover,
 	&:focus-within {
 		box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
@@ -11,10 +12,12 @@
 			}
 		}
 	}
+
 	&:not([class*="event_tag"]) a {
 		height: 100%;
 		margin-top: 1.5rem;
 	}
+
 	a {
 		box-sizing: border-box;
 		display: grid;
@@ -40,6 +43,7 @@
 			transition: bottom 0.2s ease-out;
 			border-color: currentColor;
 		}
+
 		&:focus::after,
 		&:hover::after {
 			bottom: 0;
@@ -59,6 +63,11 @@
 		.event__location {
 			font-weight: 400;
 		}
+	}
+
+	.event__time {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	&.event_tag-campaigns-and-trainings {
@@ -110,5 +119,24 @@
 				font-weight: 700;
 			}
 		}
+	}
+
+	&.status-cancelled::after {
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		opacity: 0.75;
+		@media (min-width: get-breakpoint(lg)) {
+			top: 35%;
+		}
+		display: block;
+		padding: 0.5rem 1rem 0.5rem 2rem;
+		transform: translate(-50%, -50%) rotate(-12deg);
+		background-color: get-color(emphasis);
+		content: "Cancelled";
+		font-weight: 900;
+		width: 100%;
+		font-size: get-font-size(h3);
+		color: get-color(lightest);
 	}
 }

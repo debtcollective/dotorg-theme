@@ -9,9 +9,13 @@
  * @package DebtCollective
  */
 
-get_header(); ?>
+get_header();
 
-	<main id="main" class="container site-main">
+$has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
+?>
+
+<div class="container site-main">
+	<main id="main" class="content-container">
 
 		<header class="page-header">
 			<?php
@@ -24,7 +28,7 @@ get_header(); ?>
 		$date_time = new \DateTime();
 		$paged     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		$scope     = get_post_meta( get_the_ID(), 'event_scope', true );
-		$args = array(
+		$args      = array(
 			'post_type' => array( 'an_event' ),
 			'paged'     => $paged,
 			'orderby'   => 'meta_value',
@@ -83,17 +87,22 @@ get_header(); ?>
 
 		endif;
 
-		if( \get_post_meta( get_the_ID(), 'has_sidebar', true ) ) :
+		if ( ! $has_sidebar ) :
 
-			get_sidebar(); 
+			get_sidebar( 'content-footer' );
 
-		else :
-		
-			get_sidebar( 'content-footer' ); 
-		
 		endif;
 		?>
 
 	</main><!-- #main -->
+
+	<?php
+	if ( $has_sidebar ) :
+
+		get_sidebar();
+
+	endif;
+	?>
+</div><!-- .container -->
 
 <?php get_footer(); ?>
