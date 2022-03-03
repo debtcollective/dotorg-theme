@@ -1,0 +1,14 @@
+.faq-list{
+	&.white-bg {
+		.wp-block-site-functionality-faq {
+			background-color: $white;
+			color: get-color(text);
+			.chevron svg path {
+				fill: get-color(text);
+			}
+			.answer a {
+				color: $black;
+			}
+		}
+	}
+}
