@@ -15,8 +15,7 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 ?>
 
 <div class="container site-main">
-
-	<main id="main" class="container site-main">
+	<main id="main" class="content-container">
 
 		<header class="page-header">
 			<?php
@@ -104,7 +103,6 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 
 	endif;
 	?>
-
-</div><!-- container -->
+</div><!-- .container -->
 
 <?php get_footer(); ?>
