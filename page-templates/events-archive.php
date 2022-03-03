@@ -86,17 +86,21 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 
 		endif;
 
-		if( \get_post_meta( get_the_ID(), 'has_sidebar', true ) ) :
+		if ( ! $has_sidebar ) :
 
-			get_sidebar(); 
+			get_sidebar( 'content-footer' );
 
-		else :
-		
-			get_sidebar( 'content-footer' ); 
-		
 		endif;
 		?>
 
 	</main><!-- #main -->
+
+	<?php
+	if ( $has_sidebar ) :
+
+		get_sidebar();
+
+	endif;
+	?>
 
 <?php get_footer(); ?>
