@@ -34,11 +34,19 @@ $timezone_abbr = $generic_date->format( 'T' );
 		?>
 
 		<div class="event__tag entry-meta">
-			<?php echo \esc_html( $tags[0] ); ?>
+			<?php
+			 	$tag = '';
+				if ($tags[0] === 'homepage'):
+					$tag = (count($tags) > 1)? $tags[1] : '';
+				else:
+					$tag = $tags[0];
+				endif;
+				echo \esc_html( $tag );
+			?>
 		</div>
 
 	<?php endif; ?>
-	
+
 	<a href="<?php echo \esc_url( \get_permalink() ); ?>">
 
 		<h3 class="event__title entry-title<?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>
