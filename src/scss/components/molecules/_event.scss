@@ -126,8 +126,8 @@
 		top: 45%;
 		left: 50%;
 		opacity: 0.75;
-		@media (min-width: get-breakpoint(md)) {
-			top: 25%;
+		@media (min-width: get-breakpoint(lg)) {
+			top: 35%;
 		}
 		display: block;
 		padding: 0.5rem 1rem 0.5rem 2rem;
