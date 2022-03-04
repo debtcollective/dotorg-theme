@@ -39,9 +39,15 @@ function toutMatchHeight() {
     if (touts.length < 2) return;
     const wrapper = grp.querySelectorAll('.content__wrapper')
     const content = grp.querySelectorAll('.tout__content')
-    if (touts.length > 1) {
-      MatchHeight.add(wrapper)
-      MatchHeight.add(touts)
+    if (touts.length > 1 ) {
+      if (grp.dataSet.matchHeightInitialized == true) {
+        MatchHeight.add(wrapper)
+        MatchHeight.add(touts)
+        grp.dataSet.matchHeightInitialized = true;
+      } else {
+        MatchHeight.update(wrapper)
+        MatchHeight.update(touts)
+      }
     }
   })
 }
