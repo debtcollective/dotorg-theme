@@ -4,7 +4,8 @@
   padding-left: 1.5rem;
   position: relative;
   aspect-ratio: 1;
-  max-width: 15rem;
+  width: 15rem;
+	height: 15rem;
   box-sizing: border-box;
 
 	@media (min-width: get-breakpoint(md)) {
