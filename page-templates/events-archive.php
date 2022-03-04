@@ -35,22 +35,35 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 			'order'     => 'DESC',
 			'meta_key'  => 'start_date',
 			'meta_type' => 'DATETIME',
+			'meta_query' => array(
+				array(
+					'key'     => 'hidden',
+					'value'   => '1',
+					'compare' => '!=',
+				),
+				array(
+					'key'     => 'hidden',
+					'value'   => true,
+					'compare' => '!=',
+				),
+				array(
+					'key'     => 'visibility',
+					'value'   => 'private',
+					'compare' => '!=',
+				),
+			)
 		);
 		if ( 'future' === $scope ) {
-			$args['meta_query'] = array(
-				array(
-					'key'     => 'start_date',
-					'value'   => $date_time->format( 'c' ),
-					'compare' => '>',
-				),
+			$args['meta_query'][] = array(
+				'key'     => 'start_date',
+				'value'   => $date_time->format( 'c' ),
+				'compare' => '>',
 			);
 		} elseif ( 'past' === $scope ) {
-			$args['meta_query'] = array(
-				array(
-					'key'     => 'start_date',
-					'value'   => $date_time->format( 'c' ),
-					'compare' => '<',
-				),
+			$args['meta_query'][] = array(
+				'key'     => 'start_date',
+				'value'   => $date_time->format( 'c' ),
+				'compare' => '<',
 			);
 		}
 
