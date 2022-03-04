@@ -5,8 +5,11 @@
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	}
 	.wp-block-cover__inner-container {
+		padding-top: 1rem;
 		@media (min-width: get-breakpoint(sm)) {
-			padding: 1.75rem 2.5rem;
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+			padding-bottom: 1.75rem;
 		}
 		.hero__heading {
 			font-size: get-font-size(h3);
