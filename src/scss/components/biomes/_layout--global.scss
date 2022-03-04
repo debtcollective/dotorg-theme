@@ -7,7 +7,7 @@ $sidebar-width: 280px;
 }
 
 .site-header {
-	max-width: get-breakpoint(lg);
+	max-width: get-breakpoint(xl);
 	margin: 6rem auto 0;
 	@media (min-width: get-breakpoint(sm)) {
 		.home & {
@@ -84,7 +84,7 @@ $sidebar-width: 280px;
 
 .site-main {
 
-	max-width: get-breakpoint(lg);
+	max-width: get-breakpoint(xl);
   margin: 0 auto;
 	box-sizing: border-box;
 	padding: 0 1rem;
@@ -127,7 +127,7 @@ $sidebar-width: 280px;
 
 	.content-container {
 		box-sizing: border-box;
-		max-width: get-breakpoint(lg);
+		max-width: get-breakpoint(xl);
 
 		.entry-content {
 			max-width: calc(100vw - 2rem);
@@ -139,6 +139,10 @@ $sidebar-width: 280px;
 		display: grid;
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
+
+		.entry-content {
+			max-width: 60rem;
+		}
 
 		.content-container {
  			grid-row: 2/3;
@@ -186,7 +190,6 @@ $sidebar-width: 280px;
 		@media (min-width: get-breakpoint(md)) {
 
 			grid-template-columns: repeat(12, 1fr);
-			padding-right: 0;
 
       .content-container {
         grid-row: span 4	;
@@ -196,7 +199,6 @@ $sidebar-width: 280px;
       aside.primary {
         grid-row: 1/2;
         grid-column: 10/13;
-        // padding: 0.24rem;
       }
 
       aside.subnav {
@@ -214,6 +216,9 @@ $sidebar-width: 280px;
         grid-column: 10/13;
       }
  		}
+		@media (min-width: get-breakpoint(md)) {
+			padding-right: 0;
+		}
 	}
 }
 
