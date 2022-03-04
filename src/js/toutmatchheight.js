@@ -14,7 +14,6 @@ if( window ) {
         const title = tout.querySelector('.tout__title')
         const content = tout.querySelector('.tout__content')
         const wrapper = document.createElement('div')
-        const fig = tout.querySelector('figure')
         if(tout.classList.contains('link-tout')) {
           const wrappingLink = tout.querySelector('a')
           if(wrappingLink) {
@@ -24,11 +23,10 @@ if( window ) {
             wrapper.append(content)
           }
         }
-        MatchHeight.add(wrapper)
       })
+      const  wrappers = grp.querySelectorAll('.content__wrapper')
+      MatchHeight.add(touts)
+      MatchHeight.add(wrappers)
     })
   })
-  window.resize = function() {
-    MatchHeight.update()
-  }
 }

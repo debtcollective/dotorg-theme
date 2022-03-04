@@ -142,13 +142,15 @@
 		}
 		> li {
 			list-style: none;
-			margin-right: 0.5rem;
-			margin-bottom: 2rem;
+			margin-right: 1rem;
+			margin-bottom: 1rem;
 			> a {
 				font-size: 1.25rem;
-				line-height: 2.67;
 				font-weight: 900;
 				color: $white;
+				display: block;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
 				text-decoration: none;
 			}
 			.sub-menu {
@@ -157,7 +159,9 @@
 				a {
 					color: $white;
 					text-decoration: none;
-					line-height: 2.5;
+					display: block;
+					padding-top: 0.5rem;
+					padding-bottom: 0.5rem;
 				}
 			}
 		}
