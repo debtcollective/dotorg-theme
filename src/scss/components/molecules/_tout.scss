@@ -143,6 +143,18 @@
 			height: auto;
 			mix-blend-mode: multiply;
 		}
+		@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(md)) {
+			svg,
+			img {
+				display: block;
+				aspect-ratio: 3/2;
+				width: 200%;
+				max-width: none;
+				// width: 150%;
+				left: 0;
+				mix-blend-mode: multiply;
+			}
+		}
 	}
 
 	> a {
