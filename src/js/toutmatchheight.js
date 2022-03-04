@@ -14,6 +14,7 @@ if( window ) {
         const title = tout.querySelector('.tout__title')
         const content = tout.querySelector('.tout__content')
         const wrapper = document.createElement('div')
+        const fig = tout.querySelector('figure')
         if(tout.classList.contains('link-tout')) {
           const wrappingLink = tout.querySelector('a')
           if(wrappingLink) {
@@ -22,34 +23,12 @@ if( window ) {
             wrapper.append(title)
             wrapper.append(content)
           }
-        } else {
-          //@Todo: Accomodate non-link-tout height matching.
         }
+        MatchHeight.add(wrapper)
       })
     })
-    setTimeout(toutMatchHeight, 200)
-    window.onResize = toutMatchHeight()
   })
+  window.resize = function() {
+    MatchHeight.update()
+  }
 }
-
-function toutMatchHeight() {
-  const groups = document.querySelectorAll(groupSelector)
-  groups.forEach( function(grp,i){
-    const touts = grp.querySelectorAll('.tout')
-    if (touts.length < 2) return;
-    const wrapper = grp.querySelectorAll('.content__wrapper')
-    const content = grp.querySelectorAll('.tout__content')
-    if (touts.length > 1 ) {
-      if (grp.dataSet.matchHeightInitialized == true) {
-        MatchHeight.add(wrapper)
-        MatchHeight.add(touts)
-        grp.dataSet.matchHeightInitialized = true;
-      } else {
-        MatchHeight.update(wrapper)
-        MatchHeight.update(touts)
-      }
-    }
-  })
-}
-
-const isMHLoaded = (MatchHeight)? true : false
