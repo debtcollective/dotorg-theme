@@ -13,16 +13,10 @@
 		}
 	}
 
-	&:not([class*="event_tag"]) a {
-		height: 100%;
-		margin-top: 1.5rem;
-	}
-
 	a {
 		box-sizing: border-box;
-		display: grid;
-		grid-template-rows: 6.5rem 5.5rem 2.5rem 2.5rem;
-		grid-template-columns: 100%;
+		display: block;
+		height: 100%;
 		font-weight: 900;
 		color: get-color(grey-dark);
 		text-decoration: none;
@@ -126,17 +120,21 @@
 		top: 45%;
 		left: 50%;
 		opacity: 0.75;
-		@media (min-width: get-breakpoint(lg)) {
-			top: 35%;
-		}
 		display: block;
-		padding: 0.5rem 1rem 0.5rem 2rem;
+		padding: 0.5rem 1rem 0.5rem 3rem;
 		transform: translate(-50%, -50%) rotate(-12deg);
 		background-color: get-color(emphasis);
 		content: "Cancelled";
 		font-weight: 900;
 		width: 100%;
-		font-size: get-font-size(h3);
 		color: get-color(lightest);
+		font-size: get-font-size(h4);
+		@media (min-width: get-breakpoint(sm)) {
+			font-size: get-font-size(h3);
+			padding: 0.5rem 1rem 0.5rem 2rem;
+		}
+		@media (min-width: get-breakpoint(lg)) {
+			top: 35%;
+		}
 	}
 }
