@@ -64,11 +64,14 @@
 			img {
 				right: 0;
 			}
-			&.non-flush img {
-				bottom: auto;
-				top: 1rem;
-				right: 1rem;
-
+			&.non-flush {
+				svg,
+				img {
+					bottom: auto;
+					top: 1rem;
+					right: 1rem;
+					height: 100%;
+				}
 			}
 		}
 	}
