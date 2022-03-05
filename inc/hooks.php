@@ -59,7 +59,7 @@ function body_classes( $classes ) {
 			}
 		}
 	}
-
+	
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -377,19 +377,21 @@ add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );
  *
  * @author Corey Collins
  *
- * @param string $block_title The default $block_title of the page.
+ * @param string $title The default $title of the page.
  *
- * @return string The updated $block_title.
+ * @return string The updated $title.
  */
-function remove_archive_title_prefix( $block_title ) {
-	// Get the single category title with no prefix.
-	$single_cat_title = single_term_title( '', false );
+function remove_archive_title_prefix( $title ) {
 
 	if ( is_category() || is_tag() || is_tax() ) {
-		return esc_html( $single_cat_title );
+		$title = single_cat_title( '', false );
 	}
 
-	return $block_title;
+	if ( is_post_type_archive( 'an_event' ) ) {
+		$title = post_type_archive_title( '', false );
+	}
+
+	return $title;
 }
 add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );
 
