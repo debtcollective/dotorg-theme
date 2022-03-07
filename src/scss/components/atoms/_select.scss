@@ -7,14 +7,8 @@ select {
 	&[multiple="multiple"] {
 		height: auto;
 	}
-	// color: get-color(jade-darker);
 	&:hover:focus {
 		background-color: get-color(formbg) !important;
 		border-radius: 0.25rem;
 	}
-	// &:not([multiple="multiple"]) option {
-  //  	background-color: $white;
-	// 	color: $black;
-  //   font-family: 'Libre Franklin', sans-serif !important;
-	// }
 }

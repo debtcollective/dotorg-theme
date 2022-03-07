@@ -100,6 +100,10 @@ $sidebar-width: 280px;
 		.search-form {
 			display: grid;
 			grid-gap: 1rem;
+			.button-search {
+				@extend .wp-block-button__link;
+			}
+
 			@media (min-width: get-breakpoint(xs)) {
 				grid-template-columns: 1fr 1fr 1fr 1fr;
 				label {
