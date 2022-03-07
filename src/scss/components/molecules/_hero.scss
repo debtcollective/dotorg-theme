@@ -33,6 +33,8 @@
 	}
 
 	&.dept-of-ed-action {
+		min-height: 650px;
+		padding: 2rem;
 		> img {
 			object-position: 30% 50% !important;
 			@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
@@ -40,13 +42,16 @@
 			}
 		}
 		.wp-block-cover__inner-container {
+			padding: 0;
+			padding-top: 0.5rem;
 			.wp-block-image {
 				margin: 0;
 			}
 			.ptag {
 				color: get-color(text);
 				padding-bottom: 1.5rem;
-				max-width: 40%;
+				// max-width: 40%;
+				max-width: 420px;
 				@media (min-width: get-breakpoint(xs)) {
 					padding-bottom: 1rem;
 				}
