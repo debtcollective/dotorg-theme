@@ -1,0 +1,8 @@
+.page-terms-conditions {
+	h3 {
+		font-size: get-font-size(h4);
+		@media (min-width: get-breakpoint(xs)) {
+			font-size: get-font-size(h3);
+		}
+	}
+}
