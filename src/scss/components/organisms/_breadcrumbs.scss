@@ -4,7 +4,7 @@
 		padding-left: 0;
 		list-style: none;
 		display: flex;
-		align-items: center; // certical alignment
+		align-items: center;
 
 		li {
 			font-weight: 300;
@@ -38,7 +38,6 @@
 					color: get-color(darkest)
 				}
 
-				/** Add Icon */
 				.material-icons {
 					background-image: url( ../images/icons/home.svg );
 					background-repeat: no-repeat;
@@ -49,6 +48,7 @@
 				}
 
 			}
+
 			.fbc-separator {
 				color: get-color(darkest)
 			}
