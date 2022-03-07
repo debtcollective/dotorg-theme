@@ -1,16 +1,21 @@
 .wp-block-cover {
 	margin-bottom: 2rem;
 	min-height: 500px;
+
+
 	&:focus-within {
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	}
+
 	.wp-block-cover__inner-container {
 		padding-top: 1rem;
+
 		@media (min-width: get-breakpoint(sm)) {
 			padding-left: 2.5rem;
 			padding-right: 2.5rem;
 			padding-bottom: 1.75rem;
 		}
+
 		.hero__heading {
 			font-size: get-font-size(h3);
 			line-height: 1.15;
@@ -21,6 +26,7 @@
 				color: get-color(canary);
 			}
 		}
+
 		.hero__content {
 			font-size: get-font-size(h5);
 			line-height: 1.5;
@@ -35,18 +41,22 @@
 	&.dept-of-ed-action {
 		min-height: 650px;
 		padding: 2rem;
+
 		> img {
 			object-position: 30% 50% !important;
 			@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
 				object-position: 20% 50% !important;
 			}
 		}
+
 		.wp-block-cover__inner-container {
 			padding: 0;
 			padding-top: 0.5rem;
+
 			.wp-block-image {
 				margin: 0;
 			}
+
 			.ptag {
 				color: get-color(text);
 				padding-bottom: 1.5rem;
@@ -58,6 +68,7 @@
 					max-width: 35%;
 				}
 			}
+
 			.buttons {
 				padding-bottom: 1.5rem;
 				@media (min-width: get-breakpoint(xs)) {
@@ -65,5 +76,25 @@
 				}
 			}
 		}
+	}
+
+	&::before {
+		display: none;
+	}
+
+	&.has-jade-dark-background-color {
+		background-color: get-color(jade);
+	}
+
+	&.has-canary-background-color {
+		background-color: get-color(canary);
+	}
+
+	&.has-emphasis-background-color {
+		background-color: get-color(emphasis);
+	}
+
+	&.has-salmon-background-color {
+		background-color: get-color(salmon);
 	}
 }
