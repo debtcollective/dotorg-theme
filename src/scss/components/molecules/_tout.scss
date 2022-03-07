@@ -8,29 +8,32 @@
 		box-sizing: border-box;
 	}
 
-	@media (min-width: get-breakpoint(xs)) {
-		.tout__link {
-			display: grid;
-			box-sizing: border-box;
-			grid-template-columns: repeat(12, 1fr);
-
-			.content__wrapper {
-				grid-column: 1 / span 8;
+	&:not(.minor) {
+		@media (min-width: get-breakpoint(xs)) {
+			.tout__link {
+				display: grid;
 				box-sizing: border-box;
-			}
+				grid-template-columns: repeat(12, 1fr);
 
-			figure {
-				padding-top: 2rem;
-				grid-column: 9 / span 4;
-				position: relative;
-				img {
-					position: absolute;
-					bottom: 0;
-					right: 0;
+				.content__wrapper {
+					grid-column: 1 / span 8;
+					box-sizing: border-box;
+				}
+
+				figure {
+					padding-top: 2rem;
+					grid-column: 9 / span 4;
+					position: relative;
+					img {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+					}
 				}
 			}
-		}
+		}		
 	}
+
 
 	@media (min-width: get-breakpoint(sm)) {
 		.tout__link {
