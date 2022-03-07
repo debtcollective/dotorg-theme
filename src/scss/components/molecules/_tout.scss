@@ -86,72 +86,72 @@
 				text-decoration: underline;
 			}
 		}
+	}
 
-		&::after {
-			display: block;
-			content: " ";
-			position: absolute;
-			width: calc(100% - 4rem);
-			left: 2rem;
-			bottom: -2rem;
-			top: auto;
-			border-bottom: 1.5rem solid transparent;
-			background-color: transparent;
-			transition: bottom 0.2s ease-out;
-			border-color: get-color(text);
-		}
 
-		&:focus-within::after,
-		&:hover::after {
-			bottom: 0;
-			transition: bottom 0.2s ease-out;
-		}
+	&::after {
+		display: block;
+		content: " ";
+		position: absolute;
+		width: calc(100% - 4rem);
+		left: 2rem;
+		bottom: -2rem;
+		top: auto;
+		border-bottom: 1.5rem solid transparent;
+		background-color: transparent;
+		transition: bottom 0.2s ease-out;
+		border-color: get-color(text);
+	}
 
-		.tout__title {
-			margin: 0;
-			font-size: get-font-size(h3);
-			line-height: 1.15;
-			padding-top: 2rem;
-		}
+	&:focus-within::after,
+	&:hover::after {
+		bottom: 0;
+		transition: bottom 0.2s ease-out;
+	}
 
-		.tout__title,
-		.tout__content {
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
+	.tout__title {
+		margin: 0;
+		font-size: get-font-size(h3);
+		line-height: 1.15;
+		padding-top: 2rem;
+	}
 
-    .tout__content {
-      box-sizing: border-box;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
+	.tout__title,
+	.tout__content {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 
-		.tout__image {
+  .tout__content {
+    box-sizing: border-box;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+	.tout__image {
+		display: block;
+		width: 100%;
+		mix-blend-mode: multiply;
+		svg,
+		img {
 			display: block;
 			width: 100%;
+			height: auto;
 			mix-blend-mode: multiply;
+		}
+		@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(md)) {
 			svg,
 			img {
 				display: block;
-				width: 100%;
-				height: auto;
+				aspect-ratio: 3/2;
+				max-width: none;
+				left: 0;
 				mix-blend-mode: multiply;
-			}
-			@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(md)) {
-				svg,
-				img {
-					display: block;
-					aspect-ratio: 3/2;
-					max-width: none;
-					left: 0;
-					mix-blend-mode: multiply;
-				}
 			}
 		}
 	}
-
 
 	> a {
 		height: 100%;
