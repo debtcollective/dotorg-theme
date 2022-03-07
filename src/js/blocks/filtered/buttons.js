@@ -5,10 +5,10 @@ function removeButtonSupport( settings, name ) {
     if ( name !== 'core/button' ) {
         return settings;
     }
- 
+
     return lodash.assign( {}, settings, {
         supports: lodash.assign( {}, settings.supports, {
-            color: { 
+            color: {
                 text: false,
                 gradient: false
             },
@@ -21,21 +21,3 @@ function removeButtonSupport( settings, name ) {
         } )
     } );
 }
-
-// addFilter(
-//     'blocks.registerBlockType',
-//     'debtcollective/buttons',
-//     removeButtonSupport
-// );
-
-function filterButtonSettings( settings, name ) {
-    if ( name === 'core/button' || name === 'core/buttons' ) {
-        console.log( { settings, name } );
-    }
-    return settings;
-}
-// addFilter(
-//     'blocks.registerBlockType',
-//     'debtcollective/button/settings',
-//     filterButtonSettings,
-// );
