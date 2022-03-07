@@ -82,8 +82,12 @@
 		display: none;
 	}
 
-	&.has-jade-dark-background-color {
+	&.has-jade-background-color {
 		background-color: get-color(jade);
+	}
+
+	&.has-jade-dark-background-color {
+		background-color: get-color(jade-dark);
 	}
 
 	&.has-canary-background-color {
