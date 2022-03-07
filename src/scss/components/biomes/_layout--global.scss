@@ -141,7 +141,9 @@ $sidebar-width: 280px;
 		grid-row-gap: 1rem;
 
 		.entry-content {
-			max-width: 60rem;
+			@media (min-width: get-breakpoint(sm)) {
+				max-width: 60rem;
+			}
 		}
 
 		.content-container {
