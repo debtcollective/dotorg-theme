@@ -1,0 +1,9 @@
+#cookie-law-info-bar {
+	z-index: 9999999999;
+	.cli_settings_button, .cli_action_button {
+		@extend .wp-block-button__link;
+	}
+	.cli_settings_button {
+		border: solid 1px currentColor !important;
+	}
+}
