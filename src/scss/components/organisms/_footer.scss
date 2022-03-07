@@ -171,12 +171,13 @@
 		margin-bottom: 6rem;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem 2rem;
 		@media (min-width: get-breakpoint(sm)) {
 			margin-bottom: 0;
 		}
 		> p {
 			margin: 0;
+			padding-right: 2rem;
+			padding-bottom: 1rem;
 		}
 		ul {
 			list-style: none;
