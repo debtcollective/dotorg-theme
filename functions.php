@@ -38,8 +38,8 @@ foreach ( debtcollective_get_theme_include_files() as $include ) {
 }
 
 
-function disable_all_guttenberg_colors() {
-        add_theme_support( 'editor-color-palette' );
-	add_theme_support( 'disable-custom-colors' );
-}
-add_action( 'after_setup_theme', 'disable_all_guttenberg_colors' );
+// function disable_all_guttenberg_colors() {
+//         add_theme_support( 'editor-color-palette' );
+// 	add_theme_support( 'disable-custom-colors' );
+// }
+// add_action( 'after_setup_theme', 'disable_all_guttenberg_colors' );

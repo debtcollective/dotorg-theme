@@ -2,7 +2,7 @@
 	"version": 1,
 	"settings": {
 		"color": {
-            "custom": false,
+      "custom": false,
 			"defaultGradients": false,
 			"defaultPalette": false,
             "customDuotone": false,
@@ -82,7 +82,7 @@
 					"color": "#ffffff"
 				}
 			]
-        },
+    },
 		"border": {
 			"customColor": false,
 			"color": "var(--wp--preset--color--grey-light)"
@@ -99,10 +99,10 @@
 		"typography": {
 			"customFontSize": false,
 			"customLineHeight": false,
-			"fontStyle": false, 
-			"fontWeight": false, 
-			"letterSpacing": false, 
-			"textDecoration": false, 
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"textDecoration": false,
 			"textTransform": false,
 			"dropCap": false,
 			"fontFamilies": [
@@ -154,7 +154,7 @@
                 "typography": {}
             },
 			"core/cover": {
-                "color": {
+        "color": {
 					"palette" : [
 						{
 							"name": "Emphasis",
