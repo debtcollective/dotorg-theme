@@ -19,7 +19,6 @@
   }
 }
 
-
 @mixin grid-two {
   display: grid;
   grid-template-columns: 1fr;
@@ -61,6 +60,10 @@
   @media (min-width: get-breakpoint(xxl)) {
     content: "xxl";
   }
+}
+
+.has-white-color {
+  color: get-color(lightest) !important
 }
 
 .site-main {
