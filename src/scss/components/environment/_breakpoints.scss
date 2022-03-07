@@ -3,7 +3,8 @@ $breakpoints: (
   'sm': 740px,
   'md': 1080px,
   'lg': 1438px,
-  'xl': 2000px
+  'xl': 2000px,
+  'xxl': 2300px
 );
 
 @function get-breakpoint($key) {
