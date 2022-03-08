@@ -66,8 +66,8 @@
   color: get-color(lightest) !important
 }
 
-.site-main {
-  &::before {
-    @extend %breakpoint-indicator;
-  }
-}
+// .site-main {
+//   &::before {
+//     @extend %breakpoint-indicator;
+//   }
+// }
