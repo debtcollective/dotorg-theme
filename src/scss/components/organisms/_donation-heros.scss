@@ -1,3 +1,4 @@
+.join-hero,
 .donate-hero {
   position: relative;
 	left: -1rem;
@@ -17,7 +18,8 @@
 		left: -2.25rem;
 	}
 
-  .donation-widget {
+  .membership-widget,
+	.donation-widget {
 		background-color: #F7F7F7;
 		border-radius: 1.25rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -48,8 +50,32 @@
 		p {
 			padding: 0 1rem 1rem;
 		}
-		button {
-			border: none;
+		form {
+			div div:first-child {
+				flex-wrap: nowrap;
+			}
+			input, #stripe-card-element {
+				box-sizing: border-box;
+			}
+			.PhoneInputCountry {
+				position: relative;
+				padding-left: 0;
+			}
+			select {
+				height: 100%;
+				width: 100%;
+			}
+			input:checked + label {
+				border: solid 1px get-color(jade-dark);
+			}
+			#option-other:checked ~ #option-other-input {
+				display: flex;
+				flex-direction: row-reverse;
+			}
+			button {
+				border: none;
+				background-color: get-color(darkest);
+			}
 		}
   }
 	figure {
