@@ -9,11 +9,17 @@
 	}
 
 	&:not(.minor) {
-		@media (min-width: get-breakpoint(xs)) {
+		@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(md)) {
 			.tout__link {
 				display: grid;
 				box-sizing: border-box;
 				grid-template-columns: repeat(12, 1fr);
+
+				.tout__title {
+					br {
+						display: none;
+					}
+				}
 
 				.content__wrapper {
 					grid-column: 1 / span 8;
@@ -31,35 +37,13 @@
 					}
 				}
 			}
-		}		
-	}
-
-
-	@media (min-width: get-breakpoint(sm)) {
-		.tout__link {
-			figure {
-				padding-top: 1rem;
-				padding-bottom: 2rem;
-			}
-		}
-
-		@media (min-width: get-breakpoint(sm)) {
-			min-height: 12rem;
-			.tout__link {
-				figure {
-					padding-top: 1rem;
-					padding-bottom: 2rem;
-				}
-			}
 		}
 
 		@media (min-width: get-breakpoint(md)) {
-			min-height: 16rem;
+			min-height: auto;
 			.tout__link {
 				display: block;
 				figure {
-					padding-top: 2rem;
-					padding-bottom: 0;
 					img {
 						position: relative;
 					}
@@ -68,16 +52,21 @@
 		}
 
 		@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(md)) {
-			.content__wrapper {
-				height: auto !important;
-			}
-			&.non-flush {
-				svg,
+
+			figure {
+				padding-bottom: 3rem;
+
 				img {
-					bottom: auto;
-					top: 1rem;
-					right: 1rem;
-					height: 100%;
+					right: 0;
+				}
+				&.non-flush {
+					svg,
+					img {
+						bottom: auto;
+						top: 1rem;
+						right: 1rem;
+						height: 100%;
+					}
 				}
 			}
 		}
@@ -89,7 +78,6 @@
 			}
 		}
 	}
-
 
 	&::after {
 		display: block;
@@ -126,16 +114,19 @@
 
   .tout__content {
     box-sizing: border-box;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+		margin: 0;
+		min-height: 3rem;
   }
 
 	.tout__image {
 		display: block;
+		box-sizing: border-box;
 		width: 100%;
 		mix-blend-mode: multiply;
+		margin: 0;
+
 		svg,
 		img {
 			display: block;
@@ -156,7 +147,6 @@
 	}
 
 	> a {
-		height: 100%;
 		display: grid;
 		color: get-color(text);
 		text-decoration: none;
@@ -192,10 +182,6 @@
 		&:focus-within::after {
 			border-color: $white;
 		}
-	}
-
-	.wp-block-image {
-		margin-bottom: 0 !important;
 	}
 
 	&.minor {
