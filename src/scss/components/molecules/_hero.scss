@@ -42,6 +42,12 @@
 		min-height: 650px;
 		padding: 2rem;
 
+		.wp-block-cover__inner-container {
+			.wp-block-image {
+				max-width: 420px;
+			}
+		}
+
 		> img {
 			object-position: 30% 50% !important;
 			@media (min-width: get-breakpoint(xs)) and (max-width: get-breakpoint(sm)) {
