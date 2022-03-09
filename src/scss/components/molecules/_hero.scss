@@ -97,6 +97,12 @@
 
 	&.has-emphasis-background-color {
 		background-color: get-color(emphasis);
+		.btn a:hover,
+		.btn a:focus,
+		.btn a:active {
+				background-color: get-color(canary);
+				color: get-color(darkest);
+		}
 	}
 
 	&.has-salmon-background-color {
