@@ -71,11 +71,13 @@
 
 	dl {
 		margin-top: 0.5rem;
+		white-space: nowrap;
+		display: inline-block;
+		padding-right: 1rem;
 	}
 
 	dt {
-		display: inline-block;
-		clear: left;
+		display: block;
 		margin-right: .125rem;
 	}
 
@@ -83,6 +85,8 @@
 		display: inline-block;
 		margin-left: 0;
 		font-weight: 700;
+		clear: right;
+		white-space: nowrap;
 
 		&::after {
 			content: "";
