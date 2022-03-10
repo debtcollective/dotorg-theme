@@ -71,7 +71,7 @@ $taxonomy = 'purchase_agreement_type';
 				<?php endif; ?>
 				<?php if ( $average = \get_post_meta( $post_id, 'average', true ) ) : ?>
 					<dt class="purchase-agreement__average entry-label">
-						<?php \esc_html_e( 'Average Debt/Debtor:', 'debtcollective' ); ?>
+						<?php \esc_html_e( 'Avg. Debt/Debtor:', 'debtcollective' ); ?>
 					</dt>
 					<dd class="purchase-agreement__average entry-value">
 						<?php printf( '<span class="currency-symbol">%s</span><span class="value">%s</span>', __( '$', 'debtcollecollective' ), DebtCollective\Inc\convert_string_to_number( $average ) ); ?>
