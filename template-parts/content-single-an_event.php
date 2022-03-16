@@ -29,30 +29,33 @@ $timezone_abbr = $generic_date->format( 'T' );
 
 <article <?php \post_class( 'event-container event' ); ?>>
 
-	<h3 class="event__title"><?php the_title(); ?></h3>
+	<div class="event__content">
 
-	<div class="event__meta">
-		<div class="event__date">
-			<time dateTime=<?php echo \esc_attr( $raw_start_date ); ?>><?php echo $formatted_start_date; ?></time>
+		<h3 class="event__title"><?php the_title(); ?></h3>
+
+		<div class="event__meta">
+			<div class="event__date">
+				<time dateTime=<?php echo \esc_attr( $raw_start_date ); ?>><?php echo $formatted_start_date; ?></time>
+			</div>
+
+			<div class="event__time event__time-start">
+				<?php
+					printf(
+						'<time dateTime=%1$s>%2$s</time> %3$s <span class="timezone-abbr">%4$s</span>',
+						\esc_attr( $raw_start_date ),
+						$formatted_start_time,
+						( $formatted_end_time && ! \has_term( 'welcome-call', $taxonomy, $post_id ) ) ? sprintf( '<span class="separator">-</span> <time dateTime=%1$s>%2$s</time>', \esc_attr( $raw_end_date ), $formatted_end_time ) : '',
+						$timezone_abbr
+					);
+					?>
+			</div>
+
+			<?php if ( $location = \get_post_meta( $post_id, 'location_venue', true ) ) : ?>
+				<div class="event__location"><?php echo \esc_attr( $location ); ?></div>
+			<?php endif; ?>
 		</div>
 
-		<div class="event__time event__time-start">
-			<?php
-				printf(
-					'<time dateTime=%1$s>%2$s</time> %3$s <span class="timezone-abbr">%4$s</span>',
-					\esc_attr( $raw_start_date ),
-					$formatted_start_time,
-					( $formatted_end_time && ! \has_term( 'welcome-call', $taxonomy, $post_id ) ) ? sprintf( '<span class="separator">-</span> <time dateTime=%1$s>%2$s</time>', \esc_attr( $raw_end_date ), $formatted_end_time ) : '',
-					$timezone_abbr
-				);
-				?>
-		</div>
-
-		<?php if ( $location = \get_post_meta( $post_id, 'location_venue', true ) ) : ?>
-			<div class="event__location"><?php echo \esc_attr( $location ); ?></div>
-		<?php endif; ?>
+		<?php the_content(); ?>
 	</div>
-
-	<div class="event__content"><?php the_content(); ?></div>
 
 </article><!-- #post-## -->
