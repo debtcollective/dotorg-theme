@@ -28,7 +28,7 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 		$date_time      = new \DateTime();
 		$paged          = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		$posts_per_page = \get_option( 'posts_per_page', 12 );
-		$sort           = ( $sort = get_post_meta( get_the_ID(), 'event_sort', true ) ) ? strtoupper( esc_attr( $sort ) ): 'DESC';
+		$sort           = ( $sort = get_post_meta( get_the_ID(), 'event_sort', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'DESC';
 		if ( class_exists( 'WpActionNetworkEvents\App\Admin\Options' ) ) {
 			$event_options  = \get_option( WpActionNetworkEvents\App\Admin\Options::OPTIONS_NAME );
 			$posts_per_page = isset( $event_options['events_per_page'] ) ? (int) $event_options['events_per_page'] : $posts_per_page;
