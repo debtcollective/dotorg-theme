@@ -77,8 +77,9 @@
 				flex-direction: row-reverse;
 			}
 			button {
-				border: none;
-				background-color: get-color(darkest);
+				@extend %btn;
+				background-color: darken(get-color(jade), 10%) !important;
+				cursor: pointer;
 			}
 		}
   }
