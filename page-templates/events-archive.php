@@ -25,40 +25,65 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 		</header><!-- .page-header -->
 
 		<?php
-		$date_time = new \DateTime();
-		$paged     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-    $posts_per_page = \get_option( 'posts_per_page', 12 );
-		if( class_exists( 'WpActionNetworkEvents\App\Admin\Options' ) ) {
-			$event_options = \get_option( WpActionNetworkEvents\App\Admin\Options::OPTIONS_NAME );
+		$date_time      = new \DateTime();
+		$paged          = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+		$posts_per_page = \get_option( 'posts_per_page', 12 );
+		$sort           = ( $sort = get_post_meta( get_the_ID(), 'event_sort', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'DESC';
+		if ( class_exists( 'WpActionNetworkEvents\App\Admin\Options' ) ) {
+			$event_options  = \get_option( WpActionNetworkEvents\App\Admin\Options::OPTIONS_NAME );
 			$posts_per_page = isset( $event_options['events_per_page'] ) ? (int) $event_options['events_per_page'] : $posts_per_page;
 		}
-		$scope     = get_post_meta( get_the_ID(), 'event_scope', true );
-		$args      = array(
-			'post_type' => array( 'an_event' ),
-			'paged'     => $paged,
-			'orderby'   => 'meta_value',
-			'order'     => 'DESC',
-			'meta_key'  => 'start_date',
-			'meta_type' => 'DATETIME',
+		$scope = get_post_meta( get_the_ID(), 'event_scope', true );
+		$args  = array(
+			'post_type'  => array( 'an_event' ),
+			'paged'      => $paged,
+			'orderby'    => 'meta_value',
+			'order'      => $sort,
+			'meta_key'   => 'start_date',
+			'meta_type'  => 'DATETIME',
 			'meta_query' => array(
-        array(
-					'key'     => 'hidden',
-					'value'   => '1',
-					'compare' => '!=',
+				array(
+					'relation' => 'OR',
+					array(
+						'key'     => 'is_hidden',
+						'compare' => 'NOT EXISTS',
+					),
+					array(
+						'key'     => 'is_hidden',
+						'value'   => '1',
+						'compare' => '!=',
+					),
+					array(
+						'key'     => 'is_hidden',
+						'value'   => true,
+						'compare' => '!=',
+					),
 				),
 				array(
-					'key'     => 'hidden',
-					'value'   => true,
-					'compare' => '!=',
+					'relation' => 'OR',
+					array(
+						'key'     => 'hidden',
+						'compare' => 'NOT EXISTS',
+					),
+					array(
+						'key'     => 'hidden',
+						'value'   => '1',
+						'compare' => '!=',
+					),
+					array(
+						'key'     => 'hidden',
+						'value'   => true,
+						'compare' => '!=',
+					),
 				),
 				array(
 					'key'     => 'visibility',
 					'value'   => 'private',
 					'compare' => '!=',
 				),
-      )
-    );
-    
+			),
+		);
+
 		if ( 'future' === $scope ) {
 			$args['meta_query'][] = array(
 				'key'     => 'start_date',
