@@ -50,13 +50,8 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 					),
 					array(
 						'key'     => 'is_hidden',
-						'value'   => '1',
-						'compare' => '!=',
-					),
-					array(
-						'key'     => 'is_hidden',
-						'value'   => true,
-						'compare' => '!=',
+						'value'   => array( '1', true ),
+						'compare' => 'NOT IN',
 					),
 				),
 				array(
@@ -67,13 +62,8 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 					),
 					array(
 						'key'     => 'hidden',
-						'value'   => '1',
-						'compare' => '!=',
-					),
-					array(
-						'key'     => 'hidden',
-						'value'   => true,
-						'compare' => '!=',
+						'value'   => array( '1', true ),
+						'compare' => 'NOT IN',
 					),
 				),
 				array(
