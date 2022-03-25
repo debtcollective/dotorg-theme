@@ -90,3 +90,23 @@ function convert_string_to_number( $string, $decimal = true, $trim = true ) {
 	$formatted      = number_format( $cleaned_number, $decimal ? 2 : 0 );
 	$formatted      = $trim ? str_replace( '.00', '', $formatted ) : $formatted;
 	return $formatted;
+}
+
+/**
+ * Query Event IDs
+ *
+ * @since 1.0.2
+ *
+ * @link https://developer.wordpress.org/apis/handbook/transients/
+ *
+ * @param string $scope
+ * @param array  $args
+ * @return array \WP_Post()->ID
+ */
+function get_event_ids( $scope = 'all', $args = array() ): array {
+	if ( method_exists( '\WpActionNetworkEvents\App\General\Queries', 'getAnEventIds' ) ) {
+
+		return \WpActionNetworkEvents\App\General\Queries::getAnEventIds( $scope, $args );
+
+	}
+}
