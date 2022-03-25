@@ -54,7 +54,13 @@ function get_attachment_id_from_url( $attachment_url = '' ) {
  * @return boolean
  */
 function has_parent( $post = null ) {
-	$children = get_posts( [ 'post_type' => 'page','post_parent' => $post->ID, 'fields' => 'ids' ] );
+	$children = get_posts(
+		array(
+			'post_type'   => 'page',
+			'post_parent' => $post->ID,
+			'fields'      => 'ids',
+		)
+	);
 	return count( $children ) > 0;
 }
 
@@ -73,7 +79,7 @@ function show_featured_image_header() {
 /**
  * Convert a string to currency-formatted number
  *
- * @param string $string
+ * @param string  $string
  * @param boolean $decimal
  * @return float $formatted
  */
@@ -81,7 +87,26 @@ function convert_string_to_number( $string, $decimal = true, $trim = true ) {
 	$pattern = '/[^0-9\.{1}]/';
 	// $cleaned_number = preg_replace( $pattern, '', $string );
 	$cleaned_number = filter_var( preg_replace( $pattern, '', $string ), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
-	$formatted = number_format( $cleaned_number, $decimal ? 2 : 0 );
-	$formatted = $trim ? str_replace( '.00', '', $formatted ) : $formatted;
+	$formatted      = number_format( $cleaned_number, $decimal ? 2 : 0 );
+	$formatted      = $trim ? str_replace( '.00', '', $formatted ) : $formatted;
 	return $formatted;
+}
+
+/**
+ * Query Event IDs
+ *
+ * @since 1.0.2
+ *
+ * @link https://developer.wordpress.org/apis/handbook/transients/
+ *
+ * @param string $scope
+ * @param array  $args
+ * @return array \WP_Post()->ID
+ */
+function get_event_ids( $scope = 'all', $args = array() ): array {
+	if ( method_exists( '\WpActionNetworkEvents\App\General\Queries', 'getAnEventIds' ) ) {
+
+		return \WpActionNetworkEvents\App\General\Queries::getAnEventIds( $scope, $args );
+
+	}
 }
