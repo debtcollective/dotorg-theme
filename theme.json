@@ -154,60 +154,11 @@
                 "typography": {}
             },
 			"core/cover": {
-        "color": {
-					"palette" : [
-						{
-							"name": "Emphasis",
-							"slug": "emphasis",
-							"color": "var(--wp--preset--color--emphasis)"
-						},
-						{
-							"name": "Salmon",
-							"slug": "salmon",
-							"color": "var(--wp--preset--color--salmon)"
-						},
-						{
-							"name": "Jade",
-							"slug": "jade",
-							"color": "var(--wp--preset--color--jade)"
-						},
-						{
-							"name": "Jade Dark",
-							"slug": "jade-dark",
-							"color": "var(--wp--preset--color--jade-dark)"
-						},
-						{
-							"name": "Jade Darker",
-							"slug": "jade-darker",
-							"color": "var(--wp--preset--color--jade-darker)"
-						},
-						{
-							"name": "Mint",
-							"slug": "mint",
-							"color": "var(--wp--preset--color--mint)"
-						},
-						{
-							"name": "Canary",
-							"slug": "canary",
-							"color": "var(--wp--preset--color--canary)"
-						},
-						{
-							"name": "Dark Gray",
-							"slug": "grey-dark",
-							"color": "var(--wp--preset--color--grey-dark"
-						},
-						{
-							"name": "White",
-							"slug": "white",
-							"color": "var(--wp--preset--color--white)"
-						}
-					]
-				},
-                "custom": {},
-                "layout": {},
-                "spacing": {},
-                "typography": {}
-            },
+          "custom": {},
+          "layout": {},
+          "spacing": {},
+          "typography": {}
+      },
 			"core/columns": {
                 "color": {},
                 "custom": {},
