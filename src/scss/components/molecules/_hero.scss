@@ -108,4 +108,12 @@
 	&.has-salmon-background-color {
 		background-color: get-color(salmon);
 	}
+
+	&.home-join {
+		.hero__heading,
+		.hero__content {
+			max-width: 58rem;
+			color: get-color(lightest) !important;
+		}
+	}
 }

@@ -20,6 +20,7 @@
 
 .btn,
 .wp-block-button {
+	border-radius: 8px;
 	a,
 	&__link {
 		@extend %btn;
@@ -89,7 +90,8 @@
 	}
 	&.inverse {
 		box-sizing: border-box;
-		border: 0.25rem get-color(emphasis) solid !important;
+		border-style: solid;
+		border-color: get-color(emphasis) !important;
 		background-color: transparent !important;
 		color: get-color(lightest) !important;
 		> .wp-block-button__link,
