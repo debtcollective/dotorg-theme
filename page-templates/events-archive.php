@@ -25,8 +25,8 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 		</header><!-- .page-header -->
 
 		<?php
-		$scope = ( $scope = get_post_meta( get_the_ID(), 'event_scope_archive', true ) ) ? esc_attr( $scope ) : 'all';
-		$sort  = ( $sort = get_post_meta( get_the_ID(), 'event_sort_archive', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'DESC';
+		$scope = ( $scope = get_post_meta( get_the_ID(), 'event_scope', true ) ) ? esc_attr( $scope ) : 'all';
+		$sort  = ( $sort = get_post_meta( get_the_ID(), 'event_sort', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'DESC';
 
 		$events = DebtCollective\Inc\get_event_ids( $scope );
 		
