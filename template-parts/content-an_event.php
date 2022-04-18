@@ -20,6 +20,8 @@ $end_datetime         = $raw_end_date ? new \DateTime( $raw_end_date ) : null;
 $formatted_start_date = $start_datetime->format( $date_format );
 $formatted_start_time = $start_datetime->format( $time_format );
 $formatted_end_time   = $end_datetime ? $end_datetime->format( $time_format ) : null;
+$is_past              = $start_datetime->format( 'Y-m-d' ) < date( 'Y-m-d', time() );
+$class                = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
 
 /** Get timezone abbreviation */
 $generic_date = new \DateTime( $raw_start_date );
@@ -27,7 +29,7 @@ $generic_date->setTimezone( new \DateTimeZone( $timezone ) );
 $timezone_abbr = $generic_date->format( 'T' );
 ?>
 
-<article <?php \post_class( 'event-container event' ); ?>>
+<article <?php \post_class( 'event-container event ' . $class ); ?>>
 	<a href="<?php echo \esc_url( \get_permalink() ); ?>">
 
 		<h3 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>

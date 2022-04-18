@@ -39,7 +39,7 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 
 		$args = array(
 			'post_type'      => array( 'an_event' ),
-			'poged'          => $paged,
+			'paged'          => $paged,
 			'posts_per_page' => $posts_per_page,
 			'orderby'        => 'meta_value',
 			'order'          => $sort,
@@ -49,7 +49,7 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 		);
 
 		$query = new \WP_Query( $args );
-
+		
 		if ( $query->have_posts() ) :
 			?>
 
@@ -74,7 +74,7 @@ $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 			<?php
 			debtcollective_display_numeric_pagination( null, $query );
 
-			wp_reset_postdata();
+			// wp_reset_postdata();
 
 		else :
 
