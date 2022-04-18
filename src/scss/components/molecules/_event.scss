@@ -21,8 +21,15 @@
 		color: get-color(grey-dark);
 		text-decoration: none;
 		padding: 2.3rem 1.2rem;
-		background-color: get-color('salmon');
 		border: solid 1px transparent;
+
+		background-color: get-color('grey-light');
+		.past > & {
+			background-color: get-color('salmon');
+		}
+		.upcoming > & {
+			background-color: rgba( get-color('jade'), 0.65);
+		}
 
 		&::after {
 			display: block;
