@@ -4,6 +4,13 @@
 		display: none;
 	}
 
+	.events__title {
+		font-size: get-font-size(h4);
+		@media (min-width: get-breakpoint(sm)) {
+			font-size: get-font-size(h3);
+		}
+	}
+
 	.content-container {
 
 		.entry-header {

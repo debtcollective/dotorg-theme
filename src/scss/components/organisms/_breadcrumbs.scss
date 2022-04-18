@@ -12,7 +12,8 @@
 			padding-right: 0.125rem;
 			padding-left: 0.125rem;
 
-			&.post-page {
+			// Hides the last item in the list, (since it appears as the page title and has no utility in breadcrumb)
+			&.active {
 				display: none;
 			}
 
