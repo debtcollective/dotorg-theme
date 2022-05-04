@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --delete --exclude 'node_modules' . $SSH_USER@$SSH_HOST_DEV:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --delete --exclude 'node_modules' . $SSH_USER@$SSH_HOST_DEV:$SSH_DEV_PATH
 
   deploy_stage:
     docker: # run the steps with Docker
