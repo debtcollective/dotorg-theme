@@ -1,20 +1,26 @@
-.person {
+.wp-block-site-functionality-team-member {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	.person__avatar {
+
+	.person__image {
 		width: 100%;
 		max-width: 16rem;
 		aspect-ratio: 1 / 1;
+		border-radius: 50%;
 	}
+
 	img {
+		display: block;
 		object-fit: cover;
 		border-radius: 50%;
 		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 		background: #FCFCF8;
+
 		&:hover, &:active, &:focus {
 			background: get-color(canary);
 		}
+
 		width: 100%;
 		height: 100%;
 		padding: 0.5rem;
@@ -23,13 +29,16 @@
 			padding: 1rem;
 		}
 	}
+
 	.person__name,
 	.person__title {
+		margin-top: 0;
+		margin-bottom: 0;
 		text-align: center;
 		font-weight: 900;
 	}
+
 	.person__name {
-		margin-top: 1rem;
 		font-size: get-font-size(h4);
 	}
 	.person__title {
