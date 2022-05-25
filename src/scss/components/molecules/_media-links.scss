@@ -30,3 +30,16 @@
 		}
 	}
 }
+
+.media-link-custom-title {
+	.wp-block-zwt-beautiful-link-preview:first-of-type {
+		border: none;
+		margin-bottom: 0;
+		.zwt-wp-link-prev-texts {
+			display: none;
+		}
+	}
+	.custom-title {
+		margin: 1rem 0 0.5em;
+	}
+}
