@@ -32,11 +32,15 @@
 }
 
 .media-link-custom-title {
-	.wp-block-zwt-beautiful-link-preview:first-of-type {
+	border-bottom: 0.25rem solid #1e9981;
+	margin-bottom: 2rem;
+	.wp-block-zwt-beautiful-link-preview {
 		border: none;
 		margin-bottom: 0;
-		.zwt-wp-link-prev-texts {
-			display: none;
+		&:first-of-type {
+			.zwt-wp-link-prev-texts {
+				display: none;
+			}
 		}
 	}
 	.custom-title {
