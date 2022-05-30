@@ -103,7 +103,7 @@ function convert_string_to_number( $string, $decimal = true, $trim = true ) {
  * @param array  $args
  * @return array \WP_Post()->ID
  */
-function get_event_ids( $scope = 'all', $args = array() ): array {
+function get_event_ids( $scope = 'all', $args = array() ) {
 	if ( method_exists( '\WpActionNetworkEvents\App\General\Queries', 'getAnEventIds' ) ) {
 
 		return \WpActionNetworkEvents\App\General\Queries::getAnEventIds( $scope, $args );
