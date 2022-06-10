@@ -13,7 +13,7 @@
  * @author Debt Collective
  */
 function debtcollective_get_theme_include_files() {
-	return [
+	return array(
 		'inc/setup.php', // Theme set up. Should be included first.
 		'inc/compat.php', // Backwards Compatibility.
 		'inc/customizer/customizer.php', // Customizer additions.
@@ -30,7 +30,7 @@ function debtcollective_get_theme_include_files() {
 		'inc/block-editor/block-styles.php', // Custom styles for this theme.
 		'inc/block-editor/block-variations.php', // Custom variations for this theme.
 		'inc/block-editor/block-renderers.php', // Custom dynamic block renderers for this theme.
-	];
+	);
 }
 
 foreach ( debtcollective_get_theme_include_files() as $include ) {
@@ -39,7 +39,7 @@ foreach ( debtcollective_get_theme_include_files() as $include ) {
 
 
 // function disable_all_guttenberg_colors() {
-//         add_theme_support( 'editor-color-palette' );
-// 	add_theme_support( 'disable-custom-colors' );
+// add_theme_support( 'editor-color-palette' );
+// add_theme_support( 'disable-custom-colors' );
 // }
 // add_action( 'after_setup_theme', 'disable_all_guttenberg_colors' );

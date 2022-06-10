@@ -103,10 +103,53 @@ function convert_string_to_number( $string, $decimal = true, $trim = true ) {
  * @param array  $args
  * @return array \WP_Post()->ID
  */
-function get_event_ids( $scope = 'all', $args = array() ): array {
+function get_event_ids( $scope = 'all', $args = array() ) {
 	if ( method_exists( '\WpActionNetworkEvents\App\General\Queries', 'getAnEventIds' ) ) {
 
 		return \WpActionNetworkEvents\App\General\Queries::getAnEventIds( $scope, $args );
 
 	}
+}
+
+/**
+ * Get event recurrences
+ *
+ * @param int   $recurrence_id
+ * @param array $args
+ * @return array of EM_Event
+ */
+function get_event_recurrences( $recurrence_id, $args = array() ) {
+	if ( ! class_exists( '\EM_Events' ) ) {
+		return;
+	}
+
+	$defaults = array(
+		'recurrence' => (int) $recurrence_id,
+		'scope'      => 'all',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	return \EM_Events::get( $args );
+}
+
+/**
+ * Get event location type
+ *
+ * @param obj $EM_Event
+ * @return mixed false || string
+ */
+function get_event_location_type( $EM_Event ) {
+	if ( ! class_exists( '\EM_Events' ) ) {
+		return;
+	}
+
+	$location = false;
+	if( $EM_Event->has_location() ) {
+		$location = 'physical';
+	}
+	if( $EM_Event->has_event_location() ) {
+		$location = 'virtual';
+	}
+	return $location;
 }
