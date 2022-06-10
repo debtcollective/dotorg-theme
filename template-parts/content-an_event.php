@@ -9,7 +9,7 @@
 $post_id  = get_the_ID();
 $taxonomy = 'event_tag';
 
-$date_format          = \has_term( array( 'welcome-call', 'welcome-calls' ), $taxonomy, $post_id ) ? 'D, M j' : 'l F j, Y';
+$date_format          = \has_term( array( 'welcome-call', 'welcome-calls' ), $taxonomy, $post_id ) ? 'D<\b\\r> M j' : 'l F j, Y';
 $time_format          = 'g:ia';
 $default_timezone     = \get_option( 'timezone_string' );
 $timezone             = ( $tm = \get_post_meta( $post_id, 'timezone', true ) ) ? $tm : $default_timezone;

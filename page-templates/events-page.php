@@ -55,7 +55,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 			$query = new \WP_Query( $args );
 
-			if ( $query->have_posts() ) :
+			if ( ! empty( $events ) && $query->have_posts() ) :
 				?>
 
 				<section class="events upcoming">
@@ -114,7 +114,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 		$query = new \WP_Query( $args );
 
-		if ( $query->have_posts() ) :
+		if ( ! empty( $events ) && $query->have_posts() ) :
 			?>
 
 			<section class="events past">
