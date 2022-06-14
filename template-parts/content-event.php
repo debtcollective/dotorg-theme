@@ -73,7 +73,10 @@ $timezone_abbr = $generic_date->format( 'T' );
 	</div>
 
 	<div class="event__content">
-		<?php echo apply_filters( 'the_content', $EM_Event->post_content ); ?>
+		<?php
+		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
+		echo apply_filters( 'the_content', $EM_Event->post_content );
+		?>
 	</div>
 
 	<div  class="event__location">
