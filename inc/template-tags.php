@@ -752,9 +752,32 @@ function debtcollective_event_map( $EM_Event, $args = array() ) {
 }
 
 /**
- * Render Event Map
+ * Render Physical Event Location
  *
- * @param obj $EM_Event
+ * @param obj   $EM_Event
+ * @param array $args
+ * @return void
+ */
+function debtcollective_physical_location( $EM_Event, $args = array() ) {
+	if ( ! is_object( $EM_Event ) ) {
+		return;
+	}
+
+	$defaults = array(
+		'target' => '_blank',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	// debtcollective_event_address( $EM_Event, $args );
+
+	debtcollective_event_map( $EM_Event, $args );
+}
+
+/**
+ * Render Virtual Event Location
+ *
+ * @param obj   $EM_Event
  * @param array $args
  * @return void
  */
