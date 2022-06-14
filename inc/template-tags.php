@@ -787,21 +787,55 @@ function debtcollective_virtual_location( $EM_Event, $args = array() ) {
 	}
 
 	$defaults = array(
-		'target' => '_blank'
+		'target' => '_blank',
 	);
 
 	$args = wp_parse_args( $args, $defaults );
-	
-	if( $EM_Event->has_event_location() ) {
-		$EM_Location = $EM_Event->get_event_location();
-		$url = $EM_Location->data['url'];
-		$text = ( $text = $EM_Location->data['text'] ) ? $text : 'Meeting Location';
-		?>
 
-		<div class="wp-block-button">
-			<a class="wp-block-button__link" href="<?php echo esc_url( $url ); ?>" title="<?php echo esc_attr( $text ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $text ); ?></a>
-		</div>
+	$link_text = array(
+		'url'          => __( 'Event Link', 'debt-collective' ),
+		'zoom_meeting' => __( 'Join Meeting', 'debt-collective' ),
+		'zoom_room'    => __( 'Go To Zoom', 'debt-collective' ),
+		'zoom_webinar' => __( 'Go To Webinar', 'debt-collective' ),
+	);
 
-		<?php
+	if ( $EM_Event->has_event_location() ) {
+		$EM_Location   = $EM_Event->get_event_location();
+		$location_type = $EM_Event->event_location_type;
+
+		if ( 'url' === $location_type ) :
+			$url  = $EM_Location->data['url'];
+			$text = array_key_exists( 'text', $EM_Location->data ) ? $EM_Location->data['text'] : $link_text['url'];
+			?>
+
+			<div class="wp-block-button">
+				<a class="wp-block-button__link" href="<?php echo esc_url( $url ); ?>" title="<?php echo esc_attr( $text ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $text ); ?></a>
+			</div>
+
+			<?php
+		elseif ( array_key_exists( $location_type, $link_text ) ) :
+			/** Zoom */
+			if ( array_key_exists( 'join_url', $EM_Location->data ) && ( $join_url = $EM_Location->data['join_url'] ) ) :
+				$text = __( 'Join', 'debt-collective' );
+				?>
+				<div class="wp-block-button">
+					<a class="wp-block-button__link" href="<?php echo esc_url( $join_url ); ?>" title="<?php echo esc_attr( $link_text[$location_type] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $link_text[$location_type] ); ?></a>
+				</div>
+				<?php
+			endif;
+			?>
+
+			<?php
+			if ( ! get_option( 'dbem_rsvp_enabled' ) && array_key_exists( 'registration_url', $EM_Location->data ) && ( $registration_url = $EM_Location->data['registration_url'] ) ) :
+				?>
+				<div class="wp-block-button">
+					<a class="wp-block-button__link" href="<?php echo esc_url( $registration_url ); ?>" title="<?php echo esc_attr( $link_text[$location_type] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $link_text[$location_type] ); ?></a>
+				</div>
+				<?php
+			endif;
+			?>
+
+			<?php
+		endif;
 	}
 }
