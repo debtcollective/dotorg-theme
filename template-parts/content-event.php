@@ -103,6 +103,13 @@ $timezone_abbr = $generic_date->format( 'T' );
 			debtcollective_event_recurrences( (int) $EM_Event->recurrence_id, $args, (int) $post_id );
 		}
 		?>
+
+		<?php
+		if ( em_is_event_rsvpable() ) {
+			em_locate_template( 'placeholders/bookingform.php', true, array( 'EM_Event' => $EM_Event ) );
+			EM_Bookings::enqueue_js();
+		}
+		?>
 	</footer>
 
 </article><!-- #post-## -->
