@@ -6,7 +6,7 @@
  *
  * @package DebtCollective
  */
-if( ! class_exists( '\EM_Event' ) ) {
+if ( ! class_exists( '\EM_Event' ) ) {
 	return;
 }
 $post_id  = get_the_ID();
@@ -73,14 +73,17 @@ $timezone_abbr = $generic_date->format( 'T' );
 	</div>
 
 	<div class="event__content">
-		<?php echo apply_filters( 'the_content', $EM_Event->post_content ); ?>
+		<?php
+		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
+		echo apply_filters( 'the_content', $EM_Event->post_content );
+		?>
 	</div>
 
 	<div  class="event__location">
-		<?php 
+		<?php
 		if ( $EM_Event->has_location() ) {
 
-			debtcollective_event_map( $EM_Event );
+			debtcollective_physical_location( $EM_Event );
 
 		} elseif ( $EM_Event->has_event_location() ) {
 
@@ -98,6 +101,13 @@ $timezone_abbr = $generic_date->format( 'T' );
 			);
 
 			debtcollective_event_recurrences( (int) $EM_Event->recurrence_id, $args, (int) $post_id );
+		}
+		?>
+
+		<?php
+		if ( em_is_event_rsvpable() ) {
+			em_locate_template( 'placeholders/bookingform.php', true, array( 'EM_Event' => $EM_Event ) );
+			EM_Bookings::enqueue_js();
 		}
 		?>
 	</footer>
