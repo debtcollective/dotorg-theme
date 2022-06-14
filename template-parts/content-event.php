@@ -6,7 +6,7 @@
  *
  * @package DebtCollective
  */
-if( ! class_exists( '\EM_Event' ) ) {
+if ( ! class_exists( '\EM_Event' ) ) {
 	return;
 }
 $post_id  = get_the_ID();
