@@ -576,9 +576,9 @@ function debtcollective_display_mobile_menu() {
 /**
  * Render Recurrences
  *
- * @param int $recurrence_id
+ * @param int   $recurrence_id
  * @param array $args
- * @param int $current_post_id
+ * @param int   $current_post_id
  * @return void
  */
 function debtcollective_event_recurrences( $recurrence_id, $args = array(), int $current_post_id = null ) {
@@ -636,9 +636,9 @@ function debtcollective_event_location( $EM_Event, $args = array() ) {
 		return;
 	}
 
-	$location_type  = DebtCollective\Inc\get_event_location_type( $EM_Event );
+	$location_type = DebtCollective\Inc\get_event_location_type( $EM_Event );
 
-	if( 'physical' === $location_type ) {
+	if ( 'physical' === $location_type ) {
 		$EM_Location = $EM_Event->get_location();
 
 		em_locate_template(
@@ -651,7 +651,7 @@ function debtcollective_event_location( $EM_Event, $args = array() ) {
 		);
 
 	}
-	
+
 	if ( $EM_Event->has_location() ) {
 		$args = array(
 			'width'  => '100%',
@@ -662,11 +662,11 @@ function debtcollective_event_location( $EM_Event, $args = array() ) {
 		$location = $EM_Event->get_event_location();
 
 		switch ( $EM_Event->location_type ) {
-			case 'url' :
+			case 'url':
 				break;
-			case 'zoom_meeting' :
-			case 'zoom_room' :
-			case 'zoom_webinar' :
+			case 'zoom_meeting':
+			case 'zoom_room':
+			case 'zoom_webinar':
 				break;
 		}
 	}
@@ -675,7 +675,7 @@ function debtcollective_event_location( $EM_Event, $args = array() ) {
 /**
  * Render Event Address
  *
- * @param obj $EM_Event
+ * @param obj   $EM_Event
  * @param array $args
  * @return void
  */
@@ -684,29 +684,29 @@ function debtcollective_event_address( $EM_Event, $args = array() ) {
 		return;
 	}
 
-	if( $EM_Event->has_location() ) {
-		$EM_Location = $EM_Event->get_location();
+	if ( $EM_Event->has_location() ) {
+		$EM_Location     = $EM_Event->get_location();
 		$default_country = get_option( 'dbem_location_default_country', 'US' );
 		?>
 
 		<div class="event__location">
-			<?php if( $location_name = $EM_Location->location_name ) : ?>
+			<?php if ( $location_name = $EM_Location->location_name ) : ?>
 				<div class="event__location-name"><?php echo esc_html( $location_name ); ?></div>
 			<?php endif; ?>
 			<div class="event__address">
-				<?php if( $address = $EM_Location->location_address ) : ?>
+				<?php if ( $address = $EM_Location->location_address ) : ?>
 					<div class="event__location-street"><?php echo esc_html( $address ); ?></div>
 				<?php endif; ?>
-				<?php if( $city = $EM_Location->location_town ) : ?>
+				<?php if ( $city = $EM_Location->location_town ) : ?>
 					<div class="event__location-city"><?php echo esc_html( $city ); ?></div>
 				<?php endif; ?>
-				<?php if( $state = $EM_Location->location_state ) : ?>
+				<?php if ( $state = $EM_Location->location_state ) : ?>
 					<div class="event__location-state"><?php echo esc_html( $state ); ?></div>
 				<?php endif; ?>
-				<?php if( $zip = $EM_Location->location_postcode ) : ?>
+				<?php if ( $zip = $EM_Location->location_postcode ) : ?>
 					<div class="event__location-zip"><?php echo esc_html( $zip ); ?></div>
 				<?php endif; ?>
-				<?php if( ( $country = $EM_Location->location_country ) && $default_country !== $EM_Location->location_country ) : ?>
+				<?php if ( ( $country = $EM_Location->location_country ) && $default_country !== $EM_Location->location_country ) : ?>
 					<div class="event__location-country"><?php echo esc_html( $country ); ?></div>
 				<?php endif; ?>
 			</div>
@@ -719,7 +719,7 @@ function debtcollective_event_address( $EM_Event, $args = array() ) {
 /**
  * Render Event Map
  *
- * @param obj $EM_Event
+ * @param obj   $EM_Event
  * @param array $args
  * @return void
  */
@@ -733,8 +733,8 @@ function debtcollective_event_map( $EM_Event, $args = array() ) {
 	);
 
 	$args = wp_parse_args( $args, $defaults );
-	
-	if( $EM_Event->has_location() ) {
+
+	if ( $EM_Event->has_location() ) {
 		$EM_Location = $EM_Event->get_location();
 		?>
 			<?php
