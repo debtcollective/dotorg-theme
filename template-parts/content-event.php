@@ -80,10 +80,10 @@ $timezone_abbr = $generic_date->format( 'T' );
 	</div>
 
 	<div  class="event__location">
-		<?php 
+		<?php
 		if ( $EM_Event->has_location() ) {
 
-			debtcollective_event_map( $EM_Event );
+			debtcollective_physical_location( $EM_Event );
 
 		} elseif ( $EM_Event->has_event_location() ) {
 
