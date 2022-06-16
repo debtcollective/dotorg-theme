@@ -9,10 +9,10 @@
 if ( ! class_exists( '\EM_Event' ) ) {
 	return;
 }
-$post_id  = ! empty( $args ) ? $args['post_id'] : get_the_ID();
+$EM_Event = $args['EM_Event'];
+$post_id  = property_exists( $EM_Event, 'post_id' ) ? $EM_Event->post_id : get_the_ID();
 $taxonomy = 'event-tags';
 
-$EM_Event       = em_get_event( $post_id, 'post_id' );
 $raw_start_date = $EM_Event->event_start_date . ' ' . $EM_Event->event_start_time;
 $raw_end_date   = $EM_Event->event_end_date . ' ' . $EM_Event->event_end_time;
 $location_type  = DebtCollective\Inc\get_event_location_type( $EM_Event );
@@ -37,9 +37,9 @@ $timezone_abbr = $generic_date->format( 'T' );
 ?>
 
 <article <?php \post_class( 'event-container event ' . $class ); ?>>
-	<a href="<?php echo \esc_url( \get_permalink() ); ?>">
+	<a href="<?php echo \esc_url( \get_permalink( $post_id ) ); ?>">
 
-		<h3 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h3>
+		<h3 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php echo apply_filters( 'the_title', $EM_Event->event_name ); ?></h3>
 
 		<div class="event__date">
 			<time dateTime="<?php echo \esc_attr( $raw_start_date ); ?>"><?php echo $formatted_start_date; ?></time>
