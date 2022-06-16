@@ -383,10 +383,8 @@ function debtcollective_display_numeric_pagination( $args = array(), $query = nu
 		$query = $wp_query;
 	}
 
-	// Make the pagination work on custom query loops.
 	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
-	// Set defaults.
 	$defaults = array(
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
@@ -394,7 +392,6 @@ function debtcollective_display_numeric_pagination( $args = array(), $query = nu
 		'total'     => $total_pages,
 	);
 
-	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
 	if ( null === paginate_links( $args ) ) {
@@ -773,6 +770,54 @@ function debtcollective_physical_location( $EM_Event, $args = array() ) {
 
 	debtcollective_event_map( $EM_Event, $args );
 }
+
+/**
+ * Render Virtual Event Location
+ *
+ * @param obj   $EM_Event
+ * @param array $args
+ * @return void
+ */
+function debtcollective_virtual_location_text( $EM_Event, $args = array() ) {
+	if ( ! is_object( $EM_Event ) ) {
+		return;
+	}
+
+	$defaults = array(
+		'target' => '_blank',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	$types = array(
+		'url',
+		'zoom_meeting',
+		'zoom_room',
+		'zoom_webinar',
+	);
+
+	if ( $EM_Event->has_event_location() ) {
+		$EM_Location   = $EM_Event->get_event_location();
+		$location_type = $EM_Event->event_location_type;
+
+		if ( 'url' === $location_type ) :
+			$url  = $EM_Location->data['url'];
+			?>
+
+			<?php //echo esc_url( $url ); ?>
+			<?php esc_html_e( 'Virtual Meeting', 'debt-collective' ); ?>
+
+			<?php
+		elseif ( in_array( $location_type, $types ) ) :
+			?>
+			
+			<?php esc_html_e( 'Virtual Meeting', 'debt-collective' ); ?>
+
+			<?php
+		endif;
+	}
+}
+
 
 /**
  * Render Virtual Event Location
