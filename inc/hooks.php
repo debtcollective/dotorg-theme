@@ -59,7 +59,7 @@ function body_classes( $classes ) {
 			}
 		}
 	}
-	
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -426,3 +426,32 @@ function replace_page_title( $title, $post_id ) {
 
 	return $title;
 }
+
+/**
+ * Modify events archive query
+ *
+ * @param object $query
+ * @return void
+ */
+function pre_get_events( $query ) {
+	if ( ! \is_admin() && $query->is_main_query() && \is_post_type_archive( 'event' ) ) {
+		$scope   = 'past';
+		$order   = $scope === 'past' ? 'ASC' : 'DESC';
+		$compare = $scope === 'future' ? '>=' : '<';
+		$datetime = new \DateTime( 'NOW', new \DateTimeZone( \wp_timezone_string() ) );
+		$datetime->setTimezone( new \DateTimeZone( 'UTC' ) );
+		
+		$query->set( 'order', $order );
+		$query->set( 'scope', $scope );
+
+		$meta_query[] = array(
+			'key'     => '_event_end',
+			'value'   => $datetime->format( 'Y-m-d H:i:s' ),
+			'compare' => $compare,
+			'type'    => 'DATETIME',
+		);
+		$query->set( 'meta_query', $meta_query );
+		return;
+	}
+}
+add_filter( 'pre_get_posts', __NAMESPACE__ . '\pre_get_events', 11 );
