@@ -36,7 +36,6 @@ get_header(); ?>
 				 */
 				$scope   = 'future';
 				$sort    = ( $sort = get_post_meta( get_the_ID(), 'event_sort', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'DESC';
-				$heading = ( $heading = get_post_meta( get_the_ID(), 'event_heading_upcoming', true ) ) ? esc_html( $heading ) : esc_html__( 'Upcoming', 'debtcollective' );
 
 				$args = array(
 					'scope'         => $scope,
@@ -53,7 +52,7 @@ get_header(); ?>
 					<section class="events upcoming">
 
 						<header class="events__header">
-							<h2 class="events__title"><?php echo $heading; ?></h2>
+							<h2 class="events__title"><?php esc_html_e( 'Upcoming', 'debtcollective' ); ?></h2>
 						</header>
 
 						<div class="events__list">
@@ -82,15 +81,12 @@ get_header(); ?>
 			?>
 
 			<section class="events past">
-				<?php
-				$heading = ( $heading = get_post_meta( get_the_ID(), 'event_heading', true ) ) ? esc_html( $heading ) : esc_html__( 'Past', 'debtcollective' );
-				?>
 
 				<header class="events__header">
 					<?php
 					if ( ! empty( $events ) ) :
 						?>
-						<h2 class="events__title"><?php echo $heading; ?></h2>
+						<h2 class="events__title"><?php esc_html_e( 'Past', 'debtcollective' ) ?></h2>
 						<?php
 					endif;
 					?>
