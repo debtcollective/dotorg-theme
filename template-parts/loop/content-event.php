@@ -28,7 +28,10 @@ $formatted_start_date = $start_datetime->format( $date_format );
 $formatted_start_time = $start_datetime->format( $time_format );
 $formatted_end_time   = $end_datetime ? $end_datetime->format( $time_format ) : null;
 $is_past              = $start_datetime->format( 'Y-m-d' ) < date( 'Y-m-d', time() );
+$is_recurring         = property_exists( $EM_Event, 'recurrence_id' ) && $EM_Event->recurrence_id;
 $class                = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
+$class               .= $is_recurring ? ' is-recurring' : '';
+
 
 /** Get timezone abbreviation */
 $generic_date = new \DateTime( $raw_start_date );
