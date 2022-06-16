@@ -65,7 +65,7 @@ get_header(); ?>
 								 * If you want to override this in a child theme, then include a file
 								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 								 */
-								get_template_part( 'template-parts/loop/content', get_post_type(), array( 'post_id' => $event->post_id ) );
+								get_template_part( 'template-parts/loop/content', 'event', array( 'EM_Event' => $event ) );
 
 							endforeach;
 							?>
@@ -98,8 +98,12 @@ get_header(); ?>
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
+						$args = array();
+						if ( class_exists( '\EM_Event' ) ) {
+							$args['EM_Event'] = em_get_event( $post->ID, 'post_id' );
+						}
 
-							get_template_part( 'template-parts/loop/content', get_post_type() );
+						get_template_part( 'template-parts/loop/content', 'event', $args );
 
 					endwhile;
 					?>
