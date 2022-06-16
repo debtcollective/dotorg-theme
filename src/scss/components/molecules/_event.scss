@@ -66,6 +66,14 @@
 		}
 	}
 
+	&.upcoming > a {
+		background-color: rgba( get-color('jade'), 0.65);
+	}
+
+	&.past > a {
+		background-color: get-color('salmon');
+	}
+
 	.event__time {
 		margin-top: 1rem;
 		margin-bottom: 1rem;

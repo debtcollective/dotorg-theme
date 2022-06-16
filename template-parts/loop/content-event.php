@@ -6,10 +6,10 @@
  *
  * @package DebtCollective
  */
-if( ! class_exists( '\EM_Event' ) ) {
+if ( ! class_exists( '\EM_Event' ) ) {
 	return;
 }
-$post_id  = get_the_ID();
+$post_id  = ! empty( $args ) ? $args['post_id'] : get_the_ID();
 $taxonomy = 'event-tags';
 
 $EM_Event       = em_get_event( $post_id, 'post_id' );
