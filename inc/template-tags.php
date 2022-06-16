@@ -383,10 +383,8 @@ function debtcollective_display_numeric_pagination( $args = array(), $query = nu
 		$query = $wp_query;
 	}
 
-	// Make the pagination work on custom query loops.
 	$total_pages = isset( $query->max_num_pages ) ? $query->max_num_pages : 1;
 
-	// Set defaults.
 	$defaults = array(
 		'prev_text' => '&laquo;',
 		'next_text' => '&raquo;',
@@ -394,7 +392,6 @@ function debtcollective_display_numeric_pagination( $args = array(), $query = nu
 		'total'     => $total_pages,
 	);
 
-	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
 	if ( null === paginate_links( $args ) ) {
