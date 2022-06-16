@@ -778,6 +778,54 @@ function debtcollective_physical_location( $EM_Event, $args = array() ) {
  * @param array $args
  * @return void
  */
+function debtcollective_virtual_location_text( $EM_Event, $args = array() ) {
+	if ( ! is_object( $EM_Event ) ) {
+		return;
+	}
+
+	$defaults = array(
+		'target' => '_blank',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	$types = array(
+		'url',
+		'zoom_meeting',
+		'zoom_room',
+		'zoom_webinar',
+	);
+
+	if ( $EM_Event->has_event_location() ) {
+		$EM_Location   = $EM_Event->get_event_location();
+		$location_type = $EM_Event->event_location_type;
+
+		if ( 'url' === $location_type ) :
+			$url  = $EM_Location->data['url'];
+			?>
+
+			<?php //echo esc_url( $url ); ?>
+			<?php esc_html_e( 'Virtual Meeting', 'debt-collective' ); ?>
+
+			<?php
+		elseif ( in_array( $location_type, $types ) ) :
+			?>
+			
+			<?php esc_html_e( 'Virtual Meeting', 'debt-collective' ); ?>
+
+			<?php
+		endif;
+	}
+}
+
+
+/**
+ * Render Virtual Event Location
+ *
+ * @param obj   $EM_Event
+ * @param array $args
+ * @return void
+ */
 function debtcollective_virtual_location( $EM_Event, $args = array() ) {
 	if ( ! is_object( $EM_Event ) ) {
 		return;
