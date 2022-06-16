@@ -60,10 +60,18 @@ $timezone_abbr = $generic_date->format( 'T' );
 				?>
 		</div>
 
-		<?php if ( $location = \get_post_meta( $post_id, 'location_venue', true ) ) : ?>
-			<div class="event__location"><?php echo \esc_attr( $location ); ?></div>
-		<?php endif; ?>
+		<div class="event__location">
+			<?php
+			if ( $EM_Event->has_location() ) {
 
+				debtcollective_event_address( $EM_Event );
+
+			} elseif ( $EM_Event->has_event_location() ) {
+
+				debtcollective_virtual_location_text( $EM_Event );
+			}
+			?>
+		</div>
 	</a>
 
 </article><!-- #post-## -->
