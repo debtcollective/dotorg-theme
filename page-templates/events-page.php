@@ -140,10 +140,11 @@ $paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 			</section>
 
 			<?php
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
+		else : ?>
+			
+			<!-- No Event Posts Found -->
+		
+			<?php
 		endif;
 
 		if ( ! $has_sidebar ) :
