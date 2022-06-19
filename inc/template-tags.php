@@ -629,47 +629,6 @@ function debtcollective_event_recurrences( $recurrence_id, $args = array(), int 
 	}
 }
 
-function debtcollective_event_location( $EM_Event, $args = array() ) {
-	if ( ! is_object( $EM_Event ) ) {
-		return;
-	}
-
-	$location_type = DebtCollective\Inc\get_event_location_type( $EM_Event );
-
-	if ( 'physical' === $location_type ) {
-		$EM_Location = $EM_Event->get_location();
-
-		em_locate_template(
-			'placeholders/locationmap.php',
-			true,
-			array(
-				'args'        => $args,
-				'EM_Location' => $EM_Location,
-			)
-		);
-
-	}
-
-	if ( $EM_Event->has_location() ) {
-		$args = array(
-			'width'  => '100%',
-			'height' => '400px',
-		);
-
-	} elseif ( $EM_Event->has_event_location() ) {
-		$location = $EM_Event->get_event_location();
-
-		switch ( $EM_Event->location_type ) {
-			case 'url':
-				break;
-			case 'zoom_meeting':
-			case 'zoom_room':
-			case 'zoom_webinar':
-				break;
-		}
-	}
-}
-
 /**
  * Render Event Address
  *
