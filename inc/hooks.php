@@ -387,13 +387,13 @@ function remove_archive_title_prefix( $title ) {
 		$title = single_cat_title( '', false );
 	}
 
-	if ( is_post_type_archive( 'an_event' ) ) {
+	if ( is_post_type_archive( 'an_event' ) || is_post_type_archive( 'event' ) ) {
 		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
 }
-add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );
+\add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );
 
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
