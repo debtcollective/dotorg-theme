@@ -801,17 +801,17 @@ function debtcollective_virtual_location_text( $EM_Event, $args = array() ) {
 		$location_type = $EM_Event->event_location_type;
 
 		if ( 'url' === $location_type ) :
-			$url  = $EM_Location->data['url'];
+			$url = $EM_Location->data['url'];
 			?>
 
-			<?php //echo esc_url( $url ); ?>
-			<?php esc_html_e( 'Virtual Meeting', 'debt-collective' ); ?>
+			<?php // echo esc_url( $url ); ?>
+			<?php esc_html_e( 'Virtual', 'debt-collective' ); ?>
 
 			<?php
 		elseif ( in_array( $location_type, $types ) ) :
 			?>
 			
-			<?php esc_html_e( 'Virtual Meeting', 'debt-collective' ); ?>
+			<?php esc_html_e( 'Virtual', 'debt-collective' ); ?>
 
 			<?php
 		endif;
