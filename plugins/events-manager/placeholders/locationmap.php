@@ -12,32 +12,6 @@ if( ! is_object( $EM_Location ) ) {
 	return;
 }
 
-$default_country = get_option( 'dbem_location_default_country', 'US' );
-?>
-<div class="event__location-address">
-	<?php if( $location_name = $EM_Location->location_name ) : ?>
-		<div class="event__location-name"><?php echo esc_html( $location_name ); ?></div>
-	<?php endif; ?>
-	<div class="event__address">
-		<?php if( $address = $EM_Location->location_address ) : ?>
-			<div class="event__location-street"><?php echo esc_html( $address ); ?></div>
-		<?php endif; ?>
-		<?php if( $city = $EM_Location->location_town ) : ?>
-			<div class="event__location-city"><?php echo esc_html( $city ); ?></div>
-		<?php endif; ?>
-		<?php if( $state = $EM_Location->location_state ) : ?>
-			<div class="event__location-state"><?php echo esc_html( $state ); ?></div>
-		<?php endif; ?>
-		<?php if( $zip = $EM_Location->location_postcode ) : ?>
-			<div class="event__location-zip"><?php echo esc_html( $zip ); ?></div>
-		<?php endif; ?>
-		<?php if( ( $country = $EM_Location->location_country ) && $default_country !== $EM_Location->location_country ) : ?>
-			<div class="event__location-country"><?php echo esc_html( $country ); ?></div>
-		<?php endif; ?>
-	</div>
-</div>
-
-<?php
 if ( get_option( 'dbem_gmap_is_active' ) && ( $EM_Location->location_latitude != 0 && $EM_Location->location_longitude != 0 ) ) {
 	// assign random number for element id reference
 	$rand = substr( md5( rand() . rand() ), 0, 5 );
@@ -62,7 +36,7 @@ if ( get_option( 'dbem_gmap_is_active' ) && ( $EM_Location->location_latitude !=
 				</div>
 			</div>
 			<div class='em-location-map-info' id='em-location-map-info-<?php echo $rand; ?>' style="display:none; visibility:hidden;">
-				<div class="em-map-balloon" style="font-size:12px;">
+				<div class="em-map-balloon">
 					<div class="em-map-balloon-content" ><?php echo $EM_Location->output( get_option( 'dbem_location_baloon_format' ) ); ?></div>
 				</div>
 			</div>
@@ -73,5 +47,5 @@ if ( get_option( 'dbem_gmap_is_active' ) && ( $EM_Location->location_latitude !=
 			<?php
 	}
 } elseif ( is_object( $EM_Location ) && $EM_Location->location_latitude == 0 && $EM_Location->location_longitude == 0 ) {
-	echo '<em>' . __( 'Map Unavailable', 'events-manager' ) . '</em>';
+	echo '<div class="notice-error"><em>' . __( 'Map Unavailable', 'events-manager' ) . '</em></div>';
 }

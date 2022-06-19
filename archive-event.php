@@ -11,7 +11,6 @@ get_header(); ?>
 	<main id="main" class="container site-main">
 
 		<?php
-		if ( have_posts() ) :
 			$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 			$limit = get_option( 'dbem_location_event_list_limit', get_option( 'posts_per_page' ) );
 			?>
@@ -44,7 +43,7 @@ get_header(); ?>
 					'limit'         => 0,
 				);
 
-				$events = EM_Events::get( $args );
+				$events = \EM_Events::get( $args );
 
 				if ( ! empty( $events ) ) :
 					?>
@@ -65,7 +64,7 @@ get_header(); ?>
 								 * If you want to override this in a child theme, then include a file
 								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 								 */
-								get_template_part( 'template-parts/loop/content', 'event', array( 'EM_Event' => $event ) );
+								get_template_part( 'template-parts/loop/content', 'event', array( 'EM_Event' => $event, 'post_id' => $event->post_id ) );
 
 							endforeach;
 							?>
@@ -78,6 +77,10 @@ get_header(); ?>
 
 				endif;
 			}
+			?>
+
+		<?php
+		if ( have_posts() ) :
 			?>
 
 			<section class="events past">
