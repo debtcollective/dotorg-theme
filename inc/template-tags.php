@@ -818,7 +818,6 @@ function debtcollective_virtual_location_text( $EM_Event, $args = array() ) {
 	}
 }
 
-
 /**
  * Render Virtual Event Location
  *
@@ -864,7 +863,7 @@ function debtcollective_virtual_location( $EM_Event, $args = array() ) {
 				$text = __( 'Join', 'debt-collective' );
 				?>
 				<div class="wp-block-button">
-					<a class="wp-block-button__link" href="<?php echo esc_url( $join_url ); ?>" title="<?php echo esc_attr( $link_text[$location_type] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $link_text[$location_type] ); ?></a>
+					<a class="wp-block-button__link" href="<?php echo esc_url( $join_url ); ?>" title="<?php echo esc_attr( $link_text[ $location_type ] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $link_text[ $location_type ] ); ?></a>
 				</div>
 				<?php
 			endif;
@@ -874,7 +873,7 @@ function debtcollective_virtual_location( $EM_Event, $args = array() ) {
 			if ( ! get_option( 'dbem_rsvp_enabled' ) && array_key_exists( 'registration_url', $EM_Location->data ) && ( $registration_url = $EM_Location->data['registration_url'] ) ) :
 				?>
 				<div class="wp-block-button">
-					<a class="wp-block-button__link" href="<?php echo esc_url( $registration_url ); ?>" title="<?php echo esc_attr( $link_text[$location_type] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $link_text[$location_type] ); ?></a>
+					<a class="wp-block-button__link" href="<?php echo esc_url( $registration_url ); ?>" title="<?php echo esc_attr( $link_text[ $location_type ] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $link_text[ $location_type ] ); ?></a>
 				</div>
 				<?php
 			endif;
