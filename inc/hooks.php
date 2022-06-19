@@ -435,30 +435,15 @@ function replace_page_title( $title, $post_id ) {
  */
 function pre_get_events( $query ) {
 	if ( ! \is_admin() && $query->is_main_query() && \is_post_type_archive( 'event' ) ) {
-		$scope   = 'past';
-		$order   = $scope === 'past' ? 'ASC' : 'DESC';
-		$compare = $scope === 'future' ? '>=' : '<';
-		$datetime = new \DateTime( 'NOW', new \DateTimeZone( \wp_timezone_string() ) );
-		$datetime->setTimezone( new \DateTimeZone( 'UTC' ) );
-		
-		$query->set( 'order', $order );
-		$query->set( 'scope', $scope );
-
-		$meta_query[] = array(
-			'key'     => '_event_end',
-			'value'   => $datetime->format( 'Y-m-d H:i:s' ),
-			'compare' => $compare,
-			'type'    => 'DATETIME',
-		);
-		$query->set( 'meta_query', $meta_query );
-		return;
 	}
 }
-add_filter( 'pre_get_posts', __NAMESPACE__ . '\pre_get_events', 11 );/**
+// \add_filter( 'pre_get_posts', __NAMESPACE__ . '\pre_get_events', 11 );
+
+/**
  * Override event formats
  * Formats, which can be set in Events Manager > Settings > Formats control the way event content is rendered
  * Formats can be overridden when files are placed in `./debtcollective/plugins/events-manager/formats`
- * 
+ *
  * Note: file name corresponds to the `wp_options` key in database, which holds the format, minus `dbem_` prefix
  * `dbem_event_list_item_format_header` -> event_list_item_format_header.php
  *
