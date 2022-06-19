@@ -582,6 +582,7 @@ function debtcollective_event_recurrences( $recurrence_id, $args = array(), int 
 	$defaults = array(
 		'recurrence' => (int) $recurrence_id,
 		'scope'      => 'all',
+		'title'      => esc_html__( 'Events in Series', 'debt-collective' ),
 	);
 
 	$args = wp_parse_args( $args, $defaults );
@@ -592,7 +593,7 @@ function debtcollective_event_recurrences( $recurrence_id, $args = array(), int 
 	if ( $recurrences = DebtCollective\Inc\get_event_recurrences( (int) $recurrence_id, $args ) ) {
 		?>
 		<section class="recurrences">
-			<h4 class="recurrences__title"><?php esc_html_e( 'Events in Series', 'debt-collective' ); ?></h4>
+			<h4 class="recurrences__title"><?php echo $args['title']; ?></h4>
 			<ul class="recurrences__list">
 			<?php
 			foreach ( $recurrences as $recurrence ) {
