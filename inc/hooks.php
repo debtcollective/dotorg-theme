@@ -454,4 +454,26 @@ function pre_get_events( $query ) {
 		return;
 	}
 }
-add_filter( 'pre_get_posts', __NAMESPACE__ . '\pre_get_events', 11 );
+add_filter( 'pre_get_posts', __NAMESPACE__ . '\pre_get_events', 11 );/**
+ * Override event formats
+ * Formats, which can be set in Events Manager > Settings > Formats control the way event content is rendered
+ * Formats can be overridden when files are placed in `./debtcollective/plugins/events-manager/formats`
+ * 
+ * Note: file name corresponds to the `wp_options` key in database, which holds the format, minus `dbem_` prefix
+ * `dbem_event_list_item_format_header` -> event_list_item_format_header.php
+ *
+ * @param array $array
+ * @return array $array
+ */
+function events_custom_formats( $array ) {
+	$formats = array(
+		'dbem_event_list_item_format_header',
+		'dbem_event_list_item_format',
+		'dbem_event_list_item_format_footer',
+		'dbem_location_baloon_format',
+		'dbem_map_text_format',
+		'dbem_time_format',
+	);
+	return $array + $formats;
+}
+\add_filter( 'em_formats_filter', __NAMESPACE__ . '\events_custom_formats', 1, 1 );
