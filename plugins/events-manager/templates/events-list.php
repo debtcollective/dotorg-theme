@@ -9,27 +9,32 @@
  *
  */
 $upcoming_defaults = apply_filters( 'em_content_events_args', $args );
+$page =  isset( $_GET['pno'] ) ? (int) $_GET['pno'] : get_query_var( 'pno', 1 );
 
 $scope = 'future';
 $sort  = 'ASC';
 
 $outcoming_args = array(
-	'scope'   => $scope,
-	'order'   => $sort,
-	'groupby' => 'scope',
-	'limit'   => 0,
+	'scope'         => $scope,
+	'order'         => $sort,
+	'limit'         => 0,
+	'pagination'    => 0,
 );
 
 $outcoming_args = wp_parse_args( $outcoming_args, $upcoming_defaults ); ?>
 
 <section class="events upcoming">
-
-	<header class="events__header">
-		<h2 class="events__title"><?php esc_html_e( 'Upcoming', 'debtcollective' ); ?></h2>
-	</header>
-
+	
 	<?php
-	echo EM_Events::output( $outcoming_args );
+	if( 1 === $page ) :
+		?>
+		<header class="events__header">
+			<h2 class="events__title"><?php esc_html_e( 'Upcoming', 'debtcollective' ); ?></h2>
+		</header>
+
+		<?php
+		echo EM_Events::output( $outcoming_args );
+	endif;
 	?>
 	
 </section><!-- .events.past -->
@@ -41,11 +46,10 @@ $scope = 'past';
 $sort  = 'DESC';
 
 $past_args = array(
-	'scope'      => $scope,
-	'order'      => $sort,
-	'groupby'    => 'scope',
-	'limit'      => 0,
-	'pagination' => 1,
+	'scope'         => $scope,
+	'order'         => $sort,
+	'limit'         => get_option( 'dbem_events_default_limit', 24 ),
+	'pagination'    => 1,
 );
 
 $past_args = wp_parse_args( $past_args, $past_defaults );
