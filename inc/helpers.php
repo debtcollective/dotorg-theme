@@ -153,3 +153,16 @@ function get_event_location_type( $EM_Event ) {
 	}
 	return $location;
 }
+
+/**
+ * Get Timezone Abbreviation
+ *
+ * @param string $date
+ * @param string $timezone
+ * @return string timezone abbr
+ */
+function get_timezone_abbr( string $date, string $timezone ) {
+	$generic_date = new \DateTime( $date );
+	$generic_date->setTimezone( new \DateTimeZone( $timezone ) );
+	return $generic_date->format( 'T' );
+}
