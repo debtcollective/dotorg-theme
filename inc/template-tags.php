@@ -884,3 +884,92 @@ function debtcollective_virtual_location( $EM_Event, $args = array() ) {
 		endif;
 	}
 }
+/**
+ * Render Event Map
+ *
+ * @param obj   $EM_Event
+ * @param array $args
+ * @return void
+ */
+function debtcollective_event_map_placeholders( $EM_Event ) {
+	if ( ! is_object( $EM_Event ) ) {
+		return;
+	}
+	echo $EM_Event->output( '#_LOCATIONMAP' );
+}
+
+/**
+ * Render Event Location using EM Placeholders
+ *
+ * @link https://wp-events-plugin.com/documentation/placeholders/
+ * @link https://wp-events-plugin.com/documentation/location-types/
+ *
+ * @param object $EM_Event
+ * @param array  $args
+ * @return void
+ */
+function debtcollective_physical_location_placeholders( $EM_Event ) {
+	?>
+	<div class="event__location-address">
+		<div class="event__location-name"><?php echo $EM_Event->output( '#_LOCATIONNAME' ); ?></div>
+		<div class="event__address">
+			<div class="event__location-street"><?php echo $EM_Event->output( '#_LOCATIONADDRESS' ); ?></div>
+			<div class="event__location-city"><?php echo $EM_Event->output( '#_LOCATIONTOWN' ); ?></div>
+			<div class="event__location-state"><?php echo $EM_Event->output( '#_LOCATIONSTATE' ); ?></div>
+			<div class="event__location-zip"><?php echo $EM_Event->output( '#_LOCATIONPOSTCODE' ); ?></div>
+		</div>
+		<?php debtcollective_event_map_placeholders( $EM_Event ); ?>
+	</div>
+	<?php
+}
+
+/**
+ * Render Event Location using EM Placeholders
+ *
+ * @link https://wp-events-plugin.com/documentation/placeholders/
+ * @link https://wp-events-plugin.com/documentation/location-types/
+ *
+ * @param object $EM_Event
+ * @param array  $args
+ * @return void
+ */
+function debtcollective_location_link( $EM_Event ) {
+	?>
+	<div class="wp-block-buttons">
+		<div class="wp-block-button">
+			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->output( '#_EVENTLOCATION{url}' ) ); ?>" target="_blank"><?php echo esc_html( $EM_Event->output( '#_EVENTLOCATION{text}' ) ); ?></a>
+		</div>
+	</div>
+	<?php
+}
+
+/**
+ * Render Event RSVP  formusing EM Placeholders
+ *
+ * @link https://wp-events-plugin.com/documentation/placeholders/
+ * @link https://wp-events-plugin.com/documentation/location-types/
+ *
+ * @param object $EM_Event
+ * @param array  $args
+ * @return void
+ */
+function debtcollective_rsvp_placeholders( $EM_Event, $args = array() ) {
+	if ( ! is_object( $EM_Event ) ) {
+		return;
+	}
+
+	$defaults = array(
+		'title' => esc_html__( 'RSVP', 'debt-collective' ),
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	if ( function_exists( 'em_is_event_rsvpable' ) && em_is_event_rsvpable() ) :
+		?>
+		<div class="event__rsvp">
+			<h4 class="event__rsvp-title"><?php echo $args['title']; ?></h4>
+			<?php echo $EM_Event->output( '#_BOOKINGFORM' ); ?>
+		</div>
+		<?php
+	endif;
+}
