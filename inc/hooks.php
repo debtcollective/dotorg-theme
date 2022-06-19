@@ -461,4 +461,14 @@ function events_custom_formats( $array ) {
 	);
 	return $array + $formats;
 }
-\add_filter( 'em_formats_filter', __NAMESPACE__ . '\events_custom_formats', 1, 1 );
+\add_filter( 'em_formats_filter', __NAMESPACE__ . '\events_custom_formats', 1, 1 );/**
+ * Modify the pagination
+ *
+ * @param string $pagination
+ * @return string $pagination
+ */
+function events_pagination( string $pagination ) {
+	$pagination = str_replace( 'em-pagination', 'container pagination-container', $pagination );
+	return $pagination;
+}
+\add_filter( 'em_paginate', __NAMESPACE__ . '\events_pagination' );
