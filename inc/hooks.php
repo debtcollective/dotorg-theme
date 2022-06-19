@@ -370,7 +370,7 @@ function add_og_tags() {
 	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />
 	<?php
 }
-add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );
+\add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );
 
 /**
  * Removes or Adjusts the prefix on category archive page titles.
@@ -406,7 +406,7 @@ function disable_wpautop_for_gutenberg() {
 		remove_filter( 'the_content', 'wpautop' );
 	}
 }
-add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
+\add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
 
 /**
  * Replace page title with display name
@@ -461,7 +461,9 @@ function events_custom_formats( $array ) {
 	);
 	return $array + $formats;
 }
-\add_filter( 'em_formats_filter', __NAMESPACE__ . '\events_custom_formats', 1, 1 );/**
+\add_filter( 'em_formats_filter', __NAMESPACE__ . '\events_custom_formats', 1, 1 );
+
+/**
  * Modify the pagination
  *
  * @param string $pagination
