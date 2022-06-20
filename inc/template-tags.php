@@ -861,16 +861,19 @@ function debtcollective_event_recurrences_placeholders( $EM_Event, $args = array
 	);
 
 	$args = wp_parse_args( $args, $defaults );
-	?>
 
-	<section class="recurrences">
-		<h4 class="recurrences__title"><?php echo $args['title']; ?></h4>
-		<?php
-		echo $EM_Event->output( '#_RECURRENCES' );
+	if ( ! empty( $EM_Event->recurrence_id ) ) :
 		?>
-	</section>
-		
-	<?php
+
+		<section class="recurrences">
+			<h4 class="recurrences__title"><?php echo $args['title']; ?></h4>
+			<?php
+			echo $EM_Event->output( '#_RECURRENCES' );
+			?>
+		</section>
+			
+		<?php
+	endif;
 }
 
 /**
