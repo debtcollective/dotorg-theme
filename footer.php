@@ -12,6 +12,7 @@
 ?>
 
 	<footer class="site-footer">
+		<a name="stayintheloop></a>
 		<div class="container">
 			<?php debtcollective_display_social_network_links(); ?>
 
