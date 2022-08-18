@@ -1,4 +1,8 @@
 <?php
+global $EM_Event;
+if( ! $EM_Event ) {
+    return;
+}
 $post_id = $EM_Event->output( '#_EVENTPOSTID' );
 ?>
 <article id="post-<?php echo intval( $post_id ); ?>" class="event-container event{is_past} past{/is_past}{is_future} future{/is_future}{is_recurrence} is-recurring{/is_recurrence}">
