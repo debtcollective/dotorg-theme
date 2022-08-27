@@ -161,6 +161,15 @@ function is_zoom( object $EM_Event ) : bool {
 	$type = get_event_type( $EM_Event );
 	return str_contains( $type, 'zoom' );
 }
+
+/**
+ * Has RSVP
+ *
+ * @param integer $id
+ * @return boolean
+ */
+function has_rsvp( int $post_id ) {
+	return \get_post_meta( $post_id, 'enable_rsvp', true );
 }
 
 /**
