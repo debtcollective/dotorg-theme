@@ -152,6 +152,16 @@ function get_event_location_type( $EM_Event ) {
 		$location = 'virtual';
 	}
 	return $location;
+/**
+ * Check if zoom event
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_zoom( object $EM_Event ) : bool {
+	$type = get_event_type( $EM_Event );
+	return str_contains( $type, 'zoom' );
+}
 }
 
 /**
