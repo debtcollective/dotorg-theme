@@ -139,19 +139,37 @@ function get_event_recurrences( $recurrence_id, $args = array() ) {
  * @param obj $EM_Event
  * @return mixed false || string
  */
-function get_event_location_type( $EM_Event ) {
+function get_event_type( object $EM_Event ) {
 	if ( ! class_exists( '\EM_Events' ) ) {
 		return;
 	}
 
-	$location = false;
-	if( $EM_Event->has_location() ) {
-		$location = 'physical';
-	}
+	$type = 'physical';
 	if( $EM_Event->has_event_location() ) {
-		$location = 'virtual';
+		$type = $EM_Event->event_location_type;
 	}
-	return $location;
+	return $type;
+}
+
+/**
+ * Check if zoom event
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_zoom( object $EM_Event ) : bool {
+	$type = get_event_type( $EM_Event );
+	return str_contains( $type, 'zoom' );
+}
+
+/**
+ * Has RSVP
+ *
+ * @param integer $id
+ * @return boolean
+ */
+function has_rsvp( int $post_id ) {
+	return \get_post_meta( $post_id, 'enable_rsvp', true );
 }
 
 /**
