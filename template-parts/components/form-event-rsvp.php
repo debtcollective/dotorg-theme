@@ -12,11 +12,6 @@ if( ! isset( $options['rsvp_form'] ) || ! $options['rsvp_form'] ) {
 }
 $EM_Event = $args['EM_Event'];
 
-// var_dump( $EM_Event->event_location->data['id'], $EM_Event );
-
-var_dump( 'Is Zoom: ', DebtCollective\Inc\is_zoom( $EM_Event ) );
-var_dump( 'Is URL: ', DebtCollective\Inc\is_url( $EM_Event ) );
-
 /**
  * Contact Form 7 form
  * Modify fields and markup within plugin
@@ -24,7 +19,7 @@ var_dump( 'Is URL: ', DebtCollective\Inc\is_url( $EM_Event ) );
  * `data-status` changes to 'sent' after form is submitted
  * 'sent' class is added to form after form is submitted
  */
-$form = sprintf( '[contact-form-7 id="%s" title="%s" event_id="%s" post_id="%s" zoom_id=""]', 
+$form = sprintf( '[contact-form-7 id="%s" title="%s" event_id="%s" post_id="%s" zoom_id="%s"]', 
 	$options['rsvp_form'],
 	esc_html__( 'RSVP', 'debtcollective' ),
 	$EM_Event->event_id,
