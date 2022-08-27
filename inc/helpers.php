@@ -159,7 +159,20 @@ function get_event_type( object $EM_Event ) {
  */
 function is_zoom( object $EM_Event ) : bool {
 	$type = get_event_type( $EM_Event );
-	return str_contains( $type, 'zoom' );
+	// return str_contains( $type, 'zoom' );
+	return strpos( $type, 'zoom' ) !== false;
+}
+
+/**
+ * Check if url event
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_url( object $EM_Event ) : bool {
+	$type = get_event_type( $EM_Event );
+	// return str_contains( $type, 'url' );
+	return strpos( $type, 'url' ) !== false;
 }
 
 /**
