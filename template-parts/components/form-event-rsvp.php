@@ -12,9 +12,7 @@ if( ! isset( $options['rsvp_form'] ) || ! $options['rsvp_form'] ) {
 }
 $EM_Event = $args['EM_Event'];
 
-if( 'production' !== wp_get_environment_type() ) {
-	var_dump( $EM_Event->event_location->data['id'], $EM_Event );
-}
+var_dump( $EM_Event->event_location->data['id'], $EM_Event );
 
 /**
  * Contact Form 7 form
