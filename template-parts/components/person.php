@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package site-functionality
+ * @package DebtCollective
  */
 $attributes = $data->attributes;
 $user = $data->person;
