@@ -139,19 +139,18 @@ function get_event_recurrences( $recurrence_id, $args = array() ) {
  * @param obj $EM_Event
  * @return mixed false || string
  */
-function get_event_location_type( $EM_Event ) {
+function get_event_type( object $EM_Event ) {
 	if ( ! class_exists( '\EM_Events' ) ) {
 		return;
 	}
 
-	$location = false;
-	if( $EM_Event->has_location() ) {
-		$location = 'physical';
-	}
+	$type = 'physical';
 	if( $EM_Event->has_event_location() ) {
-		$location = 'virtual';
+		$type = $EM_Event->event_location_type;
 	}
-	return $location;
+	return $type;
+}
+
 /**
  * Check if zoom event
  *
