@@ -19,10 +19,11 @@ $EM_Event = $args['EM_Event'];
  * `data-status` changes to 'sent' after form is submitted
  * 'sent' class is added to form after form is submitted
  */
-$form = sprintf( '[contact-form-7 id="%s" title="%s" event_id="%s" post_id="%s" zoom_id="%s"]', 
+$form = sprintf( '[contact-form-7 id="%s" title="%s" event_id="%s" event_name="%s" post_id="%s" zoom_id="%s"]', 
 	$options['rsvp_form'],
 	esc_html__( 'RSVP', 'debtcollective' ),
 	$EM_Event->event_id,
+	$EM_Event->event_name,
 	$args['post_id'],
 	( DebtCollective\Inc\is_zoom( $EM_Event ) ) ? $EM_Event->event_location->data['id'] : null
 );
