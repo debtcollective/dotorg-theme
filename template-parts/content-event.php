@@ -9,6 +9,8 @@
 if ( ! class_exists( '\EM_Event' ) ) {
 	return;
 }
+global $EM_Event;
+
 $post_id  = get_the_ID();
 $taxonomy = 'event-tags';
 $EM_Event = em_get_event( $post_id, 'post_id' );
@@ -48,6 +50,22 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?></time>
 	</div>
 
+	<div class="event__location">
+		<?php
+		if ( $EM_Event->has_location() ) :
+			?>
+			<?php debtcollective_event_address_placeholders( $EM_Event ); ?>
+		
+			<?php
+		elseif ( $EM_Event->has_event_location() ) :
+			?>
+
+			<?php debtcollective_location_link( $EM_Event ); ?>
+			<?php
+		endif;
+		?>
+	</div>
+
 	<div class="event__content">
 		<?php
 		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
@@ -55,20 +73,15 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		?>
 	</div>
 
-	<div class="event__location">
-		<?php
-		if ( $EM_Event->has_location() ) :
-			?>
-			<?php debtcollective_physical_location_placeholders( $EM_Event ); ?>
-
-			<?php
-		elseif ( $EM_Event->has_event_location() ) :
-			?>
-			<?php debtcollective_location_link( $EM_Event ); ?>
-			<?php
-		endif;
+	<?php
+	if ( $EM_Event->has_location() ) :
 		?>
-	</div>
+		<div class="event__location map">
+			<?php debtcollective_event_map_placeholders( $EM_Event ); ?>
+		</div>
+		<?php
+	endif;
+	?>
 
 	<footer class="event__footer">
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>

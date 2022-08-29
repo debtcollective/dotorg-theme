@@ -942,10 +942,41 @@ function debtcollective_physical_location_placeholders( $EM_Event ) {
  * @return void
  */
 function debtcollective_location_link( $EM_Event ) {
+	if( DebtCollective\Inc\is_zoom( $EM_Event ) ) {
+		debtcollective_location_link_zoom( $EM_Event );
+	} elseif( DebtCollective\Inc\is_url( $EM_Event ) ) {
+		debtcollective_location_link_url( $EM_Event );
+	}
+}
+
+/**
+ * Render Zoom Link
+ *
+ * @param object $EM_Event
+ * @return void
+ */
+function debtcollective_location_link_zoom( $EM_Event ) {
 	?>
 	<div class="wp-block-buttons">
-		<div class="wp-block-button">
-			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->output( '#_EVENTLOCATION{url}' ) ); ?>" target="_blank"><?php echo esc_html( $EM_Event->output( '#_EVENTLOCATION{text}' ) ); ?></a>
+		<div class="wp-block-button join">
+			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['join_url'] ); ?>" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
+		</div>
+	</div>
+	<?php
+}
+
+/**
+ * Render URL
+ *
+ * @param object $EM_Event
+ * @return void
+ */
+function debtcollective_location_link_url( $EM_Event ) {
+	$text = ( $EM_Event->event_location->data['text'] ) ? $EM_Event->event_location->data['text'] : esc_html__( 'Event Link', 'debtcollective' );
+	?>
+	<div class="wp-block-buttons">
+		<div class="wp-block-button url">
+			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['url'] ); ?>" target="_blank"><?php echo $text; ?></a>
 		</div>
 	</div>
 	<?php
