@@ -40,7 +40,7 @@ $display_title_tagline = get_theme_mod( 'header_text', 'false' );
 			logosmall=<?php echo esc_url( \get_stylesheet_directory_uri() . '/build/images/logo-small.png' ); ?>
 			community="<?php echo getenv( 'COMMUNITY_URL' ); ?>"
 			homepage="/"
-			WordPress="<?php echo getenv( 'WORDPRESS_URL' ); ?>"
+			wordpress="<?php echo getenv( 'WORDPRESS_URL' ); ?>"
 			returnurl="<?php echo getenv( 'RETURN_URL' ); ?>"
 			id="dc-header"
 		></dc-header>
