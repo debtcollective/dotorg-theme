@@ -63,6 +63,8 @@ function wdsOffCanvas() {
 		offCanvasOpen.classList.remove( 'is-visible' );
 		offCanvasClose.classList.remove( 'is-visible' );
 		offCanvasScreen.classList.remove( 'is-visible' );
+		document.body.classList.remove( 'menu-visible' );
+
 
 		offCanvasContainer.setAttribute( 'aria-hidden', true );
 		offCanvasOpen.setAttribute( 'aria-expanded', false );
@@ -94,6 +96,7 @@ function wdsOffCanvas() {
 		offCanvasOpen.classList.add( 'is-visible' );
 		offCanvasClose.classList.add( 'is-visible' );
 		offCanvasScreen.classList.add( 'is-visible' );
+		document.body.classList.add( 'menu-visible' );
 
 		offCanvasContainer.setAttribute( 'aria-hidden', false );
 		offCanvasOpen.setAttribute( 'aria-expanded', true );
