@@ -24,6 +24,8 @@ function body_classes( $classes ) {
 
 	if ( get_theme_mod( 'display_global_header' ) ) {
 		$classes[] = 'has-global-header';
+	} else {
+		$classes[] = 'has-site-header';
 	}
 
 	// If it's IE, add a class.
