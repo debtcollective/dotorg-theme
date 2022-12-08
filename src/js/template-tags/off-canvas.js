@@ -31,10 +31,12 @@ function wdsOffCanvas() {
 	const offCanvasContainer = document.querySelector(
 			'.off-canvas-container'
 		),
-		offCanvasOpen = document.querySelector( '.off-canvas-open' );
+		offCanvasOpen = document.querySelector( '.off-canvas-open' ),
+		offCanvasClose = document.querySelector( '.off-canvas-close' );
 
 	offCanvasOpen.addEventListener( 'click', toggleOffCanvas );
 	offCanvasScreen.addEventListener( 'click', closeOffCanvas );
+	offCanvasClose.addEventListener( 'click', closeOffCanvas );
 	document.body.addEventListener( 'keydown', closeOnEscape );
 
 	/**
@@ -59,10 +61,12 @@ function wdsOffCanvas() {
 	function closeOffCanvas() {
 		offCanvasContainer.classList.remove( 'is-visible' );
 		offCanvasOpen.classList.remove( 'is-visible' );
+		offCanvasClose.classList.remove( 'is-visible' );
 		offCanvasScreen.classList.remove( 'is-visible' );
 
 		offCanvasContainer.setAttribute( 'aria-hidden', true );
 		offCanvasOpen.setAttribute( 'aria-expanded', false );
+		offCanvasClose.setAttribute( 'aria-expanded', false );
 	}
 
 	/**
@@ -88,9 +92,11 @@ function wdsOffCanvas() {
 	function openOffCanvas() {
 		offCanvasContainer.classList.add( 'is-visible' );
 		offCanvasOpen.classList.add( 'is-visible' );
+		offCanvasClose.classList.add( 'is-visible' );
 		offCanvasScreen.classList.add( 'is-visible' );
 
 		offCanvasContainer.setAttribute( 'aria-hidden', false );
 		offCanvasOpen.setAttribute( 'aria-expanded', true );
+		offCanvasClose.setAttribute( 'aria-expanded', true );
 	}
 }
