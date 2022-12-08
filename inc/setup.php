@@ -162,6 +162,7 @@ function widgets_init() {
 		'content-footer' => esc_html__( 'Content Footer', 'debtcollective' ),
 		'footer'    => esc_html__( 'Footer', 'debtcollective' ),
 	];
+		'menu-footer'    => esc_html__( 'Menu Footer', 'debtcollective' ),
 
 	// Loop through each sidebar and register.
 	foreach ( $sidebars as $sidebar_id => $sidebar_name ) {
@@ -173,6 +174,8 @@ function widgets_init() {
 				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', 'debtcollective' ), $sidebar_name ),
 				'before_widget' => '<div class="widget %2$s">',
 				'after_widget'  => '</div>',
+				'before_widget' => 'menu-footer' === $sidebar_id ? '<footer class="widget menu-footer %2$s">' : '<div class="widget %2$s">',
+				'after_widget'  => 'menu-footer' === $sidebar_id ? '</footer>' : '</div>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
 			]
