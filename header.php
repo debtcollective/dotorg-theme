@@ -10,6 +10,7 @@
  */
 $display_global_header = get_theme_mod( 'display_global_header', 'true' );
 $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
+$display_title_tagline = get_theme_mod( 'header_text', 'false' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -49,7 +50,7 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 
 	<header class="site-header">
 
-		<div class="container">
+		<!-- <div class="container"> -->
 
 			<?php
 			if ( $display_site_branding ) :
@@ -61,27 +62,30 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 					<?php endif; ?>
 
 					<?php the_custom_logo(); ?>
-
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					
+					<?php if( $display_title_tagline ) : ?>
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<p class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php endif; ?>
+					
+						<?php
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) :
+							?>
+							<p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
 					<?php endif; ?>
-
-					<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) :
-						?>
-						<p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
 					<?php endif; ?>
 
 				</div><!-- .site-branding -->
 			<?php endif; ?>
 
 
-		</div><!-- .container -->
+		<!-- </div> -->
+		<!-- .container -->
 
-		<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
+		<?php if ( ! $display_global_header && has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
 			<div class="off-canvas-screen"></div>
 			<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Main navigation', 'debtcollective' ); ?>" aria-hidden="true" tabindex="-1">
 				<div class="off-canvas-content">
@@ -92,12 +96,14 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 					</header>
 					<?php
 					$menu_args = array(
-						'theme_location'  => 'primary',
-						'container'       => false,
-						'menu_id'         => 'site-mobile-menu',
-						'menu_class'      => 'mobile-menu',
-						'fallback_cb'     => false,
-						'items_wrap'      => '<menu class="menu-content"><ul id="%1$s" class="%2$s">%3$s</ul></menu>',
+						'theme_location' => 'primary',
+						'container'      => false,
+						'menu_id'        => 'site-mobile-menu',
+						'menu_class'     => 'mobile-menu',
+						'fallback_cb'    => false,
+						'items_wrap'     => '<menu class="menu-content"><ul id="%1$s" class="%2$s">%3$s</ul></menu>',
+						'link_before'    => '<span class="menu-item-label">',
+						'link_after'     => '</span>',
 					);
 
 					wp_nav_menu( $menu_args );
@@ -111,8 +117,9 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 					?>
 				</div><!-- .off-canvas-content-->
 			</nav><!-- #site-navigation-->
-			<?php 
-		endif; ?>
+			<?php
+		endif;
+		?>
 
 		<?php echo do_shortcode( '[flexy_breadcrumb]' ); ?> 
 
