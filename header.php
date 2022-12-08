@@ -81,19 +81,38 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 
 		</div><!-- .container -->
 
-		<nav id="site-navigation" class="main-navigation navigation-menu" aria-label="<?php esc_attr_e( 'Main Navigation', 'debtcollective' ); ?>">
-			<?php
-			wp_nav_menu(
-				array(
-					'fallback_cb'    => false,
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu dropdown container',
-					'container'      => false,
-				)
-			);
-			?>
-		</nav><!-- #site-navigation-->
+		<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
+			<div class="off-canvas-screen"></div>
+			<nav class="off-canvas-container" aria-label="<?php esc_attr_e( 'Main navigation', 'debtcollective' ); ?>" aria-hidden="true" tabindex="-1">
+				<div class="off-canvas-content">
+					<header class="menu-header">
+						<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
+							<button type="button" class="off-canvas-close" aria-expanded="false" aria-label="<?php esc_attr_e( 'Close Menu', 'debtcollective' ); ?>"></button>
+						<?php endif; ?>
+					</header>
+					<?php
+					$menu_args = array(
+						'theme_location'  => 'primary',
+						'container'       => false,
+						'menu_id'         => 'site-mobile-menu',
+						'menu_class'      => 'mobile-menu',
+						'fallback_cb'     => false,
+						'items_wrap'      => '<menu class="menu-content"><ul id="%1$s" class="%2$s">%3$s</ul></menu>',
+					);
+
+					wp_nav_menu( $menu_args );
+					?>
+					<?php
+					if ( is_active_sidebar( 'menu-footer' ) ) :
+						?>
+							<?php dynamic_sidebar( 'menu-footer' ); ?>
+						<?php
+					endif;
+					?>
+				</div><!-- .off-canvas-content-->
+			</nav><!-- #site-navigation-->
+			<?php 
+		endif; ?>
 
 		<?php echo do_shortcode( '[flexy_breadcrumb]' ); ?> 
 
