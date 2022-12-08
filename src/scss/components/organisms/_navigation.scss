@@ -8,58 +8,47 @@
         background-color: get-color('lightest');
 
 		left: -100%;
-		transition: left 0.6s ease-in-out;
-		width: 25%;
-		max-width: 320px;
+		transition: left 0.3s ease-in-out;
+		width: $menu-width;
 		z-index: 9998;
 
 		&.is-visible {
 			left: 0;
             top: 0;
 		}
-
-		.admin-bar & {
-			margin-top: 62px;
-		}
 	}
 
 	&-open,
 	&-close {
-        position: absolute;
-        left: 0;
         display: block;
 
 		background: url( ../images/icons/hamburger.svg ) 50% 50% no-repeat
 			transparent;
 		background-size: 100%;
-		height: 28px;
-		width: 28px;
+		height: 18px;
+		width: 18px;
 		border: none;
-		right: 12px;
 		top: 12px;
+		// right: 12px;
+        left: 16px;
 		z-index: 9999;
+		cursor: pointer;
 
-		.admin-bar & {
-			position: absolute;
-			top: 48px;
-		}
+		.admin-bar & {}
 
 		&:focus,
-		&:hover {
-			outline: 2px solid get-color('black');
-		}
-
-		&.is-visible {
-			background-image: url( ../images/icons/close.svg );
-		}
+		&:hover {}
 	}
+
+	&-open {}
 
 	&-close {
 		z-index: 9999;
+		background-image: url( ../images/icons/close.svg );
 	}
 
 	&-screen {
-        background-color: rgba( 0, 0, 0, .25 );
+        background-color: rgba( $black, .25 );
         visibility: hidden;
         position: fixed;
 
@@ -74,6 +63,10 @@
         display: none;
 		visibility: hidden;
 		backface-visibility: hidden;
+		box-sizing: border-box;
+		height: 0;
+		width: 0;
+		transition: transform 0.3s ease 0s, width 0.3s linear, height 0.3s linear;
 
 		.is-visible & {
 			backface-visibility: visible;
@@ -86,15 +79,25 @@
 			width: 100%;
 			top: 0;
 			left: 0;
-			max-width: 320px;
+			max-width: $menu-width;
 			padding: 0;
-			transition: transform 0.216s ease 0s;
+			
 			background-color: $white;
 			box-shadow: rgba(0, 0, 0, 0.25) 0 0.125rem 0.25rem -0.0625rem;
 
 			.menu-content {
 				transform: translate3d(0, 0, 0);
 				visibility: visible;
+			}
+
+			.admin-bar & {
+				margin-top: $wp-admin-lg;
+				height: calc( 100vh - #{$wp-admin-lg} );
+
+				@include breakpoint(wp-lg) {
+					margin-top: $wp-admin-sm;
+					height: calc( 100vh - #{$wp-admin-sm} );
+				}
 			}
 		}
 
@@ -130,20 +133,16 @@
 		}
 
 		.menu-footer {
-			// position: fixed;
-			// bottom: 0;
-			// width: 25%;
-			// max-width: 320px;
-			background: rgba(255, 255, 255, 0.92);
+			background: rgba($white, 0.92);
 			bottom: 0;
-			box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 6px;
+			box-shadow: rgba($black, 0.25) 1px 2px 6px;
 			display: flex;
 			justify-content: space-between;
 			left: 0;
+			right: 0;
 			padding-bottom: 1.5rem;
 			padding-top: 1.5rem;
 			position: absolute;
-			right: 0;
 			z-index: 1;
 		}
 
@@ -159,7 +158,7 @@
 	padding: 0;
 	margin: 0;
 	width: 100%;
-	max-width: 320px;
+	max-width: $menu-width;
 	display: block;
 
 	li {
@@ -181,11 +180,38 @@
 		a {
 			color: get-color( 'text' );
 			text-decoration: none;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 
 		&.is-visible {
 			background-color: get-color('grey-light');
 			border-left-color: get-color('emphasis');
+		}
+
+		&:hover,
+		&:focus {
+			background-color: get-color('grey-light');
+		}
+
+		&-has-children {
+			a {}
+
+			button {
+				width: 24px;
+				height: 24px;
+				background-image: url(  ../images/icons/chevron-down.svg );
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: transparent;
+				background-size: 50%;
+				border: none;
+
+				&[aria-expanded="true"] {
+					background-image: url(  ../images/icons/chevron-up.svg );
+				}
+			}
 		}
 	}
 
@@ -193,13 +219,16 @@
 		display: none;
 		visibility: hidden;
 		backface-visibility: hidden;
+		transform: all 0.3s ease 0s;
 		padding-left: 0;
 
 		.menu-item {
 			font-size: 1rem;
 			font-weight: 200;
-			line-height: 2.5;
+			line-height: 1.5;
 			font-family: get-font('more');
+			padding-top: 8px;
+			padding-bottom: 8px;
 		}
 
 		&.is-visible {
@@ -211,26 +240,68 @@
 }
 
 .site-branding {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
 	align-items: center;
 	backface-visibility: hidden;
 	background-color: get-color('lightest');
-	box-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px;
-	display: flex;
-	justify-content: space-between;
-	top: 0;
-	left: 0;
-	padding: 1rem 15px;
-	position: fixed;
+	box-shadow: rgba($black, 0.25) 0 4px 4px;
+	padding: 0.75rem $spacer;
 	width: 100%;
+	box-sizing: border-box;
+	transform: translate3d(0, 0, 0);
+	transition: transform 0.3s ease-in-out;
 	z-index: 1020;
+
+	@include breakpoint(sm) {
+		justify-content: flex-start;
+	}
+
+	.menu-visible & {
+		transform: translate3d($menu-width, 0, 0);
+	}
+
+	.admin-bar & {
+		margin-top: $wp-admin-lg;
+
+		@include breakpoint(wp-lg) {
+			margin-top: $wp-admin-sm;
+		}
+	}
 }
 
 .custom-logo-link {
-	width: 184px;
+	height: 54px;
 	display: block;
+	justify-self: center;
+	transition: margin-left .3s linear;
+
+	background-image: url(../images/logo-min.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	margin-left: calc( (100% / 2) - ( 54px / 2 ) - 18px );
+
+	.menu-visible & {
+		margin-left: 28px;
+	}
 
 	img {
-		width: 100%;
-		height: auto;
+		width: 54px;
+		height: 100%;
+		object-fit: contain;
+		visibility: hidden;
+	}
+
+	@include breakpoint(sm) {
+		background-image: none;
+		margin-left: 28px;
+
+		img {
+			visibility: visible;
+			width: auto;
+		}
 	}
 }
