@@ -56,6 +56,10 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 				?>
 				<div class="site-branding">
 
+					<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
+						<button id="toggle-nav" type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open Menu', 'debtcollective' ); ?>"></button>
+					<?php endif; ?>
+
 					<?php the_custom_logo(); ?>
 
 					<?php if ( is_front_page() && is_home() ) : ?>
@@ -74,9 +78,6 @@ $display_site_branding = get_theme_mod( 'display_site_branding', 'true' );
 				</div><!-- .site-branding -->
 			<?php endif; ?>
 
-			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'mobile' ) ) : ?>
-				<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open Menu', 'debtcollective' ); ?>"></button>
-			<?php endif; ?>
 
 		</div><!-- .container -->
 
