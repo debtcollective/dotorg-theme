@@ -59,12 +59,12 @@ function setup() {
 
 	// Register navigation menus.
 	register_nav_menus(
-		[
+		array(
 			'primary' => esc_html__( 'Primary Menu', 'debtcollective' ),
 			'footer'  => esc_html__( 'Footer Menu', 'debtcollective' ),
 			'mobile'  => esc_html__( 'Mobile Menu', 'debtcollective' ),
 			'privacy' => esc_html__( 'Privacy Menu', 'debtcollective' ),
-		]
+		)
 	);
 
 	/**
@@ -73,13 +73,13 @@ function setup() {
 	 */
 	add_theme_support(
 		'html5',
-		[
+		array(
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		]
+		)
 	);
 
 	// Set up the WordPress core custom background feature.
@@ -87,23 +87,23 @@ function setup() {
 		'custom-background',
 		apply_filters(
 			'debtcollective_custom_background_args',
-			[
+			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
-			]
+			)
 		)
 	);
 
 	// Custom logo support.
 	add_theme_support(
 		'custom-logo',
-		[
+		array(
 			'height'      => 250,
 			'width'       => 500,
 			'flex-height' => true,
 			'flex-width'  => true,
-			'header-text' => [ 'site-title', 'site-description' ],
-		]
+			'header-text' => array( 'site-title', 'site-description' ),
+		)
 	);
 
 	// Add theme support for selective refresh for widgets.
@@ -124,11 +124,14 @@ function setup() {
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
 function add_image_sizes_to_admin( $sizes ) {
-	return array_merge( $sizes, array(
-		'thumbnail' 	=> __( 'Thumbnail', 'debtcollective' ),
-		'medium' 		=> __( 'Medium', 'debtcollective' ),
-		'large' 		=> __( 'Large', 'debtcollective' ),
-	) );
+	return array_merge(
+		$sizes,
+		array(
+			'thumbnail' => __( 'Thumbnail', 'debtcollective' ),
+			'medium'    => __( 'Medium', 'debtcollective' ),
+			'large'     => __( 'Large', 'debtcollective' ),
+		)
+	);
 }
 add_filter( 'image_size_names_choose', __NAMESPACE__ . '\add_image_sizes_to_admin' );
 
@@ -156,29 +159,27 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
 function widgets_init() {
 
 	// Define sidebars.
-	$sidebars = [
-		'above-nav' => esc_html__( 'Sidebar Above Nav', 'debtcollective' ),
-		'below-nav' => esc_html__( 'Sidebar Below Nav', 'debtcollective' ),
+	$sidebars = array(
+		'above-nav'      => esc_html__( 'Sidebar Above Nav', 'debtcollective' ),
+		'below-nav'      => esc_html__( 'Sidebar Below Nav', 'debtcollective' ),
 		'content-footer' => esc_html__( 'Content Footer', 'debtcollective' ),
-		'footer'    => esc_html__( 'Footer', 'debtcollective' ),
-	];
 		'menu-footer'    => esc_html__( 'Menu Footer', 'debtcollective' ),
+		'footer'         => esc_html__( 'Footer', 'debtcollective' ),
+	);
 
 	// Loop through each sidebar and register.
 	foreach ( $sidebars as $sidebar_id => $sidebar_name ) {
 
 		register_sidebar(
-			[
+			array(
 				'name'          => $sidebar_name,
 				'id'            => $sidebar_id,
 				'description'   => /* translators: the sidebar name */ sprintf( esc_html__( 'Widget area for %s', 'debtcollective' ), $sidebar_name ),
-				'before_widget' => '<div class="widget %2$s">',
-				'after_widget'  => '</div>',
 				'before_widget' => 'menu-footer' === $sidebar_id ? '<footer class="widget menu-footer %2$s">' : '<div class="widget %2$s">',
 				'after_widget'  => 'menu-footer' === $sidebar_id ? '</footer>' : '</div>',
 				'before_title'  => '<h2 class="widget-title">',
 				'after_title'   => '</h2>',
-			]
+			)
 		);
 	}
 
