@@ -82,7 +82,7 @@
 		"postinstall": "composer install --quiet && npm run build",
 		"start": "cross-env NODE_ENV=development wp-scripts start",
 		"storybook": "start-storybook",
-		"sync": "browser-sync start --https --proxy 'http://debtcollective.test' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
+		"sync": "browser-sync start --https --proxy 'http://localhost:8000' --no-open --files 'build/*.*, **/*.html, **/*.php, !node_modules/**/*.html'",
 		"watch": "run-p start sync"
 	},
 	"dependencies": {
