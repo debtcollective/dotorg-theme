@@ -66,6 +66,21 @@
   color: get-color(lightest) !important
 }
 
+@mixin breakpoint($breakpoint, $condition: min) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint: map-get($breakpoints, $breakpoint);
+  }
+  @if max==$condition {
+    @media only screen and (max-width: #{$breakpoint - 1px}) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: #{$breakpoint}) {
+      @content;
+    }
+  }
+}
+
 // .site-main {
 //   &::before {
 //     @extend %breakpoint-indicator;
