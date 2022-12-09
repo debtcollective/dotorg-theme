@@ -6,6 +6,7 @@
  *
  * @package DebtCollective
  */
+$scope = get_option( 'dbem_events_archive_scope' );
 get_header(); ?>
 
 	<main id="main" class="container site-main">
@@ -19,7 +20,7 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<div class="events__list">
+			<div class="events__list scope-<?php echo esc_attr( $scope ); ?>">
 
 				<?php
 				/* Start the Loop */

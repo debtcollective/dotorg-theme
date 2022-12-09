@@ -50,7 +50,7 @@ $paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 			if ( ! empty( $events ) ) :
 				?>
 
-				<div class="events__list <?php echo esc_attr( $scope ); ?>">
+				<div class="events__list scope-<?php echo esc_attr( $scope ); ?>">
 				
 					<?php
 					/* Start the Loop */
