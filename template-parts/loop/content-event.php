@@ -14,9 +14,7 @@ $post_id = get_the_id();
 $EM_Event = em_get_event( $post_id, 'post_id' );
 $taxonomy = 'event-tags';
 
-// var_dump( $post_id, $EM_Event );
 $start_date   = $EM_Event->event_start_date;
-// $start_date   = $EM_Event->output( '#_{Y-m-d}' );
 $is_past      = $start_date < date( 'Y-m-d', time() );
 $is_recurring = property_exists( $EM_Event, 'recurrence_id' ) && $EM_Event->recurrence_id;
 $class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
