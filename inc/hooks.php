@@ -61,7 +61,7 @@ function body_classes( $classes ) {
 			}
 		}
 	}
-	
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -372,7 +372,7 @@ function add_og_tags() {
 	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />
 	<?php
 }
-add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );
+\add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );
 
 /**
  * Removes or Adjusts the prefix on category archive page titles.
@@ -389,13 +389,13 @@ function remove_archive_title_prefix( $title ) {
 		$title = single_cat_title( '', false );
 	}
 
-	if ( is_post_type_archive( 'an_event' ) ) {
+	if ( is_post_type_archive( 'an_event' ) || is_post_type_archive( 'event' ) ) {
 		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
 }
-add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );
+\add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );
 
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
@@ -408,7 +408,7 @@ function disable_wpautop_for_gutenberg() {
 		remove_filter( 'the_content', 'wpautop' );
 	}
 }
-add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
+\add_filter( 'init', __NAMESPACE__ . '\disable_wpautop_for_gutenberg', 9 );
 
 /**
  * Replace page title with display name
@@ -428,3 +428,51 @@ function replace_page_title( $title, $post_id ) {
 
 	return $title;
 }
+
+/**
+ * Modify events archive query
+ *
+ * @param object $query
+ * @return void
+ */
+function pre_get_events( $query ) {
+	if ( ! \is_admin() && $query->is_main_query() && \is_post_type_archive( 'event' ) ) {
+	}
+}
+// \add_filter( 'pre_get_posts', __NAMESPACE__ . '\pre_get_events', 11 );
+
+/**
+ * Override event formats
+ * Formats, which can be set in Events Manager > Settings > Formats control the way event content is rendered
+ * Formats can be overridden when files are placed in `./debtcollective/plugins/events-manager/formats`
+ *
+ * Note: file name corresponds to the `wp_options` key in database, which holds the format, minus `dbem_` prefix
+ * `dbem_event_list_item_format_header` -> event_list_item_format_header.php
+ *
+ * @param array $array
+ * @return array $array
+ */
+function events_custom_formats( $array ) {
+	$formats = array(
+		'dbem_event_list_item_format_header',
+		'dbem_event_list_item_format',
+		'dbem_event_list_item_format_footer',
+		'dbem_location_baloon_format',
+		'dbem_map_text_format',
+		'dbem_time_format',
+	);
+	return $array + $formats;
+}
+\add_filter( 'em_formats_filter', __NAMESPACE__ . '\events_custom_formats', 1, 1 );
+
+/**
+ * Modify the pagination
+ *
+ * @param string $pagination
+ * @return string $pagination
+ */
+function events_pagination( string $pagination ) {
+	$pagination = str_replace( 'em-pagination', 'container pagination-container', $pagination );
+	return $pagination;
+}
+\add_filter( 'em_paginate', __NAMESPACE__ . '\events_pagination' );

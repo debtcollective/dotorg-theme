@@ -1,2 +1,2 @@
 # Dotorg Theme
-Debt Collective Wordpress Theme
+Debt Collective Wordpress Theme 
