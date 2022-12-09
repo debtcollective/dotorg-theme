@@ -10,8 +10,9 @@ if ( ! class_exists( '\EM_Event' ) ) {
 	return;
 }
 global $EM_Event;
-$post_id = get_the_id();
-$EM_Event = em_get_event( $post_id, 'post_id' );
+
+$post_id = isset( $args['EM_Event'] ) ? $args['EM_Event']->post_id : get_the_id();
+$EM_Event = isset( $args['EM_Event'] ) ? $args['EM_Event'] : em_get_event( $post_id, 'post_id' );
 $taxonomy = 'event-tags';
 
 $start_date   = $EM_Event->event_start_date;
