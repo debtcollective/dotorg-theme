@@ -36,16 +36,25 @@ $paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		if ( 1 === $paged ) {
 			$scope   = ( $scope = get_post_meta( get_the_ID(), 'event_scope_upcoming', true ) ) ? esc_attr( $scope ) : 'future';
 			$sort    = ( $sort = get_post_meta( get_the_ID(), 'event_sort_upcoming', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'ASC';
+			$limit   = get_option( 'dbem_location_event_list_limit', get_option( 'posts_per_page' ) );
 
 			$args = array(
 				'scope'         => $scope,
 				'order'         => $sort,
-				'limit'         => 0,
-				'pagination'    => 0,
-				'page_queryvar' => 'upcoming',
+				'limit'         => $limit,
+				'pagination'    => 1,
+				'page'          => $paged,
+				'page_queryvar' => $scope,
 			);
 
 			$events = EM_Events::get( $args );
+
+			$count           = EM_Events::$num_rows_found;
+			$max_pages       = ceil( $count / $args['limit'] );
+			$pagination_args = array(
+				'total'   => $max_pages,
+				'current' => $paged,
+			);
 
 			if ( ! empty( $events ) ) :
 				?>
