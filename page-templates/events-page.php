@@ -36,7 +36,6 @@ $paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		if ( 1 === $paged ) {
 			$scope   = ( $scope = get_post_meta( get_the_ID(), 'event_scope_upcoming', true ) ) ? esc_attr( $scope ) : 'future';
 			$sort    = ( $sort = get_post_meta( get_the_ID(), 'event_sort_upcoming', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'ASC';
-			$heading = ( $heading = get_post_meta( get_the_ID(), 'event_heading_upcoming', true ) ) ? esc_html( $heading ) : esc_html__( 'Upcoming', 'debtcollective' );
 
 			$args = array(
 				'scope'         => $scope,
