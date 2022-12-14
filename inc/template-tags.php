@@ -597,7 +597,7 @@ function debtcollective_event_recurrences( $recurrence_id, $args = array(), int 
 			<ul class="recurrences__list">
 			<?php
 			foreach ( $recurrences as $recurrence ) {
-				$scope_class = 'upcoming';
+				$scope_class = 'future';
 				if ( date( 'Y-m-d' ) > $recurrence->event_end_date ) {
 					$scope_class = 'past';
 				}
@@ -942,9 +942,9 @@ function debtcollective_physical_location_placeholders( $EM_Event ) {
  * @return void
  */
 function debtcollective_location_link( $EM_Event ) {
-	if( DebtCollective\Inc\is_zoom( $EM_Event ) ) {
+	if ( DebtCollective\Inc\is_zoom( $EM_Event ) ) {
 		debtcollective_location_link_zoom( $EM_Event );
-	} elseif( DebtCollective\Inc\is_url( $EM_Event ) ) {
+	} elseif ( DebtCollective\Inc\is_url( $EM_Event ) ) {
 		debtcollective_location_link_url( $EM_Event );
 	}
 }

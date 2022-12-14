@@ -18,7 +18,7 @@ $taxonomy = 'event-tags';
 $start_date   = $EM_Event->event_start_date;
 $is_past      = $start_date < date( 'Y-m-d', time() );
 $is_recurring = property_exists( $EM_Event, 'recurrence_id' ) && $EM_Event->recurrence_id;
-$class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
+$class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'future' );
 $class       .= $is_recurring ? ' is-recurring' : '';
 ?>
 

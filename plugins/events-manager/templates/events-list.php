@@ -23,7 +23,7 @@ $outcoming_args = array(
 
 $outcoming_args = wp_parse_args( $outcoming_args, $upcoming_defaults ); ?>
 
-<section class="events upcoming">
+<section class="events_list <?php echo esc_attr( $scope ); ?>">
 	
 	<?php
 	if( 1 === $page ) :
