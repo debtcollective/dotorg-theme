@@ -476,3 +476,20 @@ function events_pagination( string $pagination ) {
 	return $pagination;
 }
 \add_filter( 'em_paginate', __NAMESPACE__ . '\events_pagination' );
+
+/**
+ * Add Event Args
+ *
+ * @param array $args
+ * @return array $args
+ */
+function add_event_args( array $args ) {
+	global $post;
+	if( $scope = \get_post_meta( \get_the_ID(), 'event_scope_upcoming', true ) ) {
+		$args['scope'] = $scope;
+	}
+	if( $sort = \get_post_meta( \get_the_ID(), 'event_sort_upcoming', true ) ) {
+		$args['order'] = $sort;
+	}
+	return $args;
+}
