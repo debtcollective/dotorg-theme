@@ -15,6 +15,8 @@ get_header();
 
 $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
 $paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$scope       = ( $scope = get_post_meta( get_the_ID(), 'event_scope_upcoming', true ) ) ? esc_attr( $scope ) : 'future';
+$sort        = ( $sort = get_post_meta( get_the_ID(), 'event_sort_upcoming', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'ASC';
 ?>
 
 <div class="container site-main">
@@ -23,67 +25,12 @@ $paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		<header class="page-header">
 			<?php
 			the_title( '<h1 class="page-title">', '</h1>' );
-			if ( 1 === $paged ) {
-				the_content( '<div class="archive-description">', '</div>' );
-			}
 			?>
 		</header><!-- .page-header -->
 
 		<?php
-		/**
-		 * Upcoming Events
-		 */
-		if ( 1 === $paged ) {
-			$scope   = ( $scope = get_post_meta( get_the_ID(), 'event_scope_upcoming', true ) ) ? esc_attr( $scope ) : 'future';
-			$sort    = ( $sort = get_post_meta( get_the_ID(), 'event_sort_upcoming', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'ASC';
-			$limit   = get_option( 'dbem_location_event_list_limit', get_option( 'posts_per_page' ) );
-
-			$args = array(
-				'scope'         => $scope,
-				'order'         => $sort,
-				'limit'         => $limit,
-				'pagination'    => 1,
-				'page'          => $paged,
-				'page_queryvar' => $scope,
-			);
-
-			$events = EM_Events::get( $args );
-
-			$count           = EM_Events::$num_rows_found;
-			$max_pages       = ceil( $count / $args['limit'] );
-			$pagination_args = array(
-				'total'   => $max_pages,
-				'current' => $paged,
-			);
-
-			if ( ! empty( $events ) ) :
-				?>
-
-				<div class="events__list scope-<?php echo esc_attr( $scope ); ?>">
-				
-					<?php
-					/* Start the Loop */
-					foreach ( $events as $event ) :
-
-						// var_dump( $event );
-						/**
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/loop/content', 'event', array( 'EM_Event' => $event ) );
-
-					endforeach;
-					?>
-
-				</div><!-- .events__list -->
-
-				<?php debtcollective_display_numeric_pagination( $pagination_args, null ); ?>
-
-				<?php
-
-			endif;
-		}
+		apply_filters( 'em_content_events_args', 'DebtCollective\Inc\add_event_args' );
+		em_content();
 
 		if ( ! $has_sidebar ) :
 
