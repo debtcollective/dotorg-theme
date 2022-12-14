@@ -30,7 +30,7 @@ $sort        = ( $sort = get_post_meta( get_the_ID(), 'event_sort_upcoming', tru
 
 		<?php
 		apply_filters( 'em_content_events_args', 'DebtCollective\Inc\add_event_args' );
-		em_content();
+		the_content();
 
 		if ( ! $has_sidebar ) :
 
