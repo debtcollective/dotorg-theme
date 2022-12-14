@@ -27,7 +27,8 @@
 		.past > & {
 			background-color: get-color('salmon');
 		}
-		.upcoming > & {
+		.upcoming > &,
+		.future > & {
 			background-color: rgba( get-color('jade'), 0.65);
 		}
 
@@ -66,7 +67,8 @@
 		}
 	}
 
-	&.upcoming > a {
+	&.upcoming > a,
+	&.future > a {
 		background-color: rgba( get-color('jade'), 0.65);
 	}
 

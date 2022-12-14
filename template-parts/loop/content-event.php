@@ -11,14 +11,14 @@ if ( ! class_exists( '\EM_Event' ) ) {
 }
 global $EM_Event;
 
-$post_id = isset( $args['EM_Event'] ) ? $args['EM_Event']->post_id : get_the_id();
+$post_id  = isset( $args['EM_Event'] ) ? $args['EM_Event']->post_id : get_the_id();
 $EM_Event = isset( $args['EM_Event'] ) ? $args['EM_Event'] : em_get_event( $post_id, 'post_id' );
 $taxonomy = 'event-tags';
 
 $start_date   = $EM_Event->event_start_date;
 $is_past      = $start_date < date( 'Y-m-d', time() );
 $is_recurring = property_exists( $EM_Event, 'recurrence_id' ) && $EM_Event->recurrence_id;
-$class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
+$class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'future' );
 $class       .= $is_recurring ? ' is-recurring' : '';
 ?>
 
@@ -39,7 +39,7 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 			<?php
 			if ( $EM_Event->has_location() ) {
 
-				debtcollective_event_address_placeholders( $EM_Event ) ;
+				debtcollective_event_address_placeholders( $EM_Event );
 
 			} elseif ( $EM_Event->has_event_location() ) {
 
