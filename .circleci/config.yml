@@ -13,23 +13,10 @@ jobs:
           command: |
             curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
             sudo apt-get install -y nodejs rsync grsync
-      - run: sudo npm install --global yarn 
-      - run:
-          name: install composer version 
-          command: |
-            sudo composer self-update 1.10.22
-      - run:
-          name: install dependencies
-          command: |
-            yarn install
-      - run:
-          name: build site in dev mode
-          command: |
-            yarn run build:dev
       - run:
           name: Deploy over SSH
           command: |
-            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --ignore-errors --delete --exclude 'node_modules' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
 
   deploy_prod:
     docker: # run the steps with Docker
@@ -41,23 +28,10 @@ jobs:
           command: |
             curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
             sudo apt-get install -y nodejs rsync grsync
-      - run: sudo npm install --global yarn 
-      - run:
-          name: install composer version 
-          command: |
-            sudo composer self-update 1.10.22
-      - run:
-          name: install dependencies
-          command: |
-            yarn install
-      - run:
-          name: build site in production mode
-          command: |
-            yarn run build
       - run:
           name: Deploy over SSH
           command: |
-            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --delete --exclude 'node_modules' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
 
 workflows:
   version: 2
