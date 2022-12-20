@@ -154,4 +154,43 @@
 			top: 35%;
 		}
 	}
+
+
+}
+
+.single-event {
+	.event {
+		&__meta {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.wp-block-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .25rem;
+		}
+
+		form {
+			input[type="submit"] {
+				width: min-content;
+			}
+		}
+	}
+}
+
+.recurrences {
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	li + li {
+		margin-top: 1rem;
+	}
+
+	&__event-title {
+		.is-current & {
+			font-weight: bold;
+		}
+	}
 }
