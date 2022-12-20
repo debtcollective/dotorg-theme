@@ -37,33 +37,35 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 	
 	<header class="event_header">
 		<h2 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h2>
-		<div class="event__ical post-meta">
-			<?php echo $EM_Event->output( '#_EVENTICALLINK' ); ?>
-		</div>
 	</header>
 
-	<div class="event__date">
-		<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTDATES' ); ?></time>
-	</div>
+	<div class="event__meta post-meta">
+		<div class="event__ical">
+			<?php echo $EM_Event->output( '#_EVENTICALLINK' ); ?>
+		</div>
+		<div class="event__date">
+			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTDATES' ); ?></time>
+		</div>
 
-	<div class="event__time event__time-start">
-		<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?></time>
-	</div>
+		<div class="event__time event__time-start">
+			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?></time>
+		</div>
 
-	<div class="event__location">
-		<?php
-		if ( $EM_Event->has_location() ) :
-			?>
-			<?php debtcollective_event_address_placeholders( $EM_Event ); ?>
-		
+		<div class="event__location">
 			<?php
-		elseif ( $EM_Event->has_event_location() ) :
-			?>
+			if ( $EM_Event->has_location() ) :
+				?>
+				<?php debtcollective_event_address_placeholders( $EM_Event ); ?>
+			
+				<?php
+			elseif ( $EM_Event->has_event_location() ) :
+				?>
 
-			<?php debtcollective_location_link( $EM_Event ); ?>
-			<?php
-		endif;
-		?>
+				<?php debtcollective_location_link( $EM_Event ); ?>
+				<?php
+			endif;
+			?>
+		</div>
 	</div>
 
 	<div class="event__content">
