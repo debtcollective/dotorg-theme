@@ -10,9 +10,10 @@
  */
 $defaults = apply_filters( 'em_content_events_args', $args );
 $page     = isset( $_GET['pno'] ) ? (int) $_GET['pno'] : get_query_var( 'pno', 1 );
+$scope    = get_option( 'dbem_events_page_scope', 'future' );
 
 $outcoming_args = array(
-	'scope'      => get_option( 'dbem_events_page_scope', 'future' ),
+	'scope'      => $scope,
 	'limit'      => get_option( 'dbem_events_default_limit', 24 ),
 	'order'      => get_option( 'dbem_events_default_order', 'ASC' ),
 	'orderby'    => get_option( 'dbem_events_default_orderby', 'event_start_date,event_start_time,event_name' ),
