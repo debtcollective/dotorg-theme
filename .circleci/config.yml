@@ -9,13 +9,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Rsync
+          name: Install Node
           command: |
-            sudo apt-get install -y rsync grsync
+            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs rsync grsync
       - run:
           name: Deploy over SSH
           command: |
             rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            ssh -p 12345 -o StrictHostKeyChecking=accept-new' $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH chown -R /mnt/efs/wordpress/wp-content/themes/debtcollective 33:ec2-user
 
   deploy_prod:
     docker: # run the steps with Docker
@@ -23,9 +25,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Rsync
+          name: Install Node
           command: |
-            sudo apt-get install -y rsync grsync
+            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs rsync grsync
       - run:
           name: Deploy over SSH
           command: |
