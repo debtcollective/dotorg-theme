@@ -9,10 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Node
+          name: Install Rsync
           command: |
-            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs rsync grsync
+            sudo apt-get install -y rsync grsync
       - run:
           name: Deploy over SSH
           command: |
@@ -24,14 +23,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Node
+          name: Install Rsync
           command: |
-            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs rsync grsync
+            sudo apt-get install -y rsync grsync
       - run:
           name: Deploy over SSH
           command: |
-            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhO --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
 
 workflows:
   version: 2
