@@ -13,11 +13,12 @@ $page     = isset( $_GET['pno'] ) ? (int) $_GET['pno'] : get_query_var( 'pno', 1
 $scope    = get_option( 'dbem_events_page_scope', 'future' );
 
 $outcoming_args = array(
-	'scope'      => $scope,
-	'limit'      => get_option( 'dbem_events_default_limit', 24 ),
-	'order'      => get_option( 'dbem_events_default_order', 'ASC' ),
-	'orderby'    => get_option( 'dbem_events_default_orderby', 'event_start_date,event_start_time,event_name' ),
-	'pagination' => 1,
+	'scope'             => $scope,
+	'limit'             => get_option( 'dbem_events_default_limit', 24 ),
+	'order'             => get_option( 'dbem_events_default_order', 'ASC' ),
+	'orderby'           => get_option( 'dbem_events_default_orderby', 'event_start_date,event_start_time,event_name' ),
+	'pagination'        => 1,
+	'no_events_message' => '<p class="no-events">' . esc_html( 'No Events', 'debtcollective' ) . '</p>',
 );
 
 $outcoming_args = wp_parse_args( $outcoming_args, $defaults ); ?>
