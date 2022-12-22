@@ -40,10 +40,15 @@ $args = array(
 			</div>
 		</header><!-- .page-header -->
 
-		<?php
-		apply_filters( 'em_content_events_args', 'DebtCollective\Inc\add_event_args' );
-		the_content();
+		<div class="events_list <?php echo esc_attr( $scope ); ?>">
+	
+			<?php
+			echo EM_Events::output( $args );
+			?>
+			
+		</div><!-- .events_list.<?php echo esc_attr( $scope ); ?> -->
 
+		<?php
 		if ( ! $has_sidebar ) :
 
 			get_sidebar( 'content-footer' );
