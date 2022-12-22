@@ -35,6 +35,9 @@ $args = array(
 			<?php
 			the_title( '<h1 class="page-title">', '</h1>' );
 			?>
+			<div class="archive-description">
+				<?php the_content(); ?>
+			</div>
 		</header><!-- .page-header -->
 
 		<?php
