@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Events Page
+ * Template Name: Events Archive
  *
  * The template for displaying the event archive page.
  *
