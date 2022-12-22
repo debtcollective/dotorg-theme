@@ -14,9 +14,18 @@ if ( ! class_exists( '\EM_Events' ) ) {
 get_header();
 
 $has_sidebar = \get_post_meta( get_the_ID(), 'has_sidebar', true );
-$paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$scope       = ( $scope = get_post_meta( get_the_ID(), 'event_scope_upcoming', true ) ) ? esc_attr( $scope ) : 'future';
-$sort        = ( $sort = get_post_meta( get_the_ID(), 'event_sort_upcoming', true ) ) ? strtoupper( esc_attr( $sort ) ) : 'ASC';
+$page        = isset( $_GET['pno'] ) ? (int) $_GET['pno'] : \get_query_var( 'pno', 1 );
+$scope       = ( $scope = \get_post_meta( \get_the_ID(), 'event_scope_upcoming', true ) ) ? \esc_attr( $scope ) : 'future';
+$sort        = ( $sort = \get_post_meta( get_the_ID(), 'event_sort_upcoming', true ) ) ? strtoupper( \esc_attr( $sort ) ) : 'ASC';
+
+$args = array(
+	'scope'          => $scope,
+	'limit'          => get_option( 'dbem_events_default_limit', 24 ),
+	'order'          => $sort,
+	'orderby'        => get_option( 'dbem_events_default_orderby', 'event_start_date,event_start_time,event_name' ),
+	'pagination'     => 1,
+	'no_results_msg' => '<p class="no-events">' . get_option( 'dbem_no_events_message', esc_html( 'There are no events at this time.', 'debtcollective' ) ) . '</p>',
+);
 ?>
 
 <div class="container site-main">
