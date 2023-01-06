@@ -1,0 +1,1 @@
+    </div><!-- .events__list -->

@@ -4,7 +4,9 @@ $breakpoints: (
   'md': 1080px,
   'lg': 1438px,
   'xl': 2000px,
-  'xxl': 2300px
+  'xxl': 2300px,
+  'wp-md': 601px,
+  'wp-lg': 783px,
 );
 
 @function get-breakpoint($key) {

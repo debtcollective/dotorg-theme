@@ -103,10 +103,97 @@ function convert_string_to_number( $string, $decimal = true, $trim = true ) {
  * @param array  $args
  * @return array \WP_Post()->ID
  */
-function get_event_ids( $scope = 'all', $args = array() ): array {
+function get_event_ids( $scope = 'all', $args = array() ) {
 	if ( method_exists( '\WpActionNetworkEvents\App\General\Queries', 'getAnEventIds' ) ) {
 
 		return \WpActionNetworkEvents\App\General\Queries::getAnEventIds( $scope, $args );
 
 	}
+}
+
+/**
+ * Get event recurrences
+ *
+ * @param int   $recurrence_id
+ * @param array $args
+ * @return array of EM_Event
+ */
+function get_event_recurrences( $recurrence_id, $args = array() ) {
+	if ( ! class_exists( '\EM_Events' ) ) {
+		return;
+	}
+
+	$defaults = array(
+		'recurrence' => (int) $recurrence_id,
+		'scope'      => 'all',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	return \EM_Events::get( $args );
+}
+
+/**
+ * Get event location type
+ *
+ * @param obj $EM_Event
+ * @return mixed false || string
+ */
+function get_event_type( object $EM_Event ) {
+	if ( ! class_exists( '\EM_Events' ) ) {
+		return;
+	}
+
+	$type = 'physical';
+	if( $EM_Event->has_event_location() ) {
+		$type = $EM_Event->event_location_type;
+	}
+	return $type;
+}
+
+/**
+ * Check if zoom event
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_zoom( object $EM_Event ) : bool {
+	$type = get_event_type( $EM_Event );
+	// return str_contains( $type, 'zoom' );
+	return strpos( $type, 'zoom' ) !== false;
+}
+
+/**
+ * Check if url event
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_url( object $EM_Event ) : bool {
+	$type = get_event_type( $EM_Event );
+	// return str_contains( $type, 'url' );
+	return strpos( $type, 'url' ) !== false;
+}
+
+/**
+ * Has RSVP
+ *
+ * @param integer $id
+ * @return boolean
+ */
+function has_rsvp( int $post_id ) {
+	return \get_post_meta( $post_id, 'enable_rsvp', true );
+}
+
+/**
+ * Get Timezone Abbreviation
+ *
+ * @param string $date
+ * @param string $timezone
+ * @return string timezone abbr
+ */
+function get_timezone_abbr( string $date, string $timezone ) {
+	$generic_date = new \DateTime( $date );
+	$generic_date->setTimezone( new \DateTimeZone( $timezone ) );
+	return $generic_date->format( 'T' );
 }

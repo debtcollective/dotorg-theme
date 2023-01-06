@@ -27,7 +27,8 @@
 		.past > & {
 			background-color: get-color('salmon');
 		}
-		.upcoming > & {
+		.upcoming > &,
+		.future > & {
 			background-color: rgba( get-color('jade'), 0.65);
 		}
 
@@ -64,6 +65,15 @@
 		.event__location {
 			font-weight: 400;
 		}
+	}
+
+	&.upcoming > a,
+	&.future > a {
+		background-color: rgba( get-color('jade'), 0.65);
+	}
+
+	&.past > a {
+		background-color: get-color('salmon');
 	}
 
 	.event__time {
@@ -142,6 +152,45 @@
 		}
 		@media (min-width: get-breakpoint(lg)) {
 			top: 35%;
+		}
+	}
+
+
+}
+
+.single-event {
+	.event {
+		&__meta {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.wp-block-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: .25rem;
+		}
+
+		form {
+			input[type="submit"] {
+				width: min-content;
+			}
+		}
+	}
+}
+
+.recurrences {
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+	li + li {
+		margin-top: 1rem;
+	}
+
+	&__event-title {
+		.is-current & {
+			font-weight: bold;
 		}
 	}
 }
