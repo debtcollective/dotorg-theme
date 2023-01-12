@@ -41,7 +41,7 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 
 	<div class="event__meta post-meta">
 		<div class="event__ical">
-			<?php echo $EM_Event->output( '#_EVENTICALLINK' ); ?>
+			<?php echo $EM_Event->output( '#_EVENTADDTOCALENDAR' ); ?>
 		</div>
 		<div class="event__date">
 			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTDATES' ); ?></time>
