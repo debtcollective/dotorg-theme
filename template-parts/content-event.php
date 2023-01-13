@@ -50,6 +50,13 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		<div class="event__time event__time-start">
 			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?></time>
 		</div>
+	</div>
+
+	<div class="event__content">
+		<?php
+		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
+		echo apply_filters( 'the_content', $EM_Event->post_content );
+		?>
 
 		<div class="event__location">
 			<?php
@@ -67,23 +74,6 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 			?>
 		</div>
 	</div>
-
-	<div class="event__content">
-		<?php
-		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
-		echo apply_filters( 'the_content', $EM_Event->post_content );
-		?>
-	</div>
-
-	<?php
-	if ( $EM_Event->has_location() ) :
-		?>
-		<div class="event__location map">
-			<?php debtcollective_event_map_placeholders( $EM_Event ); ?>
-		</div>
-		<?php
-	endif;
-	?>
 
 	<footer class="event__footer">
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>
