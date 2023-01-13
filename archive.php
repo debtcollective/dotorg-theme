@@ -51,7 +51,7 @@ get_header(); ?>
 			debtcollective_display_numeric_pagination();
 
 		else :
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/loop/content', 'none' );
 		endif;
 		?>
 
