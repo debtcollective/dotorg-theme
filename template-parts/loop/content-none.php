@@ -6,9 +6,6 @@
  *
  * @package DebtCollective
  */
-$post_type = get_post_type();
-$post_type_obj = get_post_type_object( $post_type );
-$slug = sanitize_title( $post_type_obj->labels->name );
 ?>
 
 <header class="page-header">
@@ -17,13 +14,6 @@ $slug = sanitize_title( $post_type_obj->labels->name );
 	the_archive_description( '<div class="archive-description">', '</div>' );
 	?>
 </header><!-- .page-header -->
-<div class="{$slug}__list none">
-	<?php esc_html_e( sprintf( 'No %s Found.', $post_type_obj->labels->name ), 'debtcollective' ); ?>
-	<?php
-	if( 'post' === $post_type ) :
-		?>
-		<?php get_search_form(); ?>
-		<?php
-	endif;
-	?>
+<div class="post__list none">
+	<p><?php esc_html_e( 'No items found.', 'debtcollective' ); ?></p>
 </div>
