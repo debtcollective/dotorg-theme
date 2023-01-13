@@ -87,20 +87,6 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 
 	<footer class="event__footer">
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>
-
-		<?php
-		if ( DebtCollective\Inc\has_rsvp( $post_id ) ) {
-			get_template_part(
-				'template-parts/components/form-event',
-				'rsvp',
-				array(
-					'EM_Event' => $EM_Event,
-					'post_id'  => $post_id,
-				)
-			);
-		}
-		?>
-
 	</footer>
 
 </article><!-- #post-## -->
