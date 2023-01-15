@@ -41,15 +41,22 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 
 	<div class="event__meta post-meta">
 		<div class="event__ical">
-			<?php echo $EM_Event->output( '#_EVENTICALLINK' ); ?>
+			<?php echo $EM_Event->output( '#_EVENTADDTOCALENDAR' ); ?>
 		</div>
 		<div class="event__date">
 			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTDATES' ); ?></time>
 		</div>
 
 		<div class="event__time event__time-start">
-			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?></time>
+			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?> <span class="timezone"><?php echo $EM_Event->output( '#_{T}' ); ?></span></time>
 		</div>
+	</div>
+
+	<div class="event__content">
+		<?php
+		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
+		echo apply_filters( 'the_content', $EM_Event->post_content );
+		?>
 
 		<div class="event__location">
 			<?php
@@ -68,39 +75,8 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		</div>
 	</div>
 
-	<div class="event__content">
-		<?php
-		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
-		echo apply_filters( 'the_content', $EM_Event->post_content );
-		?>
-	</div>
-
-	<?php
-	if ( $EM_Event->has_location() ) :
-		?>
-		<div class="event__location map">
-			<?php debtcollective_event_map_placeholders( $EM_Event ); ?>
-		</div>
-		<?php
-	endif;
-	?>
-
 	<footer class="event__footer">
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>
-
-		<?php
-		if ( DebtCollective\Inc\has_rsvp( $post_id ) ) {
-			get_template_part(
-				'template-parts/components/form-event',
-				'rsvp',
-				array(
-					'EM_Event' => $EM_Event,
-					'post_id'  => $post_id,
-				)
-			);
-		}
-		?>
-
 	</footer>
 
 </article><!-- #post-## -->
