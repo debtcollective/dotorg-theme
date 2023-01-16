@@ -213,3 +213,39 @@
 		}
 	}
 }
+
+.em-event-add-to-calendar-content {
+	visibility: hidden;
+	height: 0;
+}
+
+[data-state="visible"] {
+	.em-event-add-to-calendar-content {
+		height: auto;
+		visibility: visible;
+		display: flex;
+		flex-direction: column;
+
+		a {
+			text-decoration: none;
+			color: get-color('grey-dark');
+			padding: .25rem;
+
+			&:hover,
+			&:focus {
+				color: get-color('grey');
+			}
+		}
+
+		[class$="download"] {}
+
+		[class$="google"] {}
+
+		[class$="apple"] {}
+
+		[class$="office"] {}
+
+		[class$="outlook"] {}
+	}
+}
+
