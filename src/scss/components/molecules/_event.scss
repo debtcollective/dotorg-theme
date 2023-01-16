@@ -165,6 +165,19 @@
 			flex-direction: column;
 		}
 
+		&__image {
+			max-height: 500px;
+			min-height: initial;
+			border: 1px solid red;
+		}
+
+		&__thumbnail {
+			width: 100%;
+			height: auto;
+			max-height: 500px;
+			object-fit: cover;
+		}
+
 		.wp-block-buttons {
 			display: flex;
 			flex-wrap: wrap;
