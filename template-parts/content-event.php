@@ -27,9 +27,9 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 	<?php
 	if ( has_post_thumbnail( $post_id ) ) :
 		?>
-		<picture class="event__image">
-			<?php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'event__thumbnail' ) ); ?>
-		</picture>
+		<div class="event__image wp-block-cover">
+			<?php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'event__thumbnail wp-block-cover__image-background' ) ); ?>
+		</div>
 
 		<?php
 	endif;
