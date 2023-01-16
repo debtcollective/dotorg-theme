@@ -160,6 +160,12 @@
 
 .single-event {
 	.event {
+		&__content,
+		&__date,
+		&__time {
+			font-size: 1.25rem;
+		}
+
 		&__meta {
 			display: flex;
 			flex-direction: column;
