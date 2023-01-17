@@ -22,7 +22,7 @@ $class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
 $class       .= $is_recurring ? ' is-recurring' : '';
 ?>
 
-<article <?php \post_class( 'event-container event ' . $class ); ?>>
+<article id="post-<?php echo $post_id; ?>" <?php \post_class( 'event-container event ' . $class ); ?>>
 
 	<?php
 	if ( has_post_thumbnail( $post_id ) ) :

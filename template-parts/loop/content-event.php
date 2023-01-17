@@ -22,7 +22,7 @@ $class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'future' );
 $class       .= $is_recurring ? ' is-recurring' : '';
 ?>
 
-<article <?php \post_class( 'event-container event ' . $class ); ?>>
+<article id="post-<?php echo $post_id; ?>" <?php \post_class( 'event-container event ' . $class ); ?>>
 	<a href="<?php echo \esc_url( \get_permalink( $post_id ) ); ?>">
 
 		<h3 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php echo get_the_title( $post_id ); ?></h3>
