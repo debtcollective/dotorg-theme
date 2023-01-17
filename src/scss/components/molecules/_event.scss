@@ -67,6 +67,46 @@
 		}
 	}
 
+	&__address {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__location {
+		&-address {}
+
+		&-name {
+			font-weight: bold;
+		}
+
+		&-street {
+			width: 100%;
+		}
+
+		&-city,
+		&-state,
+		&-zip {
+			&:not(:empty) {
+				margin-right: .25rem;
+			}
+		}
+
+		&-city {
+			&:not(:empty)::after {
+				content: ',';
+			}
+		}
+
+		&-state {}
+
+		&-zip {}
+	}
+
+	&__location-map {
+		margin-top: 1rem;
+	}
+
+
 	&.upcoming > a,
 	&.future > a {
 		background-color: rgba( get-color('jade'), 0.65);
