@@ -76,6 +76,14 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 	</div>
 
 	<footer class="event__footer">
+		<?php
+		if ( $EM_Event->has_location() ) :
+			?>
+			<div class="post-meta event__meta event__location-map"><?php echo $EM_Event->output( '#_LOCATIONMAP' ); ?></div>
+			<?php
+		endif;
+		?>
+
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>
 	</footer>
 
