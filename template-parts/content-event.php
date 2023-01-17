@@ -22,14 +22,14 @@ $class        = $is_past ? \esc_attr( 'past' ) : \esc_attr( 'upcoming' );
 $class       .= $is_recurring ? ' is-recurring' : '';
 ?>
 
-<article <?php \post_class( 'event-container event ' . $class ); ?>>
+<article id="post-<?php echo $post_id; ?>" <?php \post_class( 'event-container event ' . $class ); ?>>
 
 	<?php
 	if ( has_post_thumbnail( $post_id ) ) :
 		?>
-		<picture class="event__image">
-			<?php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'event__thumbnail' ) ); ?>
-		</picture>
+		<div class="event__image wp-block-cover">
+			<?php echo get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'event__thumbnail wp-block-cover__image-background' ) ); ?>
+		</div>
 
 		<?php
 	endif;
@@ -76,6 +76,14 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 	</div>
 
 	<footer class="event__footer">
+		<?php
+		if ( $EM_Event->has_location() ) :
+			?>
+			<div class="post-meta event__meta event__location-map"><?php echo $EM_Event->output( '#_LOCATIONMAP' ); ?></div>
+			<?php
+		endif;
+		?>
+
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>
 	</footer>
 

@@ -158,11 +158,70 @@
 
 }
 
-.single-event {
+.single-event,
+.single-location {
 	.event {
+		&__content,
+		&__date,
+		&__time,
+		&__meta {
+			font-size: 1.25rem;
+		}
+
 		&__meta {
 			display: flex;
 			flex-direction: column;
+		}
+
+		&__image {
+			max-height: 500px;
+			min-height: initial;
+		}
+
+		&__thumbnail {
+			width: 100%;
+			height: auto;
+			max-height: 500px;
+			object-fit: cover;
+		}
+
+		&__address {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__location {
+			&-address {}
+
+			&-name {
+				font-weight: bold;
+			}
+
+			&-street {
+				width: 100%;
+			}
+
+			&-city,
+			&-state,
+			&-zip {
+				&:not(:empty) {
+					margin-right: .5rem;
+				}
+			}
+
+			&-city {
+				&:not(:empty)::after {
+					content: ',';
+				}
+			}
+
+			&-state {}
+
+			&-zip {}
+		}
+
+		&__location-map {
+			margin-top: 1rem;
 		}
 
 		.wp-block-buttons {
@@ -194,3 +253,39 @@
 		}
 	}
 }
+
+.em-event-add-to-calendar-content {
+	visibility: hidden;
+	height: 0;
+}
+
+[data-state="visible"] {
+	.em-event-add-to-calendar-content {
+		height: auto;
+		visibility: visible;
+		display: flex;
+		flex-direction: column;
+
+		a {
+			text-decoration: none;
+			color: get-color('grey-dark');
+			padding: .25rem;
+
+			&:hover,
+			&:focus {
+				color: get-color('grey');
+			}
+		}
+
+		[class$="download"] {}
+
+		[class$="google"] {}
+
+		[class$="apple"] {}
+
+		[class$="office"] {}
+
+		[class$="outlook"] {}
+	}
+}
+
