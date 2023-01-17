@@ -184,6 +184,41 @@
 			object-fit: cover;
 		}
 
+		&__address {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__location {
+			&-address {}
+
+			&-name {
+				font-weight: bold;
+			}
+
+			&-street {
+				width: 100%;
+			}
+
+			&-city,
+			&-state,
+			&-zip {
+				&:not(:empty) {
+					margin-right: .5rem;
+				}
+			}
+
+			&-city {
+				&:not(:empty)::after {
+					content: ',';
+				}
+			}
+
+			&-state {}
+
+			&-zip {}
+		}
+
 		.wp-block-buttons {
 			display: flex;
 			flex-wrap: wrap;
