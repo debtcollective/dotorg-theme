@@ -958,9 +958,20 @@ function debtcollective_location_link( $EM_Event ) {
 function debtcollective_location_link_zoom( $EM_Event ) {
 	?>
 	<div class="wp-block-buttons">
-		<div class="wp-block-button join">
-			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['join_url'] ); ?>" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
-		</div>
+		<?php if( DebtCollective\Inc\is_current( $EM_Event ) ) : 
+			?>
+			<div class="wp-block-button join">
+				<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['join_url'] ); ?>" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
+			</div>
+			<?php 
+			else : 
+			?>
+			<div class="wp-block-button register">
+				<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['registration_url'] ); ?>" target="_blank"><?php esc_html_e( 'Register', 'debtcollective' ); ?></a>
+			</div>
+			<?php
+		endif; 
+		?>
 	</div>
 	<?php
 }
