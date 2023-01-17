@@ -186,6 +186,37 @@ function has_rsvp( int $post_id ) {
 }
 
 /**
+ * Is Current
+ * event is currently happening (according to timezone of site)
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_current( object $EM_Event ) {
+	return $EM_Event->start()->getTimestamp() <= time() && $EM_Event->end()->getTimestamp() >= time();
+}
+
+/**
+ * Is Past
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_past( object $EM_Event ) {
+	return $EM_Event->end()->getTimestamp() <= time();
+}
+
+/**
+ * Is Futur
+ *
+ * @param object $EM_Event
+ * @return boolean
+ */
+function is_future( object $EM_Event ) {
+	return $EM_Event->start()->getTimestamp() > time();
+}
+
+/**
  * Get Timezone Abbreviation
  *
  * @param string $date

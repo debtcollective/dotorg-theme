@@ -9,7 +9,7 @@
         </div>
 
         <div class="event__time event__time-start">
-            <time datetime="#_{Y-m-d H:i:s}">#_EVENTTIMES</time>
+            <time datetime="#_{Y-m-d H:i:s}">#_EVENTTIMES <span class="timezone">#_{T}</span></time>
         </div>
 
         <div class="event__location">

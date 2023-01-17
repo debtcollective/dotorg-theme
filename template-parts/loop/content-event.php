@@ -32,7 +32,7 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		</div>
 
 		<div class="event__time event__time-start">
-			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?></time>
+			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?> <span class="timezone"><?php echo $EM_Event->output( '#_{T}' ); ?></span></time>
 		</div>
 
 		<div class="event__location">
