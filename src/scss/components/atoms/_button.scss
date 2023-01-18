@@ -86,6 +86,13 @@
 			font-size: get-font-size(h3) !important;
 		}
 	}
+	&.small {
+		padding: 0.4rem 0.8rem;
+		> .wp-block-button__link,
+		a {
+			font-size: get-font-size(h5) !important;
+		}
+	}
 	&.outline--reverse {
 		border: 0.125rem solid get-color(lightest) !important;
 		background-color: transparent !important;
