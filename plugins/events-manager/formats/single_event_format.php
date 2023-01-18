@@ -97,6 +97,13 @@
 	<footer class="event__footer">
 		<div class="post-meta categories">#_EVENTCATEGORIES</div>
 		<div class="post-meta tags">#_EVENTTAGS</div>
+
+		{is_recurring}
+		<section class="recurrences">
+			<h3 class="recurrences__title"><?php esc_html_e( 'Events in Series', 'debtcollective' ); ?></h3>
+			#_RECURRENCES
+		</section>
+		{/is_recurring}
 	</footer>
 
 </article><!-- #post-## -->
