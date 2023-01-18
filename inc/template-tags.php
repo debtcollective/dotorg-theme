@@ -866,7 +866,7 @@ function debtcollective_event_recurrences_placeholders( $EM_Event, $args = array
 		?>
 
 		<section class="recurrences">
-			<h4 class="recurrences__title"><?php echo $args['title']; ?></h4>
+			<h3 class="recurrences__title"><?php echo $args['title']; ?></h3>
 			<?php
 			echo $EM_Event->output( '#_RECURRENCES' );
 			?>
