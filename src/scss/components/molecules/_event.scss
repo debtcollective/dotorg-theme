@@ -288,6 +288,16 @@
 	}
 
 	&__event-title {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-family: get-font('base');
+		font-weight: normal;
+		font-size: get-font-size('large');
+
+		a {
+			font-weight: normal;
+		}
+
 		.is-current & {
 			font-weight: bold;
 		}
