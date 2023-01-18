@@ -36,6 +36,18 @@
 			}
 		}
 	}
+	&.primary,
+	&.emphasis {
+		a,
+		.wp-block-button__link {
+			background-color: $white;
+			color: get-color(emphasis);
+			border: 1px solid get-color(emphasis);
+			&:hover, &:focus {
+				background-color: $black;
+			}
+		}
+	}
 	&.jade {
 		a,
 		.wp-block-button__link {
@@ -72,6 +84,13 @@
 		> .wp-block-button__link,
 		a {
 			font-size: get-font-size(h3) !important;
+		}
+	}
+	&.small {
+		padding: 0.4rem 0.8rem;
+		> .wp-block-button__link,
+		a {
+			font-size: get-font-size(h5) !important;
 		}
 	}
 	&.outline--reverse {
@@ -116,9 +135,13 @@ input.btn {
 	@extend %btn;
 	margin-bottom: .25rem;
 
+	padding: 0.4rem 0.8rem;
+	font-size: get-font-size(h5);
+	font-weight: 700;
 	background-color: $white;
-	color: get-color('grey-darker');
-	border: 2px solid get-color('grey-darker');
+	color: get-color(darkest);
+	border: 1px solid get-color(darkest);
+
 	&:hover, 
 	&:focus {
 		background-color: darken($white, 15%);
@@ -129,8 +152,8 @@ input.btn {
 		background-size: 100%;
 		background-repeat: no-repeat;
 		display: inline-block;
-		height: 24px;
-		width: 24px;
+		height: 18px;
+		width: 18px;
 		line-height: inherit;
 		margin-right: .125rem;
 	}

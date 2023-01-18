@@ -205,7 +205,7 @@
 		&__date,
 		&__time,
 		&__meta {
-			font-size: 1.25rem;
+			font-size: get-font-size('large');
 		}
 
 		&__meta {
@@ -288,6 +288,16 @@
 	}
 
 	&__event-title {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-family: get-font('base');
+		font-weight: normal;
+		font-size: get-font-size('large');
+
+		a {
+			font-weight: normal;
+		}
+
 		.is-current & {
 			font-weight: bold;
 		}
