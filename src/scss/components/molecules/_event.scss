@@ -205,7 +205,7 @@
 		&__date,
 		&__time,
 		&__meta {
-			font-size: 1.25rem;
+			font-size: get-font-size('large');
 		}
 
 		&__meta {
