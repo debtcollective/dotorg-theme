@@ -961,7 +961,7 @@ function debtcollective_location_link_zoom( $EM_Event ) {
 		<?php
 		if( DebtCollective\Inc\is_past( $EM_Event ) ) : 
 			?>
-			<p><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>
+			<p class="past ended"><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>
 			<?php 
 		elseif ( DebtCollective\Inc\is_current( $EM_Event ) ) : 
 			?>
