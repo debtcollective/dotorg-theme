@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					{/is_current}
-					{is_past}<p><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>{/is_past}
+					{is_past}<p class="past ended"><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>{/is_past}
 				{/has_event_location_zoom_meeting}
 
 				{has_event_location_zoom_webinar}
@@ -81,7 +81,7 @@
 						</div>
 					</div>
 					{/is_current}
-					{is_past}<p><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>{/is_past}
+					{is_past}<p class="past ended"><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>{/is_past}
 				{/has_event_location_zoom_webinar}
 			
 			{/has_event_location}
