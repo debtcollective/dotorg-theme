@@ -42,7 +42,7 @@
 			{has_event_location}
 				{has_event_location_url}
 				<div class="wp-block-buttons">
-					<div class="wp-block-button url">
+					<div class="wp-block-button emphasis url">
 						<a class="wp-block-button__link" href="#_EVENTLOCATION{url}" target="_blank">#_EVENTLOCATION{text}</a>
 					</div>
 				</div>
@@ -51,14 +51,14 @@
 				{has_event_location_zoom_meeting}
 					{is_future}
 					<div class="wp-block-buttons">
-						<div class="wp-block-button url">
+						<div class="wp-block-button emphasis zoom register">
 							<a class="wp-block-button__link" href="#_EVENTLOCATION{registration_url}" target="_blank"><?php esc_html_e( 'Register', 'debtcollective' ); ?></a>
 						</div>
 					</div>
 					{/is_future}
 					{is_current}
 					<div class="wp-block-buttons">
-						<div class="wp-block-button url">
+						<div class="wp-block-button emphasis zoom join">
 							<a class="wp-block-button__link" href="#_EVENTLOCATION{join_url}" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
 						</div>
 					</div>
@@ -69,20 +69,19 @@
 				{has_event_location_zoom_webinar}
 				{is_future}
 					<div class="wp-block-buttons">
-						<div class="wp-block-button url">
+						<div class="wp-block-button emphasis zoom register">
 							<a class="wp-block-button__link" href="#_EVENTLOCATION{registration_url}" target="_blank"><?php esc_html_e( 'Register', 'debtcollective' ); ?></a>
 						</div>
 					</div>
 					{/is_future}
 					{is_current}
 					<div class="wp-block-buttons">
-						<div class="wp-block-button url">
+						<div class="wp-block-button emphasis zoom join">
 							<a class="wp-block-button__link" href="#_EVENTLOCATION{join_url}" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
 						</div>
 					</div>
 					{/is_current}
-					{is_past}
-					<p><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>{/is_past}
+					{is_past}<p><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>{/is_past}
 				{/has_event_location_zoom_webinar}
 			
 			{/has_event_location}

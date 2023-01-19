@@ -40,10 +40,9 @@
 	&.emphasis {
 		a,
 		.wp-block-button__link {
-			background-color: $white;
-			color: get-color(emphasis);
-			border: 1px solid get-color(emphasis);
-			&:hover, &:focus {
+			background-color: get-color(emphasis);
+			&:hover, 
+			&:focus {
 				background-color: $black;
 			}
 		}
