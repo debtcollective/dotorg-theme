@@ -866,7 +866,7 @@ function debtcollective_event_recurrences_placeholders( $EM_Event, $args = array
 		?>
 
 		<section class="recurrences">
-			<h4 class="recurrences__title"><?php echo $args['title']; ?></h4>
+			<h3 class="recurrences__title"><?php echo $args['title']; ?></h3>
 			<?php
 			echo $EM_Event->output( '#_RECURRENCES' );
 			?>
@@ -958,9 +958,25 @@ function debtcollective_location_link( $EM_Event ) {
 function debtcollective_location_link_zoom( $EM_Event ) {
 	?>
 	<div class="wp-block-buttons">
-		<div class="wp-block-button join">
-			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['join_url'] ); ?>" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
-		</div>
+		<?php
+		if( DebtCollective\Inc\is_past( $EM_Event ) ) : 
+			?>
+			<p class="past ended"><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>
+			<?php 
+		elseif ( DebtCollective\Inc\is_current( $EM_Event ) ) : 
+			?>
+			<div class="wp-block-button emphasis zoom join">
+				<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['join_url'] ); ?>" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
+			</div>
+			<?php
+		else :
+			?>
+			<div class="wp-block-button emphasis zoom register">
+				<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['registration_url'] ); ?>" target="_blank"><?php esc_html_e( 'Register', 'debtcollective' ); ?></a>
+			</div>
+			<?php
+		endif; 
+		?>
 	</div>
 	<?php
 }
@@ -975,7 +991,7 @@ function debtcollective_location_link_url( $EM_Event ) {
 	$text = ( $EM_Event->event_location->data['text'] ) ? $EM_Event->event_location->data['text'] : esc_html__( 'Event Link', 'debtcollective' );
 	?>
 	<div class="wp-block-buttons">
-		<div class="wp-block-button url">
+		<div class="wp-block-button emphasis url">
 			<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['url'] ); ?>" target="_blank"><?php echo $text; ?></a>
 		</div>
 	</div>

@@ -36,6 +36,17 @@
 			}
 		}
 	}
+	&.primary,
+	&.emphasis {
+		a,
+		.wp-block-button__link {
+			background-color: get-color(emphasis);
+			&:hover, 
+			&:focus {
+				background-color: $black;
+			}
+		}
+	}
 	&.jade {
 		a,
 		.wp-block-button__link {
@@ -74,6 +85,13 @@
 			font-size: get-font-size(h3) !important;
 		}
 	}
+	&.small {
+		padding: 0.4rem 0.8rem;
+		> .wp-block-button__link,
+		a {
+			font-size: get-font-size(h5) !important;
+		}
+	}
 	&.outline--reverse {
 		border: 0.125rem solid get-color(lightest) !important;
 		background-color: transparent !important;
@@ -110,4 +128,32 @@
 
 input.btn {
 	@extend %btn;
+}
+
+.em-event-add-to-calendar {
+	@extend %btn;
+	margin-bottom: .25rem;
+
+	padding: 0.4rem 0.8rem;
+	font-size: get-font-size(h5);
+	font-weight: 700;
+	background-color: $white;
+	color: get-color(darkest);
+	border: 1px solid get-color(darkest);
+
+	&:hover, 
+	&:focus {
+		background-color: darken($white, 15%);
+	}
+
+	.em-icon-calendar {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48' width='48'%3E%3Cpath d='M35 44v-6h-6v-3h6v-6h3v6h6v3h-6v6ZM9 40q-1.2 0-2.1-.9Q6 38.2 6 37V10q0-1.2.9-2.1Q7.8 7 9 7h3.25V4h3.25v3h13V4h3.25v3H35q1.2 0 2.1.9.9.9.9 2.1v15.1q-.75-.1-1.5-.1t-1.5.1v-5.6H9V37h16q0 .75.15 1.5t.4 1.5Zm0-23.5h26V10H9Zm0 0V10v6.5Z'/%3E%3C/svg%3E");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		display: inline-block;
+		height: 18px;
+		width: 18px;
+		line-height: inherit;
+		margin-right: .125rem;
+	}
 }
