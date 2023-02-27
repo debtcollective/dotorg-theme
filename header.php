@@ -75,8 +75,17 @@ $display_title_tagline = get_theme_mod( 'header_text', 'false' );
 						if ( $description || is_customize_preview() ) :
 							?>
 							<p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
+							<?php 
+						endif; ?>
 					<?php endif; ?>
-					<?php endif; ?>
+
+					<?php
+					if ( is_active_sidebar( 'header' ) ) :
+						?>
+							<?php dynamic_sidebar( 'header' ); ?>
+						<?php
+					endif;
+					?>
 
 				</div><!-- .site-branding -->
 			<?php endif; ?>
