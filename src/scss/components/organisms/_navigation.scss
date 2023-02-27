@@ -271,6 +271,16 @@
 			margin-top: $wp-admin-sm;
 		}
 	}
+
+	.widget {
+		display: none;
+	}
+
+	@include breakpoint(sm) {
+		.widget {
+			display: block;
+		}
+	}
 }
 
 .custom-logo-link {
