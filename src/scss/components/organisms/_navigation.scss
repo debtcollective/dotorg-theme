@@ -284,6 +284,7 @@
 	background-size: contain;
 
 	margin-left: calc( (100% / 2) - ( 54px / 2 ) - 18px );
+	margin-right: auto;
 
 	.menu-visible & {
 		margin-left: 28px;
