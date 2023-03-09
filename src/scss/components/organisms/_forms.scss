@@ -1,0 +1,26 @@
+.field-section { // contact form 7
+	border: none;
+	padding: 0;
+	margin: 1rem 0;
+}
+.field-group {
+	display: grid;
+	margin-bottom: 1rem;
+	label {
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 0.5rem;
+	}
+	&.social {
+		@media (min-width: get-breakpoint(xs)) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
+
+.ngp-form { // every action
+	.EventRolesParent {
+		// hide Roles on Event Signup forms (default Role will be selected), remove this if we use Event Roles in the future
+		display: none !important
+	}
+}
