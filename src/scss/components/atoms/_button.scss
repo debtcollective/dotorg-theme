@@ -67,6 +67,12 @@
 			}
 		}
 	}
+	&.outlined {
+		a,
+		.wp-block-button__link {
+			border: 1px solid get-color(grey-darker);
+		}
+	}
 	&.link {
 		a,
 		.wp-block-button__link {
