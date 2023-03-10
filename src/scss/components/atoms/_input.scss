@@ -1,8 +1,8 @@
 input {
 	&[type="text"],
 	&[type="email"],
-	
-	&[type="tel"] {
+	&[type="tel"],
+	&[type="date"] {
 		box-sizing: border-box;
 		background-color: get-color(green-1) !important;
 		border: 1px solid #219653 !important;
@@ -13,6 +13,10 @@ input {
 		padding: 0 1rem;
 		&.minor {
 			height: 2.5rem;
+		}
+		.at &:focus { // every action
+			outline: 5px auto Highlight !important;
+			outline: 5px auto -webkit-focus-ring-color !important;
 		}
 	}
 }

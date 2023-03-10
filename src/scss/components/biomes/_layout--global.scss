@@ -254,3 +254,17 @@ $sidebar-width: 280px;
 .grecaptcha-badge {
 	display: none !important;
 }
+
+body[class*="postid-"]:not([class*="event"]) {
+	.fbc-items li:not(:first-child) {
+		// breadcrumbs: hide link for post category but keep home icon
+		display: none;
+	}
+	.post {
+		.entry-meta,
+		.entry-footer,
+		+ .post-navigation {
+			display: none;
+		}
+	}
+}

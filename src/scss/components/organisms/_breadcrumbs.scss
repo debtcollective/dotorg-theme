@@ -21,6 +21,7 @@
 				padding-left: 0;
 			}
 			a {
+				color: get-color(darkest);
 				text-decoration: none;
 				&:hover,
 				&:focus {
@@ -34,9 +35,6 @@
 					&:focus {
 						text-decoration: underline;
 					}
-				}
-				span {
-					color: get-color(darkest)
 				}
 
 				.material-icons {
