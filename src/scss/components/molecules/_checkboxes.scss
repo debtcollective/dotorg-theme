@@ -66,3 +66,24 @@
 		}
 	}
 }
+
+.at { // every action
+	input[type="checkbox"] {
+		&:checked, &:active {
+			+ span::before {
+				background-color: get-color(jade-darker) !important;
+				border-color: get-color(jade-darker) !important;
+			}
+		}
+		&:focus, &:hover {
+			+ span::before {
+				border-color: get-color(jade-darker) !important;
+				box-shadow: 0 0 4px get-color(jade-darker) !important;
+			}
+		}
+		&:focus + span {
+			outline: 5px auto Highlight !important;
+			outline: 5px auto -webkit-focus-ring-color !important;
+		}
+	}
+}

@@ -41,7 +41,7 @@
 		a,
 		.wp-block-button__link {
 			background-color: get-color(emphasis);
-			&:hover, 
+			&:hover,
 			&:focus {
 				background-color: $black;
 			}
@@ -132,7 +132,7 @@
 	}
 }
 
-input.btn {
+input.btn, input.btn-at.at-submit {
 	@extend %btn;
 }
 
@@ -147,7 +147,7 @@ input.btn {
 	color: get-color(darkest);
 	border: 1px solid get-color(darkest);
 
-	&:hover, 
+	&:hover,
 	&:focus {
 		background-color: darken($white, 15%);
 	}
