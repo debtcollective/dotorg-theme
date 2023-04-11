@@ -12,6 +12,7 @@ const variations = [
     __( 'call to action', 'debtcollective' )
   ],
   category: 'components',
+  icon: 'video-alt3',
   attributes: {
     className: 'video-banner banner',
     backgroundColor: 'canary',
