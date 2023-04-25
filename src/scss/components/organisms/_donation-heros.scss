@@ -98,14 +98,25 @@
 				margin: 0 3.5rem;
 			}
 		}
+		&.multistep-layout {
+			// to fix form title cut off at top
+			overflow: visible;
+			.at-form {
+				// fix width larger than screen seen at <640px
+				overflow: hidden;
+			}
+			.FastAction {
+				// reset padding on empty element, takes up space on Join form
+				padding: 0;
+			}
+		}
 		.at-form {
 			.at-inner {
 				background-color: transparent;
 				.at-title {
 					font-size: get-font-size(h4);
 					font-weight: 900;
-					padding: 0;
-					padding-top: 1rem;
+					padding: 1rem 0;
 				}
 				.at-legal, small {
 					a {
@@ -206,7 +217,7 @@
 			object-position: 19%;
 		}
 	}
-	p {
+	> p {
 		padding-top: 1rem;
 	}
 	&.zero {
