@@ -24,3 +24,24 @@
 		display: none !important
 	}
 }
+.oa-self-service-login-container {
+	font-family: get-font('base'), sans-serif;
+	h2 {
+		font-size: get-font-size('h4');
+		margin-top: 0;
+	}
+	.oa-input-container {
+		.oa-input-unit {
+			color: get-color('text');
+			+ .row {
+				padding-bottom: 0;
+				margin: 0;
+				.btn-at.btn-at-primary {
+					@extend %btn;
+					height: auto;
+					margin: 1rem auto !important;
+				}
+			}
+		}
+	}
+}
