@@ -29,8 +29,15 @@ function wdsMobileMenu() {
 	subMenuParentItem.forEach( ( subMenuParent ) => {
 		const menuItem = subMenuParent.querySelector( 'a' );
 
+		menuItem.setAttribute( 'aria-expanded', false );
+		menuItem.setAttribute( 'aria-label', 'Open submenu' );
+		menuItem.classList.add( 'parent-indicator' );
+		menuItem.classList.add( 'caret-down' );
+
+		// menuItem.innerHTML +=
+		// 	'<button type="button" aria-expanded="false" class="parent-indicator caret-down" aria-label="Open submenu"><span class="down-arrow"></span></button>';
 		menuItem.innerHTML +=
-			'<button type="button" aria-expanded="false" class="parent-indicator caret-down" aria-label="Open submenu"><span class="down-arrow"></span></button>';
+			'<span class="down-arrow"></span>';
 
 		const subMenuTrigger = document.querySelectorAll( '.parent-indicator' );
 
