@@ -3,11 +3,9 @@
   position: relative;
 	left: -1rem;
 	width: 100vw;
-	display: flex;
-	justify-content: center;
-	padding: 2rem 0;
+	display: block;
+	padding-top: 2rem;
 	@media (min-width: get-breakpoint(sm)) {
-		display: block;
 		left: -3.5rem;
 		padding-top: 3rem;
 	}
@@ -30,6 +28,7 @@
 		margin: 0 1rem;
     @media (min-width: get-breakpoint(xs)) {
       max-width: 80%;
+			margin: 0 auto;
     }
     @media (min-width: get-breakpoint(sm)) {
 			max-width: 24rem;
@@ -83,11 +82,131 @@
 			}
 		}
   }
+
+	.ngp-form { // every action
+		background-color: #F7F7F7;
+		border-radius: 1.25rem;
+		box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+		&, + p {
+			margin: 0 1rem;
+			@media (min-width: get-breakpoint(xs)) {
+				max-width: 80%;
+				margin: 0 auto;
+			}
+			@media (min-width: get-breakpoint(sm)) {
+				max-width: 24rem;
+				margin: 0 3.5rem;
+			}
+		}
+		&.multistep-layout {
+			// to fix form title cut off at top
+			overflow: visible;
+			.at-form {
+				// fix width larger than screen seen at <640px
+				overflow: hidden;
+			}
+			.FastAction {
+				// reset padding on empty element, takes up space on Join form
+				padding: 0;
+			}
+		}
+		.at-form {
+			.at-inner {
+				background-color: transparent;
+				.at-title {
+					font-size: get-font-size(h4);
+					font-weight: 900;
+					padding: 1rem 0;
+				}
+				.at-legal, small {
+					a {
+						color: #1E9981;
+					}
+				}
+				.btn-at-primary {
+					@extend %btn;
+				}
+
+				.at-steps {
+					@media (min-width: get-breakpoint(ea-sm)) {
+						padding: 0.5rem 1rem;
+					}
+					.at-step {
+						a {
+							display: flex;
+							justify-content: center;
+							color: get-color(grey-darker);
+
+							&::before {
+								border: none;
+								font-weight: 900;
+							}
+
+							@media (min-width: get-breakpoint(ea-sm)) {
+								padding: 0;
+								&::before {
+									position: inherit;
+									transform: none;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									padding: 0.5rem;
+									margin: 2px;
+									margin-right: 4px;
+								}
+							}
+						}
+						&.active {
+							border-bottom-color: get-color(text);
+						}
+						&.valid>*::before {
+							background-color: get-color(jade-dark);
+						}
+						&.invalid>*::before {
+							background-color: get-color(emphasis);
+						}
+					}
+				}
+				.at-radio {
+					.label-amount {
+						color: get-color(text);
+						a {
+							background-color: transparent;
+							border: solid 1px get-color(text);
+							border-radius: 0.5rem;
+						}
+						input {
+							&:required,
+							&:checked + a {
+								background-color: #DBF8FF;
+								border-color: get-color(text);
+							}
+							&::placeholder {
+								color: get-color(text);
+							}
+						}
+					}
+					.label-otheramount > {
+						.label-otheramount-prefix,
+						.edit-otheramount {
+							color: get-color(text);
+							border-radius: 0.5rem;
+						}
+					}
+				}
+				.at-recurring label {
+					cursor: default;
+				}
+			}
+		}
+	}
+
 	figure {
 		position: absolute;
 		top: 0;
 		z-index: -1;
 		height: 100%;
+		max-height: 25rem;
 		@media (min-width: get-breakpoint(sm)) {
 			height: 82%;
 		}
@@ -96,6 +215,21 @@
 			object-fit: cover;
 			height: 100%;
 			object-position: 19%;
+		}
+	}
+	> p {
+		padding-top: 1rem;
+	}
+	&.zero {
+		padding: 0;
+		.ngp-form {
+			@media (min-width: get-breakpoint(sm)) {
+				max-width: 100%;
+			}
+		}
+		figure {
+			position: initial;
+			margin-bottom: 2rem;
 		}
 	}
 }
