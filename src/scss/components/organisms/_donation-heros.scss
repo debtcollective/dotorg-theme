@@ -194,8 +194,45 @@
 						}
 					}
 				}
+			}
+			.ContributionInformation {
 				.at-recurring label {
+					// these labels are for hidden checkboxes where user chooses recurring/frequency of recurring payment
+					// defaults to Yes & Month on Join w Dues form (only form with recurring enabled currently)
 					cursor: default;
+					line-height: 1.5;
+					&.IsRecurring {
+						display: block;
+						position: relative;
+						padding-bottom: 1rem;
+						span {
+							display: none;
+						}
+						&::after {
+							content: "Joining as a dues paying member with a monthly payment";
+							color: get-color('text');
+							font-size: 1rem;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+					&.at-select {
+						display: none !important;
+					}
+				}
+			}
+			.thankYou {
+				padding: 1.25rem;
+				h3 {
+					font-size: get-font-size('h4');
+					margin: 1rem 0;
+				}
+				a {
+					color: get-color(jade-dark);
+					&:hover, &:focus, &:active {
+						color: get-color(jade-darker);
+					}
 				}
 			}
 		}
