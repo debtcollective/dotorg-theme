@@ -270,3 +270,23 @@
 		}
 	}
 }
+
+.donate-hero {
+	.ngp-form {
+		@media (min-width: get-breakpoint('sm')) {
+			.ContributionInformation {
+				.at-radio, &:not(.hideStep) ~ .at-form-submit {
+					margin-left: 0;
+					margin-right: 0;
+				}
+				.label-amount {
+					&:not(:nth-child(4n+4), .label-otheramount) {
+						padding: 8px 4px;
+						width: 24%;
+						margin-right: 2%;
+					}
+				}
+			}
+		}
+	}
+}
