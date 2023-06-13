@@ -23,7 +23,7 @@
 		}
 		.event.future {
 			border-radius: 0.75rem;
-
+			height: min-content;
 			a {
 				padding: 1rem 1.25rem;
 				background: get-color('azure');
@@ -52,6 +52,7 @@
 						font-style: italic;
 						position: relative;
 						font-size: 1.25rem;
+						height: min-content;
 						&::before, &::after {
 							content: "";
 							position: absolute;
