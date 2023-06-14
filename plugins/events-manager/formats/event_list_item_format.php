@@ -28,6 +28,14 @@
                 <?php esc_html_e( 'Virtual', 'debt-collective' ); ?>
             {/has_event_location}
         </div>
+		{has_tag_jubilee-school}
+		<div class="event__image">
+			#_EVENTIMAGE{full}
+		</div>
+		<div class="event__content">
+			#_EVENTNOTES
+		</div>
+		{/has_tag_jubilee-school}
     </a>
 
 </article><!-- #post-## -->

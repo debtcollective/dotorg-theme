@@ -6,6 +6,8 @@ $c__gray--darker: #343434;
 $black: #000;
 
 $c__orange: #FF4630;
+$c__red: #EB1700;
+$c__red-dark: #CC1400;
 
 $c__jade: #20A78C;
 $c__jade--light: #24BA9D;
@@ -26,6 +28,31 @@ $c__black--80: rgba($black, 0.8);
 $c__black--50: rgba($black, 0.5);
 
 $c__green--1: rgba(91, 203, 181, 0.1);
+
+$c__violet: #995D81;
+$c__violet-dark: #613E65;
+
+$c__azure-dark: #70D6FF;
+$c__azure-med: #98E6FE;
+$c__azure-light: #BFF5FD;
+
+$azure-gradient: linear-gradient(
+	135deg,
+	$c__azure-light 0%,
+	$c__azure-med 90%,
+	$c__azure-dark 100%
+);
+
+$c__aquamarine: #8BF9B7;
+$c__aquamarine-med: #AAFAC8;
+$c__aquamarine-light: #C2FCD8;
+
+$aquamarine-gradient: linear-gradient(
+	45deg,
+	$c__aquamarine 0%,
+	$c__aquamarine-med 10%,
+	$c__aquamarine-light 100%,
+);
 
 // Usage  `map.get($colors, "emphasis");``
 $colors: (
@@ -53,6 +80,14 @@ $colors: (
   "lightest": $white,
   "darkest": $c__gray--darker,
   "formbg": $c__jade--form-bg,
+	"red":$c__red,
+	"red-dark": $c__red-dark,
+	"azure-dark": $c__azure-dark,
+	"azure": $c__azure-light,
+	"aquamarine": $c__aquamarine,
+	"aquamarine-light": $c__aquamarine-light,
+	"violet": $c__violet,
+	"violet-dark": $c__violet-dark
 );
 
 @function get-color($key) {
