@@ -493,3 +493,23 @@ function add_event_args( array $args ) {
 	}
 	return $args;
 }
+
+/**
+ * custom event placeholder for all tag slugs
+ * used to add classes to events in event_list format
+ */
+function event_tag_slugs($replace, $EM_Event, $result){
+	if( $result == '#_ALLTAGSLUGS' ){
+			$replace = 'none';
+			$tags = get_the_terms($EM_Event->post_id, EM_TAXONOMY_TAG);
+			if( is_array($tags) && count($tags) > 0 ){
+				$tags_list = array();
+				foreach($tags as $tag){
+					$tags_list[] = $tag->slug;
+				}
+				$replace = implode(' ', $tags_list);
+			}
+	}
+	return $replace;
+}
+\add_filter( 'em_event_output_placeholder', __NAMESPACE__ . '\event_tag_slugs', 1, 3 );

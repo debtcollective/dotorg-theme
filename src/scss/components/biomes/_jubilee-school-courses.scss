@@ -23,7 +23,6 @@
 		}
 		.event.future {
 			border-radius: 0.75rem;
-			height: min-content;
 			a {
 				padding: 1rem 1.25rem;
 				background: get-color('azure');
@@ -44,15 +43,18 @@
 				@media (min-width: get-breakpoint(xs)) {
 					display: grid;
 					grid-template-columns: repeat(6, 16.667%);
-					row-gap: 0.5rem;
 				}
 
 				.event {
 					&__title {
-						font-style: italic;
 						position: relative;
-						font-size: 1.25rem;
 						height: min-content;
+						line-height: 1.3;
+						font-style: italic;
+						font-size: 1.25rem;
+						@media (min-width: get-breakpoint(xs)) {
+							font-size: 2rem;
+						}
 						&::before, &::after {
 							content: "";
 							position: absolute;
@@ -81,30 +83,45 @@
 							font-size: 1.25rem;
 							font-weight: 800;
 							letter-spacing: -1px;
+							@media (min-width: get-breakpoint(xs)) {
+								font-size: 2rem;
+							}
 						}
 					}
 					&__time {
 						margin: 0.25rem 0;
+						@media (min-width: get-breakpoint(sm)) {
+							font-size: 1.25rem;
+						}
 					}
 					&__location {
 						margin-bottom: 0.25rem;
 					}
 					&__content {
 						margin-top: 1rem;
-						display: -webkit-box;
-						-webkit-box-orient: vertical;
-						-webkit-line-clamp: 5;
-						overflow: hidden;
+						display: block;
+						.speaker-name {
+							font-weight: 900;
+							margin: 0;
+						}
 						p {
-							font-size: 1rem;
-							margin: 0.5rem 0;
-							display: inline;
-							&:empty {
-								display: none;
+							font-weight: 400;
+							@media (min-width: get-breakpoint(sm)) {
+								font-size: get-font-size('lede');
 							}
-							&:not(:empty)::after {
-								content: " \A\A";
-								white-space: pre;
+						}
+						.series {
+							display: block;
+							text-align: center;
+							font-weight: 400;
+							font-size: 0.8rem;
+							@media (min-width: get-breakpoint(sm)) {
+								font-size: 1rem;
+							}
+							&::after {
+								font-size: 1.25em;
+								font-weight: 900;
+								font-style: italic;
 							}
 						}
 					}
@@ -115,7 +132,6 @@
 						&__title {
 							grid-column: 1 / 6;
 							grid-row: 1;
-							font-size: 2rem;
 							padding: 1rem;
 							&::before, &::after {
 								margin: 1rem;
@@ -129,9 +145,6 @@
 						&__date {
 							grid-column: 1 / 4;
 							margin-top: 0;
-							time {
-								font-size: 2rem;
-							}
 						}
 						&__time {
 							grid-column: 4 / end;
@@ -158,34 +171,59 @@
 						&__time {
 							grid-column: 5 / end;
 							grid-row: 3;
-							font-size: 1.25rem;
 						}
 						&__content {
 							grid-row: 4;
 							margin: 1rem 1rem 0;
-							-webkit-line-clamp: 8;
-							p {
-								font-size: get-font-size('lede');
-							}
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
 						}
 					}
 				}
 			}
-		}
-	}
-	.events-by-series {
-		&:nth-child(even) .event:nth-child(even),
-		&:nth-child(odd) .event:nth-child(odd) {
-			a {
-				background: get-color(aquamarine-light);
-				background: $aquamarine-gradient;
-				.event__title {
-					&::before {
-						border-color: get-color('violet-dark');
+			&:nth-child(even) {
+				a {
+					background: get-color(aquamarine-light);
+					background: $aquamarine-gradient;
+					.event__title {
+						&::before {
+							border-color: get-color('violet-dark');
+						}
+						&::after {
+							border-color: get-color('red-dark');
+						}
 					}
-					&::after {
-						border-color: get-color('red-dark');
-					}
+				}
+			}
+			&.debt-is-a-labor-issue {
+				.series::after {
+					content: "Debt is a Labor Issue Series"
+				}
+			}
+			&.higher-ed-series {
+				.series::after {
+					content: "Rethinking and Reinventing Higher Education Series"
+				}
+			}
+			&.housing-debt-series {
+				.series::after {
+					content: "Housing Debt Series"
+				}
+			}
+			&.k-12-debt {
+				.series::after {
+					content: "K-12 Debt Crisis Series"
+				}
+			}
+			&.war-and-debt {
+				.series::after {
+					content: "War and Debt Series"
+				}
+			}
+			&.other-jubilee-school {
+				.series {
+					display: none !important;
 				}
 			}
 		}
