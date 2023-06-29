@@ -204,16 +204,46 @@
 .single-event,
 .single-location {
 	.event {
+		&__title {
+			font-size: get-font-size(h3);
+			@media (min-width: get-breakpoint(sm)) {
+				font-size: get-font-size(h2);
+			}
+			line-height: 1.15;
+		}
 		&__content,
-		&__date,
 		&__time,
 		&__meta {
 			font-size: get-font-size('large');
 		}
-
 		&__meta {
 			display: flex;
 			flex-direction: column;
+			align-items: center;
+			margin-bottom: 1rem;
+			.event {
+				&__date {
+					font-size: 2rem;
+					font-weight: 900;
+					font-style: italic;
+				}
+				@media (min-width: get-breakpoint(sm)) {
+					&__date {
+						font-size: get-font-size('h3');
+					}
+					&__time {
+						font-size: get-font-size('h4');
+					}
+				}
+			}
+			.em-event-add-to-calendar {
+				margin: 0.25rem auto 0;
+				@media (min-width: get-breakpoint(sm)) {
+					margin-top: 0.75rem;
+					font-size: get-font-size('large');
+					padding: 0.5rem 1.25rem;
+				}
+			}
 		}
 
 		&__image {
@@ -270,7 +300,16 @@
 		.wp-block-buttons {
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: center;
 			gap: .25rem;
+			.wp-block-button a {
+				background-color: get-color('red');
+				font-size: 1.5rem;
+				padding: 0.75rem 0.75em;
+				@media (min-width: get-breakpoint(sm)) {
+					font-size: 2rem;
+				}
+			}
 		}
 
 		form {
@@ -303,6 +342,11 @@
 
 		.is-current & {
 			font-weight: bold;
+		}
+	}
+	.event {
+		&__date, &__time {
+			font-size: get-font-size('large');
 		}
 	}
 }

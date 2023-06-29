@@ -145,7 +145,7 @@ input.btn, input.btn-at.at-submit {
 	font-weight: 700;
 	background-color: $white;
 	color: get-color(darkest);
-	border: 1px solid get-color(darkest);
+	border: 2px solid get-color(darkest);
 
 	&:hover,
 	&:focus {
@@ -157,9 +157,9 @@ input.btn, input.btn-at.at-submit {
 		background-size: 100%;
 		background-repeat: no-repeat;
 		display: inline-block;
-		height: 18px;
-		width: 18px;
+		height: 1.125em;
+		width: 1.125em;
 		line-height: inherit;
-		margin-right: .125rem;
+		margin-right: .125em;
 	}
 }
