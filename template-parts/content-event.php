@@ -34,21 +34,20 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		<?php
 	endif;
 	?>
-	
+
 	<header class="event_header">
 		<h2 class="event__title <?php echo \has_term( array( 'welcome-calls', 'welcome-call' ), $taxonomy, $post_id ) ? ' sr-only' : ''; ?>"><?php the_title(); ?></h2>
 	</header>
 
 	<div class="event__meta post-meta">
-		<div class="event__ical">
-			<?php echo $EM_Event->output( '#_EVENTADDTOCALENDAR' ); ?>
-		</div>
 		<div class="event__date">
 			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTDATES' ); ?></time>
 		</div>
-
 		<div class="event__time event__time-start">
 			<time datetime="<?php echo $EM_Event->output( '#_{Y-m-d H:i:s}' ); ?>"><?php echo $EM_Event->output( '#_EVENTTIMES' ); ?> <span class="timezone"><?php echo $EM_Event->output( '#_{T}' ); ?></span></time>
+		</div>
+		<div class="event__ical">
+			<?php echo $EM_Event->output( '#_EVENTADDTOCALENDAR' ); ?>
 		</div>
 	</div>
 
@@ -57,32 +56,34 @@ $class       .= $is_recurring ? ' is-recurring' : '';
 		remove_filter( 'the_content', array( 'EM_Event_Post', 'the_content' ) );
 		echo apply_filters( 'the_content', $EM_Event->post_content );
 		?>
-
-		<div class="event__location">
-			<?php
-			if ( $EM_Event->has_location() ) :
-				?>
-				<?php debtcollective_event_address_placeholders( $EM_Event ); ?>
-			
-				<?php
-			elseif ( $EM_Event->has_event_location() ) :
-				?>
-
-				<?php debtcollective_location_link( $EM_Event ); ?>
-				<?php
-			endif;
-			?>
-		</div>
 	</div>
 
-	<footer class="event__footer">
-		<?php
-		if ( $EM_Event->has_location() ) :
-			?>
-			<div class="post-meta event__meta event__location-map"><?php echo $EM_Event->output( '#_LOCATIONMAP' ); ?></div>
-			<?php
-		endif;
+	<?php
+	if ( has_term('jubilee-school', $taxonomy, $post_id) ) :
 		?>
+		<?php debtcollective_event_speaker_placeholders( $EM_Event ); ?>
+
+		<?php
+	endif
+	?>
+
+	<footer class="event__footer">
+		<div class="event__location">
+			<?php
+				if ( $EM_Event->has_location() ) :
+					?>
+					<?php debtcollective_event_address_placeholders( $EM_Event ); ?>
+
+					<div class="post-meta event__meta event__location-map"><?php echo $EM_Event->output( '#_LOCATIONMAP' ); ?></div>
+					<?php
+				elseif ( $EM_Event->has_event_location() ) :
+					?>
+
+					<?php debtcollective_location_link( $EM_Event ); ?>
+					<?php
+				endif;
+			?>
+		</div>
 
 		<?php debtcollective_event_recurrences_placeholders( $EM_Event ); ?>
 	</footer>

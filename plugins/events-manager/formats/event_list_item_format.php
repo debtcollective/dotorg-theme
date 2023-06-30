@@ -1,4 +1,4 @@
-<article class="event-container event{is_past} past{/is_past}{is_future} future{/is_future}{is_recurrence} is-recurring{/is_recurrence}">
+<article class="event-container event{is_past} past{/is_past}{is_future} future{/is_future}{is_recurrence} is-recurring{/is_recurrence}{has_tag_jubilee-school} #_ALLTAGSLUGS{/has_tag_jubilee-school}">
 
     <a href="#_EVENTURL" title="#_EVENTNAME">
 
@@ -29,12 +29,14 @@
             {/has_event_location}
         </div>
 		{has_tag_jubilee-school}
-		<div class="event__image">
-			#_EVENTIMAGE{full}
-		</div>
-		<div class="event__content">
-			#_EVENTNOTES
-		</div>
+			<div class="event__image">
+				#_EVENTIMAGE{thumbnail}
+			</div>
+			<div class="event__content">
+				<p class="speaker-name">SPEAKER: #_ATT{speaker_name}</p>
+				#_EVENTEXCERPTCUT
+				<span class="series">Part of our <br/></span>
+			</div>
 		{/has_tag_jubilee-school}
     </a>
 

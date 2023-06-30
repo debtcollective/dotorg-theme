@@ -770,7 +770,7 @@ function debtcollective_virtual_location_text( $EM_Event, $args = array() ) {
 			<?php
 		elseif ( in_array( $location_type, $types ) ) :
 			?>
-			
+
 			<?php esc_html_e( 'Virtual', 'debt-collective' ); ?>
 
 			<?php
@@ -871,7 +871,7 @@ function debtcollective_event_recurrences_placeholders( $EM_Event, $args = array
 			echo $EM_Event->output( '#_RECURRENCES' );
 			?>
 		</section>
-			
+
 		<?php
 	endif;
 }
@@ -959,11 +959,11 @@ function debtcollective_location_link_zoom( $EM_Event ) {
 	?>
 	<div class="wp-block-buttons">
 		<?php
-		if( DebtCollective\Inc\is_past( $EM_Event ) ) : 
+		if( DebtCollective\Inc\is_past( $EM_Event ) ) :
 			?>
 			<p class="past ended"><?php esc_html_e( 'Event has ended.', 'debtcollective' ); ?></p>
-			<?php 
-		elseif ( DebtCollective\Inc\is_current( $EM_Event ) ) : 
+			<?php
+		elseif ( DebtCollective\Inc\is_current( $EM_Event ) ) :
 			?>
 			<div class="wp-block-button emphasis zoom join">
 				<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['join_url'] ); ?>" target="_blank"><?php esc_html_e( 'Join', 'debtcollective' ); ?></a>
@@ -975,7 +975,7 @@ function debtcollective_location_link_zoom( $EM_Event ) {
 				<a class="wp-block-button__link" href="<?php echo esc_url( $EM_Event->event_location->data['registration_url'] ); ?>" target="_blank"><?php esc_html_e( 'Register', 'debtcollective' ); ?></a>
 			</div>
 			<?php
-		endif; 
+		endif;
 		?>
 	</div>
 	<?php
@@ -1024,6 +1024,23 @@ function debtcollective_rsvp_placeholders( $EM_Event, $args = array() ) {
 		<div class="event__rsvp">
 			<h4 class="event__rsvp-title"><?php echo $args['title']; ?></h4>
 			<?php echo $EM_Event->output( '#_BOOKINGFORM' ); ?>
+		</div>
+		<?php
+	endif;
+}
+
+function debtcollective_event_speaker_placeholders( $EM_Event ) {
+	$speaker_img = $EM_Event->output( '#_ATT{speaker_image}');
+	$speaker_name = $EM_Event->output( '#_ATT{speaker_name}' );
+	if ( $speaker_name ) :
+		?>
+		<div class="event__speaker">
+			<h3 class="speaker-name">
+				Speaker:
+				<br/>
+				<?php echo $EM_Event->output( '#_ATT{speaker_name}' ); ?>
+			</h3>
+			<?php echo wp_get_attachment_image( $speaker_img, 'thumbnail' ); ?>
 		</div>
 		<?php
 	endif;
