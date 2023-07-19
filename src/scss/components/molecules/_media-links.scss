@@ -1,6 +1,11 @@
 .wp-block-zwt-beautiful-link-preview {
 	border-bottom: #1e9981 solid 0.25rem;
 	margin-bottom: 2rem;
+	.zwt-wp-link-prev-img.empty {
+		content: url(https://wordpress-cdn-prod.debtcollective.org/wp-content/uploads/2022/04/01125933/dc-seoo.png);
+		width: 100%;
+		height: 100%;
+	}
 	.zwt-wp-link-prev-texts {
 		> div > a {
 			font-size: 0.875rem;
