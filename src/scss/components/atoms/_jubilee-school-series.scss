@@ -1,0 +1,70 @@
+%series-visible {
+	.series {
+		display: block;
+		text-align: center;
+		font-weight: 400;
+		font-size: 0.8rem;
+		@media (min-width: get-breakpoint(sm)) {
+			font-size: 1rem;
+		}
+		&::after {
+			font-size: 1.25em;
+			font-weight: 900;
+			font-style: italic;
+		}
+	}
+}
+
+%jubilee-school-series {
+	.series {
+		display: none;
+	}
+	&.debt-is-a-labor-issue {
+		@extend %series-visible;
+		.series::after {
+			content: "Debt is a Labor Issue Series"
+		}
+	}
+	&.higher-ed-series {
+		@extend %series-visible;
+		.series::after {
+			content: "Rethinking and Reinventing Higher Education Series"
+		}
+	}
+	&.housing-debt-series {
+		@extend %series-visible;
+		.series::after {
+			content: "Housing Debt Series"
+		}
+	}
+	&.k-12-debt {
+		@extend %series-visible;
+		.series::after {
+			content: "K-12 Debt Crisis Series"
+		}
+	}
+	&.war-and-debt {
+		@extend %series-visible;
+		.series::after {
+			content: "War and Debt Series"
+		}
+	}
+	&.carceral-debt {
+		@extend %series-visible;
+		.series::after {
+			content: "Carceral Debt Series"
+		}
+	}
+	// &:not(
+	// 	.debt-is-a-labor-issue,
+	// 	.higher-ed-series,
+	// 	.housing-debt-series,
+	// 	.k-12-debt,
+	// 	.war-and-debt,
+	// 	.carceral-debt
+	// ) {
+	// 	.series {
+	// 		display: none !important;
+	// 	}
+	// }
+}

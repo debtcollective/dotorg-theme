@@ -24,6 +24,9 @@
 					font-size: get-font-size('lede');
 				}
 			}
+			figure {
+				max-width: 540px;
+			}
 		}
 		&__speaker {
 			text-align: center;
@@ -96,6 +99,21 @@
 				grid-column: 4 / end;
 				grid-row: 2;
 				margin-top: 2rem;
+			}
+		}
+	}
+	&.past {
+		.event {
+			&__date {
+				font-size: 1.25rem;
+			}
+			&__time, &__ical {
+				display: none;
+			}
+			@media (min-width: get-breakpoint(sm)) {
+				&__meta {
+					grid-column: 1/end;
+				}
 			}
 		}
 	}

@@ -29,15 +29,18 @@
             {/has_event_location}
         </div>
 		{has_tag_jubilee-school}
-			<div class="event__image">
-				#_EVENTIMAGE{thumbnail}
-			</div>
-			<div class="event__content">
-				<p class="speaker-name">SPEAKER: #_ATT{speaker_name}</p>
-				#_EVENTEXCERPTCUT
+			<p class="event__speaker">SPEAKER: #_ATT{speaker_name}</p>
+			{is_future}
+				<div class="event__content">
+					#_EVENTEXCERPTCUT
+				</div>
 				<span class="series">Part of our <br/></span>
-			</div>
+			{/is_future}
 		{/has_tag_jubilee-school}
     </a>
-
+	{has_tag_jubilee-school}
+		{is_past}
+			<span class="series">Part of our <br/></span>
+		{/is_past}
+	{/has_tag_jubilee-school}
 </article><!-- #post-## -->
