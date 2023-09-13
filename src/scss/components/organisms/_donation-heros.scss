@@ -17,9 +17,6 @@
 	}
 
 	.ngp-form { // every action
-		background-color: #F7F7F7;
-		border-radius: 1.25rem;
-		box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 		&, + p {
 			margin: 0 1rem;
 			@media (min-width: get-breakpoint(xs)) {
@@ -45,19 +42,10 @@
 		}
 		.at-form {
 			.at-inner {
-				background-color: transparent;
-				.at-title {
-					font-size: get-font-size(h4);
-					font-weight: 900;
-					padding: 1rem 0;
-				}
 				.at-legal, small {
 					a {
 						color: #1E9981;
 					}
-				}
-				.btn-at-primary {
-					@extend %btn;
 				}
 
 				.at-steps {
