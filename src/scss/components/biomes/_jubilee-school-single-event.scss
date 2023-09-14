@@ -24,6 +24,15 @@
 					font-size: get-font-size('lede');
 				}
 			}
+			.ngp-form {
+				margin-bottom: 2rem;
+				.HeaderHtml p {
+					margin: 0;
+					strong {
+						color: $black;
+					}
+				}
+			}
 		}
 		&__speaker {
 			text-align: center;
