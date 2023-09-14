@@ -206,6 +206,7 @@
 	.event {
 		&__title {
 			font-size: get-font-size(h3);
+			margin: 0.5em 0;
 			@media (min-width: get-breakpoint(sm)) {
 				font-size: get-font-size(h2);
 			}
