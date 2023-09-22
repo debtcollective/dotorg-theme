@@ -29,11 +29,10 @@
             {/has_event_location}
         </div>
 		{has_tag_jubilee-school}
-			<div class="event__image">
-				#_EVENTIMAGE{thumbnail}
-			</div>
 			<div class="event__content">
-				<p class="speaker-name">SPEAKER: #_ATT{speaker_name}</p>
+				{has_speaker_name}
+					<p class="speaker-name">SPEAKER: #_ATT{speaker_name}</p>
+				{/has_speaker_name}
 				#_EVENTEXCERPTCUT
 				<span class="series">Part of our <br/></span>
 			</div>
