@@ -23,6 +23,7 @@
 		}
 		.event.future {
 			border-radius: 0.75rem;
+			@extend %jubilee-school-series;
 			a {
 				padding: 1rem 1.25rem;
 				background: get-color('azure');
@@ -111,20 +112,6 @@
 							font-weight: 400;
 							@media (min-width: get-breakpoint(sm)) {
 								font-size: get-font-size('lede');
-							}
-						}
-						.series {
-							display: block;
-							text-align: center;
-							font-weight: 400;
-							font-size: 0.8rem;
-							@media (min-width: get-breakpoint(sm)) {
-								font-size: 1rem;
-							}
-							&::after {
-								font-size: 1.25em;
-								font-weight: 900;
-								font-style: italic;
 							}
 						}
 					}
@@ -255,36 +242,6 @@
 							border-color: get-color('red-dark');
 						}
 					}
-				}
-			}
-			&.debt-is-a-labor-issue {
-				.series::after {
-					content: "Debt is a Labor Issue Series"
-				}
-			}
-			&.higher-ed-series {
-				.series::after {
-					content: "Rethinking and Reinventing Higher Education Series"
-				}
-			}
-			&.housing-debt-series {
-				.series::after {
-					content: "Housing Debt Series"
-				}
-			}
-			&.k-12-debt {
-				.series::after {
-					content: "K-12 Debt Crisis Series"
-				}
-			}
-			&.war-and-debt {
-				.series::after {
-					content: "War and Debt Series"
-				}
-			}
-			&.other-jubilee-school {
-				.series {
-					display: none !important;
 				}
 			}
 		}
