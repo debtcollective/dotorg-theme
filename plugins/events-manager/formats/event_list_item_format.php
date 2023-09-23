@@ -1,4 +1,4 @@
-<article class="event-container event{is_past} past{/is_past}{is_future} future{/is_future}{is_recurrence} is-recurring{/is_recurrence}{has_tag_jubilee-school} #_ALLTAGSLUGS{/has_tag_jubilee-school}">
+<article class="event-container event{is_past} past{/is_past}{is_future} future{/is_future}{is_recurrence} is-recurring{/is_recurrence}{no_event_location} physical-location{/no_event_location}{has_tag_jubilee-school} #_ALLTAGSLUGS{/has_tag_jubilee-school}">
 
     <a href="#_EVENTURL" title="#_EVENTNAME">
 

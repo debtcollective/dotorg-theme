@@ -42,6 +42,9 @@
 				}
 				@media (min-width: get-breakpoint(xs)) {
 					display: grid;
+					grid-template-columns: 1fr 1fr;
+				}
+				@media (min-width: get-breakpoint(sm)) {
 					grid-template-columns: repeat(6, 16.667%);
 				}
 
@@ -127,24 +130,29 @@
 					}
 					@media (min-width: get-breakpoint(xs)) {
 						&__title {
-							grid-column: 1 / 6;
+							grid-column: 1 / end;
 							grid-row: 1;
 							padding: 1rem;
 							&::before, &::after {
 								margin: 1rem;
 							}
 						}
-						&__location {
-							grid-column: 6 / end;
-							grid-row: 1;
-							text-align: right;
-						}
 						&__date {
-							grid-column: 1 / 4;
+							grid-column: 1;
+							grid-row: 2 / 4;
 							margin-top: 0;
 						}
+						&__location {
+							grid-column: 2;
+							grid-row: 2;
+							text-align: right;
+						}
+						&__address {
+							justify-content: flex-end;
+						}
 						&__time {
-							grid-column: 4 / end;
+							grid-column: 2;
+							grid-row: 3;
 							text-align: right;
 						}
 						&__content {
@@ -165,6 +173,10 @@
 							text-align: right;
 							grid-row: 2;
 						}
+						&__location {
+							grid-column: 5 / end;
+							grid-row: 1;
+						}
 						&__time {
 							grid-column: 5 / end;
 							grid-row: 3;
@@ -175,6 +187,58 @@
 							display: flex;
 							flex-direction: column;
 							justify-content: space-between;
+						}
+					}
+				}
+			}
+			&.physical-location {
+				a {
+					@media (min-width: get-breakpoint(lg)) {
+						grid-template-rows: min-content;
+					}
+				}
+				.event {
+					@media (min-width: get-breakpoint(xs)) {
+						&__date {
+							grid-row: 2;
+						}
+						&__time {
+							grid-column: 1;
+							grid-row: 3;
+							text-align: left;
+						}
+						&__location {
+							grid-row: 2 / 4;
+							align-self: center;
+						}
+						&__content {
+							margin-top: 0;
+						}
+					}
+					@media (min-width: get-breakpoint(sm)) {
+						&__title {
+							grid-row: 1;
+							margin-bottom: 1rem;
+						}
+						&__date {
+							grid-column: 1 / 4;
+							text-align: left;
+						}
+						&__time {
+							grid-column: 4 / end;
+							grid-row: 2;
+							text-align: right;
+						}
+						&__location {
+							grid-row: 1;
+						}
+					}
+					@media (min-width: get-breakpoint(lg)) {
+						&__date, &__time {
+							align-self: center;
+						}
+						&__content {
+							grid-row: 3;
 						}
 					}
 				}
