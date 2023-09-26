@@ -498,18 +498,37 @@ function add_event_args( array $args ) {
  * custom event placeholder for all tag slugs
  * used to add classes to events in event_list format
  */
-function event_tag_slugs($replace, $EM_Event, $result){
-	if( $result == '#_ALLTAGSLUGS' ){
-			$replace = 'none';
-			$tags = get_the_terms($EM_Event->post_id, EM_TAXONOMY_TAG);
-			if( is_array($tags) && count($tags) > 0 ){
-				$tags_list = array();
-				foreach($tags as $tag){
-					$tags_list[] = $tag->slug;
-				}
-				$replace = implode(' ', $tags_list);
+function event_tag_slugs( $replace, $EM_Event, $result ) {
+	if ( $result == '#_ALLTAGSLUGS' ) {
+		$replace = 'none';
+		$tags = get_the_terms($EM_Event->post_id, EM_TAXONOMY_TAG);
+		if ( is_array($tags) && count($tags) > 0 ) {
+			$tags_list = array();
+			foreach( $tags as $tag ) {
+				$tags_list[] = $tag->slug;
 			}
+			$replace = implode(' ', $tags_list);
+		}
 	}
 	return $replace;
 }
 \add_filter( 'em_event_output_placeholder', __NAMESPACE__ . '\event_tag_slugs', 1, 3 );
+
+/**
+ * conditional placeholder for custom fields
+ * speaker_name and speaker_image for Jubilee School events
+ */
+function custom_field_condition_filter( $replace, $condition, $match, $EM_Event ){
+	if ( is_object($EM_Event) &&
+		preg_match('/^has_(speaker_name)$/', $condition, $matches) ||
+		preg_match('/^has_(speaker_image)$/', $condition, $matches)
+	) {
+		if ( array_key_exists($matches[1], $EM_Event->event_attributes) && !empty($EM_Event->event_attributes[$matches[1]]) ) {
+			$replace = preg_replace("/\{\/?$condition\}/", '', $match);
+		} else {
+			$replace = '';
+		}
+	}
+	return $replace;
+}
+\add_filter( 'em_event_output_condition', __NAMESPACE__ . '\custom_field_condition_filter', 1, 4 );
