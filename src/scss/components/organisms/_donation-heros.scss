@@ -16,77 +16,7 @@
 		left: -2.25rem;
 	}
 
-  .PhoneInputCountryIconImg {
-    display: none;
-  }
-
-  .membership-widget,
-	.donation-widget {
-		background-color: #F7F7F7;
-		border-radius: 1.25rem;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-		margin: 0 1rem;
-    @media (min-width: get-breakpoint(xs)) {
-      max-width: 80%;
-			margin: 0 auto;
-    }
-    @media (min-width: get-breakpoint(sm)) {
-			max-width: 24rem;
-			margin: 0 3.5rem;
-		}
-
-		> div {
-			// override default max-width, then reapply at sm breakpoint
-			max-width: 100% !important;
-			@media (min-width: get-breakpoint(sm)) {
-				max-width: 24rem !important;
-			}
-
-			> div {
-				// necessary for border-radius to apply to the top corners, using this specificity to avoid altering other child divs
-				background: transparent;
-				> div {
-					background: transparent;
-				}
-			}
-		}
-		p {
-			padding: 0 1rem 1rem;
-		}
-		form {
-			div div:first-child {
-				flex-wrap: nowrap;
-			}
-			input, #stripe-card-element {
-				box-sizing: border-box;
-			}
-			.PhoneInputCountry {
-				position: relative;
-				padding-left: 0;
-			}
-			select {
-				height: 100%;
-				width: 100%;
-			}
-			input:checked + label {
-				border: solid 1px get-color(jade-dark);
-			}
-			#option-other:checked ~ #option-other-input {
-				display: flex;
-				flex-direction: row-reverse;
-			}
-			button {
-				@extend %btn;
-				background-color: darken(get-color(jade), 10%) !important;
-				cursor: pointer;
-			}
-		}
-  }
-
 	.ngp-form { // every action
-		background-color: #F7F7F7;
-		border-radius: 1.25rem;
-		box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 		&, + p {
 			margin: 0 1rem;
 			@media (min-width: get-breakpoint(xs)) {
@@ -112,19 +42,10 @@
 		}
 		.at-form {
 			.at-inner {
-				background-color: transparent;
-				.at-title {
-					font-size: get-font-size(h4);
-					font-weight: 900;
-					padding: 1rem 0;
-				}
 				.at-legal, small {
 					a {
 						color: #1E9981;
 					}
-				}
-				.btn-at-primary {
-					@extend %btn;
 				}
 
 				.at-steps {

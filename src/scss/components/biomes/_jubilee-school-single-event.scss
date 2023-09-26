@@ -2,15 +2,13 @@
 .event-tags-jubilee-school {
 	@media (min-width: get-breakpoint(sm)) {
 		display: grid;
-		grid-template-columns: repeat(2, 50%);
 		grid-template-rows: auto;
+		grid-template-columns: 1fr 1fr;
 		column-gap: 1rem;
 	}
 	@media (min-width: get-breakpoint(md)) {
-		grid-template-columns: repeat(2, 33%) 1fr;
-	}
-	@media (min-width: get-breakpoint(lg)) {
-		grid-template-columns: repeat(3, 25%) 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 2rem;
 	}
 	.event {
 		&__date time {
@@ -24,12 +22,25 @@
 					font-size: get-font-size('lede');
 				}
 			}
+			.is-type-video {
+				max-width: 30rem;
+				margin: 0 auto;
+			}
+			.ngp-form {
+				margin-bottom: 2rem;
+				.HeaderHtml p {
+					margin: 0;
+					strong {
+						color: $black;
+					}
+				}
+			}
 		}
 		&__speaker {
 			text-align: center;
 			.speaker-name {
 				font-size: get-font-size('h4');
-				margin-top: 0;
+				margin-top: 1rem;
 			}
 			img {
 				object-fit: contain;
@@ -42,7 +53,6 @@
 		@media (min-width: get-breakpoint(sm)) {
 			&_header {
 				grid-column: 1 / end;
-				grid-row: 1;
 			}
 			&__title {
 				margin-top: 2rem;
@@ -52,6 +62,7 @@
 				grid-column: 1;
 				grid-row: 2;
 				justify-content: center;
+				margin-top: 1rem;
 			}
 			&__content {
 				grid-column: 1 / end;
@@ -64,8 +75,7 @@
 			}
 			&__footer {
 				grid-column: 1 / end;
-				grid-row: 4;
-				margin-top: 0;
+				grid-row: 6;
 			}
 		}
 		@media (min-width: get-breakpoint(md)) {
@@ -80,22 +90,85 @@
 				grid-row: 3;
 			}
 		}
-		@media (min-width: get-breakpoint(lg)) {
+	}
+	&.has-post-thumbnail .event {
+		&__image {
+			margin-bottom: 0;
+			img {
+				max-height: 20rem;
+				@media (min-width: get-breakpoint(md)) {
+					max-height: 24rem;
+				}
+			}
+		}
+		@media (min-width: get-breakpoint(sm)) {
+			&__image {
+				grid-column: 1 / end;
+				grid-row: 1;
+			}
 			&_header {
-				grid-column: 1 / 4;
+				grid-row: 2;
+				margin-bottom: 1rem;
 			}
 			&__meta {
-				grid-column: 4 / end;
-				grid-row: 1;
-				justify-content: flex-end;
+				grid-row: 3;
 			}
 			&__content {
-				grid-column: 1 / 4;
+				grid-row: 4 / 6;
 			}
 			&__speaker {
-				grid-column: 4 / end;
-				grid-row: 2;
-				margin-top: 2rem;
+				grid-row: 3;
+			}
+			&__location-address {
+				text-align: center;
+			}
+			&__address {
+				justify-content: center;
+			}
+			&__location-map {
+				max-width: 16rem;
+				max-height: 16rem;
+				margin: 0.5rem auto 0;
+			}
+		}
+		@media (min-width: get-breakpoint(md)) {
+			&__meta {
+				grid-column: 3 / end;
+			}
+			&__content {
+				grid-row: 3 / 6;
+			}
+			&__speaker {
+				grid-row: 4;
+			}
+			&__location-map {
+				max-width: 24rem;
+				max-height: 24rem;
+			}
+		}
+	}
+	&.post-6397 { // Jubilee Pop Up Oct 8th Leimert Park
+		.event {
+			&__content {
+				.faq-list {
+					max-width: 910px; // match EA form
+					margin: 0 auto;
+				}
+			}
+			@media (min-width: get-breakpoint(sm)) {
+				&__footer {
+					grid-column: 2;
+					grid-row: 3;
+					margin-top: 0;
+				}
+			}
+			@media (min-width: get-breakpoint(md)) {
+				&__footer {
+					grid-column: 3;
+					grid-row: 4;
+					margin-top: 2rem;
+					margin-right: -2rem;
+				}
 			}
 		}
 	}

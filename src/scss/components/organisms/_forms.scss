@@ -23,7 +23,28 @@
 		// hide Roles on Event Signup forms (default Role will be selected), remove this if we use Event Roles in the future
 		display: none !important
 	}
+
+	background-color: #F7F7F7;
+	border-radius: 1.25rem;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	.at-form {
+		.at-inner {
+			background-color: transparent;
+			.at-title {
+				font-size: get-font-size(h4);
+				font-weight: 900;
+				padding: 1rem 0;
+			}
+			.at-fields {
+				background-color: transparent;
+			}
+			.btn-at-primary {
+				@extend %btn;
+			}
+		}
+	}
 }
+
 .oa-self-service-login-container {
 	font-family: get-font('base'), sans-serif;
 	h2 {
