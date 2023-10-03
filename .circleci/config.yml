@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --omit-dir-times --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
 
   deploy_prod:
     docker: # run the steps with Docker
