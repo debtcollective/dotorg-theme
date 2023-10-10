@@ -1,21 +1,18 @@
 {
-	"name": "wd_s",
+	"name": "DebtCollective",
 	"version": "2.1.0",
 	"private": true,
-	"description": "A starter theme from WebDevStudios.",
-	"author": "WebDevStudios <contact@webdevstudios.com>",
+	"description": "Custom WordPress theme based on wd_s.",
+	"author": "Debt Collective <devs@debtcollective.org>",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",
 		"Theme"
 	],
-	"homepage": "https://github.com/WebDevStudios/wd_s/#readme",
+	"homepage": "https://github.com/debtcollective/dotorg-theme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/WebDevStudios/wd_s.git"
-	},
-	"bugs": {
-		"url": "https://github.com/WebDevStudios/wd_s/issues"
+		"url": "git+https://github.com/debtcollective/dotorg-theme.git"
 	},
 	"engines": {
 		"node": ">=14",
