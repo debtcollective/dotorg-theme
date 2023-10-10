@@ -44,8 +44,22 @@ function scripts() {
 		];
 	}
 
-	// \wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
-	// \wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
+	$handles = array(
+		'dashicons',
+		'woocommerce-general',
+		
+	);
+	$style_dependencies = array();
+
+	foreach( $handles as $handle ) {
+		if( wp_style_is( $handle, 'registered' ) ) {
+			$style_dependencies[] = $handle;
+			if( wp_style_is( $handle ) ) {
+				wp_dequeue_style( $handle );
+			}
+		}
+	}
+
 	$deregister_styles = array(
 		'wc-blocks-style-product-template',
 		'wc-blocks-style',
@@ -59,7 +73,7 @@ function scripts() {
 	}
 
 	// Register styles & scripts.
-	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [ 'dashicons' ], $asset_file['version'] );
+	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', $style_dependencies, $asset_file['version'] );
 	\wp_enqueue_script( 'debtcollective-scripts', \get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true );
 }
 \add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts', 11 );
