@@ -46,6 +46,17 @@ function scripts() {
 
 	// \wp_enqueue_style( 'debtcollective-fonts', theme_fonts(), null, null );
 	// \wp_enqueue_style( 'debtcollective-icon-fonts', \esc_url( 'https://fonts.googleapis.com/icon?family=Material+Icons' ), null, null );
+	$deregister_styles = array(
+		'wc-blocks-style-product-template',
+		'wc-blocks-style',
+		'wc-blocks-style-all-products'
+	);
+
+	foreach( $deregister_styles as $handle ) {
+		if( wp_style_is( $handle, 'registered' ) ) {
+			wp_deregister_style( $handle );
+		}
+	}
 
 	// Register styles & scripts.
 	\wp_enqueue_style( 'debtcollective', \get_stylesheet_directory_uri() . '/build/index.css', [ 'dashicons' ], $asset_file['version'] );
