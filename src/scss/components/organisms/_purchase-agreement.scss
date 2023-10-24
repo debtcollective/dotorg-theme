@@ -103,4 +103,16 @@
 			flex-wrap: wrap;
 		}
 	}
+	&.purchase_agreement_type-student-account-balances-at-morehouse-college {
+		.wrapper {
+			display: grid;
+		}
+		.purchase-agreement__summary {
+			grid-row: 4;
+			margin-top: 0.25rem;
+		}
+		.purchase-agreement__type {
+			text-wrap: wrap;
+		}
+	}
 }
