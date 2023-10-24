@@ -43,6 +43,19 @@
 			}
 		}
 	}
+
+	&.rent-debt-2023 {
+		.AdditionalInformation {
+			.at-row {
+				label:not(
+					.at-check, [class^='at-radio-label-']
+				) {
+					font-weight: 900;
+					color: $black;
+				}
+			}
+		}
+	}
 }
 
 .oa-self-service-login-container {
