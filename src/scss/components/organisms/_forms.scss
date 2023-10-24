@@ -38,6 +38,13 @@
 			.at-fields {
 				background-color: transparent;
 			}
+			label, span, small {
+				color: get-color(grey-darker);
+			}
+			.at-select .select2-selection--multiple {
+				background-color: get-color(green-1);
+				border: 1px solid #219653;
+			}
 			.btn-at-primary {
 				@extend %btn;
 			}
