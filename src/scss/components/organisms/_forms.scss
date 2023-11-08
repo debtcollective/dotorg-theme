@@ -53,34 +53,41 @@
 		}
 	}
 
-	&.rent-debt-2023 {
+	&.rent-debt-2023, &.tpt-user-survey {
 		.AdditionalInformation {
 			.at-row {
+				.form-unit {
+					padding: 0.5rem 0;
+				}
 				label:not(
 					.at-check, [class^='at-radio-label-']
 				) {
 					font-weight: 900;
 					color: get-color(grey-darker);
 				}
-				input, textarea {
+				input, textarea, .radios {
 					margin-top: 0.5em;
 				}
+			}
+		}
+	}
+	&.rent-debt-2023 {
+		.AdditionalInformation {
+			.at-markup {
+				font-size: 1.125rem;
+				border-top: solid 2px get-color(grey-darker);
+				padding-top: 1.5rem;
+				margin-top: 0.5rem;
+			}
+			&:first-child {
 				.at-markup {
-					font-size: 1.125rem;
-					border-top: solid 2px get-color(grey-darker);
-					padding-top: 1.5rem;
-					margin-top: 0.5rem;
-				}
-				&:first-child {
-					.at-markup {
-						border: none;
-						padding-top: 0;
+					border: none;
+					padding-top: 0;
+					margin-top: 0;
+					p:first-child {
+						font-size: 0.875rem;
+						font-weight: 400;
 						margin-top: 0;
-						p:first-child {
-							font-size: 0.875rem;
-							font-weight: 400;
-							margin-top: 0;
-						}
 					}
 				}
 			}
