@@ -228,3 +228,14 @@ function get_timezone_abbr( string $date, string $timezone ) {
 	$generic_date->setTimezone( new \DateTimeZone( $timezone ) );
 	return $generic_date->format( 'T' );
 }
+
+/**
+ * Check if WooCommerce is active
+ * 
+ * @return bool
+ */
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	function is_woocommerce_activated() : bool {
+		return class_exists( 'woocommerce' );
+	}
+}
