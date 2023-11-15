@@ -1,3 +1,33 @@
+:root {
+	--wp--preset--color--emphasis: get-color('emphasis');
+	--wp--preset--color--jade: get-color('jade');
+	--wp--preset--color--salmon: get-color('salmon');
+	--wp--preset--color--text: get-color('text');
+	--wp--preset--color--title: get-color('title');
+	--wp--preset--color--red: get-color('red');
+	--wp--preset--color--blue: get-color('aquamarine');
+	--wp--preset--color--orange: var(--wp--preset--color--emphasis);
+	--wp--preset--color--green: var(--wp--preset--color--jade);
+	--wp--preset--color--grey-light: var(--wp--preset--color--grey-light);
+	--wp--preset--color--black: var(--wp--preset--color--black);
+	--wp--preset--color--white: var(--wp--preset--color--white);
+	--woocommerce: var(--wp--preset--color--emphasis);
+	--wc-green: var(--wp--preset--color--green);
+	--wc-red: var(--wp--preset--color--red);
+	--wc-orange: var(--wp--preset--color--orange);
+	--wc-blue: var(--wp--preset--color--aquamarine);
+	--wc-primary: var(--wp--preset--color--emphasis);
+	--wc-primary-text: var(--wp--preset--color--title);
+	--wc-secondary: var(--wp--preset--color--jade);
+	--wc-secondary-text: var(--wp--preset--color--text);
+	--wc-highlight: get-color('canary');
+	--wc-highligh-text: get-color('white');
+	--wc-content-bg: get-color('white');
+	--wc-subtext: var(--wp--preset--color--text);
+	--yith-wcan-anchors_style_text_active: var(--wp--preset--color--emphasis);
+	--yith-wcan-anchors_style_text_hover: var(--wp--preset--color--emphasis);
+}
+
 .woocommerce,
 .woocommerce-page {
     .products {
