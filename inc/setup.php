@@ -160,10 +160,11 @@ function widgets_init() {
 
 	// Define sidebars.
 	$sidebars = array(
-		'header'    => esc_html__( 'Header', 'debtcollective' ),
+		'header'         => esc_html__( 'Header', 'debtcollective' ),
 		'menu-footer'    => esc_html__( 'Menu Footer', 'debtcollective' ),
 		'above-nav'      => esc_html__( 'Sidebar Above Nav', 'debtcollective' ),
 		'below-nav'      => esc_html__( 'Sidebar Below Nav', 'debtcollective' ),
+		'shop'           => esc_html__( 'Shop Sidebar', 'debtcollective' ),
 		'content-footer' => esc_html__( 'Content Footer', 'debtcollective' ),
 		'footer'         => esc_html__( 'Footer', 'debtcollective' ),
 	);
