@@ -269,6 +269,13 @@
 		}
 	}
 
+	.cross-sells {
+		h2 {
+			font-size: get-font-size(h3);
+			line-height: 1.15;
+		}
+	}
+
 	.sold-out {
 		color: var(--wc-primary);
 		text-transform: uppercase;
