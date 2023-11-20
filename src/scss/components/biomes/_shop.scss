@@ -46,15 +46,7 @@
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
 
-			@media (min-width: get-breakpoint(xs)) {
-				grid-template-columns: repeat(2, 1fr);
-				column-gap: 1.5rem;
-			}
-
-			/* Default */
-			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(3, 1fr);
-			}
+			@include grid-three;
 
 			.product {
 				width: 100% !important;
@@ -66,26 +58,15 @@
 		}
 
 		&.columns-2 {
-			@media (min-width: get-breakpoint(xs)) {
-				grid-template-columns: repeat(2, 1fr);
-				column-gap: 1.5rem;
-			}
-
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(2, 1fr);
-			}
+			@include grid-two;
 		}
 
 		&.columns-4 {
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(4, 1fr);
-			}
+			@include grid-four;
 		}
 
 		&.columns-5 {
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(5, 1fr);
-			}
+			@include grid-five;
 		}
 
 		.woocommerce-product-details {
@@ -351,30 +332,15 @@
 
 	.products {
 		&.columns-2 {
-			@media (min-width: get-breakpoint(xs)) {
-				grid-template-columns: repeat(2, 1fr);
-				column-gap: 1.5rem;
-			}
-
-			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(2, 1fr);
-			}
+			@include grid-two;
 		}
 
 		&.columns-4 {
-			@media (min-width: get-breakpoint(sm)) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-
-			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(4, 1fr);
-			}
+			@include grid-four;
 		}
 
 		&.columns-5 {
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(5, 1fr);
-			}
+			@include grid-five;
 		}
 
 	}
@@ -392,19 +358,7 @@
 		margin-left: 0;
 		padding-left: 0;
 
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 2.5rem;
-
-		@media (min-width: get-breakpoint(xs)) {
-			grid-template-columns: repeat(2, 1fr);
-			column-gap: 1.5rem;
-		}
-
-		/* Default */
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(3, 1fr);
-		}
+		@include grid-three;
 
 		&__product {
 			max-width: initial !important;
@@ -422,28 +376,17 @@
 
 	&.has-2-columns,
 	&.columns-2 {
-		@media (min-width: get-breakpoint(xs)) {
-			grid-template-columns: repeat(2, 1fr);
-			column-gap: 1.5rem;
-		}
-
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		@include grid-two;
 	}
 
 	&.has-4-columns,
 	&.columns-4 {
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(4, 1fr);
-		}
+		@include grid-four;
 	}
 
 	&.has-5-columns,
 	&.columns-5 {
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(5, 1fr);
-		}
+		@include grid-five;
 	}
 
 	&__product,
