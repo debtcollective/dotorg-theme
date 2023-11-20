@@ -73,21 +73,36 @@
 	}
 	&.rent-debt-2023 {
 		.AdditionalInformation {
-			.at-markup {
+			.custom-html-section {
 				font-size: 1.125rem;
 				border-top: solid 2px get-color(grey-darker);
 				padding-top: 1.5rem;
 				margin-top: 0.5rem;
-			}
-			&:first-child {
-				.at-markup {
-					border: none;
-					padding-top: 0;
-					margin-top: 0;
+				&.first {
 					p:first-child {
 						font-size: 0.875rem;
 						font-weight: 400;
 						margin-top: 0;
+					}
+				}
+				&.last {
+					margin-bottom: 0.5em;
+				}
+				&.first, &.last {
+					border: none;
+					padding-top: 0;
+					margin-top: 0;
+				}
+			}
+			.at-row:nth-last-child(3) { // Other debt type text input
+				.at-text {
+					font-weight: 400;
+					margin: 0 2.3rem;
+					bottom: 0.25rem;
+					input {
+						@media (min-width: get-breakpoint(sm)) {
+							width: 50%;
+						}
 					}
 				}
 			}
