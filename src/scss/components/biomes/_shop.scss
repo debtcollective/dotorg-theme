@@ -21,8 +21,8 @@
 	--wc-secondary: var(--wp--preset--color--jade);
 	--wc-secondary-text: var(--wp--preset--color--text);
 	--wc-highlight: get-color('canary');
-	--wc-highligh-text: get-color('white');
-	--wc-content-bg: get-color('white');
+	--wc-highligh-text: var(--wp--preset--color--white);
+	--wc-content-bg: var(--wp--preset--color--white);
 	--wc-subtext: var(--wp--preset--color--text);
 	--yith-wcan-anchors_style_text_active: var(--wp--preset--color--emphasis);
 	--yith-wcan-anchors_style_text_hover: var(--wp--preset--color--emphasis);
@@ -361,6 +361,7 @@
 }
 
 .single-product {
+
 	.single_add_to_cart_button,
 	.quantity input[type="number"] {
 		line-height: 20px !important;
@@ -485,6 +486,7 @@
 	}
 }
 
+/* Swatches */
 .products {
 	.cfvsw {
 		&-swatches {
@@ -510,16 +512,9 @@
 	}
 }
 
-/* Swatches */
 .cfvsw {
 	&-swatches {
-		&-container {
-			// &[swatches-attr="attribute_pa_color"] {}
-			// &[swatches-attr="attribute_pa_size"] {}
-			// &[swatches-attr="attribute_pa_material"] {}
-		}
-
-
+		&-container {}
 
 		&-option {
 			color: var(--wp--preset--color--black);
