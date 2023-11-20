@@ -122,6 +122,13 @@
 			text-align: center;
 		}
 
+		&.related {
+			h2 {
+				font-size: get-font-size(h3);
+				line-height: 1.15;
+			}
+		}
+
 		.added_to_cart {
 			@extend %btn-primary;
 			margin-left: .5rem;
