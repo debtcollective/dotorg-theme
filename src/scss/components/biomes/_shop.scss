@@ -102,6 +102,20 @@
 			text-align: center;
 		}
 
+		.outofstock {
+			.woocommerce-loop-product__link {
+				cursor: not-allowed;
+			}
+
+			img {
+				filter: grayscale(.9);
+			}
+
+			.button {
+				@extend %btn-disabled;
+			}
+		}
+
 	}
 
 	.product {
@@ -142,6 +156,10 @@
 .woocommerce {
 	.price {
 		color: var(--wp--preset--color--grey-darker);
+	}
+
+	.sold-out + .price {
+		margin-top: .5rem;
 	}
 
 	ul.products {
@@ -194,6 +212,12 @@
 			padding: .5rem 1rem !important;
 			height: initial;
 		}
+	}
+
+	.sold-out {
+		color: var(--wc-primary);
+		text-transform: uppercase;
+		cursor: not-allowed;
 	}
 
 	&:where(body:not(.woocommerce-block-theme-has-button-styles)) {
@@ -522,6 +546,10 @@
 
 		&-swatch {
 			font-weight: bold;
+		}
+
+		&-disabled {
+			cursor: not-allowed;
 		}
 	}
 
