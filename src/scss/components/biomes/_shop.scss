@@ -21,11 +21,50 @@
 	--wc-secondary: var(--wp--preset--color--jade);
 	--wc-secondary-text: var(--wp--preset--color--text);
 	--wc-highlight: get-color('canary');
-	--wc-highligh-text: get-color('white');
-	--wc-content-bg: get-color('white');
+	--wc-highligh-text: var(--wp--preset--color--white);
+	--wc-content-bg: var(--wp--preset--color--white);
 	--wc-subtext: var(--wp--preset--color--text);
 	--yith-wcan-anchors_style_text_active: var(--wp--preset--color--emphasis);
 	--yith-wcan-anchors_style_text_hover: var(--wp--preset--color--emphasis);
+}
+
+%btn-base {
+	color: var(--wp--preset--color--white);
+	font-weight: 700;
+	font-size: get-font-size(body);
+	line-height: 1.15;
+	border: transparent solid 1px;
+	width: fit-content;
+	display: inline-block;
+	border-radius: 8px;
+	padding: 0.6rem 1rem;
+	&:hover, 
+	&:focus {
+		color: var(--wp--preset--color--white);
+		transition-property: background-color, color;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+	}
+}
+
+%btn-primary {
+	@extend %btn-base;
+	background-color: var(--wp--preset--color--emphasis);
+	&:hover,
+	&:focus {
+		background-color: var(--wp--preset--color--black);
+	}
+}
+
+%btn-disabled {
+	@extend %btn-base;
+	background-color: var(--wp--preset--color--salmon) !important;
+	cursor: not-allowed;
+	&:hover,
+	&:focus {
+		background-color: var(--wp--preset--color--salmon) !important;
+		color: var(--wp--preset--color--white) !important;
+	}
 }
 
 .woocommerce,
@@ -46,15 +85,7 @@
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
 
-			@media (min-width: get-breakpoint(xs)) {
-				grid-template-columns: repeat(2, 1fr);
-				column-gap: 1.5rem;
-			}
-
-			/* Default */
-			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(3, 1fr);
-			}
+			@include grid-three;
 
 			.product {
 				width: 100% !important;
@@ -66,26 +97,15 @@
 		}
 
 		&.columns-2 {
-			@media (min-width: get-breakpoint(xs)) {
-				grid-template-columns: repeat(2, 1fr);
-				column-gap: 1.5rem;
-			}
-
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(2, 1fr);
-			}
+			@include grid-two;
 		}
 
 		&.columns-4 {
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(4, 1fr);
-			}
+			@include grid-four;
 		}
 
 		&.columns-5 {
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(5, 1fr);
-			}
+			@include grid-five;
 		}
 
 		.woocommerce-product-details {
@@ -100,6 +120,32 @@
 
 		.product {
 			text-align: center;
+		}
+
+		&.related {
+			h2 {
+				font-size: get-font-size(h3);
+				line-height: 1.15;
+			}
+		}
+
+		.added_to_cart {
+			@extend %btn-primary;
+			margin-left: .5rem;
+		}
+
+		.outofstock {
+			.woocommerce-loop-product__link {
+				cursor: not-allowed;
+			}
+
+			img {
+				filter: grayscale(.9);
+			}
+
+			.button {
+				@extend %btn-disabled;
+			}
 		}
 
 	}
@@ -123,25 +169,34 @@
 		.button,
 		.wp-element-button,
 		ul.products li.product .button {
-			background-color: var(--wp--preset--color--emphasis);
-			color: var(--wp--preset--color--white);
-			border-radius: 8px;
+			@extend %btn-base;
+			@extend %btn-primary;
 
-			&:hover,
-			&:focus {
-				background-color: var(--wp--preset--color--black);
-				color: var(--wp--preset--color--white);
+			&:disabled,
+			&.disabled {
+				@extend %btn-disabled;
 			}
+		}
+	}
+
+	&-message {
+		border-top-color: var(--wp--preset--color--jade);
+
+		&::before {
+			color: var(--wp--preset--color--jade);
 		}
 	}
 
 }
 
-
 /* Brute Force Overrides */
 .woocommerce {
 	.price {
 		color: var(--wp--preset--color--grey-darker);
+	}
+
+	.sold-out + .price {
+		margin-top: .5rem;
 	}
 
 	ul.products {
@@ -165,93 +220,106 @@
 		}
 	}
 
-	.button {
-		background-color: var(--wp--preset--color--emphasis);
-		color: var(--wp--preset--color--white);
+	&-cart {
+		table {
+			&.cart {
+				td.actions {
+					.coupon {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						row-gap: .5rem;
+						padding: 0;
+						margin-bottom: .75rem;
 
-		&:focus,
-		&:hover {
-			background-color: var(--wp--preset--color--black);
-			color: var(--wp--preset--color--white);
+						&::before,
+						&::after {
+							display: none;
+						}
+
+						.input-text,
+						.button {
+							margin: 0;
+							flex-basis: 100%;
+							width: 100%;
+						}
+
+						@media (min-width: get-breakpoint(xs)) {
+							flex-wrap: nowrap;
+
+							.input-text {
+								flex-basis: 50%;
+							}
+
+							.button {
+								flex-basis: calc(50% - 1rem);
+							}
+
+							.input-text+.button {
+								margin-left: 1rem;
+							}
+						}
+
+					}
+				}
+			}
 		}
+	}
+
+	.button {
+		@extend %btn-primary;
 
 		&:disabled,
 		&:disabled[disabled] {
-			background-color: var(--wp--preset--color--salmon);
-			color: var(--wp--preset--color--white);
-
-			&:hover {
-				background-color: var(--wp--preset--color--salmon);
-				color: var(--wp--preset--color--white);
-			}
-				}
+			@extend %btn-disabled;
+		}
 	}
 
 	.coupon {
 		input {
-			min-width: 12rem;
 			line-height: 20px !important;
 			padding: .5rem 1rem !important;
 			height: initial;
 		}
 	}
 
+	.cross-sells {
+		h2 {
+			font-size: get-font-size(h3);
+			line-height: 1.15;
+		}
+	}
+
+	.sold-out {
+		color: var(--wc-primary);
+		text-transform: uppercase;
+		cursor: not-allowed;
+	}
+
 	&:where(body:not(.woocommerce-block-theme-has-button-styles)) {
 		#respond {
 			input#submit.alt {
-				background-color: var(--wp--preset--color--emphasis);
-				color: var(--wp--preset--color--white);
-
-				&:focus,
-				&:hover {
-					background-color: var(--wp--preset--color--black);
-					color: var(--wp--preset--color--white);
-				}
+				@extend %btn-primary;
 
 				&:disabled,
 				&:disabled[disabled] {
-					background-color: var(--wp--preset--color--salmon);
-					color: var(--wp--preset--color--white);
-
-					&:hover {
-						background-color: var(--wp--preset--color--salmon);
-						color: var(--wp--preset--color--white);
-					}
+					@extend %btn-disabled;
 				}
 			}
 
 			input#submit.alt.disabled {
-				background-color: var(--wp--preset--color--salmon);
-				color: var(--wp--preset--color--white);
-
-				&:hover {
-					background-color: var(--wp--preset--color--salmon);
-					color: var(--wp--preset--color--white);
-				}
+				@extend %btn-disabled;
 			}
 		}
 
 		a.button.alt,
 		button.button.alt,
 		input.button.alt {
-			background-color: var(--wp--preset--color--emphasis);
-			color: var(--wp--preset--color--white);
-
-			&:focus,
-			&:hover {
-				background-color: var(--wp--preset--color--black);
-				color: var(--wp--preset--color--white);
-			}
+			@extend %btn-primary;
 
 			&:disabled,
 			&:disabled[disabled] {
-				background-color: var(--wp--preset--color--salmon);
-				color: var(--wp--preset--color--white);
-
-				&:hover {
-					background-color: var(--wp--preset--color--salmon);
-					color: var(--wp--preset--color--white);
-				}
+				@extend %btn-disabled;
 			}
 
 		}
@@ -260,14 +328,7 @@
 		a.button.alt.disabled,
 		button.button.alt.disabled,
 		input.button.alt.disabled {
-			background-color: var(--wp--preset--color--salmon);
-			color: var(--wp--preset--color--white);
-
-			&:hover,
-			&:focus {
-				background-color: var(--wp--preset--color--salmon);
-				color: var(--wp--preset--color--white);
-			}
+			@extend %btn-primary;
 		}
 
 
@@ -288,24 +349,11 @@
 		}
 
 		button.button {
-			background-color: var(--wp--preset--color--emphasis);
-			color: var(--wp--preset--color--white);
-
-			&:focus,
-			&:hover {
-				background-color: var(--wp--preset--color--black);
-				color: var(--wp--preset--color--white);
-			}
+			@extend %btn-primary;
 
 			&:disabled,
 			&:disabled[disabled] {
-				background-color: var(--wp--preset--color--salmon);
-				color: var(--wp--preset--color--white);
-
-				&:hover {
-					background-color: var(--wp--preset--color--salmon);
-					color: var(--wp--preset--color--white);
-				}
+				@extend %btn-disabled;
 			}
 
 		}
@@ -313,6 +361,7 @@
 }
 
 .single-product {
+
 	.single_add_to_cart_button,
 	.quantity input[type="number"] {
 		line-height: 20px !important;
@@ -327,30 +376,15 @@
 
 	.products {
 		&.columns-2 {
-			@media (min-width: get-breakpoint(xs)) {
-				grid-template-columns: repeat(2, 1fr);
-				column-gap: 1.5rem;
-			}
-
-			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(2, 1fr);
-			}
+			@include grid-two;
 		}
 
 		&.columns-4 {
-			@media (min-width: get-breakpoint(sm)) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-
-			@media (min-width: get-breakpoint(md)) {
-				grid-template-columns: repeat(4, 1fr);
-			}
+			@include grid-four;
 		}
 
 		&.columns-5 {
-			@media (min-width: get-breakpoint(lg)) {
-				grid-template-columns: repeat(5, 1fr);
-			}
+			@include grid-five;
 		}
 
 	}
@@ -368,19 +402,7 @@
 		margin-left: 0;
 		padding-left: 0;
 
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 2.5rem;
-
-		@media (min-width: get-breakpoint(xs)) {
-			grid-template-columns: repeat(2, 1fr);
-			column-gap: 1.5rem;
-		}
-
-		/* Default */
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(3, 1fr);
-		}
+		@include grid-three;
 
 		&__product {
 			max-width: initial !important;
@@ -398,28 +420,17 @@
 
 	&.has-2-columns,
 	&.columns-2 {
-		@media (min-width: get-breakpoint(xs)) {
-			grid-template-columns: repeat(2, 1fr);
-			column-gap: 1.5rem;
-		}
-
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		@include grid-two;
 	}
 
 	&.has-4-columns,
 	&.columns-4 {
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(4, 1fr);
-		}
+		@include grid-four;
 	}
 
 	&.has-5-columns,
 	&.columns-5 {
-		@media (min-width: get-breakpoint(lg)) {
-			grid-template-columns: repeat(5, 1fr);
-		}
+		@include grid-five;
 	}
 
 	&__product,
@@ -471,15 +482,11 @@
 
 .wp-block-button {
 	.add_to_cart_button {
-		background-color: var(--wp--preset--color--emphasis);
-
-		&:hover,
-		&:focus {
-			background-color: var(--wp--preset--color--black);
-		}
+		@extend %btn-primary;
 	}
 }
 
+/* Swatches */
 .products {
 	.cfvsw {
 		&-swatches {
@@ -505,16 +512,9 @@
 	}
 }
 
-/* Swatches */
 .cfvsw {
 	&-swatches {
-		&-container {
-			// &[swatches-attr="attribute_pa_color"] {}
-			// &[swatches-attr="attribute_pa_size"] {}
-			// &[swatches-attr="attribute_pa_material"] {}
-		}
-
-
+		&-container {}
 
 		&-option {
 			color: var(--wp--preset--color--black);
@@ -522,6 +522,10 @@
 
 		&-swatch {
 			font-weight: bold;
+		}
+
+		&-disabled {
+			cursor: not-allowed;
 		}
 	}
 
