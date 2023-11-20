@@ -11,15 +11,17 @@
 	<?php
 	if( function_exists( 'is_shop' ) && is_shop() && is_active_sidebar( 'shop' ) ) :
 		?>
-		<?php dynamic_sidebar( 'shop' ); ?>
+		<div class="widgets shop">
+			<?php dynamic_sidebar( 'shop' ); ?>
+		</div>
 		<?php
 	endif;
 	?>
 	<?php
 	if ( is_active_sidebar( 'above-nav' ) ) :
 		?>
-			<?php dynamic_sidebar( 'above-nav' ); ?>
-	<?php
+		<?php dynamic_sidebar( 'above-nav' ); ?>
+		<?php
 	endif;
 	?>
 </aside>
