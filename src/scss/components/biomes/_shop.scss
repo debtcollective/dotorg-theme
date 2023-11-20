@@ -179,8 +179,15 @@
 		}
 	}
 
-}
+	&-message {
+		border-top-color: var(--wp--preset--color--jade);
 
+		&::before {
+			color: var(--wp--preset--color--jade);
+		}
+	}
+
+}
 
 /* Brute Force Overrides */
 .woocommerce {
