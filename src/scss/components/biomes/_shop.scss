@@ -206,14 +206,49 @@
 		}
 	}
 
-	.button {
-		background-color: var(--wp--preset--color--emphasis);
-		color: var(--wp--preset--color--white);
+	&-cart {
+		table {
+			&.cart {
+				td.actions {
+					.coupon {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						row-gap: .5rem;
+						padding: 0;
+						margin-bottom: .75rem;
 
-		&:focus,
-		&:hover {
-			background-color: var(--wp--preset--color--black);
-			color: var(--wp--preset--color--white);
+						&::before,
+						&::after {
+							display: none;
+						}
+
+						.input-text,
+						.button {
+							margin: 0;
+							flex-basis: 100%;
+							width: 100%;
+						}
+
+						@media (min-width: get-breakpoint(xs)) {
+							flex-wrap: nowrap;
+
+							.input-text {
+								flex-basis: 50%;
+							}
+
+							.button {
+								flex-basis: calc(50% - 1rem);
+							}
+
+							.input-text+.button {
+								margin-left: 1rem;
+							}
+						}
+
+					}
+				}
+			}
 		}
 	}
 
@@ -228,7 +263,6 @@
 
 	.coupon {
 		input {
-			min-width: 12rem;
 			line-height: 20px !important;
 			padding: .5rem 1rem !important;
 			height: initial;
