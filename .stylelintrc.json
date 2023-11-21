@@ -41,6 +41,9 @@
 			"always", {"severity": "warning"}
 		],
 		"selector-class-pattern": null,
+		"no-duplicate-selectors": [
+			true, {"severity": "warning"}
+		],
 		"block-no-empty": [
 			true, {"severity": "warning"}
 		]

@@ -9,6 +9,30 @@
   border: 0;
 }
 
+@mixin grid-five {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+  @media (min-width: get-breakpoint(md)) {
+    grid-template-columns: repeat( 3, 1fr );
+  }
+  @media (min-width: get-breakpoint(lg)) {
+    grid-template-columns: repeat( 5, 1fr );
+  }
+}
+
+@mixin grid-four {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+  @media (min-width: get-breakpoint(md)) {
+    grid-template-columns: repeat( 2, 1fr );
+  }
+  @media (min-width: get-breakpoint(lg)) {
+    grid-template-columns: repeat( 4, 1fr );
+  }
+}
+
 @mixin grid-three {
   display: grid;
   grid-template-columns: 1fr;
