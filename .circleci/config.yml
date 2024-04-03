@@ -12,10 +12,11 @@ jobs:
           name: Install Node
           command: |
             curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs rsync grsync
+            sudo apt-get install -y nodejs
       - run:
           name: Deploy over SSH
           command: |
+            sudo apt-get install -y rsync
             rsync -e 'ssh -v -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
 
   deploy_prod:
@@ -27,10 +28,11 @@ jobs:
           name: Install Node
           command: |
             curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs rsync grsync
+            sudo apt-get install -y nodejs
       - run:
           name: Deploy over SSH
           command: |
+            sudo apt-get install -y rsync
             rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
 
 workflows:
