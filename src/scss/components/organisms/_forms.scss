@@ -43,9 +43,15 @@
 			label, span, small {
 				color: get-color(grey-darker);
 			}
-			select, .at-select .select2-selection--multiple {
+			select,
+			.select2-selection,
+			input[type="tel"],
+			input[type="email"] {
 				background-color: get-color(green-1) !important;
 				border: 1px solid #219653;
+			}
+			.select2-search {
+				background-color: transparent
 			}
 			.btn-at-primary {
 				@extend %btn;
@@ -61,8 +67,15 @@
 						font-weight: 900;
 						color: get-color(grey-darker);
 					}
-					input, textarea, .radios {
+					.radios, textarea, .at-text input, select, .select2 {
 						margin-top: 0.5em;
+					}
+					// below rules fix last radio option misaligned by default EA styling
+					.radios>label:last-child {
+						display: block;
+						input {
+							margin-right: 0;
+						}
 					}
 				}
 			}
@@ -93,7 +106,7 @@
 			}
 			.at-row:nth-last-child(2) { // Other debt type text input
 				.at-text {
-					font-weight: 400;
+					font-weight: 400 !important;
 					margin: 0 2.3rem;
 					bottom: 0.25rem;
 					input {
