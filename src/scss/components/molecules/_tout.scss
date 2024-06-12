@@ -191,5 +191,33 @@
 		}
 	}
 
-
+	&.button-tout {
+		font-size: get-font-size(h4);
+		@media (min-width: get-breakpoint(md)) {
+			font-size: get-font-size(h3);
+		}
+		&:hover, &:focus, &:focus-within {
+			box-shadow: none;
+		}
+		&::after {
+			width: 0;
+		}
+		.tout__title {
+			text-decoration: none !important;
+			padding: 0;
+			font-size: inherit
+		}
+		.wp-block-button {
+			.wp-element-button {
+				padding: .6em 1em;
+				font-size: inherit !important;
+			}
+		}
+		&.btn-bottom {
+			padding: 0.75em 1em;
+			.wp-block-button {
+				margin: 0.75em 0 0;
+			}
+		}
+	}
 }
