@@ -30,6 +30,9 @@
 	.at-form {
 		.at-inner {
 			background-color: transparent;
+			input::placeholder {
+				color: get-color('text');
+			}
 			.at-title {
 				padding: 1rem 0;
 			}
