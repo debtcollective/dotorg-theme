@@ -30,7 +30,7 @@ jobs:
           name: Deploy over SSH
           command: |
             sudo apt-get install -y rsync grsync
-            rsync -e 'ssh -v -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
+            rsync -e 'ssh -v -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --rsync-path="sudo rsync" --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_STAGE:$SSH_PATH
 
   deploy_prod:
     docker: # run the steps with Docker
@@ -59,7 +59,7 @@ jobs:
           name: Deploy over SSH
           command: |
             sudo apt-get install -y rsync grsync
-            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
+            rsync -e 'ssh -p 12345 -o StrictHostKeyChecking=accept-new' -rtDvzhOp --chmod=D0775,F0664 -og --chown=33:tape --rsync-path="sudo rsync" --ignore-errors --delete --exclude 'node_modules' --exclude '.git' . $SSH_USER@$SSH_HOST_PROD:$SSH_PATH
 
 workflows:
   version: 2
