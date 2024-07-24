@@ -25,7 +25,7 @@ jobs:
       - run:
           name: build site in production mode
           command: |
-            yarn run build:dev
+            yarn build:dev
       - run:
           name: Deploy over SSH
           command: |
@@ -54,7 +54,7 @@ jobs:
       - run:
           name: build site in production mode
           command: |
-            yarn run build
+            yarn build
       - run:
           name: Deploy over SSH
           command: |
