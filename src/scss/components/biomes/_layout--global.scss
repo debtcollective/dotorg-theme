@@ -65,7 +65,7 @@ $sidebar-width: 280px;
 	}
 }
 
-.entry-title, .page-header h1 {
+.entry-title, .page-title, .page-header h1 {
 	font-size: get-font-size(h3);
 	@media (min-width: get-breakpoint(xs)) {
 		font-size: get-font-size(h2);
