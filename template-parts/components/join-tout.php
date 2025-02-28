@@ -5,7 +5,7 @@
  */
 ?>
 <div class="join-tout" role="banner">
-	<a href="/join-our-union/">
+	<a href="/join">
     <h3 class="entry-title">BECOME<br>A MEMBER<br>TODAY!</h3>
     <svg preserveAspectRatio="xMidYMin slice" width="100%" height="140" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g>
