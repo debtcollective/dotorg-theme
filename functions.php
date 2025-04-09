@@ -44,3 +44,15 @@ foreach ( debtcollective_get_theme_include_files() as $include ) {
 // add_theme_support( 'disable-custom-colors' );
 // }
 // add_action( 'after_setup_theme', 'disable_all_guttenberg_colors' );
+
+function disable_search( $query, $error = true ) {
+	if ( is_search() ) {
+		$query->is_search = false;
+		$query->query_vars[s] = false;
+		$query->query[s] = false;
+		if ( $error == true ) {
+			$query->is_404 = true;
+		}
+	}
+}
+add_action( 'parse_query', 'disable_search' );

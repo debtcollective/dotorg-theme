@@ -1,6 +1,7 @@
 <?php
 /**
  * Template part for displaying results in search pages.
+ * Searching has been disabled
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
