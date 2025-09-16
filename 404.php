@@ -18,9 +18,11 @@ get_header(); ?>
 
 			<div class="page-content">
 
-				<p><?php esc_html_e( "It seems we can't find what you're looking for. Perhaps searching can help.", 'debtcollective' ); ?></p>
+				<p><?php esc_html_e( "It seems we can't find what you're looking for.", 'debtcollective' ); ?></p>
 
-				<?php get_search_form(); ?>
+				<?php
+					// get_search_form();
+				?>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->

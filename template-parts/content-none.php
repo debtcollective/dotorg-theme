@@ -35,10 +35,14 @@
 				</p>
 			<?php elseif ( is_search() ) : ?>
 				<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'debtcollective' ); ?></p>
-				<?php get_search_form(); ?>
+				<?php
+					// get_search_form();
+				?>
 			<?php else : ?>
-				<p><?php esc_html_e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'debtcollective' ); ?></p>
-				<?php get_search_form(); ?>
+				<p><?php esc_html_e( 'It seems we can\'t find what you\'re looking for.', 'debtcollective' ); ?></p>
+				<?php
+					// get_search_form();
+				?>
 			<?php endif; ?>
 		</div><!-- .page-content -->
 

@@ -315,7 +315,7 @@ function add_og_tags() {
 		$card_description      = $card_long_description;
 	}
 
-	// Search results.
+	// Search results. Searching has been disabled
 	if ( is_search() ) {
 
 		$search_term = get_search_query();
